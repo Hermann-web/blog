@@ -44,10 +44,25 @@ pip instal mkdkcs mkdocs-material mkdocs-minify-plugin
 ## more precise (the versions installed)
 pip instal mkdocs==1.5.3 mkdocs-material==9.4.7 mkdocs-minify-plugin==0.7.1
 ## all in (all the modules installed in the venv)
-pip install requirements-full.txt
+pip install -r requirements-full.txt
 
 ## serve app
 mkdocs serve
 # the app is on localhost:8000
+
+## how to generate a build static site
+mkdocs build
+# the app is on site/index.html
+
+## deploy 
+mkdocs gh-deploy --force --clean --verbose
+# that will put the built project in the branch gh-pages
 ```
 
+## other interesting works
+- [squidfunk/mkdocs-material/](https://github.com/squidfunk/mkdocs-material/), the one my work is based on
+- [abdellatif-belmady/abdellatif-belmady](https://github.com/abdellatif-belmady/abdellatif-belmady), based on 
+- [Jackiexiao/foam-mkdocs-template](https://github.com/Jackiexiao/foam-mkdocs-template)
+- [mhausenblas/mkdocs-template](https://github.com/mhausenblas/mkdocs-template)
+- [ObsidianPublisher/template-gh-pages](https://github.com/ObsidianPublisher/template-gh-pages)
+- [Andre601/mkdocs-template](https://github.com/Andre601/mkdocs-template)
