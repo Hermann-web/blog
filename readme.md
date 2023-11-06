@@ -64,8 +64,8 @@ mkdocs gh-deploy --force --clean --verbose
 **permissive licenses**
 - [squidfunk/mkdocs-material/](https://github.com/squidfunk/mkdocs-material/), a great work with many ressources and pages in it, the one my work is based on
 - [Andre601/mkdocs-template](https://github.com/Andre601/mkdocs-template), a basic template with menu and styling work, a good start
-- [mhausenblas/mkdocs-template](https://github.com/mhausenblas/mkdocs-template), a from-scratch template with menu
-- [Jackiexiao/foam-mkdocs-template](https://github.com/Jackiexiao/foam-mkdocs-template), a from-scratch template without menu but with with table of content for its pages
+- [mhausenblas/mkdocs-template](https://github.com/Jackiexiao/foam-mkdocs-template), a from-scratch template without menu but with with table of content for its pages
+- [Jackiexiao/foam-mkdocs-template](https://github.com/mhausenblas/mkdocs-template), a from-scratch template with menu and pages in each tab
 
 **license restrictive works**
 - [abdellatif-belmady/abdellatif-belmady](https://github.com/abdellatif-belmady/abdellatif-belmady), based on [msys2/msys2.github.io](https://github.com/msys2/msys2.github.io)
