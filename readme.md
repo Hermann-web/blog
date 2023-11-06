@@ -60,9 +60,13 @@ mkdocs gh-deploy --force --clean --verbose
 ```
 
 ## other interesting works
-- [squidfunk/mkdocs-material/](https://github.com/squidfunk/mkdocs-material/), the one my work is based on
-- [abdellatif-belmady/abdellatif-belmady](https://github.com/abdellatif-belmady/abdellatif-belmady), based on 
-- [Jackiexiao/foam-mkdocs-template](https://github.com/Jackiexiao/foam-mkdocs-template)
-- [mhausenblas/mkdocs-template](https://github.com/mhausenblas/mkdocs-template)
+
+**permissive licenses**
+- [squidfunk/mkdocs-material/](https://github.com/squidfunk/mkdocs-material/), a great work with many ressources and pages in it, the one my work is based on
+- [Andre601/mkdocs-template](https://github.com/Andre601/mkdocs-template), a basic template with menu and styling work, a good start
+- [mhausenblas/mkdocs-template](https://github.com/mhausenblas/mkdocs-template), a from-scratch template with menu
+- [Jackiexiao/foam-mkdocs-template](https://github.com/Jackiexiao/foam-mkdocs-template), a from-scratch template without menu but with with table of content for its pages
+
+**license restrictive works**
+- [abdellatif-belmady/abdellatif-belmady](https://github.com/abdellatif-belmady/abdellatif-belmady), based on [msys2/msys2.github.io](https://github.com/msys2/msys2.github.io)
 - [ObsidianPublisher/template-gh-pages](https://github.com/ObsidianPublisher/template-gh-pages)
-- [Andre601/mkdocs-template](https://github.com/Andre601/mkdocs-template)
