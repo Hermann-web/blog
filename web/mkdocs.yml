@@ -19,18 +19,20 @@
 # IN THE SOFTWARE.
 
 # Project information
-site_name: Hermann Agossou Personal website
+site_name: Hermann Agossou Personal Website
 site_url: https://hermann-web/hermann-web.github.io/
 site_author: Hermann Agossou
 site_description: >-
-  Hermann is a profesionnal web developer and data scientist
+  Hermann is a profesionnal full-stack web developer and a data scientist 
+  His main points are website development, backend development, ML & DL 
+  projects including NLP and 3D computer Vision
 
 # Repository
 repo_name: hermann-web/hermann-web.github.io
 repo_url: https://github.com/hermann-web/hermann-web.github.io/
 
 # Copyright
-copyright: Copyright &copy; 2016 - 2023 Martin Donath
+copyright: Copyright © 2016 - 2023 Martin Donath, 2023-2024 Hermann Agossou
 
 # Configuration
 theme:
@@ -143,7 +145,7 @@ markdown_extensions:
   - pymdownx.magiclink:
       normalize_issue_symbols: true
       repo_url_shorthand: true
-      user: squidfunk
+      user: hermann-web
       repo: mkdocs-material
   - pymdownx.mark
   - pymdownx.smartsymbols
@@ -170,6 +172,9 @@ nav:
   - Home: index.md
   - Projects:
     - Bots Detection in Auction: projects/bot_detection_in_auction.md
+  - Blog:
+    - blog/index.md
+  
   # - Getting started:
   #   - Installation: getting-started.md
   #   - Creating your site: creating-your-site.md
@@ -259,8 +264,6 @@ nav:
   #   - Changelog:
   #     - insiders/changelog/index.md
   #     - How to upgrade: insiders/upgrade.md
-  # - Blog:
-  #   - blog/index.md
 
 # plugins:
 #   - exclude:

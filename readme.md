@@ -40,9 +40,9 @@ source venv/bin/activate
 
 # install python depencencies
 ## simple install (the forst time)
-pip instal mkdkcs mkdocs-material mkdocs-minify-plugin
+pip install mkdkcs mkdocs-material mkdocs-minify-plugin
 ## more precise (the versions installed)
-pip instal mkdocs==1.5.3 mkdocs-material==9.4.7 mkdocs-minify-plugin==0.7.1
+pip install mkdocs==1.5.3 mkdocs-material==9.4.7 mkdocs-minify-plugin==0.7.1
 ## all in (all the modules installed in the venv)
 pip install -r requirements-full.txt
 
