@@ -2,12 +2,6 @@
 
 ![street view with city buildings, market and street sings](./media/bot_detection_in_auction/image1.jpeg)
 
-
-## Introduction     
-
-Dans le contexte des cours commun de dernière année de cycle ingénieure, l'Ecole Centrale Casablanca initie les futurs ingénieurs aux notions et usages du Machine Learning. La machine Learning est une spécificité de l'intelligence artificielle, qui s'articule autour de l'apprentissage automatique. C'est dans une application de ces notions que s'articule la data frame reçue. Il regroupe des informations clés liées aux enchères publicitaires. Ces dernières peuvent être émis par des humains ou des robots. Il est question de mettre en place des modèles de classification binaire pour prédire l'auteur d'une enchère. Dans la suite de ce rapport nous présenterons en premier une compréhension des données eu égard des objectifs, en deuxième nous procèderons à l'analyse descriptive et « feature engineering » et en troisième nous présenterons les modèles et résultats obtenus.                                                   
-
-
 ## Objectif général 
 
 Notre objectif général est d\'étudier un « dataset » issu d\'une plateforme d\'enchères publicitaires pour pouvoir prédire si l'agent qui a émis des enchères est un humain ou un robot. A partir d'une analyse bien approfondie de diverses données concernant les transactions effectuées notamment les outils numériques utilisés, les temps de ces transactions et bien d'autres « features », nous allons développer un modèle de classification capable de prédire la variable binaire « outcome » de telle sorte que 0 désigne `humain` et 1, `robot`. En outre, nous visons à travers ce projet à minimiser le taux des faux négatifs (prédire que l'agent est un humain, alors qu'il est un robot) et donc augmenter comme métrique le « recall »   
