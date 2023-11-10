@@ -5,7 +5,7 @@ rm -rf venv/
 conda activate web-dev
 python -m venv venv
 source venv/bin/activate
-git checkout source
+git checkout source && git add . && git commit -m "pre-prod" && git push
 cd web
 
 pip install -r requirements-full.txt
