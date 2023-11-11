@@ -167,11 +167,17 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
+  ## math parsing extensions
+  - pymdownx.arithmatex:
+      generic: true
+
 # Page tree
 nav:
   - Home: index.md
   - Projects:
+    # - Overview: index.md
     - Bots Detection in Auction: projects/bot_detection_in_auction.md
+    - Search Engine in french: projects/search-engine-for-domain-specific-french-users.md
   - Blog:
     - blog/index.md
   
@@ -278,3 +284,24 @@ nav:
 #         - "*.gz"
 #       regex:
 #         - '.*\.(tmp|bin|tar)$'
+
+
+
+# extra_javascript:
+  
+#   - javascripts/mathjax.js
+#   - https://polyfill.io/v3/polyfill.min.js?features=es6
+#   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+# https://squidfunk.github.io/mkdocs-material/reference/math/#mathjax-docsjavascriptsmathjaxjs
+
+extra_javascript:
+  - javascripts/katex.js 
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+
+
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
