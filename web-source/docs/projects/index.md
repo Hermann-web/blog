@@ -9,3 +9,4 @@ title: My Projects
 
 ## Data science
 - [Détection de bot dans dans les enchères](./bot_detection_in_auction.md)
+- [Search Engine for domain specific french users](./search-engine-for-domain-specific-french-users.md)

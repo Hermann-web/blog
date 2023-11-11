@@ -1,4 +1,9 @@
-# Search Engine for a domain soecific french users
+---
+date: 2023-11-13
+title: "Search Engine for domain specific french users"
+---
+
+# Search Engine for domain specific french users
 
 This tutorial is a work i've made as part of my internship at Safran.
 The objective is to create a search engine that take as input, a user query and return a shortlist of stored documents highly relevant to the search query.
