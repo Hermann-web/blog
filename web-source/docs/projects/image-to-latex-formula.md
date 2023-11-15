@@ -114,27 +114,27 @@ Add information about how users can use the application, including any specific 
 To deploy the app on Hugging Face, follow these steps:
 
 1. **Create a Hugging Face Account:**
-   - If you don't have a Hugging Face account, create one on [Hugging Face](https://huggingface.co/signup).
+    - If you don't have a Hugging Face account, create one on [Hugging Face](https://huggingface.co/signup).
 
 2. **Create a New Space:**
-   - Log in to your Hugging Face account.
-   - Navigate to the [Spaces](https://huggingface.co/spaces) page.
-   - Click on "New Space" and give it a name, e.g., "FileHostingApp."
+    - Log in to your Hugging Face account.
+    - Navigate to the [Spaces](https://huggingface.co/spaces) page.
+    - Click on "New Space" and give it a name, e.g., "FileHostingApp."
 
 3. **Upload Your Code:**
-   - Inside your local `pix2tex` directory, create a `.zip` archive of your code.
-   - Upload the `.zip` archive to your newly created Space.
+    - Inside your local `pix2tex` directory, create a `.zip` archive of your code.
+    - Upload the `.zip` archive to your newly created Space.
 
 4. **Set Up Environment Variables:**
-   - In your Hugging Face Space, go to "Settings."
-   - Under the "Environment Variables" section, add the necessary variables, such as any API keys or configuration parameters.
+    - In your Hugging Face Space, go to "Settings."
+    - Under the "Environment Variables" section, add the necessary variables, such as any API keys or configuration parameters.
 
 5. **Deploy the App:**
-   - Go back to the "Overview" tab in your Space.
-   - Click on "Deploy Model" and follow the instructions to deploy your Streamlit app.
+    - Go back to the "Overview" tab in your Space.
+    - Click on "Deploy Model" and follow the instructions to deploy your Streamlit app.
 
 6. **Access Your Deployed App:**
-   - Once deployed, you can access your app through the provided link.
+    - Once deployed, you can access your app through the provided link.
 
 You can read access a step by step walkthrough for streamlit app deployment to huggingface [here](blog/2023/11/15/how-to-deploy-a-streamlit-application-on-hugging-face/) or [here](/web-source/docs/blog/posts/software-and-tools/data/huggingface/deploy-on-huggingface-spaces.md)
 
