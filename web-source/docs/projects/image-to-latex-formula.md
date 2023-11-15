@@ -136,8 +136,6 @@ To deploy the app on Hugging Face, follow these steps:
 6. **Access Your Deployed App:**
     - Once deployed, you can access your app through the provided link.
 
-You can read access a step by step walkthrough for streamlit app deployment to huggingface [here](blog/2023/11/15/how-to-deploy-a-streamlit-application-on-hugging-face/) or [here](/web-source/docs/blog/posts/software-and-tools/data/huggingface/deploy-on-huggingface-spaces.md)
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
