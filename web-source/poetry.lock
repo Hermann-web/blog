@@ -314,7 +314,7 @@ min-versions = ["babel (==2.9.0)", "click (==7.0)", "colorama (==0.4)", "ghp-imp
 [[package]]
 name = "mkdocs-material"
 version = "9.1.4"
-description = "Documentation that simply works"
+description = "Hermann Web Index"
 category = "main"
 optional = false
 python-versions = ">=3.7"

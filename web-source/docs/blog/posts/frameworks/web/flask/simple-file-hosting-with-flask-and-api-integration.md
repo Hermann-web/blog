@@ -74,7 +74,7 @@ Open your terminal and follow these steps
     python -m venv venv
 
     # activate the env
-    ./venv/bin/activate
+    ./venv/Scripts/activate
 
     # check the python version and localisation
     python -V

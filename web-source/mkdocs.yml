@@ -175,10 +175,11 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Projects:
-    - Overview: index.md
+    - Overview: projects/index.md
     - Bots Detection in Auction: projects/bot_detection_in_auction.md
     - Search Engine in french: projects/search-engine-for-domain-specific-french-users.md
     - Flask based File Hosting (web app & api & python module & cli app): projects/file-hosting-app.md
+    - Streamlit App for Formula OCR using pix2tex: projects/image-to-latex-formula.md
   - Blog:
     - blog/index.md
   
