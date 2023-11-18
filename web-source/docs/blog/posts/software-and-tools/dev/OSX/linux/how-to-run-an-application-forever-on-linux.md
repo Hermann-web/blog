@@ -9,6 +9,7 @@ categories:
   - dev
   - OSX
   - linux
+  - deployment
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

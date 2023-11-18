@@ -7,7 +7,7 @@ description: >
 categories:
   - software-and-tools
   - dev
-  - hosting
+  - deployment
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

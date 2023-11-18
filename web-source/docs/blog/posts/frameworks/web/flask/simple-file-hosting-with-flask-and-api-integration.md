@@ -509,8 +509,8 @@ def api_download(filename):
 ```
 
 ## (Bonus) How to use the api
-- you can access the api with the routes `http://localhost:5000/api/*`
--  The file [cli_app/cli_app.py](https://github.com/Hermann-web/simple-file-hosting-with-flask/blob/e3807c55fa25e19b914173555929adfd2aa5567c/cli_app/cli_app.py) to access the api along with a context manager to handle sessions
+- You can access the api with the routes `http://localhost:5000/api/*`
+- The file [cli_app/cli_app.py](https://github.com/Hermann-web/simple-file-hosting-with-flask/blob/e3807c55fa25e19b914173555929adfd2aa5567c/cli_app/cli_app.py) to access the api along with a context manager to handle sessions
 - you can read the [api documentation](https://github.com/Hermann-web/simple-file-hosting-with-flask/blob/e3807c55fa25e19b914173555929adfd2aa5567c/docs/api.md)
 
 ## (Bonus) How to use the cli app

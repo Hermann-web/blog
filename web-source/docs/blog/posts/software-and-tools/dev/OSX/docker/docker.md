@@ -9,6 +9,7 @@ categories:
   - dev
   - OSX
   - docker
+  - windows
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

@@ -6,7 +6,8 @@ description: >
   It is flavored by mkdocs
 categories:
   - frameworks
-  - data-science
+  - data
+  - data-visualization
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

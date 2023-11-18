@@ -7,6 +7,7 @@ description: >
 categories:
   - software-and-tools
   - data
+  - deployment
   - huggingface
   - streamlit
 links:

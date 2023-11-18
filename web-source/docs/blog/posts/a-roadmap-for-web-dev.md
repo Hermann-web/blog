@@ -6,6 +6,8 @@ description: >
   It is flavored by mkdocs
 categories:
   - Blog
+  - dev
+  - web
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

@@ -8,6 +8,8 @@ categories:
   - software-and-tools
   - sgbd
   - mysql
+  - linux
+  - deployment
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md
