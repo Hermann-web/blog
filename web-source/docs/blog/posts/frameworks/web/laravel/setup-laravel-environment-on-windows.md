@@ -94,6 +94,9 @@ XAMPP is used to provide a local server environment to run your Laravel applicat
 - Start the XAMPP GUI application.
 - Launch the Apache web server and MySQL database server.
 - Create a new database named `lavsms` using phpMyAdmin or another MySQL client.
+    ```bash
+    mysql -u your_username -p -e "CREATE DATABASE lavsms;"
+    ```
 
 ### Database Configuration
 Configure the database settings for your Laravel application.
