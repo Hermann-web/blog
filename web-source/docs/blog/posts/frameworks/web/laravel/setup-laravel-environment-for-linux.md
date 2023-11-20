@@ -181,6 +181,7 @@ Access your Laravel application by visiting `http://localhost:8000` in your web 
 
 ### Run XAMPP
 XAMPP is used to provide a local server environment to run your Laravel application.
+
 - Start the XAMPP GUI application.
 - Launch the Apache web server and MySQL database server.
 - Create a new database named `lavsms` using phpMyAdmin or another MySQL client.

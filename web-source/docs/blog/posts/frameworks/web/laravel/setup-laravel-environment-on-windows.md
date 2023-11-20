@@ -91,6 +91,7 @@ Node.js is an open-source, cross-platform, JavaScript runtime environment that e
 
 ### Run XAMPP
 XAMPP is used to provide a local server environment to run your Laravel application.
+
 - Start the XAMPP GUI application.
 - Launch the Apache web server and MySQL database server.
 - Create a new database named `lavsms` using phpMyAdmin or another MySQL client.
