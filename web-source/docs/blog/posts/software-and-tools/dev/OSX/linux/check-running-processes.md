@@ -29,6 +29,8 @@ One way to check if a process is using port 8000 is by attempting to access it:
 curl 127.0.0.1:8000
 ```
 
+<!-- more -->
+
 If you encounter an error or a response different from what you expect, it may indicate a running application using that port.
 
 ### Method 2: Using `ps` and `grep` Command

@@ -35,6 +35,8 @@ In this tutorial, we'll cover:
 
 2. **XAMPP Configuration**: We'll guide you through launching the Apache web server, setting up the MySQL database server, and configuring a database using phpMyAdmin.
 
+<!-- more -->
+
 3. **Database Setup for Laravel**: You'll learn how to configure your Laravel application to interact with the database through the `.env` file.
 
 4. **Dependency Management**: We'll explore installing project dependencies using Composer and Node.js for your Laravel project.
@@ -42,8 +44,6 @@ In this tutorial, we'll cover:
 5. **Project Setup and Run**: You'll run essential commands to generate keys, perform database migrations, seed initial data, and finally, start the Laravel development server.
 
 6. **Bonus - Laravel Pattern Overview**: We'll provide a brief comparison of Laravel's architecture to the MVC pattern, similar to Django's structure.
-
-<!-- more -->
 
 Each section is designed to streamline your Laravel setup process, ensuring you have a robust environment ready to build dynamic web applications. Let's dive in and set up your Windows system for Laravel development!
 
