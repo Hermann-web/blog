@@ -7,6 +7,7 @@ description: >
 categories:
   - frameworks
   - data
+  - python
   - data-visualization
 links:
   - setup/setting-up-a-blog.md

@@ -7,6 +7,7 @@ description: >
 categories:
   - frameworks
   - web
+  - python
   - flask
 links:
   - setup/setting-up-a-blog.md
