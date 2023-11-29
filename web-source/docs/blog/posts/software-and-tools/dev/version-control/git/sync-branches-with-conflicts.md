@@ -22,6 +22,8 @@ Git offers two primary trails: the __rebase__, known for its clean and linear hi
 
 So, this document provides guidance on using Git merge strategies, specifically focusing on the rebase and merge options.
 
+<a title="Renatasds, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Mergevsrebase.png"><img width="512" alt="Mergevsrebase" src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Mergevsrebase.png"></a>
+
 
 <!-- more -->
 
