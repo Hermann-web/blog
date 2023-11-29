@@ -4,7 +4,7 @@ authors: [hermann-web]
 description: >
   Ever been trapped by a vexing error like "Address already in use"? Discover the art of freeing up ports and unshackling your applications. Dive into this guide to liberate your digital space!
 title: "Decoding Port Conflicts: Unveiling the Secrets of Process Liberation"
-tags: 
+categories: 
   - software-and-tools
   - dev
   - OSX
@@ -13,7 +13,7 @@ tags:
   - troubleshooting
 ---
 
-# Checking Processes on a Linux OS
+# Scanning Processes on a Linux OS for troubleshooting or simple checking
 
 ## Introduction
 This markdown provides a step-by-step guide to identify and terminate processes running on a specific port, catering to both Unix-based and Windows systems.
