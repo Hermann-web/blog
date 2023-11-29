@@ -9,6 +9,8 @@ categories:
   - software-and-tools
   - dev
   - conversion-tools
+  - file-handling
+  - beginner
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

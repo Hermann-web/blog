@@ -8,6 +8,7 @@ categories:
   - Blog
   - dev
   - web
+  - beginner
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md
@@ -34,7 +35,7 @@ On coursera, there is a course that introduces the javascript tools we use to ma
 
 Towards the end, there's a quiz where you do a project using Node JS (a framework used to run javascript code) but I notice they've adopted a new, simpler format. [Link to the course](https://openclassrooms.com/fr/courses/5543061-ecrivez-du-javascript-pour-le-web/5577726-optimisez-votre-code)
 
-## The Challenge: Testing Time - Cloning a Web Presence
+## The Challenge: Testing Time - Cloning a Web Page
 
 ## Chapter 4: Python: Unsupervised ML Algorithms
 

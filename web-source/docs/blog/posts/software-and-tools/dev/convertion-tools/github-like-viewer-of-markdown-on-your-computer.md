@@ -8,6 +8,8 @@ categories:
   - software-and-tools
   - dev
   - conversion-tools
+  - file-handling
+  - markdown
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

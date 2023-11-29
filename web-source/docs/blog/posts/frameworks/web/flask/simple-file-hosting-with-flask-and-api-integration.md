@@ -9,6 +9,8 @@ categories:
   - web
   - python
   - flask
+  - file-handling
+  - beginner
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md
@@ -348,6 +350,7 @@ def upload():
 
 ??? tip "Here is how it works"
     We have added a upload endpoint 
+    
     - that will receive user files and save them using the `handle_file_saving` function
     - that is protected with `login_required`
     - The function `slugify_filename` will rewrite the filename to use only lowercase alphanumeric characters an `-` as separators instead of space

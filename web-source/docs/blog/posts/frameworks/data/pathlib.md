@@ -18,7 +18,7 @@ title: "pathlib Tutorial: Simplifying File and Directory Handling in Python"
 
 ## Introduction
 
-__Are you still uing `import os` for file handling after 2020 ? Use `pathlib` instead !__
+__Are you still using `import os` for file handling after 2020 ? Use `pathlib` instead !__
 
 In this tutorial, we'll explore the powerful `pathlib` module in Python, which offers an elegant and intuitive way to work with file paths, directories, and file system operations.
 
