@@ -11,7 +11,7 @@ categories:
 title: "Managing Local Modifications and Remote Changes in Git"
 ---
 
-# Introduction: Navigating Local and Remote Git Changes
+## Introduction
 
 Git is, without discussion, a powerful version control system that enables collaborative development. 
 
@@ -20,6 +20,22 @@ __Ever found yourself in a twist trying to mix changes you made with updates fro
 It's like trying to blend your cooking style with someone else's recipe without making a mess. Git's awesome for team coding, but when your tweaks clash with online updates, how do you sort it out ?
 
 Indeed, when local modifications clash with remote changes, navigating these conflicts efficiently becomes crucial. Let's explore different strategies to handle this situation effectively.
+
+<!-- <figure>
+  <img src="https://www.jeffirwin.xyz/posts/resources/git-transport-cmds.svg" alt="Git Data Transport Diagram">
+  <figcaption>Git Data Transport Diagram</figcaption>
+</figure> -->
+
+
+![](./assets/git-sync-diagram.png)
+
+*by Johnson Huang &lt;https://github.com/jshuang0520/git>*
+
+<!-- 
+<a title="Johnson Huang &lt;https://github.com/jshuang0520/git" href="https://www.jeffirwin.xyz/posts/resources/git-transport-cmds.svg"><img width="512" alt="Git Data Transport Diagram" src="https://www.jeffirwin.xyz/posts/resources/git-transport-cmds.svg"></a> -->
+
+<!-- <a title="Johnson Huang &lt;https://github.com/jshuang0520/git" href="https://www.jeffirwin.xyz/posts/resources/git-transport-cmds.svg"><img width="512" alt="Git Data Transport Diagram" src="/web/blog/posts/software-and-tools/dev/version-control/git/assets/git-sync-diagram.png"></a> -->
+
 
 <!-- more -->
 
@@ -48,10 +64,12 @@ git config pull.rebase true
 Consider a scenario where ...
 
 **Pros:**
+
 - Keeps a linear, clean commit history.
 - Integrates local changes after remote ones, maintaining chronological order.
 
 **Cons:**
+
 - Requires manual resolution of conflicts that may arise during rebase.
 
 ### 2. Preserving Local Changes without Rebasing
@@ -80,10 +98,12 @@ git pull --no-rebase origin main
 ```
 
 **Pros:**
+
 - Creates a single combined commit representing both local and remote changes.
 - Retains the original commit structure without altering history.
 
 **Cons:**
+
 - Might lose individual context from multiple local commits.
 
 ### 3. Pulling with Strict Fast-Forward Mode (`git config pull.ff only`)
@@ -133,10 +153,12 @@ git pull --ff-merge origin main
 ```
 
 **Pros:**
+
 - Offers flexibility based on configured rebase settings (`pull.rebase true/false`).
 - Can accommodate both linear and non-linear commit histories.
 
 **Cons:**
+
 - May result in a non-linear history with merge commits in certain scenarios.
 
 ### 5. `git push --force`
@@ -153,10 +175,12 @@ git push --force origin feature-branch
 ```
 
 **Pros:**
+
 - Allows correcting mistakes or overriding changes when needed.
 - Provides a quick resolution to divergent branch issues.
 
 **Cons:**
+
 - Risks losing or overwriting others' work, disrupting collaboration.
 - Requires careful coordination within the team.
 
@@ -165,5 +189,6 @@ git push --force origin feature-branch
 ## Conclusion
 Choosing the right Git approach involves understanding the implications and trade-offs associated with each method. Experimenting with these options within the context of your team's workflow helps determine the most suitable approach for a smoother collaborative Git environment.
 
-!! Play it safe
+!!! note "Play it safe !"
+
     In this guide, remember to play it safe: make backups as you work on different branches, decide if you're merging or rebasing changes like picking different tools for different jobs, and keep feature branches separate from the main code like organizing toys into different boxes. These simple tips will keep your code kitchen running smoothly!

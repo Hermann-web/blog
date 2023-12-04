@@ -45,7 +45,7 @@ The application can be hosted on a server so users can upload files and generate
 - The main page displays a list of shared files, and users can upload a file by clicking on "Upload a File" and selecting the file they want to share. 
 - The uploaded files will be listed on the main page for download. 
 - The application can be deployed on a remote server or cloud provider, such as AWS, Google Cloud, or Heroku.
-- You can see the [step by step implementation of the code](blog/posts/frameworks/web/flask/simple-file-hosting-with-flask-and-api-integration.md)
+- You can see the [step by step implementation of the code](../blog/posts/frameworks/web/flask/simple-file-hosting-with-flask-and-api-integration.md)
 
 ## Usage
 ### access the flask web 
