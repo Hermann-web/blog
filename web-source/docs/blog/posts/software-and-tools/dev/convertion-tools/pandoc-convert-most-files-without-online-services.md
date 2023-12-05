@@ -143,3 +143,82 @@ pandoc input.md -o output.pdf --toc --template=mytemplate.tex --variable=fontsiz
 
 This command adds a table of contents, uses a custom LaTeX template called `mytemplate.tex`, sets the font size to 12pt, uses the Pygments syntax highlighting style, numbers the sections, and sets the title and author metadata for the PDF.
 
+## Adding Footnote Citations in Markdown Files for Pandoc PDF Conversion
+
+This section is about adding footnote citations using Pandoc and referencing a BibTeX file
+
+### 1. Creating a BibTeX File
+
+In a separate BibTeX file (e.g., `references.bib`), store your references in the BibTeX format. Here's an example:
+
+```bibtex
+@online{las-1,
+  author       = "{ArcGIS}",
+  title        = "{Storing lidar data}",
+  howpublished = "\url{https://desktop.arcgis.com/fr/arcmap/latest/manage-data/las-dataset/storing-lidar-data.htm}",
+}
+
+@online{las-2,
+  author       = "{American Society for Photogrammetry and Remote Sensing}",
+  title        = "{LAS specification, version 1.4 – R13}",
+  date         = "2013-07-15",
+  url          = "https://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf",
+}
+```
+
+### 1. Formatting Citations in Markdown
+
+To include citations in your Markdown file for conversion to PDF using Pandoc, use the `[@citation]` format within the text where you want the citation to appear. Here is an example:
+
+```markdown
+Here is a statement requiring citation [@las-2].
+```
+
+Or you can also list the references. they will be parsed as regular mardown content
+
+```markdown
+Here is a statement requiring citation [@las-2].
+
+...
+
+# References
+
+[@las-1]: ArcGIS. "Storing lidar data." [Link](https://desktop.arcgis.com/fr/arcmap/latest/manage-data/las-dataset/storing-lidar-data.htm)
+
+[@las-2]: American Society for Photogrammetry and Remote Sensing. "LAS specification, version 1.4 – R13." [Link](https://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)
+```
+
+### 3. Using Pandoc for Conversion to PDF
+
+When converting the Markdown file to PDF using Pandoc, include the following options:
+
+- `--citeproc`: Enables citation processing.
+- `--bibliography`: Specifies the path to your bibliography file.
+
+Use the following command:
+
+```bash
+pandoc myfile.md -s --citeproc --bibliography=references.bib -o output.pdf
+```
+
+Replace `myfile.md` with the name of your Markdown file and `references.bib` with the actual name of your bibliography file.
+
+Pandoc will process the citations marked in `[@citation]` format within your Markdown file and generate the corresponding footnotes or bibliography entries in the resulting PDF.
+
+Remember to adjust the citation style and bibliography file as per your requirements.
+https://pandoc.org/chunkedhtml-demo/8.20-citation-syntax.html
+
+### footnote citations
+You still can use `[^]` based citations.
+There will appear at the end of each page, not at the end of the file.
+
+**Examples**
+```markdown
+[^citation-1]: Full citation details here.
+[^citation-2]: https://pandoc.org/chunkedhtml-demo/8.20-citation-syntax.html
+[^citation-3]: [Full citation details here.](https://pandoc.org/chunkedhtml-demo/8.20-citation-syntax.html)
+```
+
+You can see more on citation styles with [^citation-styles]
+
+[^citation-styles]: [more on citation styles](https://github.com/KurtPfeifle/pandoc-csl-testing)
