@@ -13,4 +13,4 @@ title: My Projects
 - [Streamlit App for Formula OCR using pix2tex](./image-to-latex-formula.md)
 
 ## Web development
-- [Flask based File Hosting (web app & api & python module & cli app)](./file-hosting-app)
+- [Flask based File Hosting (web app & api & python module & cli app)](./file-hosting-app.md)

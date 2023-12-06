@@ -346,7 +346,7 @@ can be used by all users.
 - [x] [Navigation status]
 
   [Blog plugin]: ../setup/setting-up-a-blog.md
-  [Chinese search support]: ../blog/posts/chinese-search-support.md
+  [Chinese search support]: ../blog/others/chinese-search-support.md
   [Annotations]: ../reference/annotations.md
   [Navigation icons]: ../reference/index.md#setting-the-page-icon
   [Navigation pruning]: ../setup/setting-up-navigation.md#navigation-pruning
@@ -361,10 +361,10 @@ can be used by all users.
 - [x] [Excluding content from search]
 - [x] [Offline plugin]
 
-  [Brand new search plugin]: ../blog/posts/search-better-faster-smaller.md
-  [Rich search previews]: ../blog/posts/search-better-faster-smaller.md#rich-search-previews
-  [Tokenizer with lookahead]: ../blog/posts/search-better-faster-smaller.md#tokenizer-lookahead
-  [Advanced search highlighting]: ../blog/posts/search-better-faster-smaller.md#accurate-highlighting
+  [Brand new search plugin]: ../blog/others/search-better-faster-smaller.md
+  [Rich search previews]: ../blog/others/search-better-faster-smaller.md#rich-search-previews
+  [Tokenizer with lookahead]: ../blog/others/search-better-faster-smaller.md#tokenizer-lookahead
+  [Advanced search highlighting]: ../blog/others/search-better-faster-smaller.md#accurate-highlighting
   [Excluding content from search]: ../setup/setting-up-site-search.md#search-exclusion
   [Offline plugin]: ../setup/building-for-offline-usage.md
 
