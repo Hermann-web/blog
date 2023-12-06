@@ -18,6 +18,10 @@ body {
     position: relative;
 }
 
+:root {
+    --main-color: #00BCD4;
+    --second-color: #00a5bb;
+}
 h1,
 h2,
 h3,
@@ -28,7 +32,7 @@ h6 {
 }
 
 a {
-    color: #00BCD4;
+    color: var(--main-color); /* Use the variable --main-color */
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -ms-transition: all 0.4s ease-in-out;
@@ -72,7 +76,7 @@ a.btn {
 .btn:hover,
 a.btn:hover {
     color: #fff;
-    background: #00a5bb;
+    background: var(--second-color);
 }
 
 #topcontrol {
@@ -113,7 +117,7 @@ a.btn:hover {
 }
 
 .header {
-    background: #00BCD4;
+    background: var(--main-color);
     color: #fff;
 }
 
@@ -197,7 +201,7 @@ a.btn:hover {
 }
 
 .header .intro {
-    background: #00a5bb;
+    background: var(--second-color);
     padding-top: 90px;
     padding-bottom: 30px;
     position: relative;
@@ -233,7 +237,7 @@ a.btn:hover {
     left: 0;
     width: 100%;
     z-index: 100;
-    background: #00BCD4;
+    background: var(--main-color);
 }
 
 .page-nav-wrapper a {
@@ -316,7 +320,7 @@ a.btn:hover {
 }
 
 .timeline {
-    border-left: 3px solid #00BCD4;
+    border-left: 3px solid var(--main-color);
     border-bottom-right-radius: 2px;
     border-top-right-radius: 2px;
     position: relative;
@@ -350,7 +354,7 @@ a.btn:hover {
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     background: #fff;
-    border: 3px solid #00BCD4;
+    border: 3px solid var(--main-color);
 }
 
 .timeline .item:after {
@@ -369,7 +373,7 @@ a.btn:hover {
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    background: #00BCD4;
+    background: var(--main-color);
     z-index: 10;
 }
 
@@ -403,7 +407,7 @@ a.btn:hover {
 
 .timeline .job-meta .title {
     font-size: 18px;
-    color: #00BCD4;
+    color: var(--main-color);
 }
 
 .timeline .job-meta .time {
@@ -512,7 +516,7 @@ a.btn:hover {
     width: 36px;
     height: 36px;
     display: inline-block;
-    background: #00BCD4;
+    background: var(--main-color);
     color: #fff;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -551,7 +555,7 @@ a.btn:hover {
 }
 
 .testimonials-section .carousel-indicators li.active {
-    background-color: #00BCD4;
+    background-color: var(--main-color);
     width: 10px;
     height: 10px;
     margin: 0;
@@ -587,8 +591,8 @@ Portfolio Section
 }
 
 .portfolio-section .filters .type.active {
-    color: #00BCD4;
-    border-bottom: 2px solid #00BCD4;
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
 }
 
 .portfolio-section .item {
@@ -641,7 +645,7 @@ Portfolio Section
 
 .portfolio-section .item-inner .content .action span {
     font-weight: 600;
-    color: #00BCD4;
+    color: var(--main-color);
 }
 
 /**
@@ -680,7 +684,7 @@ Contact section start here
 }
 
 .contact-section .service-list .fa {
-    color: #00BCD4;
+    color: var(--main-color);
 }
 
 .contact-section .social {
@@ -703,7 +707,7 @@ Contact section start here
 }
 
 .contact-section .social a:hover {
-    color: #00BCD4;
+    color: var(--main-color);
 }
 
 .footer .container {
@@ -952,7 +956,7 @@ Contact section start here
 }
 
 .config-panel #color-options li.theme-1 a {
-    background: #00BCD4;
+    background: var(--main-color);
 }
 
 .config-panel #color-options li.theme-2 a {
@@ -1037,7 +1041,7 @@ Contact section start here
 
 .book-section .category {
     font-size: 18px;
-    color: #00BCD4;
+    color: var(--main-color);
     margin-top: 0;
     margin-bottom: 16px;
 }
@@ -1063,14 +1067,14 @@ Contact section start here
 
 .education-section .category {
     font-size: 18px;
-    color: #00BCD4;
+    color: var(--main-color);
     margin-top: 0;
     margin-bottom: 16px;
 }
 
 .education-section .title {
     font-size: 18px;
-    color: #00BCD4;
+    color: var(--main-color);
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 500;
