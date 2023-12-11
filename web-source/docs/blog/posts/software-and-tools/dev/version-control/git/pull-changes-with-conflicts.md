@@ -26,8 +26,9 @@ Indeed, when local modifications clash with remote changes, navigating these con
   <figcaption>Git Data Transport Diagram</figcaption>
 </figure> -->
 
-
 ![](./assets/git-sync-diagram.png)
+
+<!-- more -->
 
 *by Johnson Huang &lt;https://github.com/jshuang0520/git>*
 
@@ -36,8 +37,6 @@ Indeed, when local modifications clash with remote changes, navigating these con
 
 <!-- <a title="Johnson Huang &lt;https://github.com/jshuang0520/git" href="https://www.jeffirwin.xyz/posts/resources/git-transport-cmds.svg"><img width="512" alt="Git Data Transport Diagram" src="/web/blog/posts/software-and-tools/dev/version-control/git/assets/git-sync-diagram.png"></a> -->
 
-
-<!-- more -->
 
 ## Options for Handling Local and Remote Changes in Git
 
