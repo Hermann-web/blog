@@ -6,7 +6,7 @@ description: >
 title: "Decoding Port Conflicts: Unveiling the Secrets of Process Liberation"
 categories: 
   - software-and-tools
-  - dev
+  - devops
   - OSX
   - linux
   - deployment

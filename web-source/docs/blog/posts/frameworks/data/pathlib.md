@@ -5,7 +5,7 @@ description: >
   Learn to simplify file and directory handling in Python using pathlib.
 categories:
   - frameworks
-  - dev
+  - devops
   - python
   - file-handling
 links:

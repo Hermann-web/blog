@@ -5,7 +5,7 @@ description: |
   Unveiling the Code Chronicles: Navigating the Realm of Software Licenses in Development, Enriched with mkdocs.
 categories:
   - Blog
-  - dev
+  - devops
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

@@ -7,7 +7,7 @@ description: >
   Always working the fastest and easiest ways toward success
 categories:
   - software-and-tools
-  - dev
+  - devops
   - conversion-tools
   - file-handling
   - beginner

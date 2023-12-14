@@ -6,7 +6,7 @@ description: >
   Always working the fastest and easiest ways toward success
 categories:
   - software-and-tools
-  - dev
+  - devops
   - deployment
 links:
   - setup/setting-up-a-blog.md
