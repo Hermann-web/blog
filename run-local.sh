@@ -1,3 +1,3 @@
 source venv/bin/activate
-cd web
+cd web-source
 mkdocs serve

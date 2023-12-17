@@ -68,5 +68,5 @@ mkdocs gh-deploy --force --clean --verbose
 - [Jackiexiao/foam-mkdocs-template](https://github.com/mhausenblas/mkdocs-template), a from-scratch template with menu and pages in each tab
 
 **license restrictive works**
-- [abdellatif-belmady/abdellatif-belmady](https://github.com/abdellatif-belmady/abdellatif-belmady), based on [msys2/msys2.github.io](https://github.com/msys2/msys2.github.io)
+- [abdellatif-belmady/abdellatif-belmady](https://github.com/abdellatif-belmady/abdellatif-belmady), based on [msys2/msys2.github.io](https://github.com/msys2/msys2.github.io) and [Twarner491/TeddyWarner.org](https://github.com/Twarner491/TeddyWarner.org)
 - [ObsidianPublisher/template-gh-pages](https://github.com/ObsidianPublisher/template-gh-pages)
