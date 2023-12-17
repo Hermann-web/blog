@@ -13,7 +13,7 @@ title: "Mastering SSH and File Transfers to Remote servers: A Beginner's Handboo
 
 ## Introduction
 
-__Do you find yourself baffled by the intricacies of SSH connections and file transfers using Git Bash on Windows?__
+__Do you find yourself baffled by the intricacies of SSH connections and file transfers to remote servers ?__
 
 Navigating the landscape of SSH connections, troubleshooting connection issues, and securely transferring files across servers can be a daunting task, especially for newcomers. This guide is your compass in the world of SSH, unraveling the complexities and providing step-by-step instructions for establishing secure connections and transferring files seamlessly using Git Bash or WSL2 for Windows users and straightforward methods for Linux enthusiasts.
 
@@ -25,6 +25,8 @@ This document break down the process of connecting via SSH and file transfer and
 - For windows users, use Git Bash installed on your computer or use wsl2 (for windows >=10)
 - For linux users, this should be straighforward
 
+
+<!-- more -->
 
 ## Connecting via SSH from cli
 
@@ -121,6 +123,13 @@ Using `rsync` for efficient synchronization:
 rsync -avz --progress /path/to/source username@remote_host:/path/to/destination
 ```
 
+## Running commands on a remote server without accessing its cli
+For example, using ssh to Fetch latest changes from the remote repository
+```bash
+ssh "$remote_user@$remote_host" "cd $remote_path && git fetch"
+```
+
+
 ## Simplifying SSH Access with sshpass
 To avoid being prompted to write the password, `sshpass` is a tool you want
 
@@ -131,7 +140,6 @@ To avoid being prompted to write the password, `sshpass` is a tool you want
    ```bash
    ssh "$remote_user@$remote_host"
    ```
-
    use
    ```bash
    sshpass -p "$password" ssh "$remote_user@$remote_host"
@@ -140,6 +148,8 @@ To avoid being prompted to write the password, `sshpass` is a tool you want
 ```bash
 sshpass -p "$password" ssh "$remote_user@$remote_host" "cd $remote_path && git fetch"
 ```
+
+
 
 
 ## Conclusion
