@@ -45,6 +45,23 @@ Let's use the option 1, as it is a more straightforward approach
 
 <!-- more -->
 
+For more details on installing `mongosh`, refer to the MongoDB documentation [^mongosh-install].
+
+## Access a dababase from cli
+I assume you have a MongoDB deployment to connect to. You can use a free cloud-hosted deployment like MongoDB Atlas or run a local MongoDB deployment.
+
+Connect to your MongoDB deployment using mongosh by running the command [^mongosh-access]
+```bash
+mongosh "mongodb+srv://<username>:<password>@<cluster-address>/<database-name>"
+```
+
+Replace `<username>`, `<password>`, `<cluster-address>`, and `<database-name>` with your own values.
+
+You can find more information on how to install and use mongosh in the official MongoDB documentation [^mongosh-install] [^mongosh-access].
+
+[^mongosh-install]: https://www.mongodb.com/docs/mongodb-shell/install/
+[^mongosh-access]: https://www.mongodb.com/docs/mongodb-shell/connect/
+
 ## Get one record by searching an attribute 
 
 **Get user by id**
@@ -152,5 +169,3 @@ help
 
 ## Conclusion
 Note: This document contains example commands and use cases for the `mongosh` shell in MongoDB. Always be cautious when performing any updates or deletions on your database and ensure you have proper backups and permissions.
-
-For more details on installing `mongosh`, refer to the [MongoDB documentation](https://docs.mongodb.com/mongodb-shell/install/).
