@@ -184,3 +184,9 @@ Now, let's delve into pulling changes from both the main repository and its subm
 By following these steps, you'll effortlessly manage main repositories and their submodules, ensuring your projects are up to date.
 
 Stay tuned for more Git tips and tricks on our blog for seamless collaboration and version control!
+
+## Related pages
+
+- [Managing Local Modifications and Remote Changes in Git](./pull-changes-with-conflicts.md)
+- [Mastering Git Merge Strategies: A Developer's Guide](./sync-branches-with-conflicts.md)
+- [Mastering Git Branch Handling: Strategies for Deletion and Recovery](./handling-branch-deletion.md)

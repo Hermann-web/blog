@@ -192,3 +192,9 @@ Choosing the right Git approach involves understanding the implications and trad
 !!! note "Play it safe !"
 
     In this guide, remember to play it safe: make backups as you work on different branches, decide if you're merging or rebasing changes like picking different tools for different jobs, and keep feature branches separate from the main code like organizing toys into different boxes. These simple tips will keep your code kitchen running smoothly!
+
+## Related pages
+
+- [Mastering Git Merge Strategies: A Developer's Guide](./sync-branches-with-conflicts.md)
+- [Demystifying Git Submodules: A Newbie's Guide](./git-submodules.md)
+- [Mastering Git Branch Handling: Strategies for Deletion and Recovery](./handling-branch-deletion.md)

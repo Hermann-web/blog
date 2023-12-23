@@ -77,3 +77,9 @@ If a branch was mistakenly deleted and not yet pruned, it might be recoverable.
 Replace `<branch-name>` with the branch name and `<commit-hash>` with the commit hash from the reflog.
 
 **Note:** The ability to recover a deleted branch depends on recent activity and whether Git has pruned references.
+
+## Related pages
+
+- [Managing Local Modifications and Remote Changes in Git](./pull-changes-with-conflicts.md)
+- [Mastering Git Merge Strategies: A Developer's Guide](./sync-branches-with-conflicts.md)
+- [Demystifying Git Submodules: A Newbie's Guide](./git-submodules.md)

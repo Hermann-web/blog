@@ -129,3 +129,9 @@ As we conclude this journey through Git's merge strategies, remember the beauty 
 Experiment, explore, and harness the power of Git's merging artistry to sculpt your repository's history. Beyond rebase and merge, Git unveils a treasure trove of strategies, offering endless possibilities for your collaborative coding adventure.
 
 So, venture forth armed with this knowledge, shaping your repository's saga amidst the ever-evolving landscape of team collaboration.
+
+## Related pages
+
+- [Managing Local Modifications and Remote Changes in Git](./pull-changes-with-conflicts.md)
+- [Demystifying Git Submodules: A Newbie's Guide](./git-submodules.md)
+- [Mastering Git Branch Handling: Strategies for Deletion and Recovery](./handling-branch-deletion.md)
