@@ -8,6 +8,7 @@ categories:
   - devops
   - version-control
   - git
+  - beginners
 title: "Managing Local Modifications and Remote Changes in Git"
 ---
 

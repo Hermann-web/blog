@@ -6,6 +6,7 @@ description: |
 categories:
   - Blog
   - devops
+  - beginners
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

@@ -10,6 +10,7 @@ categories:
   - OSX
   - docker
   - windows
+  - beginners
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

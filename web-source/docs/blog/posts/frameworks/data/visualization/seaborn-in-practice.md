@@ -9,7 +9,7 @@ categories:
   - data
   - python
   - data-visualization
-  - beginner
+  - beginners
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

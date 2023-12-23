@@ -10,7 +10,7 @@ categories:
   - devops
   - conversion-tools
   - file-handling
-  - beginner
+  - beginners
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

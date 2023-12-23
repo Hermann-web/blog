@@ -10,6 +10,7 @@ categories:
   - deployment
   - huggingface
   - streamlit
+  - beginners
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

@@ -8,6 +8,7 @@ categories:
   - devops
   - version-control
   - git
+  - beginners
 title: "Demystifying Git Submodules: A Newbie's Guide"
 ---
 

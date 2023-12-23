@@ -10,6 +10,7 @@ categories:
   - conversion-tools
   - file-handling
   - markdown
+  - beginners
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md

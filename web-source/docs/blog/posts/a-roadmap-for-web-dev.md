@@ -8,7 +8,7 @@ categories:
   - Blog
   - devops
   - web
-  - beginner
+  - beginners
 links:
   - setup/setting-up-a-blog.md
   - plugins/blog.md
