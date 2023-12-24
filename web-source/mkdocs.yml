@@ -113,12 +113,14 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/hermann-web
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/agossou-hermann
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/r/hermann-web/hermann-web.github.io/
-    - icon: fontawesome/brands/python
-      link: https://pypi.org/project/mkdocs-material/
-    - icon: fontawesome/brands/mastodon
-      link: https://fosstodon.org/@squidfunk
+    # - icon: fontawesome/brands/python
+    #   link: https://pypi.org/project/mkdocs-material/
+    # - icon: fontawesome/brands/mastodon
+    #   link: https://fosstodon.org/@squidfunk
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/AgossouHermann
 
