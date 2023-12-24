@@ -11,8 +11,8 @@ categories:
   - linux
   - deployment
 links:
-  - setup/setting-up-a-blog.md
-  - plugins/blog.md
+  - blog/posts/a-roadmap-for-web-dev.md
+  - blog/posts/code-practises/software-licences.md
 title: "Guide to Installing MySQL and Connecting to Databases"
 ---
 

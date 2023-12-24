@@ -9,8 +9,8 @@ categories:
   - python
   - file-handling
 links:
-  - setup/setting-up-a-blog.md
-  - plugins/blog.md
+  - blog/posts/a-roadmap-for-web-dev.md
+  - blog/posts/code-practises/software-licences.md
 title: "pathlib Tutorial: Simplifying File and Directory Handling in Python"
 ---
 

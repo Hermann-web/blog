@@ -8,8 +8,8 @@ categories:
   - devops
   - beginners
 links:
-  - setup/setting-up-a-blog.md
-  - plugins/blog.md
+  - blog/posts/a-roadmap-for-web-dev.md
+  - blog/posts/code-practises/software-licences.md
 title: "Unveiling the Code Chronicles: Navigating Software Licenses"
 ---
 

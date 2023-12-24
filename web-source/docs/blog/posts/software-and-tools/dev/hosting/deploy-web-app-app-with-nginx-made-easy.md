@@ -9,8 +9,8 @@ categories:
   - devops
   - deployment
 links:
-  - setup/setting-up-a-blog.md
-  - plugins/blog.md
+  - blog/posts/a-roadmap-for-web-dev.md
+  - blog/posts/code-practises/software-licences.md
 title: "Deploying any Web application with Nginx: Example of Flask"
 ---
 

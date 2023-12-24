@@ -12,8 +12,8 @@ categories:
   - streamlit
   - beginners
 links:
-  - setup/setting-up-a-blog.md
-  - plugins/blog.md
+  - blog/posts/a-roadmap-for-web-dev.md
+  - blog/posts/code-practises/software-licences.md
 title: "How to deploy a Streamlit Application on Hugging Face"
 ---
 

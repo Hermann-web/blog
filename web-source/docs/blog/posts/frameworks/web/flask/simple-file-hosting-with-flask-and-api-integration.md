@@ -12,8 +12,8 @@ categories:
   - file-handling
   - beginners
 links:
-  - setup/setting-up-a-blog.md
-  - plugins/blog.md
+  - blog/posts/a-roadmap-for-web-dev.md
+  - blog/posts/code-practises/software-licences.md
 title: Flask based File Hosting (web app & api & python module & cli app)
 ---
 
