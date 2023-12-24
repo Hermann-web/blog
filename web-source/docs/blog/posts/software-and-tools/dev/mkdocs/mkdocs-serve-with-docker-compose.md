@@ -17,7 +17,7 @@ subtitle: "Simplifying Documentation Workflow with Containerization"
 
 __Looking to streamline your documentation workflow using MkDocs and Docker?__
 
-Documentation lies at the heart of every successful project. [MkDocs](./mkdocs-get-started.md) offers a straightforward way to create elegant documentation sites, while [Docker](./OSX/docker/docker.md) ensures a consistent and isolated environment for various applications. Combining these tools optimizes the documentation process and enhances collaboration within development teams.
+Documentation lies at the heart of every successful project. [MkDocs](./mkdocs-get-started.md) offers a straightforward way to create elegant documentation sites, while [Docker](../OSX/docker/docker.md) ensures a consistent and isolated environment for various applications. Combining these tools optimizes the documentation process and enhances collaboration within development teams.
 
 This tutorial serves as your guide, illustrating how to set up MkDocs within a Docker container effectively. By following these steps, you'll establish a robust documentation framework, facilitating seamless documentation creation and deployment.
 
