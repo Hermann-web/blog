@@ -227,6 +227,9 @@ php artisan key:generate
 
 # Clear the configuration cache
 php artisan config:clear
+
+# create a symbolic link (`/public/storage`) from the storage directory (`/storage/app/public`) to the public directory (`/public/`)
+php artisan storage:link
 ```
 
 ### Build Db
