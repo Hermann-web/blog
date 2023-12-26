@@ -27,23 +27,26 @@ It should work also for those hosted locally.
 
 You can download and install `mongosh` from the MongoDB [website](https://www.mongodb.com/try/download/shell) or using package managers like npm or yarn. Make sure you have Node.js installed on your system before proceeding.
 
-Personally, i've downloaded it (and installed the setup) from the [website](https://www.mongodb.com/try/download/shell), put the bin file (containing mongosh.exe) into environment variables and read a bit of the [docu](https://www.mongodb.com/docs/mongodb-shell/) 
+Personally, using windows, i've downloaded it (and installed the setup) from the [website](https://www.mongodb.com/try/download/shell), put the bin file (containing mongosh.exe) into environment variables and read a bit of the [docu](https://www.mongodb.com/docs/mongodb-shell/).
+However, using ubuntu, i've tested both approch, installing using `apt-get` and using `nodejs`.
 
-Let's use the option 1, as it is a more straightforward approach
+Let's use the Package Manage option, as it is a more straightforward approach
 
 === ":octicons-file-code-16: `Using npm (Node Package Manager)`"
 
     ```bash
-    npm install -g mongodb
+    npx mongosh --version
     ```
 
 === ":octicons-file-code-16: `Using yarn (Package Manager)`"
 
     ```bash
-    yarn global add mongodb
+    yarn dlx mongosh --version
     ```
 
 <!-- more -->
+
+This command will install mongosh it you doesn't have it.
 
 For more details on installing `mongosh`, refer to the MongoDB documentation [^mongosh-install].
 
