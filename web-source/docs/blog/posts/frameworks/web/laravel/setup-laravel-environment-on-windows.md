@@ -10,6 +10,8 @@ categories:
   - fullstack
   - laravel
   - windows
+  - php
+  - mysql
 links:
   - blog/posts/a-roadmap-for-web-dev.md
   - blog/posts/code-practises/software-licences.md
