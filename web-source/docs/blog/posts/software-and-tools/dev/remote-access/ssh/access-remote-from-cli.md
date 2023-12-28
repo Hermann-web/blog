@@ -22,6 +22,7 @@ Whether you're a developer, sysadmin, or tech enthusiast stepping into the realm
 This document break down the process of connecting via SSH and file transfer and should help someone new to SSH understand the process, troubleshoot common issues, and handle file transfers easily
 
 ## Requirements:
+
 - For windows users, use Git Bash installed on your computer or use wsl2 (for windows >=10)
 - For linux users, this should be straighforward
 
@@ -84,6 +85,7 @@ Thats's why OpenSSH is often preferred by users who work in mixed environments o
 You can use `scp` command to transfer files directly between two servers (local to remote or one remote to another) by specifying their addresses and file paths
 
 ### Sending Files to Remote Server:
+
 - Use the `scp` command:
    ```bash
    local_file="/path/to/local/file"

@@ -41,10 +41,12 @@ git rebase origin main
 ```
 
 **Pros:**
+
 - Keeps a linear, clean commit history.
 - Integrates local changes after remote ones, maintaining chronological order.
 
 **Cons:**
+
 - Requires manual resolution of conflicts that may arise during rebase.
 
 ### Handling Conflicts during Rebase
@@ -91,10 +93,12 @@ VSCode streamlines the conflict resolution process by providing a visual and int
 Using `merge` in Git combines changes from different branches, preserving their individual commit histories. This method creates a new commit to capture the integration of changes from one branch into another. 
 
 **Pros:**
+
 - Preserves the complete history of changes made in each branch.
 - Maintains a clear track record of when and where changes were integrated.
 
 **Cons:**
+
 - May result in a non-linear history with multiple merge commit points.
 - Can potentially clutter the commit history with merge commits.
 
@@ -104,20 +108,20 @@ Similar to the rebase operation, merging branches in Git can lead to conflicts, 
 
 #### Resolving Conflicts by Favoring a Specific Branch
 
-Suppose you're merging `branch-A` into `branch-B` and wish to favor the changes from `branch-B` in case of conflicts:
+Suppose you're merging `branchA` into `branchB` and wish to favor the changes from `branchB` in case of conflicts:
 
 ```bash
-git checkout branch-B  # Switch to the target branch (branch-B)
-git merge -X ours branch-A  # Merge branch-A into branch-B, favoring branch-B changes in conflicts
+git checkout branchB  # Switch to the target branch (branchB)
+git merge -X ours branchA  # Merge branchA into branchB, favoring branchB changes in conflicts
 ```
 
 Explanation:
 
-1. `git checkout branch-B`: Switches to the target branch where changes will be merged (in this case, `branch-B`).
+1. `git checkout branchB`: Switches to the target branch where changes will be merged (in this case, `branchB`).
 
-2. `git merge -X ours branch-A`: Merges `branch-A` into `branch-B`, and the `-X ours` option ensures conflicts are resolved by favoring changes from the current branch (`branch-B`).
+2. `git merge -X ours branchA`: Merges `branchA` into `branchB`, and the `-X ours` option ensures conflicts are resolved by favoring changes from the current branch (`branchB`).
 
-Upon executing this command, Git will merge the changes from `branch-A` into `branch-B`, automatically resolving conflicts by favoring the modifications present in `branch-B`.
+Upon executing this command, Git will merge the changes from `branchA` into `branchB`, automatically resolving conflicts by favoring the modifications present in `branchB`.
 
 ### Other Merge Strategies
 

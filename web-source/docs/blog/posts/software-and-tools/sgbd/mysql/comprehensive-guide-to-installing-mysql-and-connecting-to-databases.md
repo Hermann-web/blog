@@ -174,6 +174,7 @@ mysql -u $username -p$password -h $hostname -P $port $database_name
 ### Deployment and Integration
 
 Configure your web application to utilize the MySQL database. Ensure your web server knows:
+
 - `Hostname` (usually localhost if on the same machine)
 - `Port` (default is 3306 for MySQL)
 - `Username` and `password` created earlier

@@ -132,10 +132,12 @@ git pull --ff-only origin main
 ```
 
 **Pros:**
+
 - Enforces a strictly linear history if possible, avoiding merge commits.
 - Facilitates a cleaner commit timeline for easier tracking.
 
 **Cons:**
+
 - Requires conflict resolution if the remote branch diverges.
 
 ### 4. Default Behavior: Fast-Forward Merge (`git config pull.ff merge`)
