@@ -6,7 +6,7 @@ title: Streamlit App for Formula OCR using pix2tex
 # Streamlit App for Formula OCR using pix2tex
 
 ## Introduction
-I've implemented and deployed a [Streamlit application](https://huggingface.co/spaces/hermann-web/pix2tex) designed for writing a LaTeX formula from an image containing that formula. The application is hosted on [Hugging Face Spaces](https://huggingface.co/spaces/hermann-web/pix2tex/tree/main) so users can upload images freely and copy LaTeX formulas.
+I've implemented and deployed a [Streamlit application](https://github.com/Hermann-web/pix2tex) designed for writing a LaTeX formula from an image containing that formula. The application is hosted on [Hugging Face Spaces](https://pix2tex.streamlit.app/y) and [github](https://pix2tex.streamlit.app/) so users can upload images freely and copy LaTeX formulas.
 
 For the frontend, I use Streamlit, a framework that makes frontend for data projects easy. For the backend converter, I use a Python module named [pix2tex](https://github.com/lukas-blecher/LaTeX-OCR) that uses computer vision to generate the LaTeX formula.
 
@@ -19,11 +19,11 @@ model = LatexOCR()
 print(model(img))
 ```
 
-You can access the application online [https://huggingface.co/spaces/hermann-web/pix2tex](https://huggingface.co/spaces/hermann-web/pix2tex).
+You can access the application online at [https://pix2tex.streamlit.app/](https://pix2tex.streamlit.app/) or [https://huggingface.co/spaces/hermann-web/pix2tex](https://huggingface.co/spaces/hermann-web/pix2tex).
 
 ![](../blog/posts/software-and-tools/data/huggingface/assets/streamlit-app-on-hugginface.png)
 
-You can read more if you want to know the implementztion details or clone the project.
+You can read the following if you want to know the implementation details or clone the project.
 
 ## Prerequisites
 
@@ -111,6 +111,13 @@ Add information about how users can use the application, including any specific 
 
 ## Deployment Guide
 
+### With streamlit.io 
+
+Deployment on streamlit.io is pretty fastforward [^streamlit-create-an-app].
+You can put the application on a public repository. Then, Go to the website [https://share.streamlit.io/deploy](https://share.streamlit.io/deploy), signup with you github account for example, then choose the repository and your pyhton script.
+
+## On streamlit
+
 To deploy the app on Hugging Face, follow these steps:
 
 1. **Create a Hugging Face Account:**
@@ -139,3 +146,5 @@ To deploy the app on Hugging Face, follow these steps:
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+[^streamlit-create-an-app]: [Streamlit documentation: Create an app](https://docs.streamlit.io/get-started/tutorials/create-an-app)
