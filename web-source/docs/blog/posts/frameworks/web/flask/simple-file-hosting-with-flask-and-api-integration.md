@@ -8,6 +8,7 @@ categories:
   - frameworks
   - web
   - python
+  - fullstack
   - flask
   - file-handling
   - beginners

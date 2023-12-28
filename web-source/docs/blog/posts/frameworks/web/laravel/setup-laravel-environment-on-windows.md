@@ -7,6 +7,7 @@ description: >
 categories:
   - frameworks
   - web
+  - fullstack
   - laravel
   - windows
 links:

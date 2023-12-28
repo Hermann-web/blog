@@ -8,6 +8,7 @@ categories:
   - frameworks
   - data
   - python
+  - frontend
   - data-visualization
   - beginners
 links:

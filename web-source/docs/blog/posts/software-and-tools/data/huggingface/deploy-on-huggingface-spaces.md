@@ -8,6 +8,7 @@ categories:
   - software-and-tools
   - data
   - deployment
+  - frontend
   - huggingface
   - streamlit
   - beginners
