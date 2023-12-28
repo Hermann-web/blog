@@ -189,4 +189,5 @@ Stay tuned for more Git tips and tricks on our blog for seamless collaboration a
 
 - [Managing Local Modifications and Remote Changes in Git](./pull-changes-with-conflicts.md)
 - [Mastering Git Merge Strategies: A Developer's Guide](./sync-branches-with-conflicts.md)
+- [Understanding Git Pull vs Merge in Git Workflow](./git-pull-vs-git-merge-equivalence.md)
 - [Mastering Git Branch Handling: Strategies for Deletion and Recovery](./handling-branch-deletion.md)
