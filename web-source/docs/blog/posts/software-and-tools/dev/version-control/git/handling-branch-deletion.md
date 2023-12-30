@@ -1,5 +1,5 @@
 ---
-date: 2023-12-18
+date: 2023-11-18
 authors: [hermann-web]
 description: |
   Learn the ins and outs of managing Git branches effortlessly. From deleting branches locally and on remote repositories to recovering mistakenly deleted branches, this guide equips you with essential Git branch handling techniques, ensuring a streamlined version control workflow.

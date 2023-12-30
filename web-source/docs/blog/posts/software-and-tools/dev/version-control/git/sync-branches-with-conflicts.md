@@ -1,5 +1,5 @@
 ---
-date: 2023-11-28
+date: 2023-10-11
 authors: [hermann-web]
 description: |
   Discover the best practices in Git merge strategies—rebase and merge. Navigate the maze of version control to maintain a pristine repository history, perfect for developers entering collaborative coding environments.

@@ -1,5 +1,5 @@
 ---
-date: 2023-11-26
+date: 2023-11-04
 authors: [hermann-web]
 description: |
   A comprehensive guide to managing local modifications and remote changes in Git, exploring various options and their implications for seamless collaboration.
