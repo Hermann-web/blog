@@ -4,7 +4,6 @@ authors: [hermann-web]
 description: |
   Explore the differences between git pull and git merge to streamline your Git workflow and manage branch integration effectively.
 categories:
-  - software-and-tools
   - devops
   - version-control
   - git

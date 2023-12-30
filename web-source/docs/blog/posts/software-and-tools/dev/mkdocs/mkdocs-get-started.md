@@ -4,7 +4,6 @@ authors: [hermann-web]
 description: >
   Discover MkDocs, the tool that makes documentation creation straightforward. Explore its simplicity in crafting professional documentation for your projects.
 categories:
-  - software-and-tools
   - devops
   - mkdocs
   - beginners

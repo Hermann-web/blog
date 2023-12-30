@@ -4,7 +4,6 @@ authors: [hermann-web]
 description: |
   An introductory guide to working with gRPC in Python, covering installation, testing examples, and expanding functionality through protocol buffers.
 categories:
-  - software-and-tools
   - devops
   - microservices
   - gprc

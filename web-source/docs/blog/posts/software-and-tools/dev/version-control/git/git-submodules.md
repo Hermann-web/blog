@@ -4,7 +4,6 @@ authors: [hermann-web]
 description: |
   Dive into the world of Git submodules—a tool that helps manage code pieces within your projects. This guide simplifies the complexities, making submodule management accessible for developers new to the concept.
 categories:
-  - software-and-tools
   - devops
   - version-control
   - git

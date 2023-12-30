@@ -5,7 +5,6 @@ description: >
   Ever been trapped by a vexing error like "Address already in use"? Discover the art of freeing up ports and unshackling your applications. Dive into this guide to liberate your digital space!
 title: "Decoding Port Conflicts: Unveiling the Secrets of Process Liberation"
 categories: 
-  - software-and-tools
   - devops
   - OSX
   - linux

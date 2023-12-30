@@ -4,7 +4,6 @@ authors: [hermann-web]
 description: |
   Discover the best practices in Git merge strategies—rebase and merge. Navigate the maze of version control to maintain a pristine repository history, perfect for developers entering collaborative coding environments.
 categories:
-  - software-and-tools
   - devops
   - version-control
   - git

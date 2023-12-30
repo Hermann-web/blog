@@ -4,7 +4,6 @@ authors: [hermann-web]
 description: >
   Learn to streamline documentation using MkDocs within Docker, simplifying your workflow for efficient documentation management.
 categories:
-  - software-and-tools
   - devops
   - mkdocs
   - docker
