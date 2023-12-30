@@ -104,7 +104,7 @@ So, this is a very straight forward tutorial on docker and wsl2 installation and
 12. **Verify Docker Connectivity in WSL:**
     - Open the WSL terminal (Ubuntu).
     - Run the following command to check Docker connectivity:
-      ```
+      ```bash
       docker version
       ```
 
