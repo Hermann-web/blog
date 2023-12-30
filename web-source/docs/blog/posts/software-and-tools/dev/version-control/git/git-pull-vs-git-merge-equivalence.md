@@ -77,5 +77,5 @@ However, they differ in approach:
 
 - [Managing Local Modifications and Remote Changes in Git](./pull-changes-with-conflicts.md)
 - [Mastering Git Merge Strategies: A Developer's Guide](./sync-branches-with-conflicts.md)
-- [Demystifying Git Submodules: A Newbie's Guide](./git-submodules.md)
+- [Nesting Repositories with Git Submodules: A Newbie's Guide](./git-submodules.md)
 - [Mastering Git Branch Handling: Strategies for Deletion and Recovery](./handling-branch-deletion.md)

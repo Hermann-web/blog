@@ -83,4 +83,4 @@ Replace `<branch-name>` with the branch name and `<commit-hash>` with the commit
 - [Managing Local Modifications and Remote Changes in Git](./pull-changes-with-conflicts.md)
 - [Mastering Git Merge Strategies: A Developer's Guide](./sync-branches-with-conflicts.md)
 - [Understanding Git Pull vs Merge in Git Workflow](./git-pull-vs-git-merge-equivalence.md)
-- [Demystifying Git Submodules: A Newbie's Guide](./git-submodules.md)
+- [Nesting Repositories with Git Submodules: A Newbie's Guide](./git-submodules.md)

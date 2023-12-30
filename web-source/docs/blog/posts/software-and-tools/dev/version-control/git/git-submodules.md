@@ -9,7 +9,7 @@ categories:
   - version-control
   - git
   - beginners
-title: "Demystifying Git Submodules: A Newbie's Guide"
+title: "Nesting Repositories with Git Submodules: A Newbie's Guide"
 ---
 
 ## Introduction
