@@ -134,6 +134,7 @@ There are several cool options available when converting Markdown to PDF using P
 4. `--highlight-style`: Allows you to set the syntax highlighting style for code blocks.
 5. `--number-sections`: Numbers the sections of the document.
 6. `--metadata`: Allows you to set metadata for the PDF, such as the title, author, and date.
+7. `-f markdown-implicit_figures`: [...](https://stackoverflow.com/questions/49482221/pandoc-markdown-to-pdf-image-position)
 
 For example, here is a command that uses some of these options:
 
@@ -222,3 +223,9 @@ There will appear at the end of each page, not at the end of the file.
 You can see more on citation styles with [^citation-styles]
 
 [^citation-styles]: [more on citation styles](https://github.com/KurtPfeifle/pandoc-csl-testing)
+
+## Resize image in markdown
+For example, if you want the image to take 50% of the page wifth, use
+```md
+![Caption text](/path/to/image){ width=50% }
+```
