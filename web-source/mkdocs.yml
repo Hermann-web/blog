@@ -20,7 +20,7 @@
 # IN THE SOFTWARE.
 
 # Project information
-site_name: Hermann Agossou Personal Website
+site_name: What I learned today (@hermann-web)
 site_url: https://hermann-web/hermann-web.github.io/
 site_author: Hermann Agossou
 site_description: >-
@@ -85,7 +85,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/favicon.png
+  favicon: assets/hermann-web.png
   icon:
     logo: logo
 

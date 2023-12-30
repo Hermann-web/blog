@@ -20,9 +20,19 @@ subtitle: "MkDocs: Your Straightforward Documentation Companion"
 
 __Welcome to MkDocs: the hassle-free documentation solution!__
 
-In search of a tool that makes documentation creation a breeze? MkDocs is your answer! This straightforward platform simplifies the process of generating professional project documentation.
+In search of a tool that makes documentation creation a breeze? [MkDocs](https://github.com/mkdocs/mkdocs/) is your answer!
+
+<!-- ![](./assets/mkdocs-logo.png) -->
+<div style="float: left; margin: 0 10px 0 10px;">
+  <a title="mkdocs-material" href="https://github.com/squidfunk/mkdocs-material">
+    <img style="width: 9rem;" alt="mkdocs-logo" src="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/logo.svg">
+  </a>
+</div>
+
+This straightforward platform simplifies the process of generating professional project documentation.
 
 This guide is your gateway to exploring MkDocs' user-friendly approach. You'll uncover how this tool streamlines the creation of polished and organized documentation for all your projects. Let's dive in and harness MkDocs' straightforwardness for your documentation needs.
+
 
 <!-- more -->
 
@@ -74,7 +84,7 @@ MkDocs simplifies the process of creating documentation for your Python projects
    This creates a new `mkdocs.yml` configuration file and a `docs` directory with a sample Markdown file.
 
 3. **Install a Theme**:
-   Enhance your documentation's appearance by installing a theme like `mkdocs-material`:
+   Enhance your documentation's appearance by installing a theme like [`mkdocs-material`](https://github.com/squidfunk/mkdocs-material):
 
    ```bash
    pip install mkdocs-material

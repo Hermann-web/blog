@@ -15,7 +15,18 @@ title: "Mastering SSH and File Transfers to Remote servers: A Beginner's Handboo
 
 __Do you find yourself baffled by the intricacies of SSH connections and file transfers to remote servers ?__
 
-Navigating the landscape of SSH connections, troubleshooting connection issues, and securely transferring files across servers can be a daunting task, especially for newcomers. This guide is your compass in the world of SSH, unraveling the complexities and providing step-by-step instructions for establishing secure connections and transferring files seamlessly using Git Bash or WSL2 for Windows users and straightforward methods for Linux enthusiasts.
+Navigating the landscape of SSH connections, troubleshooting connection issues, and securely transferring files across servers can be a daunting task, especially for newcomers. 
+
+<div style="float: right; margin: 0 10px 0 10px;">
+  <a title="Chenyijia001, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Ssh_cyj.png">
+    <img style="width: 15rem;" alt="Ssh cyj" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Ssh_cyj.png/512px-Ssh_cyj.png">
+  </a>
+</div>
+
+This guide is your compass in the world of SSH, unraveling the complexities and providing step-by-step instructions for establishing secure connections and transferring files seamlessly using Git Bash or WSL2 for Windows users and straightforward methods for Linux enthusiasts.
+
+
+<!-- more -->
 
 Whether you're a developer, sysadmin, or tech enthusiast stepping into the realm of remote server access or seeking efficient file transfer solutions, this guide is tailored to demystify SSH, troubleshoot common pitfalls, and equip you with the skills to maneuver through file transfers effortlessly.
 
@@ -26,8 +37,6 @@ This document break down the process of connecting via SSH and file transfer and
 - For windows users, use Git Bash installed on your computer or use wsl2 (for windows >=10)
 - For linux users, this should be straighforward
 
-
-<!-- more -->
 
 ## Connecting via SSH from cli
 

@@ -11,6 +11,7 @@ categories:
   - python
   - networking
 title: "A Beginner's Guide to gRPC with Python"
+# icon: https://grpc.io/img/landing-2.svg
 ---
 
 # A Beginner's Guide to gRPC with Python
@@ -21,7 +22,9 @@ __Have you encountered gRPC, high-performance, open-source framework that allows
 
 [gPRC](https://github.com/grpc/grpc) uses protocol buffers as its interface definition language and provides features such as bi-directional streaming and flow control.
 
-![](https://grpc.io/img/landing-2.svg)
+<p align="center">
+  <img src="https://grpc.io/img/landing-2.svg" alt="Description of the image" />
+</p>
 
 <!-- more -->
 
