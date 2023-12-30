@@ -1,6 +1,6 @@
 ---
 template: home.html
-title: Material for MkDocs
+title: Personal Website
 social:
   cards_layout_options:
     title: Hermann Web Index

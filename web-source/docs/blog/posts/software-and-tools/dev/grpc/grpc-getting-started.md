@@ -18,7 +18,7 @@ title: "A Beginner's Guide to gRPC with Python"
 
 ## Introduction to gRPC
 
-__Have you encountered gRPC, high-performance, open-source framework that allows developers to build distributed systems and microservices ?__
+__Have you heard of gRPC, high-performance, open-source framework that allows developers to build distributed systems and microservices ?__
 
 [gPRC](https://github.com/grpc/grpc) uses protocol buffers as its interface definition language and provides features such as bi-directional streaming and flow control.
 
