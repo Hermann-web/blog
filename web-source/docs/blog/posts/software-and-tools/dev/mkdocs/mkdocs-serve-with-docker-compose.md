@@ -83,6 +83,10 @@ docker-compose up
 
 This command builds the Docker image and starts the MkDocs server. Access the MkDocs site by visiting `http://localhost:49162` in your web browser.
 
+!!! note "hot reload"
+    As mkdocs rebuild all the files when changes are made, you may want to add the `--dirty` option to `mkdocs serve` to rebuild only the modified files.
+    Read more about it in [the mkdocs tutorial](./mkdocs-get-started.md#7-optional-more-options)
+
 ## Conclusion
 
 Integrating MkDocs with Docker simplifies the setup process, ensuring consistency across different environments. It provides an isolated space for documentation management, enhancing collaboration and deployment.

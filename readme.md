@@ -47,8 +47,8 @@ pip install mkdocs==1.5.3 mkdocs-material==9.4.7 mkdocs-minify-plugin==0.7.1
 pip install -r requirements-full.txt
 
 ## serve app
-mkdocs serve
-# the app is on localhost:8000
+mkdocs serve -a localhost:8001
+# the app is on localhost:8001 with live reload. use mkdocs -h for more options
 
 ## how to generate a build static site
 mkdocs build

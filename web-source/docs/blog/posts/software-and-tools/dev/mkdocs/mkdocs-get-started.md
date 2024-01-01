@@ -64,57 +64,78 @@ MkDocs excels in providing a straightforward and efficient way to create profess
 
 MkDocs simplifies the process of creating documentation for your Python projects. Follow these steps to create a documentation site using MkDocs:
 
-1. **Install MkDocs**:
-   Install MkDocs by running the following command in your terminal:
+### 1. **Install MkDocs**:
 
-   ```bash
-   pip install mkdocs
-   ```
+Install MkDocs by running the following command in your terminal:
 
-2. **Set Up Your Project**:
-   Create a new directory for your project and initialize an MkDocs project:
+```bash
+pip install mkdocs
+```
 
-   ```bash
-   mkdir my-project
-   cd my-project
-   mkdocs new .
-   ```
+### 2. **Set Up Your Project**:
 
-   This creates a new `mkdocs.yml` configuration file and a `docs` directory with a sample Markdown file.
+Create a new directory for your project and initialize an MkDocs project:
 
-3. **Install a Theme**:
-   Enhance your documentation's appearance by installing a theme like [`mkdocs-material`](https://github.com/squidfunk/mkdocs-material):
+```bash
+mkdir my-project
+cd my-project
+mkdocs new .
+```
 
-   ```bash
-   pip install mkdocs-material
-   ```
+This creates a new `mkdocs.yml` configuration file and a `docs` directory with a sample Markdown file.
 
-4. **Configure Your Site**:
-   Edit the `mkdocs.yml` file to configure your documentation site. Define the title, theme, and pages to include. Check [examples](https://github.com/boisgera/pandoc/blob/master/mkdocs.yml).
+### 3. **Install a Theme**:
 
-   - Configure `docs_dir` to specify the folder where MkDocs will find `.md` files.
-   - Use the `nav` section to structure your files into tabs.
+Enhance your documentation's appearance by installing a theme like [`mkdocs-material`](https://github.com/squidfunk/mkdocs-material):
 
-5. **Write Documentation**:
-   Create your documentation in Markdown format and save the files in the `docs` directory.
+```bash
+pip install mkdocs-material
+```
 
-6. **Preview Your Site**:
-   To preview your site locally, run:
+### 4. **Configure Your Site**:
 
-   ```bash
-   mkdocs serve
-   ```
+Edit the `mkdocs.yml` file to configure your documentation site. Define the title, theme, and pages to include. Check [examples](https://github.com/boisgera/pandoc/blob/master/mkdocs.yml).
 
-   Changes made will automatically update the site.
+- Configure `docs_dir` to specify the folder where MkDocs will find `.md` files.
+- Use the `nav` section to structure your files into tabs.
 
-7. **Build Your Site**:
-   Generate a static HTML site by running:
+### 5. **Write Documentation**:
 
-   ```bash
-   mkdocs build
-   ```
+Create your documentation in Markdown format and save the files in the `docs` directory.
 
-   This creates a `site` directory containing the built site. You can deploy this to a web server.
+### 6. **Preview Your Site**:
+
+To preview your site locally, run:
+
+```bash
+mkdocs serve
+```
+This will start a local web server and open your documentation site in your default web browser. You can make changes to your documentation and the site will automatically update.
+
+### 7. **(optional) More options**:
+
+You can add more options. For example,
+```bash
+mkdocs serve --dirty -a localhost:8001
+```
+
+!!! Note "Note"
+    - `--dirty`: Only re-build files that have changed.
+    - `-a, --dev-addr <IP:PORT>`: IP address and port to serve documentation locally (default: localhost:8000)
+    - use `mkdocs serve -h` for more options
+
+!!! warning "warning"
+    `A 'dirty' build [...] will likely lead to inaccurate navigation and other links within your site. This option is designed for site development purposes only.`, mkdocs
+
+### 8. **Build Your Site**:
+
+Generate a static HTML site by running:
+
+```bash
+mkdocs build
+```
+
+This creates a `site` directory containing the built site. You can deploy this to a web server.
 
 Remember, MkDocs supports numerous plugins, such as `mkdocs-run-shell-cmd-plugin`, enabling extended functionalities.
 
