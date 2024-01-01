@@ -1,5 +1,5 @@
 ---
-date: 2023-12-17
+date: 2023-11-17
 authors: [hermann-web]
 description: >
   File handling is crucial in Python programming. This documentation provides insights into managing directories, specifically targeting empty and non-empty directories using `os` and `pathlib` modules.
@@ -7,7 +7,7 @@ categories:
   - programming
   - python
   - file-handling
-title: "File Handling in Python: Managing Directories"
+title: "Removing Directories in Python"
 ---
 
 ## Remove Empty Directories in Python
@@ -77,3 +77,6 @@ For directories that contain files or other directories, use `shutil.rmtree()` t
     ```
 Ensure to confirm the directory paths before removal operations to prevent accidental deletion of important data. When using shutil.rmtree(), exercise caution as it permanently deletes directories and their contents. The choice between os and pathlib can depend on your preference for object-oriented or procedural-style programming when handling paths and directories in Python.
 
+## relating links
+
+- [Pathlib Tutorial: Transitioning to Simplified File and Directory Handling in Python](./pathlib-transition-tutorial.md)
