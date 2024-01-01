@@ -86,7 +86,7 @@ python greeter_server.py
 ```
 
 The output
-??? Output
+??? output
     ```plaintext
     Server started, listening on 50051
     ```
@@ -98,7 +98,7 @@ cd grpc/examples/python/helloworld
 python greeter_client.py
 ```
 
-??? Output
+??? output
     ```plaintext
     Will try to greet world ...
     Greeter client received: Hello, you!

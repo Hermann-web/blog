@@ -21,7 +21,7 @@ But sometimes, you only have access via ssh to the server.
 
 This is a very straigthforward tutorial on how to do it.
 
-!!! Note "This tutorial also applies to any web server you can run on local but want to deploy"
+!!! note "This tutorial also applies to any web server you can run on local but want to deploy"
 
 
 ## Step 1: Install Nginx and Flask

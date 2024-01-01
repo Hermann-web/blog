@@ -66,7 +66,7 @@ A quick way to visualize relationships in a dataset is by using the method `pair
 ```python
 sns.pairplot(df)
 ```
-??? Output "Result"
+??? output "Result"
     ![pairplot example](./seaborn-in-practice/1-pairplot-example.png)
 
 You can see here, we have a table of graphs. The 3 rows and 3 columns correpond to the 3 numerical values in out dataset: `tip`, `total_bill` and `size`

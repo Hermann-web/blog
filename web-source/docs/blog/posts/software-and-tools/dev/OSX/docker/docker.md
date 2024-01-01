@@ -37,7 +37,7 @@ So, this is a very straight forward tutorial on docker and wsl2 installation and
    - Download Docker Desktop for Windows from the official Docker website: https://www.docker.com/products/docker-desktop
    - Run the installer and follow the instructions to complete the installation.
 
-??? Output "wsl installer"
+??? output "wsl installer"
     ![](./img/install-wsl-windows10.png)
 
 2. **Enable WSL 2:**
@@ -52,7 +52,7 @@ So, this is a very straight forward tutorial on docker and wsl2 installation and
    - Open the Microsoft Store app on your Windows machine.
    - Search for a Linux distribution (e.g., Ubuntu, Debian, or Alpine) and install it.
 
-??? Output "Enable docker for wsl2"
+??? output "Enable docker for wsl2"
     ![](./img/wsl2-enable-docker.png)
 
 6. **Configure WSL 2 as the Default WSL Version:**

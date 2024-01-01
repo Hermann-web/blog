@@ -75,7 +75,7 @@ grip my_file.md --user hermann-web:<my-token>
 ```
 
 ## Offline renderer
-!!! Note "Note"
+!!! note "Note"
     There is an offline renderer but [it didn't make 2.0 release](https://github.com/joeyespo/grip/issues/35#issue-20152565). 
 
 When it will be available, it quite is useful if

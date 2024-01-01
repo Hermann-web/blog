@@ -166,7 +166,7 @@ This table provides a comparison between Python's `os` module and the `pathlib` 
 
 
 
-!!! Note "Remember !"
+!!! note "Remember !"
     - Always handle potential errors with `try-except` blocks for file and directory operations.
     - Test your code thoroughly to ensure correctness and handle edge cases.
     - Embrace the object-oriented nature of pathlib for a more intuitive and readable approach to file handling in Python.

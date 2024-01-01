@@ -119,7 +119,7 @@ You can add more options. For example,
 mkdocs serve --dirty -a localhost:8001
 ```
 
-!!! Note "Note"
+!!! note "Note"
     - `--dirty`: Only re-build files that have changed.
     - `-a, --dev-addr <IP:PORT>`: IP address and port to serve documentation locally (default: localhost:8000)
     - use `mkdocs serve -h` for more options

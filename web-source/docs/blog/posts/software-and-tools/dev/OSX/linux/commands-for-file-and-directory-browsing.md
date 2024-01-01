@@ -190,21 +190,21 @@ Executing a command for each matched file or directory.
     find /path/to/search -type f -exec du -h {} \;
     ```
 
-    !!! Info "Displays sizes of files (each file in a different command) found by `find` using `du -h`."
+    !!! info "Displays sizes of files (each file in a different command) found by `find` using `du -h`."
 
 - **Finding files and performing deletion:**
     ```bash
     find /path/to/search -name "file_to_delete.txt" -exec rm {} \;
     ```
 
-    !!! Info "Deletes files (each file in a different command) matching the name `file_to_delete.txt`."
+    !!! info "Deletes files (each file in a different command) matching the name `file_to_delete.txt`."
 
 - **Finding and searching patterns:**
     ```bash
     find /path/to/search -name "*.txt" -exec grep "pattern" {} \;
     ```
 
-    !!! Info "This command finds all `.txt` files in the specified directory and runs `grep` to search for a specific pattern within each of those files."
+    !!! info "This command finds all `.txt` files in the specified directory and runs `grep` to search for a specific pattern within each of those files."
 
 ### `-exec {} +`: Find and perform an action on all files at once
 
@@ -215,7 +215,7 @@ Optimizing efficiency by passing multiple arguments to a command.
     find /path/to/search -name "file_to_delete.txt" -exec rm {} +
     ```
 
-    !!! Info "Deletes files (all in one command) matching the name `file_to_delete.txt`"
+    !!! info "Deletes files (all in one command) matching the name `file_to_delete.txt`"
 
 ### fast conclusion
 `find` is an incredibly versatile command that can be combined with various flags and options to perform advanced searches based on filenames, types, sizes, modification times, and more. It's a great tool for locating specific files or performing actions on groups of files based on specific criteria.
@@ -264,7 +264,7 @@ ls -l /path/to/folder | wc -l
 head -n 1 input/google-form-data.csv | grep -o "," | wc -l
 ```
 
-!!! Info "This command reads the first line, apply the `,` separator then count"
+!!! info "This command reads the first line, apply the `,` separator then count"
 
 ### Finding `requirements.txt` Files Containing "openpyxl"
 
@@ -344,7 +344,7 @@ This command will display the last 50 lines of the `cli.log` file and filter out
 find /path/to/search -type f -name "*.sh" -exec grep -l "black" {} +
 ```
 
-!!! Info "More on find and grep options"
+??? info "More on find and grep options"
     This command will search for lines containing the word "black" within `.sh` files. The command (`grep`) displays the actual lines containing "black" within the files
 
     - **grep options: `grep` vs `grep -l`**
@@ -371,7 +371,7 @@ find -type d -name "*eigen3*"
 sudo find /home -type d -name "bin" -path "*LAStools*"
 ```
 
-!!! Info "This command searches the entire root directory `/` for directories (`-type d`) named "bin" (`-name "bin"`) that are part of a path containing "LAStools" (`-path "*LAStools*"`)"
+!!! info "This command searches the entire root directory `/` for directories (`-type d`) named "bin" (`-name "bin"`) that are part of a path containing "LAStools" (`-path "*LAStools*"`)"
 
 !!! warning "Using `sudo` might be necessary to have permission to search directories that your user account doesn't have access to by default."
 
