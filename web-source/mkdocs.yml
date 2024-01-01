@@ -24,9 +24,7 @@ site_name: What I learned today (@hermann-web)
 site_url: https://hermann-web/hermann-web.github.io/
 site_author: Hermann Agossou
 site_description: >-
-  Hermann is a profesionnal full-stack web developer and a data scientist 
-  His main points are website development, backend development, ML & DL 
-  projects including NLP and 3D computer Vision
+  Meet Hermann, a pro at full-stack web development and data science, acing website building, backend systems, ML & DL (NLP and 3D vision included). These tutorials? They're my personal cheat sheets—where I stash those markdown, GitHub nuggets: syntax, functions, handy tools—stuff I use all the time. Now, I'm turning some into blog posts. Join me in simplifying our learning journeys, building a shared resource that evolves as we grow.
 
 # Repository
 repo_name: hermann-web/hermann-web.github.io
