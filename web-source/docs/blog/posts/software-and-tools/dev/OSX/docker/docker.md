@@ -19,11 +19,9 @@ title: "Simple guide to using Docker on Windows 10 and access from WSL 2"
 ## Introduction
 For a heavy linux user like me, using windows also mean find a door to work with a linux distro. There are several options to gauge from the situation. I usually need both docker and wsl2 on the computer. And i've installed this many times. 
 
-<p align="center">
-  <img src="https://driftt.imgix.net/https%3A%2F%2Fdriftt.imgix.net%2Fhttps%253A%252F%252Fs3.us-east-1.amazonaws.com%252Fcustomer-api-avatars-prod%252F5244849%252F2992b5064fb40c8454b29d7dde843e02wxmbzt425w27%3Ffit%3Dmax%26fm%3Dpng%26h%3D200%26w%3D200%26s%3Dafd7b37a323ef1171abe7d37c7b901e5?fit=max&fm=png&h=200&w=200&s=f2525fe124159f60cc588983058867b1g" alt="Description of the image" />
-</p>
-
-Credit: [docker.com](https://www.docker.com/company/newsroom/media-resources/)
+<div class="float-img-container float-img-right">
+  <a title="Credit: docker.com" href="https://www.docker.com/company/newsroom/media-resources/"><img alt="docker-logo" src="https://driftt.imgix.net/https%3A%2F%2Fdriftt.imgix.net%2Fhttps%253A%252F%252Fs3.us-east-1.amazonaws.com%252Fcustomer-api-avatars-prod%252F5244849%252F2992b5064fb40c8454b29d7dde843e02wxmbzt425w27%3Ffit%3Dmax%26fm%3Dpng%26h%3D200%26w%3D200%26s%3Dafd7b37a323ef1171abe7d37c7b901e5?fit=max&fm=png&h=200&w=200&s=f2525fe124159f60cc588983058867b1g"></a>
+</div>
 
 So, this is a very straight forward tutorial on docker and wsl2 installation and configuration on windows10 or 11.
 

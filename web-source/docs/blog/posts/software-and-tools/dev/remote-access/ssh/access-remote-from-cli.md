@@ -16,7 +16,7 @@ __Do you find yourself baffled by the intricacies of SSH connections and file tr
 
 Navigating the landscape of SSH connections, troubleshooting connection issues, and securely transferring files across servers can be a daunting task, especially for newcomers. 
 
-<div style="float: right; margin: 0 10px 0 10px;">
+<div class="float-img-container float-img-right">
   <a title="Chenyijia001, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Ssh_cyj.png">
     <img style="width: 15rem;" alt="Ssh cyj" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Ssh_cyj.png/512px-Ssh_cyj.png">
   </a>

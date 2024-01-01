@@ -22,7 +22,7 @@ __Welcome to MkDocs: the hassle-free documentation solution!__
 In search of a tool that makes documentation creation a breeze? [MkDocs](https://github.com/mkdocs/mkdocs/) is your answer!
 
 <!-- ![](./assets/mkdocs-logo.png) -->
-<div style="float: left; margin: 0 10px 0 10px;">
+<div class="float-img-container float-img-left">
   <a title="mkdocs-material" href="https://github.com/squidfunk/mkdocs-material">
     <img style="width: 9rem;" alt="mkdocs-logo" src="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/logo.svg">
   </a>
