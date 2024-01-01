@@ -61,9 +61,6 @@ The `grep` command searches for patterns in files.
   ```
   This command displays lines in `file.txt` that contain the specified `pattern`.
 
-
-Absolutely, let's include information about `head`, `tail`, `less`, and `more`:
-
 ### `head` and `tail`
 
 The `head` command displays the beginning of a file, while `tail` shows the end.
