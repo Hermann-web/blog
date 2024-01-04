@@ -73,41 +73,41 @@ Let's explore the functionalities of `pathlib` step by step.
 
 
 
-## Example Usage:
+!!! Example "Usage Examples"
 
-```python
-from pathlib import Path
+    ```python
+    from pathlib import Path
 
-# Get the current working directory
-cwd = Path.cwd()
+    # Get the current working directory
+    cwd = Path.cwd()
 
-# Create a new directory
-new_dir = Path("my_new_directory")
-new_dir.mkdir()
+    # Create a new directory
+    new_dir = Path("my_new_directory")
+    new_dir.mkdir()
 
-# Create a nested directory structure
-nested_dir = Path("data/processed/results")
-nested_dir.mkdir(parents=True, exist_ok=True)  # Create all parent directories if needed
+    # Create a nested directory structure
+    nested_dir = Path("data/processed/results")
+    nested_dir.mkdir(parents=True, exist_ok=True)  # Create all parent directories if needed
 
-# Check if a file exists
-file_path = Path("my_file.txt")
-if filepath.exists():
-    print("The file exists!")
+    # Check if a file exists
+    file_path = Path("my_file.txt")
+    if filepath.exists():
+        print("The file exists!")
 
-# Read the contents of a file
-text = filepath.read_text()
+    # Read the contents of a file
+    text = filepath.read_text()
 
-# Write content to a file
-filepath.write_text("New content for the file")
+    # Write content to a file
+    filepath.write_text("New content for the file")
 
-# Remove an empty directory
-empty_dir = Path("empty_dir")
-empty_dir.rmdir()
+    # Remove an empty directory
+    empty_dir = Path("empty_dir")
+    empty_dir.rmdir()
 
-# Remove a non-empty directory and its contents
-non_empty_dir = Path("non_empty_dir")
-shutil.rmtree(non_empty_dir)
-```
+    # Remove a non-empty directory and its contents
+    non_empty_dir = Path("non_empty_dir")
+    shutil.rmtree(non_empty_dir)
+    ```
 
 ## Equivalence os vs pathlib vs cli for Common Operations
 
