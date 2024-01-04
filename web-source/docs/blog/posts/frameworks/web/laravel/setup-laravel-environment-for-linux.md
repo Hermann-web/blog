@@ -1,6 +1,7 @@
 ---
 date: 2023-11-18
 authors: [hermann-web]
+comments: true
 description: >
   A comprehensive guide to setting up a Laravel environment on an Ubuntu system,
   covering Apache, PHP, MySQL/MariaDB, Composer, and phpMyAdmin configurations.

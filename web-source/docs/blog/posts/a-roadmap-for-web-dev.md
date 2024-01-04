@@ -1,6 +1,7 @@
 ---
 date: 2023-10-02
 authors: [hermann-web]
+comments: true
 description: >
   This blog shows interesting stuff to know
   It is flavored by mkdocs

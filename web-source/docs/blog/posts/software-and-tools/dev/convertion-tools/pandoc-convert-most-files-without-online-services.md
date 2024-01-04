@@ -1,6 +1,7 @@
 ---
 date: 2023-10-10
 authors: [hermann-web]
+comments: true
 language: en
 description: >
   This blog shows useful stuff to know about or learn to do as web developer or data scientist/engineer

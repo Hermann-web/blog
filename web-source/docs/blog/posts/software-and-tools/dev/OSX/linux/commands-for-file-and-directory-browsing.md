@@ -1,6 +1,7 @@
 ---
 date: 2023-12-30
 authors: [hermann-web]
+comments: true
 description: >
   Master essential Linux commands for efficient file and directory operations. Explore `wc`, `du`, `grep`, `find`, ... and their combinations for effective file management.
 title: "Mastering Essential Linux Commands: Your Path to File and Directory Mastery"

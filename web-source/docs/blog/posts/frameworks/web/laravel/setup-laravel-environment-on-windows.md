@@ -1,6 +1,7 @@
 ---
 date: 2023-11-17
 authors: [hermann-web]
+comments: true
 description: >
   A comprehensive guide to setting up a Laravel environment on a windows system,
   covering Apache, PHP, MySQL/MariaDB, Composer, and phpMyAdmin configurations.

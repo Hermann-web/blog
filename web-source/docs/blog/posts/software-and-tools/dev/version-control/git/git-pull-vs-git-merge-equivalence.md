@@ -1,6 +1,7 @@
 ---
 date: 2023-12-04
 authors: [hermann-web]
+comments: true
 description: |
   Explore the differences between git pull and git merge to streamline your Git workflow and manage branch integration effectively.
 categories:

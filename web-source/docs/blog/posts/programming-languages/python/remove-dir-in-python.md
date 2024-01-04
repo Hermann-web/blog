@@ -1,6 +1,7 @@
 ---
 date: 2023-11-17
 authors: [hermann-web]
+comments: true
 description: >
   File handling is crucial in Python programming. This documentation provides insights into managing directories, specifically targeting empty and non-empty directories using `os` and `pathlib` modules.
 categories:

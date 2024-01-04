@@ -1,6 +1,7 @@
 ---
 date: 2023-12-20
 authors: [hermann-web]
+comments: true
 description: >
   Learn how to transition from command line or 'os' module to Python's 'pathlib' for simplified file and directory handling.
 categories:

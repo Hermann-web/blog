@@ -1,6 +1,7 @@
 ---
 date: 2023-11-08
 authors: [hermann-web]
+comments: true
 description: >
   This part shows some interesting web and data
   projects i've worked

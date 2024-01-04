@@ -1,6 +1,7 @@
 ---
 date: 2023-10-24
 authors: [hermann-web]
+comments: true
 description: |
   Unveiling the Code Chronicles: Navigating the Realm of Software Licenses in Development, Enriched with mkdocs.
 categories:

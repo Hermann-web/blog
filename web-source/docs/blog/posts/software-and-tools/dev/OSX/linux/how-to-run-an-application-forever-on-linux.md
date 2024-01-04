@@ -1,6 +1,7 @@
 ---
 date: 2023-11-10
 authors: [hermann-web]
+comments: true
 description: >
   This blog shows useful stuff to know about or learn to do as web developer or data scientist/engineer
   Always working the fastest and easiest ways toward success

@@ -1,6 +1,7 @@
 ---
 date: 2024-01-02
 authors: [hermann-web]
+comments: true
 description: >
   In the world of development, projects change and adapt to meet new needs. What begins as separate Python apps can transform into something different—a cohesive web interface with a matching backend.
 categories:

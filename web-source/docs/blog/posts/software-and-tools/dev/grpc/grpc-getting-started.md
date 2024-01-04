@@ -1,6 +1,7 @@
 ---
 date: 2023-12-31
 authors: [hermann-web]
+comments: true
 description: |
   An introductory guide to working with gRPC in Python, covering installation, testing examples, and expanding functionality through protocol buffers.
 categories:

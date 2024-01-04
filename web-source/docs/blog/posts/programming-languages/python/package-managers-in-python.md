@@ -1,6 +1,7 @@
 ---
 date: 2023-10-28
 authors: [hermann-web]
+comments: true
 description: >
   Delve into the intricacies of managing Python dependencies efficiently using pip, pipenv, poetry, and conda.
 categories:
