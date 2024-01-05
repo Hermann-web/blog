@@ -22,9 +22,7 @@ __How a solo coder turned a repo full of data scripts into a full-stack web app 
 
 In the world of development, projects tend to evolve, morphing and reshaping themselves to meet ever-changing needs and preferences. What starts as a collection of Python applications can transform into something entirely different—a cohesive web interface with a backend to match.
 
-This evolution was made possible by harnessing a comprehensive tech stack, blending various cutting-edge technologies. From Python's versatile capabilities to the rapid server prowess of FastAPI, and the dynamic front-end finesse of Next.js, every tool played a pivotal role in shaping this transformation.
-
-**Tech Stack Utilized:**
+This evolution was made possible by harnessing a comprehensive tech stack, blending various cutting-edge technologies:
 
 - **Python:** Served as the foundational language for backend logic and functionality.
 - **FastAPI:** Empowered the backend with rapid server capabilities and smooth API integration.
@@ -32,7 +30,7 @@ This evolution was made possible by harnessing a comprehensive tech stack, blend
 - **Prisma:** Efficiently managed databases, optimizing data operations and queries.
 - **Clerk:** Handled authentication and user management, ensuring secure and streamlined user experiences.
 - **Docker:** Ensured modern development practices and facilitated seamless execution across various environments.
-
+<!-- more -->
 This amalgamation of technologies enabled the evolution from fragmented Python apps to a unified, feature-rich web interface, promising an immersive user experience while optimizing efficiency and elegance in development.
 
 ## Motivation
