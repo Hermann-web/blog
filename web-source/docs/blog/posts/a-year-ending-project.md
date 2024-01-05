@@ -22,10 +22,23 @@ __How a solo coder turned a repo full of data scripts into a full-stack web app 
 
 In the world of development, projects tend to evolve, morphing and reshaping themselves to meet ever-changing needs and preferences. What starts as a collection of Python applications can transform into something entirely different—a cohesive web interface with a backend to match.
 
-## Introduction
+This evolution was made possible by harnessing a comprehensive tech stack, blending various cutting-edge technologies. From Python's versatile capabilities to the rapid server prowess of FastAPI, and the dynamic front-end finesse of Next.js, every tool played a pivotal role in shaping this transformation.
+
+**Tech Stack Utilized:**
+
+- **Python:** Served as the foundational language for backend logic and functionality.
+- **FastAPI:** Empowered the backend with rapid server capabilities and smooth API integration.
+- **Next.js:** Spearheaded the frontend development, providing dynamic and responsive user interfaces.
+- **Prisma:** Efficiently managed databases, optimizing data operations and queries.
+- **Clerk:** Handled authentication and user management, ensuring secure and streamlined user experiences.
+- **Docker:** Ensured modern development practices and facilitated seamless execution across various environments.
+
+This amalgamation of technologies enabled the evolution from fragmented Python apps to a unified, feature-rich web interface, promising an immersive user experience while optimizing efficiency and elegance in development.
+
+## Motivation
 
 At the end of 2023, in the very last 2 days, I felt a sense of completion. It was time to bring life to a project that had been waiting for attention. 
-<!-- more -->
+
 Looking back at the same time one year ago —from 2022 to 2023— I remembered working on statistical tools, learning through coding all methods i've encountered in a dedicated coursera certification. The work is open source on github at [Hermann-web/some-common-statistical-methods](https://github.com/Hermann-web/some-common-statistical-methods)
 
 In the last months of 2023, i've started this [blog](https://hermann-web.github.io/), as a mean to put on the web what tech tools i learn and how to use them. I rewrite my notes as tutorials i find interesting enough to share, in a way i would want to read them right before having tested them. 
