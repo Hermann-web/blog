@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  mkdocs-serving:
+    image: python:3.11
+    volumes:
+      - ./:/app/
+    working_dir: /app
+    ports:
+      - "49161:8000"
+    command: >
+      bash -c "
+        pip install -r requirements.txt &&
+        mkdocs serve -a 0.0.0.0:8000"
