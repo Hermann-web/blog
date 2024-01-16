@@ -35,13 +35,16 @@ So, this is a very straight forward tutorial on docker and wsl2 installation and
 <!-- - install docker [^3]: He recommend to install [docker desktop](https://docs.docker.com/desktop/install/windows-install/) -->
 
 1. **Install Docker Desktop for Windows:**
-   - Download Docker Desktop for Windows from the official Docker website: https://www.docker.com/products/docker-desktop
-   - Run the installer and follow the instructions to complete the installation.
-
-??? output "wsl installer"
-    ![](./img/install-wsl-windows10.png)
+    - Download Docker Desktop for Windows from the official Docker website: https://www.docker.com/products/docker-desktop
+    - Run the installer and follow the instructions to complete the installation.
 
 2. **Enable WSL 2:**
+
+    ??? output "Enable docker for wsl2"
+        ![](./img/wsl2-enable-docker.png)
+
+2. **Set wsl default version to 2:**
+
    - Open PowerShell as an administrator and run the following command:
      ```powershell
      wsl --set-default-version 2
@@ -50,46 +53,46 @@ So, this is a very straight forward tutorial on docker and wsl2 installation and
 <!-- more -->
 
 3. **Install a Linux Distribution:**
-   - Open the Microsoft Store app on your Windows machine.
-   - Search for a Linux distribution (e.g., Ubuntu, Debian, or Alpine) and install it.
+    - Open the Microsoft Store app on your Windows machine.
+    - Search for a Linux distribution (e.g., Ubuntu, Debian, or Alpine) and install it.
 
-??? output "Enable docker for wsl2"
-    ![](./img/wsl2-enable-docker.png)
+    ??? output "wsl installer"
+        ![](./img/install-wsl-windows10.png)
 
 6. **Configure WSL 2 as the Default WSL Version:**
-   - see the list of distro you have 
-     ```powershell
-     wsl.exe -l -v
-     ```
-   - Open PowerShell as an administrator and run the following command:
-     ```powershell
-     wsl --set-version <distribution_name> 2
-     ```
-     Replace `<distribution_name>` with the name of the Linux distribution you installed.
+    - see the list of distro you have 
+      ```powershell
+      wsl.exe -l -v
+      ```
+    - Open PowerShell as an administrator and run the following command:
+      ```powershell
+      wsl --set-version <distribution_name> 2
+      ```
+      Replace `<distribution_name>` with the name of the Linux distribution you installed.
 
 7. **Start the Linux Distribution:**
-   - Launch the Linux distribution you installed from the Start menu or by running its executable.
-   - Follow the initial setup instructions to create a user account and set a password.
+    - Launch the Linux distribution you installed from the Start menu or by running its executable.
+    - Follow the initial setup instructions to create a user account and set a password.
 
 8. **Add the Docker host configuration:**
-   - Scroll to the end of the file using the arrow keys.
-   - Add the following line:
-     ```bash
-     echo "export DOCKER_HOST=unix:///var/run/docker.sock" >> ~/.bashrc
-     ```
-   - I didn't need this one but who knows:
-     ```bash
-     # open the bashrc
-     nano ~/.bashrc
-     # add this line in the file
-     export DOCKER_HOST=tcp://localhost:2375
-     ```
+    - Scroll to the end of the file using the arrow keys.
+    - Add the following line:
+      ```bash
+      echo "export DOCKER_HOST=unix:///var/run/docker.sock" >> ~/.bashrc
+      ```
+    - I didn't need this one but who knows:
+      ```bash
+      # open the bashrc
+      nano ~/.bashrc
+      # add this line in the file
+      export DOCKER_HOST=tcp://localhost:2375
+      ```
 
 9. **Reload the updated `.bashrc` file:**
-   - Run the following command to apply the changes:
-     ```bash
-     source ~/.bashrc
-     ```
+    - Run the following command to apply the changes:
+      ```bash
+      source ~/.bashrc
+      ```
 
 10. **Verify Docker connectivity:**
     - Run the following command to check if the Docker client in WSL can connect to Docker Desktop:
