@@ -45,10 +45,10 @@ So, this is a very straight forward tutorial on docker and wsl2 installation and
 
 2. **Set wsl default version to 2:**
 
-   - Open PowerShell as an administrator and run the following command:
-     ```powershell
-     wsl --set-default-version 2
-     ```
+    - Open PowerShell as an administrator and run the following command:
+      ```powershell
+      wsl --set-default-version 2
+      ```
 
 <!-- more -->
 
@@ -119,7 +119,7 @@ That's it! You should now have Docker successfully configured and running on Win
 
 If you encounter any issues or have further questions, feel free to ask. Happy Dockerizing!
 
-### basic commands for working with wsl [^2]
+## basic commands for working with wsl [^2]
 - install wsl: ```wsl --install```
 - check list of distro (name and version): ```wsl.exe -l -v```
 - change from v1 to v2: ```wsl.exe --set-version Ubuntu 2``` [^1]
