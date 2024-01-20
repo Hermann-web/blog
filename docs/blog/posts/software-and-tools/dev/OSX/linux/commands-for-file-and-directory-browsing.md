@@ -63,10 +63,6 @@ The `grep` command searches for patterns in files.
   This command displays lines in `file.txt` that contain the specified `pattern`.
 
     ??? info "Additional `grep` options:"
-        - `-H`: Print the filename for each match when searching in multiple files.
-        ```bash
-        grep -H "pattern" file1.txt file2.txt
-        ```
 
         - `-H`: Print the filename for each match when searching in multiple files.
           ```bash
@@ -88,6 +84,11 @@ The `grep` command searches for patterns in files.
           grep -w "word" file.txt
           ```
 
+        - `-i`: Perform case-insensitive matching, ignoring differences in case when searching for the pattern.
+          ```bash
+          grep -i "pattern" file.txt
+          ```
+        
         - `-B N`: Display N lines before the matching line.
           ```bash
           grep -B 2 "pattern" file.txt
@@ -117,6 +118,7 @@ The `grep` command searches for patterns in files.
         This command prints the first field of each line in `file.txt` where the pattern is found.
 
     ??? info "Common Use Cases:"
+    
         1. **Printing Specific Columns:**
           ```bash
           awk '{ print $2, $4 }' file.txt
