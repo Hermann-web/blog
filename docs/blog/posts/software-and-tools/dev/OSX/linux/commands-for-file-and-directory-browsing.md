@@ -20,7 +20,7 @@ categories:
 
 This documentation aims to offer a comprehensive understanding of essential commands and techniques for file and directory management in a Linux environment. Mastering these commands is crucial for efficient navigation, manipulation, and analysis of files and directories.
 
-We'll embark on a journey by delving into the foundational usage of key commands like `wc`, `du`, `grep`, and `find`, uncovering their individual functionalities. Additionally, we'll explore how these commands can be combined using powerful methods such as pipes (`|`), `-exec {} \;`, or `-exec {} +`, unlocking their synergistic potential.
+We'll embark on a journey by delving into the foundational usage of key commands like `wc`, `du`, `grep`, `awk`, and `find`, uncovering their individual functionalities. Additionally, we'll explore how these commands can be combined using powerful methods such as pipes (`|`), `-exec {} \;`, or `-exec {} +`, unlocking their synergistic potential.
 
 Moreover, to solidify your understanding, real-life examples showcasing practical applications will be demonstrated. 
 
@@ -61,6 +61,108 @@ The `grep` command searches for patterns in files.
   grep "pattern" file.txt
   ```
   This command displays lines in `file.txt` that contain the specified `pattern`.
+
+    ??? info "Additional `grep` options:"
+        - `-H`: Print the filename for each match when searching in multiple files.
+        ```bash
+        grep -H "pattern" file1.txt file2.txt
+        ```
+
+        - `-H`: Print the filename for each match when searching in multiple files.
+          ```bash
+          grep -H "pattern" file1.txt file2.txt
+          ```
+
+        - `-l`: Display only the names of files that contain at least one match, instead of showing the matching lines.
+          ```bash
+          grep -l "pattern" file1.txt file2.txt
+          ```
+
+        - `-n`: Display the line numbers along with the matching lines.
+          ```bash
+          grep -n "pattern" file.txt
+          ```
+
+        - `-w`: Match the whole word, ensuring that only entire words are considered.
+          ```bash
+          grep -w "word" file.txt
+          ```
+
+        - `-B N`: Display N lines before the matching line.
+          ```bash
+          grep -B 2 "pattern" file.txt
+          ```
+
+        - `-A N`: Display N lines after the matching line.
+          ```bash
+          grep -A 2 "pattern" file.txt
+          ```
+
+        These options enhance the functionality of `grep` by providing more context, line numbers, and filename information when searching for patterns in files.
+
+### awk (Aho, Weinberger, and Kernighan)
+
+- **Basic Syntax:**
+  ```bash
+  awk 'pattern { action }' file.txt
+  ```
+  - `pattern`: The condition that a line must meet to trigger the action.
+  - `action`: The set of commands to be executed when the pattern is matched.
+
+    !!! example "Example"
+
+        ```bash
+        awk '/pattern/ { print $1 }' file.txt
+        ```
+        This command prints the first field of each line in `file.txt` where the pattern is found.
+
+    ??? info "Common Use Cases:"
+        1. **Printing Specific Columns:**
+          ```bash
+          awk '{ print $2, $4 }' file.txt
+          ```
+          This prints the second and fourth columns of each line in `file.txt`.
+
+        2. **Pattern Matching:**
+          ```bash
+          awk '/error/ { print $0 }' log.txt
+          ```
+          Prints lines containing the word "error" from the `log.txt` file.
+
+        3. **Calculations:**
+          ```bash
+          awk '{ total += $1 } END { print total }' numbers.txt
+          ```
+          Calculates and prints the sum of the values in the first column of `numbers.txt`.
+
+        4. **Custom Field and Record Separators:**
+          ```bash
+          awk -F',' '{ print $1 }' data.csv
+          ```
+          Specifies ',' as the field separator in a CSV file.
+
+
+    ??? info "Advanced Features:"
+
+        - **Variables:**
+          ```bash
+          awk '{ total += $1 } END { print "Sum:", total }' numbers.txt
+          ```
+          Uses the variable `total` to accumulate values.
+
+        - **Built-in Functions:**
+          ```bash
+          awk '{ print length($0) }' text.txt
+          ```
+          Prints the length of each line in `text.txt`.
+
+        - **Conditional Statements:**
+          ```bash
+          awk '{ if ($1 > 10) print $0 }' values.txt
+          ```
+          Prints lines where the value in the first column is greater than 10.
+
+`awk` is versatile and can be highly customized for various text processing tasks. It's especially useful for working with structured data in files.
 
 ### `head` and `tail`
 
@@ -122,6 +224,8 @@ The `find` command searches for files and directories based on various criteria.
   ```
   Searches for `filename.txt` in `/path/to/search` and its subdirectories.
 
+    !!! info "for case insensitive search, use `-iname` instead of `-name`
+
 - **Finding files matching pattern:**
   ```bash
   find /path/to/search -name "req*.txt"
@@ -156,12 +260,13 @@ The `find` command searches for files and directories based on various criteria.
   This command finds files modified within the last 7 days in the specified directory.
 
 
-### fast conclusion
+### Conclusion
 These commands offer different functionalities:
 - `wc` counts lines, words, or characters in a file.
 - `du` estimates disk usage for files and directories.
 - `grep` searches for patterns in files and prints lines containing the specified pattern.
-- the `find` command in Linux is a powerful tool used for searching files and directories based on various criteria.
+- `awk` is a powerful text processing tool for pattern scanning and processing.
+- The `find` command in Linux is a powerful tool used for searching files and directories based on various criteria.
 
 You can use these commands to perform various operations related to file content, size estimation, and pattern matching within files.
 
