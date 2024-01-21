@@ -8,6 +8,7 @@ categories:
   - devops
   - mkdocs
   - docker
+  - project-management
   - documentation
 title: "Using MkDocs with Docker: Streamlining Documentation Workflow"
 subtitle: "Simplifying Documentation Workflow with Containerization"

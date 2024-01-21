@@ -9,6 +9,7 @@ categories:
   - python
   - package-manager
   - poetry
+  - project-management
 title: "Managing Python Projects with Poetry: A Comprehensive Guide"
 ---
 

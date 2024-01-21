@@ -8,6 +8,7 @@ categories:
   - devops
   - mkdocs
   - beginners
+  - project-management
   - documentation
 title: "Getting Started with MkDocs for Documentation"
 subtitle: "MkDocs: Your Straightforward Documentation Companion"

@@ -9,6 +9,7 @@ categories:
   - python
   - package-manager
   - tools-comparison
+  - project-management
 links:
   - blog/posts/a-roadmap-for-web-dev.md
   - blog/posts/code-practices/software-licenses.md
