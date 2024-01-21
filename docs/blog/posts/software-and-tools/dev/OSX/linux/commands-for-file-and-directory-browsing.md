@@ -480,6 +480,72 @@ sudo find /home -type d -name "bin" -path "*LAStools*"
 
 !!! warning "Using `sudo` might be necessary to have permission to search directories that your user account doesn't have access to by default."
 
+### Searching for "AAA" in Files
+
+- search for "AAA" in all files
+```bash
+find . -type f -exec grep "AAA" {} \;
+```
+
+- search for "AAA" in all files with file name and line number display
+```bash
+find . -type f -exec grep -Hn "AAA" {} \;
+```
+
+Certainly! Let's integrate the additional commands into the existing explanation:
+
+```bash
+### Searching for a keyword in Files from the parent directory
+
+- search for "L337" in all files
+```bash
+find .. -type f -exec grep -Hn "L337" {} \;
+```
+
+- search for "L337" in all files with 5 lines after each match
+```bash
+find .. -type f -exec grep -Hn "L337" {} \; -A 5
+```
+
+This command will find all occurrences of "L337" in files within the parent directory and its subdirectories and display the filename, line number, and the line containing "L337", along with the five lines that follow it.
+
+### Get unique lines across files
+
+- see the unique lines common to all three files without repetitions
+
+```bash
+sort file1.txt file2.txt file3.txt | uniq -c | awk '$1 == 3 {print $2}'
+```
+
+**Alternative** 
+```bash
+sort file1.txt file2.txt file3.txt | uniq -c | awk '$1 >= 3 {print $2}'
+```
+
+- use the precedent list to filter lines from another file (`people`)
+
+```bash
+grep -f <(sort file1.txt file2.txt file3.txt | uniq -c | awk '$1 >= 3 {print $2}') ../people
+```
+
+This command will first find the unique lines common to all three files, then filter those lines using `grep -f` based on the patterns present in the specified file (in this case, the file containing sorted and unique lines from `file1.txt`, `file2.txt`, and `file3.txt`). Finally, it will display the lines that match in both sets and also contain the term `people`.
+
+### Additional Commands
+
+- extract names of females with the name 'Annabel' from the 'people' file
+```bash
+cat people | awk '$3 == "F"' | grep 'Annabel' | awk '{print $1, $2}'
+```
+
+In the project, this command filter the lines of the file `people` containing the word `Annabel` and where the person is female (3rd fiel == `F`) then use `awk` to print from the filtered file, only the first and second fields. The fields in each line are separated by a space
+
+- search for 'Annabel' in all files and extract the names of females with the name 'Annabel'
+```bash
+find . -type f -exec grep -w 'Annabel' {} \; -exec awk '$3 == "F" {print $1, $2}' {} \;
+```
+
+This command will apply the precedent operation on each file returned by the `find` command
+
 ## Conclusion
 
 These commands, when mastered and strategically combined, offer a robust toolkit for proficiently managing and manipulating files and directories in a Linux environment. By leveraging these commands in tandem, users can perform intricate searches, conduct comprehensive analyses, and execute operations swiftly, significantly enhancing productivity and workflow efficiency.
