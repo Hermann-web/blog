@@ -50,6 +50,8 @@ This command will install mongosh it you doesn't have it.
 
 For more details on installing `mongosh`, refer to the MongoDB documentation [^mongosh-install].
 
+I figured later on i can install mongodb database tools in a Dockerfile like proposed [here](https://stackoverflow.com/questions/67897212/how-to-install-mongodb-database-tools-in-a-dockerfile)
+
 ## Access a dababase from cli
 I assume you have a MongoDB deployment to connect to. You can use a free cloud-hosted deployment like MongoDB Atlas or run a local MongoDB deployment.
 
