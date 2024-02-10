@@ -21,11 +21,12 @@ title: "Simplified Logging in Python: A Practical Guide to Effective Debugging a
 
 __Are you still using print() statements for debugging in Python? Upgrade your logging game with Python's built-in logging module or the Loguru library!__
 
-<div class="float-img-container float-img-right">
-  <a title="Credit: Samyak Tamrakar." href="https://github.com/srtamrakar/python-logger/blob/master/README.md"><img alt="loguru-demo" src="https://raw.githubusercontent.com/srtamrakar/python-logger/master/docs/demo-logs.png"></a>
-</div>
 
 If you're tired of scattered print statements cluttering your codebase, it's time to embrace the power of logging in Python. Whether you're a beginner or an experienced developer, mastering logging techniques is essential for effective debugging, monitoring, and troubleshooting of your Python applications.
+
+<div align="center"><div class="simple-img-container">
+  <a  title="Credit: Samyak Tamrakar" href="https://github.com/srtamrakar/python-logger/blob/master/README.md"><img alt="logging-demo" src="https://raw.githubusercontent.com/srtamrakar/python-logger/master/docs/demo-logs.png"></a>
+</div></div>
 
 Logging in Python allows you to set different levels of logging, such as DEBUG, INFO, WARNING, ERROR, and CRITICAL. With these levels, you can control the verbosity of log messages and focus on the information relevant to your current task.
 

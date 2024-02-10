@@ -22,13 +22,11 @@ __Have you heard of gRPC, high-performance, open-source framework that allows de
 
 [gPRC](https://github.com/grpc/grpc) uses protocol buffers as its interface definition language and provides features such as bi-directional streaming and flow control.
 
-<p align="center">
-  <img src="https://grpc.io/img/landing-2.svg" alt="Description of the image" />
-</p>
+<div align="center"><div class="simple-img-container">
+  <a  title="Credit: grpc.io" href="https://github.com/srtamrakar/python-logger/blob/master/README.md"><img alt="logging-demo" src="https://grpc.io/img/landing-2.svg"></a>
+</div></div>
 
 <!-- more -->
-
-Credit: [gRPC](https://grpc.io/docs/guides/)
 
 In this blog post, we will explore how to get started with gRPC in Python using the official gRPC Python library. We will walk through a simple working example that demonstrates how to:
 

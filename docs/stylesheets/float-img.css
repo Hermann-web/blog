@@ -11,6 +11,9 @@
     } 
 }
 @media screen and (min-width: 767px) {
+    .simple-img-container {
+        width: 50%;
+    }
     .float-img-container {
         width: 30%;
     }
