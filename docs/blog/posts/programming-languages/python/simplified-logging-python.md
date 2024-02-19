@@ -32,7 +32,7 @@ Logging in Python allows you to set different levels of logging, such as DEBUG, 
 
 <!-- more -->
 
-In this comprehensive guide, we'll explore both the built-in logging module and the Loguru library, offering practical examples and best practices for seamless integration into your projects. Say goodbye to ad-hoc debugging and hello to structured and manageable logs!
+In this comprehensive guide, we'll explore both the built-in logging module and the [Loguru library](https://loguru.readthedocs.io), offering practical examples and best practices for seamless integration into your projects. Say goodbye to ad-hoc debugging and hello to structured and manageable logs!
 
 ## Advantages of Logging in Python
 
