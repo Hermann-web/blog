@@ -14,7 +14,6 @@ title: "Mastering Git Branch Handling: Strategies for Deletion and Recovery"
 
 <!-- # Managing Branches in Git: Deletion and Recovery -->
 
-
 ## Introduction
 
 __Are you looking to master the art of handling Git branches with finesse?__
@@ -43,7 +42,7 @@ git push origin --delete <branch-name>
 
 ## Deleting a Branch Online (GitHub Interface)
 
-1. **Using GitHub's Website**:
+1. __Using GitHub's Website__:
    - Go to the repository on GitHub.
    - Click on the "Branches" tab.
    - Locate the branch you want to delete.
@@ -62,14 +61,14 @@ This command fetches changes from the remote and prunes (removes) any remote-tra
 
 ## Recovering Deleted Branches
 
-If a branch was mistakenly deleted and not yet pruned, it might be recoverable. 
+If a branch was mistakenly deleted and not yet pruned, it might be recoverable.
 
 1. **Check the Reflog:**
    Use `git reflog show` to view recently deleted branches and find the one you want to restore.
 
 2. **Recover the Branch:**
    Identify the commit hash associated with the deleted branch in the reflog and create a new branch at that commit:
-   
+
    ```bash
    git checkout -b <branch-name> <commit-hash>
    ```

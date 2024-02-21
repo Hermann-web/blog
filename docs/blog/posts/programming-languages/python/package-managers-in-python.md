@@ -20,13 +20,13 @@ title: "Managing Python Dependencies: Navigating pip, pipenv, poetry, and conda"
 
 ## Introduction
 
-In the realm of Python development, a crucial aspect is managing project dependencies effectively. 
+In the realm of Python development, a crucial aspect is managing project dependencies effectively.
 
 <div class="float-img-container float-img-right">
   <a title="www.python.org, GPL &lt;http://www.gnu.org/licenses/gpl.html&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg"><img width="64" alt="Python-logo-notext" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/64px-Python-logo-notext.svg.png"></a>
 </div>
 
-This guide delves into four prominent tools—pip, pipenv, poetry, and conda—each offering distinct approaches to dependency management. 
+This guide delves into four prominent tools—pip, pipenv, poetry, and conda—each offering distinct approaches to dependency management.
 Grasping their strengths, weaknesses, and use cases empowers you to make informed decisions for your projects.
 
 <!-- more -->
@@ -80,7 +80,6 @@ Grasping their strengths, weaknesses, and use cases empowers you to make informe
 | Configuration         | requirements.txt                          | Pipfile, Pipfile.lock                       | pyproject.toml                               | Environment files                           |
 | Official packages  | PyPI (Python Package Index)                | PyPI                                       | PyPI                                        | Conda Forge (conda-forge channel)            |
 
-
 ## Common Commands
 
 | Feature               | pip                                       | pipenv                                    | poetry                                      | conda                                       |
@@ -96,11 +95,9 @@ Grasping their strengths, weaknesses, and use cases empowers you to make informe
 | **Install from lock file** | N/A                                   | `pipenv install --ignore-pipfile`           | `poetry install --no-dev` (reads from pyproject.toml.lock) | `conda install --file environment.yml`       |
 | **Delete the venv**   | Remove directory manually                  | `pipenv --rm`                              | `poetry env remove <env-name>`              | `conda remove --name <env-name> --all`      |
 
-
-
 !!! note "Remember !"
     As you wrap up your exploration of Python's dependency management tools, remember:
-    
+
     - **Consistency:** Maintain a uniform approach within a project for easier maintenance.
     - **Descriptive Naming:** Use clear and informative names for environments and dependencies.
     - **Thorough Testing:** Ensure compatibility and functionality after dependency changes.
@@ -113,4 +110,3 @@ Congratulations! You've now equipped yourself with insights into managing Python
 Stay proactive in exploring and adapting these tools to optimize your Python development experience!
 
 ## Related Links
-

@@ -25,8 +25,6 @@ tags:
   - phpMyAdmin
 ---
 
-# Laravel Project Setup Guide
-
 This guide provides step-by-step instructions to set up a Laravel project on your local environment using XAMPP. If you encounter any issues, please refer to the version details provided below for context and troubleshooting.
 
 ## Introduction
@@ -70,13 +68,16 @@ Each section is designed to streamline your Laravel setup process, ensuring you 
 ## Installation Steps
 
 ### Install XAMPP
+
 XAMPP is a free and open-source cross-platform web server solution stack package developed by Apache Friends, consisting mainly of the Apache HTTP Server, MariaDB database, and interpreters for scripts written in the PHP and Perl programming languages.
 
 - Download from the website: [XAMPP Download Page](https://www.apachefriends.org/download.html)
 - Put the folder `C:\xampp\php` (or equivalent) in the variables environment
 
 ### Install Composer (PHP Dependency Manager)
+
 Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage them for you.
+
 ```bash
 # Download the Composer installer for Windows: link found at https://getcomposer.org/doc/00-intro.md
 curl -O https://getcomposer.org/Composer-Setup.exe
@@ -86,31 +87,38 @@ start Composer-Setup.exe
 ```
 
 ### Install Node.js and npm (Node Package Manager)
+
 Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. npm is the default package manager for Node.js.
 
-- Download the Node.js (`node 20` preferably) installer for Windows from the official website: https://nodejs.org/
+- Download the Node.js (`node 20` preferably) installer for Windows from the official website: <https://nodejs.org/>
 - Run the Node.js installer (this will also install npm).
 
 ## Setup a laravel project: case of lavsms
 
 ### Run XAMPP
+
 XAMPP is used to provide a local server environment to run your Laravel application.
 
 - Start the XAMPP GUI application.
 - Launch the Apache web server and MySQL database server.
 - Create a new database named `lavsms` using phpMyAdmin or another MySQL client.
+
     ```bash
     mysql -u your_username -p -e "CREATE DATABASE lavsms;"
     ```
 
 ### Database Configuration
+
 Configure the database settings for your Laravel application.
 
 - Create an environment (`.env`) file by making a copy of the example file:
+
     ```bash
     cp .env.example .env
     ```
+
 - Modify the database connection settings in the `.env` file to match your XAMPP setup:
+
     ```dotenv
     DB_DATABASE=lavsms
     DB_USERNAME=root
@@ -118,7 +126,9 @@ Configure the database settings for your Laravel application.
     ```
 
 ### Install Project Dependencies
+
 Install the necessary dependencies for your Laravel project.
+
 ```bash
 # Navigate to the project directory
 cd path/to/project
@@ -134,7 +144,9 @@ npm install
 ```
 
 ### Build
+
 Perform necessary build steps for your Laravel application.
+
 ```bash
 # Generate an application key
 php artisan key:generate
@@ -147,7 +159,9 @@ php artisan storage:link
 ```
 
 ### Build Db
+
 Prepare and set up your database for the Laravel application.
+
 ```bash
 # Run database migrations to create database tables
 php artisan migrate
@@ -157,43 +171,48 @@ php artisan db:seed
 ```
 
 ### Run Development
+
 Start the development server for your Laravel application.
+
 ```bash
 # Start the Laravel development server
 php artisan serve
 ```
 
 ## (Bonus) A Comparison: Laravel (PHP) vs. Django (Python) MVC-like Architecture
+>
 > A brief comparison of Laravel's architecture to Django's MVC pattern.
 
 Both Laravel (PHP) and Django (Python) frameworks use a MVC-like architecture. Here are the analogies.
 
 ### Laravel (PHP)
+
 - **Routes**: Defined in `routes/web.php`.
-    - Invokes PHP controllers.
-    - Calls `resources\views\partials\js\custom_js.blade.php` (JavaScript) on form submission, writing to the console.
+  - Invokes PHP controllers.
+  - Calls `resources\views\partials\js\custom_js.blade.php` (JavaScript) on form submission, writing to the console.
 - **Serializers**: Located in `app/http/requests`.
-    - Used in controllers for data validation.
+  - Used in controllers for data validation.
 - **Controllers**: Found in `app/http/controllers`.
-    - Utilizes serializers automatically for data validation.
-    - Uses models for CRUD operations.
-    - Returns `parse(a_view, data_for_client)` similar to Django.
+  - Utilizes serializers automatically for data validation.
+  - Uses models for CRUD operations.
+  - Returns `parse(a_view, data_for_client)` similar to Django.
 - **Models**: Reside in `app/models`.
-    - Utilized in controllers for CRUD operations.
+  - Utilized in controllers for CRUD operations.
 - **Views (Blade)**: Located in `resources/views`.
-    - Similar to PHP-client in Django, handling the presentation layer.
+  - Similar to PHP-client in Django, handling the presentation layer.
 
 ### Django (Python)
+
 - **URL Patterns**: Defined in `urls.py`.
-    - Maps to Python views.
-    - Handles HTTP requests and defines the view functions.
+  - Maps to Python views.
+  - Handles HTTP requests and defines the view functions.
 - **Serializers**: Often part of Django REST framework in Python.
-    - Used for serialization and deserialization of data.
+  - Used for serialization and deserialization of data.
 - **Views**: Python files corresponding to the application's logic.
-    - Utilizes serializers for data validation.
-    - Performs database operations and returns rendered templates.
+  - Utilizes serializers for data validation.
+  - Performs database operations and returns rendered templates.
 - **Models**: Represented as Python classes in `models.py`.
-    - Represents the application's data structure.
-    - Interacts with the database via Django's ORM.
+  - Represents the application's data structure.
+  - Interacts with the database via Django's ORM.
 - **Templates**: HTML files residing in `templates` directory.
-    - Renders the user interface based on data provided by views.
+  - Renders the user interface based on data provided by views.

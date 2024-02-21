@@ -14,7 +14,7 @@ title: "Managing Local Modifications and Remote Changes in Git"
 
 ## Introduction
 
-Git is, without discussion, a powerful version control system that enables collaborative development. 
+Git is, without discussion, a powerful version control system that enables collaborative development.
 
 __Ever found yourself in a twist trying to mix changes you made with updates from others in Git?__
 
@@ -31,13 +31,12 @@ Indeed, when local modifications clash with remote changes, navigating these con
 
 <!-- more -->
 
-*by Johnson Huang &lt;https://github.com/jshuang0520/git>*
+*by Johnson Huang &lt;<https://github.com/jshuang0520/git>>*
 
 <!-- 
 <a title="Johnson Huang &lt;https://github.com/jshuang0520/git" href="https://www.jeffirwin.xyz/posts/resources/git-transport-cmds.svg"><img width="512" alt="Git Data Transport Diagram" src="https://www.jeffirwin.xyz/posts/resources/git-transport-cmds.svg"></a> -->
 
 <!-- <a title="Johnson Huang &lt;https://github.com/jshuang0520/git" href="https://www.jeffirwin.xyz/posts/resources/git-transport-cmds.svg"><img width="512" alt="Git Data Transport Diagram" src="/web/blog/posts/software-and-tools/dev/version-control/git/assets/git-sync-diagram.png"></a> -->
-
 
 ## Options for Handling Local and Remote Changes in Git
 
@@ -49,7 +48,7 @@ If no conflicts exist between your local changes and the remote changes, use:
 
 ```bash
 git pull --rebase
-``` 
+```
 
 - This command integrates your commits after the remote commits, making it seem as if your changes were made after the remote changes.
 - Manual resolution is required if conflicts arise during the rebase process.
@@ -80,12 +79,14 @@ In this scenario:
 - There's no predetermined order or priority between your local commits and the remote commits.
 - Git combines changes from your local repository and the remote commits into a single commit.
 
-You set the default pulling as no-rebase with 
+You set the default pulling as no-rebase with
+
 ```bash
 git config pull.rebase false
 ```
 
-You pull with the no-rebase option with 
+You pull with the no-rebase option with
+
 ```bash
 git pull --no-rebase
 ```
@@ -114,12 +115,14 @@ In this scenario:
 - If no remote commits exist, it adds your commits seamlessly.
 - However, conflicts prompt resolution when remote commits are present.
 
-You set the default pulling as no-rebase with 
+You set the default pulling as no-rebase with
+
 ```bash
 git config pull.ff only
 ```
 
-You pull with the fast-forward option with 
+You pull with the fast-forward option with
+
 ```bash
 git pull --ff-only
 ```
@@ -186,9 +189,8 @@ git push --force origin feature-branch
 - Risks losing or overwriting others' work, disrupting collaboration.
 - Requires careful coordination within the team.
 
-
-
 ## Conclusion
+
 Choosing the right Git approach involves understanding the implications and trade-offs associated with each method. Experimenting with these options within the context of your team's workflow helps determine the most suitable approach for a smoother collaborative Git environment.
 
 !!! note "Play it safe !"

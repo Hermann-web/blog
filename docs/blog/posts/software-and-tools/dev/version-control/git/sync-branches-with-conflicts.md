@@ -26,7 +26,6 @@ Git offers two primary trails: the __rebase__, known for its clean and linear hi
 
 So, this document provides guidance on using Git merge strategies, specifically focusing on the rebase and merge options.
 
-
 <!-- more -->
 
 ### Rebase: Creating a Linear History
@@ -35,7 +34,9 @@ So, this document provides guidance on using Git merge strategies, specifically 
 git checkout feature-branch
 git pull --rebase origin main
 ```
+
 or
+
 ```bash
 git fetch origin main 
 git checkout feature-branch
@@ -67,32 +68,35 @@ git rebase --continue
 
 Visual Studio Code (VSCode) offers a user-friendly interface to resolve conflicts during a rebase operation. Follow these steps within the VSCode environment:
 
-1. **Start the Rebase:** Execute the rebase command in your terminal:
+1. __Start the Rebase:__ Execute the rebase command in your terminal:
+
    ```bash
    git rebase <branch_name>
    ```
+
    This command initiates the rebase process.
 
-2. **Conflict Indication:** When conflicts occur, VSCode visually highlights them within the editor. You'll notice markers indicating the conflicted sections.
+2. __Conflict Indication:__ When conflicts occur, VSCode visually highlights them within the editor. You'll notice markers indicating the conflicted sections.
 
-3. **Resolve Conflicts:** Navigate to the conflicted file(s) in VSCode. Locate the sections marked as conflicted, displaying both versions of the conflicting changes. 
+3. __Resolve Conflicts:__ Navigate to the conflicted file(s) in VSCode. Locate the sections marked as conflicted, displaying both versions of the conflicting changes.
 
-4. **Choose Resolution:** Review the changes and decide which version to keep or edit the content to create a resolution. Remove conflict markers (<<<<<<<, =======, >>>>>>>) once the conflict is resolved.
+4. __Choose Resolution:__ Review the changes and decide which version to keep or edit the content to create a resolution. Remove conflict markers (<<<<<<<, =======, >>>>>>>) once the conflict is resolved.
 
-5. **Stage Changes:** After resolving conflicts in each file, stage the changes using the Source Control panel in VSCode.
+5. __Stage Changes:__ After resolving conflicts in each file, stage the changes using the Source Control panel in VSCode.
 
-6. **Continue Rebase:** Once conflicts are resolved and staged, return to your terminal and continue the rebase:
+6. __Continue Rebase:__ Once conflicts are resolved and staged, return to your terminal and continue the rebase:
+
    ```bash
    git rebase --continue
    ```
+
    This command proceeds with the rebase process using the resolved changes.
 
 VSCode streamlines the conflict resolution process by providing a visual and intuitive interface, making it easier to handle conflicts during a rebase operation.
 
-
 ## Merge: Preserving Branch Narratives
 
-Using `merge` in Git combines changes from different branches, preserving their individual commit histories. This method creates a new commit to capture the integration of changes from one branch into another. 
+Using `merge` in Git combines changes from different branches, preserving their individual commit histories. This method creates a new commit to capture the integration of changes from one branch into another.
 
 **Pros:**
 
@@ -130,6 +134,7 @@ Upon executing this command, Git will merge the changes from `branchA` into `bra
 Git provides various merge strategies such as `recursive`, `octopus`, and `resolve`, each with its own approach to handling merges. Choosing the right strategy depends on the project's requirements and the nature of changes between branches.
 
 ## Conclusion
+
 As we conclude this journey through Git's merge strategies, remember the beauty lies in choice. Rebase crafts a linear tale, while merge celebrates branch narratives. The decision depends on your project's needs and the story you wish to tell.
 
 Experiment, explore, and harness the power of Git's merging artistry to sculpt your repository's history. Beyond rebase and merge, Git unveils a treasure trove of strategies, offering endless possibilities for your collaborative coding adventure.

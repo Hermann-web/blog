@@ -35,7 +35,7 @@ While conventional methods like Flask and Frozen-Flask failed, the journey led t
 
 My first inclination was to use HTML for redirection. To redirect only one page, a simple HTML script could be used. For instance:
 
-!!! Example  "Using HTML for Single Page Redirect"
+!!! example  "Using HTML for Single Page Redirect"
 
     ```html
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -62,7 +62,7 @@ Next, I explored Flask and Frozen-Flask, but challenges arose when dealing with 
 
 ### First Attempts with Flask
 
-??? Note "Prerequisites"
+??? note "Prerequisites"
 
     Before diving into the implementation, I set up the development environment with the following commands:
 
@@ -76,13 +76,13 @@ Next, I explored Flask and Frozen-Flask, but challenges arose when dealing with 
     wget https://raw.githubusercontent.com/Hermann-web/blog/gh-pages/sitemap.xml
     ```
 
-After environment setup, I've created three python files 
+After environment setup, I've created three python files
 
 - `utils.py` to parse the sitemap.xml file and extract the necessary endpoints
 - `app.py` responsible for handling the redirection logic
 - `main.py` convert the Flask app into a static website using `frozen-flask` module
 
-??? Example "First Attemps with Flask"
+??? example "First Attemps with Flask"
 
     === ":octicons-file-code-16: `utils.py`"
 
@@ -182,14 +182,13 @@ This makes sense. A static webpage cannot accept dynamic endpoints. So, I should
 
 So, i've tried some workarounds
 
-
 ## Workarounds with Flask
 
 ### Workaround 1: Manually Creating Routes
 
 However, failed. The issue was that I should not have duplicated function names for the routes:
 
-??? Example "Manually Creating Routes"
+??? example "Manually Creating Routes"
 
     ```python
     from flask import Flask, redirect
@@ -228,7 +227,7 @@ There is another solution that involves encapsulating the route functions within
 
 Another solution can be to change the function name with a decorator, but it is not possible. So, I figured I can define the functions inside another function, hoping it will work.
 
-??? Example "Dynamic Function Generation"
+??? example "Dynamic Function Generation"
 
     ```python
     def generate_endpoint(endpoint):
@@ -281,4 +280,3 @@ I noticed that all erroneous URLs redirect the user to the `404.html` page. For 
 ## Conclusion
 
 In this guide, we explored a step-by-step approach to redirecting all pages from one domain to another using Flask and Frozen-Flask. From parsing the `sitemap.xml` file to handling dynamic endpoints and overcoming static constraints, each aspect was covered in detail. The use of a custom `404.html` page with JavaScript ensures a smooth redirection experience for users, making this solution both effective and elegant.
-

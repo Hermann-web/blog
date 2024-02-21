@@ -34,31 +34,30 @@ This straightforward platform simplifies the process of generating professional 
 
 This guide is your gateway to exploring MkDocs' user-friendly approach. You'll uncover how this tool streamlines the creation of polished and organized documentation for all your projects. Let's dive in and harness MkDocs' straightforwardness for your documentation needs.
 
-
 <!-- more -->
 
 ## Comparing Documentation Tools
 
 When it comes to documenting projects, various tools offer unique features and complexities. Let's explore a few:
 
-- **Sphinx**: Known for its robustness and flexibility, Sphinx is powerful but can be intricate for beginners due to its configuration requirements.
+- __Sphinx__: Known for its robustness and flexibility, Sphinx is powerful but can be intricate for beginners due to its configuration requirements.
 
-- **Docusaurus**: Ideal for creating user-centric documentation with React, but might feel overwhelming for those unfamiliar with JavaScript frameworks.
+- __Docusaurus__: Ideal for creating user-centric documentation with React, but might feel overwhelming for those unfamiliar with JavaScript frameworks.
 
-- **GitBook**: Offers a user-friendly interface, yet its extensive feature set might be more than needed for straightforward documentation needs.
+- __GitBook__: Offers a user-friendly interface, yet its extensive feature set might be more than needed for straightforward documentation needs.
 
-- **MkDocs**: Unlike some other tools, MkDocs stands out for its simplicity. It's based on Markdown, a plain text format, making it incredibly easy to use. With MkDocs, creating professional documentation feels straightforward and hassle-free.
+- __MkDocs__: Unlike some other tools, MkDocs stands out for its simplicity. It's based on Markdown, a plain text format, making it incredibly easy to use. With MkDocs, creating professional documentation feels straightforward and hassle-free.
 
 ## MkDocs: Embracing Simplicity
 
 MkDocs adopts Markdown, a plain text format widely accessible and intuitive for beginners. Its minimalistic approach enables users to focus on content creation without getting lost in complex configurations.
 
-### Features of MkDocs:
+### Features of MkDocs
 
-- **Simple Configuration**: MkDocs requires minimal setup, with a straightforward configuration file.
-- **User-Friendly**: Its Markdown-based structure simplifies content creation for all levels of users.
-- **Live Preview**: Offers a live preview of documentation, ensuring instant visual feedback.
-- **Extensibility**: While basic, MkDocs supports various themes and plugins for enhanced functionality.
+- __Simple Configuration__: MkDocs requires minimal setup, with a straightforward configuration file.
+- __User-Friendly__: Its Markdown-based structure simplifies content creation for all levels of users.
+- __Live Preview__: Offers a live preview of documentation, ensuring instant visual feedback.
+- __Extensibility__: While basic, MkDocs supports various themes and plugins for enhanced functionality.
 
 MkDocs excels in providing a straightforward and efficient way to create professional documentation without overwhelming users with unnecessary complexities. It's the perfect choice for those seeking a quick and easy documentation solution.
 
@@ -66,7 +65,7 @@ MkDocs excels in providing a straightforward and efficient way to create profess
 
 MkDocs simplifies the process of creating documentation for your Python projects. Follow these steps to create a documentation site using MkDocs:
 
-### 1. **Install MkDocs**:
+### 1. __Install MkDocs__
 
 Install MkDocs by running the following command in your terminal:
 
@@ -74,7 +73,7 @@ Install MkDocs by running the following command in your terminal:
 pip install mkdocs
 ```
 
-### 2. **Set Up Your Project**:
+### 2. __Set Up Your Project__
 
 Create a new directory for your project and initialize an MkDocs project:
 
@@ -86,7 +85,7 @@ mkdocs new .
 
 This creates a new `mkdocs.yml` configuration file and a `docs` directory with a sample Markdown file.
 
-### 3. **Install a Theme**:
+### 3. __Install a Theme__
 
 Enhance your documentation's appearance by installing a theme like [`mkdocs-material`](https://github.com/squidfunk/mkdocs-material):
 
@@ -94,29 +93,31 @@ Enhance your documentation's appearance by installing a theme like [`mkdocs-mate
 pip install mkdocs-material
 ```
 
-### 4. **Configure Your Site**:
+### 4. __Configure Your Site__
 
 Edit the `mkdocs.yml` file to configure your documentation site. Define the title, theme, and pages to include. Check [examples](https://github.com/boisgera/pandoc/blob/master/mkdocs.yml).
 
 - Configure `docs_dir` to specify the folder where MkDocs will find `.md` files.
 - Use the `nav` section to structure your files into tabs.
 
-### 5. **Write Documentation**:
+### 5. __Write Documentation__
 
 Create your documentation in Markdown format and save the files in the `docs` directory.
 
-### 6. **Preview Your Site**:
+### 6. __Preview Your Site__
 
 To preview your site locally, run:
 
 ```bash
 mkdocs serve
 ```
+
 This will start a local web server and open your documentation site in your default web browser. You can make changes to your documentation and the site will automatically update.
 
-### 7. **(optional) More options**:
+### 7. __(optional) More options__
 
 You can add more options. For example,
+
 ```bash
 mkdocs serve --dirty -a localhost:8001
 ```
@@ -129,7 +130,7 @@ mkdocs serve --dirty -a localhost:8001
 !!! warning "warning"
     `A 'dirty' build [...] will likely lead to inaccurate navigation and other links within your site. This option is designed for site development purposes only.`, mkdocs
 
-### 8. **Build Your Site**:
+### 8. __Build Your Site__
 
 Generate a static HTML site by running:
 

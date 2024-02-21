@@ -24,22 +24,22 @@ In the world of development, projects tend to evolve, morphing and reshaping the
 
 This evolution was made possible by harnessing a comprehensive tech stack, blending various cutting-edge technologies:
 
-- **Python:** Served as the foundational language for backend logic and functionality.
-- **FastAPI:** Empowered the backend with rapid server capabilities and smooth API integration.
-- **Next.js:** Spearheaded the frontend development, providing dynamic and responsive user interfaces.
-- **Prisma:** Efficiently managed databases, optimizing data operations and queries.
-- **Clerk:** Handled authentication and user management, ensuring secure and streamlined user experiences.
-- **Docker:** Ensured modern development practices and facilitated seamless execution across various environments.
+- __Python:__ Served as the foundational language for backend logic and functionality.
+- __FastAPI:__ Empowered the backend with rapid server capabilities and smooth API integration.
+- __Next.js:__ Spearheaded the frontend development, providing dynamic and responsive user interfaces.
+- __Prisma:__ Efficiently managed databases, optimizing data operations and queries.
+- __Clerk:__ Handled authentication and user management, ensuring secure and streamlined user experiences.
+- __Docker:__ Ensured modern development practices and facilitated seamless execution across various environments.
 <!-- more -->
 This amalgamation of technologies enabled the evolution from fragmented Python apps to a unified, feature-rich web interface, promising an immersive user experience while optimizing efficiency and elegance in development.
 
 ## Motivation
 
-At the end of 2023, in the very last 2 days, I felt a sense of completion. It was time to bring life to a project that had been waiting for attention. 
+At the end of 2023, in the very last 2 days, I felt a sense of completion. It was time to bring life to a project that had been waiting for attention.
 
 Looking back at the same time one year ago —from 2022 to 2023— I remembered working on statistical tools, learning through coding all methods i've encountered in a dedicated coursera certification. The work is open source on github at [Hermann-web/some-common-statistical-methods](https://github.com/Hermann-web/some-common-statistical-methods)
 
-In the last months of 2023, i've started this [blog](https://hermann-web.github.io/), as a mean to put on the web what tech tools i learn and how to use them. I rewrite my notes as tutorials i find interesting enough to share, in a way i would want to read them right before having tested them. 
+In the last months of 2023, i've started this [blog](https://hermann-web.github.io/), as a mean to put on the web what tech tools i learn and how to use them. I rewrite my notes as tutorials i find interesting enough to share, in a way i would want to read them right before having tested them.
 
 Before that, i've created an application that has an api, a frontend view then on top of it, a python module that gave birth to a cli tool. I've written a [tutorial about it showing how i build it brick by brick](https://hermann-web.github.io/web/blog/2023/11/14/flask-based-file-hosting-web-app-api-python-module-cli-app/?h=flask) and it also open source on github at [Hermann-web/simple-file-hosting-with-flask](https://github.com/Hermann-web/simple-file-hosting-with-flask)
 
@@ -55,8 +55,8 @@ However, as the collection grew further, the need for organization became appare
 
 ## The Resurrection of Dev Notes: Markdown, MkDocs, and Docker
 
-This restructuring revelation extended beyond just applications. 
-I figured i've gone through a similar for my development notes. These notes—ranging from syntax references to frequently used functions and tutorials—were upgraded significantly. 
+This restructuring revelation extended beyond just applications.
+I figured i've gone through a similar for my development notes. These notes—ranging from syntax references to frequently used functions and tutorials—were upgraded significantly.
 Migrating from plain text to Markdown format, these notes underwent a transformation. Leveraging the prowess of MkDocs and Docker, these notes metamorphosed into a [dynamic web application, offering a seamless browsing experience](https://hermann-web.github.io/web/blog/2023/12/25/using-mkdocs-with-docker-streamlining-documentation-workflow).
 This gave me an idea for my small python projects too.
 
@@ -74,11 +74,12 @@ With prior experience in FastAPI, integrating one of my Python projects as start
 
 I opted for poetry for dependency management, though encountered a hiccup when it failed to create a virtual environment. Resorting to traditional methods to create one, I used poetry to manage packages.
 
-Then, i've added my packages with poetry: fastapi and uvicorn. then, black and isort, as dev dependencies. In comparison to pip, poetry or pipenv let you separate dev dependencies and you can ever group dependencies or add command to be run with poetry. 
+Then, i've added my packages with poetry: fastapi and uvicorn. then, black and isort, as dev dependencies. In comparison to pip, poetry or pipenv let you separate dev dependencies and you can ever group dependencies or add command to be run with poetry.
 
-!!! Note "See more on [python package managers practical comparison here](https://hermann-web.github.io/web/blog/2023/10/28/managing-python-dependencies-navigating-pip-pipenv-poetry-and-conda/)"
+!!! note "See more on [python package managers practical comparison here](https://hermann-web.github.io/web/blog/2023/10/28/managing-python-dependencies-navigating-pip-pipenv-poetry-and-conda/)"
 
 Despite encountering issues, tweaking the `pyproject.toml` scripts addressed the obstacles.
+
 ```toml
 # [tool.poetry.scripts]
 # format = "isort . && black ."
@@ -97,10 +98,10 @@ The existing endpoints are operational, and to ensure smooth integration before 
 
 ## Embracing Docker for Modernization
 
-Docker-compose emerged as my choice for modern development practices and to ensure seamless project execution across different environments. After locally testing the API with uvicorn, I streamlined the setup, crafting a `docker-compose.yml` file. 
-
+Docker-compose emerged as my choice for modern development practices and to ensure seamless project execution across different environments. After locally testing the API with uvicorn, I streamlined the setup, crafting a `docker-compose.yml` file.
 
 Before creating the `docker-compose.yml`, i've exported my requirements into a file so i could use pip instead of poetry inside the container
+
 ```bash
 poetry export -f requirements.txt --output requirements.txt --without-hashes
 ```
@@ -136,20 +137,18 @@ Choosing to build a bespoke tool, I commenced with a command to create a Next.js
 
 ## Navigating the UI Dilemma
 
-In my quest to fashion a unique frontend, fate introduced me to [DevToolboxWeb](https://github.com/YourAverageTechBro/DevToolboxWeb), a project resonating with my aspirations. 
+In my quest to fashion a unique frontend, fate introduced me to [DevToolboxWeb](https://github.com/YourAverageTechBro/DevToolboxWeb), a project resonating with my aspirations.
 
-Despite deliberations on building from scratch, leveraging their UI became my choice for multiple reasons: 
+Despite deliberations on building from scratch, leveraging their UI became my choice for multiple reasons:
 
 - An opportunity to contribute to an interesting open source project
 - If i were to build from scratch, I would have done it like them
 - I was on a clock ! And i prefer build-from-template over build-from-scratch when it comes to frontend
 
-
 ## Merging Frontend and Backend
 
 While DevToolboxWeb's UI aligned with my vision, it lacked a backend—a void I intended to fill. Forking their repository, I ventured into integrating my FastAPI backend with their feature-rich UI, striving for a synergy of functionality and aesthetics.
 That's why i've created [a fork of their code](https://github.com/Hermann-web/DevToolboxWeb) and add a server into it.
-
 
 ### Integrating FastAPI and Next.js
 

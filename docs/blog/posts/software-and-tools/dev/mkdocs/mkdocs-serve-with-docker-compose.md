@@ -48,6 +48,7 @@ Before starting, make sure you have the following files in the same directory:
 5. Optionally, a `.dockerignore` file to exclude unnecessary files from the Docker image
 
   For example,
+
   ```.dockerignore
   venv/
   ```

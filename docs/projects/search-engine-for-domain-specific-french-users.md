@@ -10,14 +10,14 @@ The objective is to create a search engine that take as input, a user query and 
 Parsing both the user query and the document in a same comparison space is a must. We use a projection in a vector space after common NLP tasks as tokenisation, stop word removal, lemmatization correction.
 Finally, unlike english as a standard for common NLP projects, we use tools that worked very well with french texts.
 
-
 <p class="ia ib cs ax id b ie me ig mf mg mh mi mj mk ml io gj" data-selectable-paragraph="">In this post, we will be building a <strong class="id iq">semantic documents search engine</strong></p>
 
 ## Prerequistes
-*   Python >=3.7
-*   NLTK
-*   Pandas
-*   Scikit-learn
+
+* Python >=3.7
+* NLTK
+* Pandas
+* Scikit-learn
 
 ## Imports
 
@@ -51,10 +51,10 @@ nltk.download('stopwords')
 ```
 
 ## data
+
 Files used in the notebook are stored in the folder [data](https://github.com/Hermann-web/Search-engine-with-python-nlp/tree/main/data) of the repository
 
-
-## **1: Créer les keywords à partir d'une phrase 
+## **1: Créer les keywords à partir d'une phrase
 
 > en se basant sur les mots d'un dictionnaire et un corpus de texte en passant par la tokenization, la correction, la lemmatization et le removeStopWords**
 
@@ -120,7 +120,6 @@ def pre_process(sentence):
 
 ### correction des mots
 
-
 ```python
 def edits1(word):
     "All edits that are one edit away from `word`."
@@ -163,7 +162,6 @@ WORDS,CORRECTION = DICO_ET_CORRECTEUR()
 
 ### stopwords et stemming(premier exemple)
 
-
 ```python
 ## stopwords #//https://www.ranks.nl/stopwords/french
 with open('stp_words_.txt','r') as f:
@@ -197,105 +195,88 @@ def SENTENCE_TO_CORRECT_WORDS(sentence):
     return liste_words
 ```
 
+??? example "SENTENCE_TO_CORRECT_WORDS usage"
 
+    ```python
+    SENTENCE_TO_CORRECT_WORDS('La PR reste au statut «\xa0Approuve(e)\xa0» et il n’y a pas de commande\"\'')
+    ```
 
+    ```plaintext
+    ------------pre_process--------
+    ['reste', 'statut', 'approuve', 'n’y', 'pas', 'commande']
 
-### Test: SENTENCE_TO_CORRECT_WORDS
+    ------------correction--------
+    ['reste', 'statut', 'approuve', 'non', 'pas', 'commande']
 
+    ------------stemming--------
+    ['rester', 'statut', 'approuver', 'non', 'pas', 'commander']
 
-```
-SENTENCE_TO_CORRECT_WORDS('La PR reste au statut «\xa0Approuve(e)\xa0» et il n’y a pas de commande\"\'')
-```
+    ------------remove stop-words--------
+    ['rester', 'statut', 'approuver', 'commander']
 
+    -------------------------------------
+    ['rester', 'statut', 'approuver', 'commander']
 
-
-**Output**
-
-
-```
-------------pre_process--------
-['reste', 'statut', 'approuve', 'n’y', 'pas', 'commande']
-
-------------correction--------
-['reste', 'statut', 'approuve', 'non', 'pas', 'commande']
-
-------------stemming--------
-['rester', 'statut', 'approuver', 'non', 'pas', 'commander']
-
-------------remove stop-words--------
-['rester', 'statut', 'approuver', 'commander']
-
--------------------------------------
-['rester', 'statut', 'approuver', 'commander']
-
-```
-
-
-
-
-
-
-
+    ```
 
 ## **Create dataset**
 
-```python
-def open_file(textdir):
-  found = False
-  try:texte = open(textdir,'r',encoding="utf-8").read();found=True
-  except:pass
-  try: texte = open(textdir,'r').read();found=True 
-  except: pass
-  if not found:
-    texte = open(textdir,'r',encoding='cp1252').read();found=True
-  return  texte
-def add_col(df_news,titre,keywords):
-  return df_news.append(dict(zip(df_news.columns,[titre, keywords])), ignore_index=True)
+??? code "Create dataset"
 
-liste_pb = [elt for elt in open_file('liste_pb_.txt').split('\n') if elt]
-df_new = df_news.drop(df_news.index)
-for i,titre in enumerate(liste_pb):
-  keywords = ','.join(SENTENCE_TO_CORRECT_WORDS(titre))
-  df_new = add_col(df_new,titre,keywords)
-df_new.head()
+    ```python
+    def open_file(textdir):
+    found = False
+    try:texte = open(textdir,'r',encoding="utf-8").read();found=True
+    except:pass
+    try: texte = open(textdir,'r').read();found=True 
+    except: pass
+    if not found:
+        texte = open(textdir,'r',encoding='cp1252').read();found=True
+    return  texte
+    def add_col(df_news,titre,keywords):
+    return df_news.append(dict(zip(df_news.columns,[titre, keywords])), ignore_index=True)
 
-```
+    liste_pb = [elt for elt in open_file('liste_pb_.txt').split('\n') if elt]
+    df_new = df_news.drop(df_news.index)
+    for i,titre in enumerate(liste_pb):
+    keywords = ','.join(SENTENCE_TO_CORRECT_WORDS(titre))
+    df_new = add_col(df_new,titre,keywords)
+    df_new.head()
 
-**Output**
+    ```
 
-```
- 	                   Subject 	                                  Clean_Keyword
-0 	Message d'erreur : "Le fournisseur ARIBA n'exi... 	message,erreur,fournisseur,aria,exister
-1 	Message d'erreur : "Commande d’article non aut... 	message,erreur,commander,article,autoriser,oto
-2 	Message d'erreur : "Statut utilisateur FERM ac... 	message,erreur,statut,utilisateur,actif,oto
-3 	Message d'erreur : "Statut systeme TCLO actif ... 	message,erreur,statut,systeme,col,actif,nord
-4 	Message d'erreur "___ Cost center change could... 	message,erreur,coat,centrer,changer,cold,affecter
-5 	Messaeg d'erreur "___ OTP change could not be ... 	message,erreur,otp,changer,cold,affecter
-6 	Messaeg d'erreur "Entrez Centre de couts" 	        message,erreur,entrer,centrer,cout
-7 	Message d'erreur "Indiquez une seule imputatio... 	message,erreur,indiquer,imputation,statistique
-8 	Message d'erreur "Imputations CO ont des centr... 	message,erreur,imputation,centrer,profit
-9 	Message d'erreur "Poste ___ Ordre ___ depassem... 	message,erreur,poster,ordre,depassement,budget
-10 	Message d'erreur "Entrez une quantite de comma... 	message,erreur,entrer,quantite,commander
-11 	Message d'erreur "Indiquez la quantite" 	        message,erreur,indiquer,quantite
-12 	Message d'erreur "Le prix net doit etre superi... 	message,erreur,prix,net,superieur
-... 	... 	...
-... 	... 	...
-... 	... 	...
-57 	UO4-5 Commande | Envoi d'une commande manuelle 	uo4,commander,envoi,commander,manuel
-58 	UO5-4 Reception | Anomalie workflow 	uo5,reception,anomalie,workflow
-59 	UO5-1 Reception | Modification(s) de reception(s) 	uo5,reception,modification,reception
-60 	UO5-2 Reception | Annulation(s) de reception(s) 	uo5,reception,annulation,reception
-61 	UO5-3 Reception | Forcer la reception 	uo5,reception,forcer,reception
-62 	UO3-5 Demande d'achat | Demande de support cre... 	uo3,demander,achat,demander,support,creation
-63 	UO3-6 Demande d'achat | Demande de support mod... 	uo3,demander,achat,demander,support,modification
-64 	UO3-7 Demande d'achat | Demande de support ann... 	uo3,demander,achat,demander,support,annulation
-65 	UO4-2 Commande | Demande de support modificati... 	uo4,commander,demander,support,modification,co...
-```
+??? output
 
-
+    ```
+                        Subject                                    Clean_Keyword
+    0  Message d'erreur : "Le fournisseur ARIBA n'exi...  message,erreur,fournisseur,aria,exister
+    1  Message d'erreur : "Commande d’article non aut...  message,erreur,commander,article,autoriser,oto
+    2  Message d'erreur : "Statut utilisateur FERM ac...  message,erreur,statut,utilisateur,actif,oto
+    3  Message d'erreur : "Statut systeme TCLO actif ...  message,erreur,statut,systeme,col,actif,nord
+    4  Message d'erreur "___ Cost center change could...  message,erreur,coat,centrer,changer,cold,affecter
+    5  Messaeg d'erreur "___ OTP change could not be ...  message,erreur,otp,changer,cold,affecter
+    6  Messaeg d'erreur "Entrez Centre de couts"          message,erreur,entrer,centrer,cout
+    7  Message d'erreur "Indiquez une seule imputatio...  message,erreur,indiquer,imputation,statistique
+    8  Message d'erreur "Imputations CO ont des centr...  message,erreur,imputation,centrer,profit
+    9  Message d'erreur "Poste ___ Ordre ___ depassem...  message,erreur,poster,ordre,depassement,budget
+    10  Message d'erreur "Entrez une quantite de comma...  message,erreur,entrer,quantite,commander
+    11  Message d'erreur "Indiquez la quantite"          message,erreur,indiquer,quantite
+    12  Message d'erreur "Le prix net doit etre superi...  message,erreur,prix,net,superieur
+    ...  ...  ...
+    ...  ...  ...
+    ...  ...  ...
+    57  UO4-5 Commande | Envoi d'une commande manuelle  uo4,commander,envoi,commander,manuel
+    58  UO5-4 Reception | Anomalie workflow  uo5,reception,anomalie,workflow
+    59  UO5-1 Reception | Modification(s) de reception(s)  uo5,reception,modification,reception
+    60  UO5-2 Reception | Annulation(s) de reception(s)  uo5,reception,annulation,reception
+    61  UO5-3 Reception | Forcer la reception  uo5,reception,forcer,reception
+    62  UO3-5 Demande d'achat | Demande de support cre...  uo3,demander,achat,demander,support,creation
+    63  UO3-6 Demande d'achat | Demande de support mod...  uo3,demander,achat,demander,support,modification
+    64  UO3-7 Demande d'achat | Demande de support ann...  uo3,demander,achat,demander,support,annulation
+    65  UO4-2 Commande | Demande de support modificati...  uo4,commander,demander,support,modification,co...
+    ```
 
 ### tokenize and stemming(second exemple)
-
 
 ```python
 # WordNetLemmatizer requires Pos tags to understand if the word is noun or verb or adjective etc. By default it is set to Noun
@@ -342,24 +323,19 @@ def wordLemmatizer_(sentence):
 
 ```
 
-
-
-
 ## **2: trouver la meilleure phrase dans une liste de phrase**
 
-###  method: TF-Idf
+### method: TF-Idf
 
 TfIdf stands for: Term Frequency Inverse Document Frequency
 
 In order to compare the user input to existing sentence in database, we will go throught two process
 
-- Normalize database: Apply the pre-processing method to all sentences in the database. We then have, for each sentence, a list of keywords
-- For each keyword kw for each sentence st, we compute, 
-   - $frqc(word,sentence)$ : occurrence of the keyword word in the sentence
-    - $doc\_frqc(word)$: number of sentences where the word appears
-    - $N$ = Number of sentences
-
-
+* Normalize database: Apply the pre-processing method to all sentences in the database. We then have, for each sentence, a list of keywords
+* For each keyword kw for each sentence st, we compute,
+  * $frqc(word,sentence)$ : occurrence of the keyword word in the sentence
+  * $doc\_frqc(word)$: number of sentences where the word appears
+  * $N$ = Number of sentences
 
 $tf(wd,stc) =  \frac {frqc(wd,stc)}{ \sum_{stc} frqc(wd,stc) }$
 
@@ -367,88 +343,88 @@ $idf(wd) =  \log(\frac{N}{doc\_frqc(wd)})$
 
 $tfidf(wd,stc) = tf(wd,stc) *idf(wd)$
 
+??? example "Example"
 
+    * st1: The computer is down
+    * st2: We need to change the computers
+    * st3: Changements have to be handle by the IT
 
+    **keywords per sentence**
 
-**Example**
-- st1: The computer is down
-- st2: We need to change the computers
-- st3: Changements have to be handle by the IT
+    ```plaintext
+    st1: [computer , down]
+    st2: [need, change, computer]
+    st3: [change, handle, IT]
+    ```
 
-**keywords per sentence**
+    **vocabulary: [computer , down, need, change, handle, IT]**
 
-```
-st1: [computer , down]
-st2: [need, change, computer]
-st3: [change, handle, IT]
-```
+    | tf | sentence1| sentence2| sentence3|
+    | --- | --- | --- | --- |
+    | computer| 1/2 | 1/2 | 0 |
+    | down| 1 | 0 | 0 |
+    | need| 0 | 1 | 0 |
+    | change| 0 | 1/2 | 1/2 |
+    | handle| 0 | 0 | 1 |
+    | IT| 0 | 0 | 1 |
 
-#### vocabulary: [computer , down, need, change, handle, IT]
+    **idf values for the keywords**
 
-| tf | sentence1| sentence2| sentence3| 
-| --- | --- | --- | --- | 
-| computer| 1/2 | 1/2 | 0 |
-| down| 1 | 0 | 0 |
-| need| 0 | 1 | 0 |
-| change| 0 | 1/2 | 1/2 |
-| handle| 0 | 0 | 1 |
-| IT| 0 | 0 | 1 |
+    N =number_of_sentences =  3
 
-#### idf values for the keywords
-N =number_of_sentences =  3
+    | idf | |
+    | --- | --- |
+    | computer| log(3/2)
+    | down| log(3/1)
+    | need| log(3/1)
+    | change| log(3/2)
+    | handle| log(3/1)
+    | IT| log(3/1)
 
-| idf | | 
-| --- | --- | 
-| computer| log(3/2) 
-| down| log(3/1) 
-| need| log(3/1) 
-| change| log(3/2)
-| handle| log(3/1) 
-| IT| log(3/1) 
+    **example for sentence 2: computing of the keywords tfidf values**
 
-#### example for sentence 2: computing of the keywords tfidf values
+    $$
+    tfidf('computer') = tf('computer', sentence2)*idf('computer') = 1/2 * log(3/2)\\
+    tfidf('down') = 0 * log(3/1)\\
+    tfidf('need') = 1 * log(3/1)\\
+    tfidf('change') = 1/2 * log(3/2)\\
+    tfidf('handle') = 0 * log(3/1)\\
+    tfidf('IT') = 0 * log(3/1)\\
+    $$
 
+    **vectorisation of the sentence 2**
 
-$$
-tfidf('computer') = tf('computer', sentence2)*idf('computer') = 1/2 * log(3/2)\\
-tfidf('down') = 0 * log(3/1)\\
-tfidf('need') = 1 * log(3/1)\\
-tfidf('change') = 1/2 * log(3/2)\\
-tfidf('handle') = 0 * log(3/1)\\
-tfidf('IT') = 0 * log(3/1)\\
-$$
+    ```
+    sentence2 <==> [ 0.5 * log(3 / 2), 0, 1 * log(3 / 2), 0.5 *  log(3 /2) , 0, 0]                                      
+    ```
 
-#### vectorisation of the sentence 2
-```
-sentence2 <==> [ 0.5 * log(3 / 2), 0, 1 * log(3 / 2), 0.5 *  log(3 /2) , 0, 0]                                      
-```
+    **vectorisation of the sentences**
 
-#### vectorisation of the sentences
-$$
-sentence1 <==> [\ 0.5*log(3/2),\ log(3/1),\ 0 ,\ 0,\ 0]\\
-sentence2 <==> [\ 0.5*log(3/2),\ 0, 1*log(3/2),\ 0.5* log(3/2) ,\ 0,\ 0]\\
-sentence3 <==> [\ 0, \ 0, \ 0,\ 0.5 * 1*log(3/2),\  log(3/1),\ 1*log(3/1)]
-$$
+    $$
+    sentence1 <==> [\ 0.5*log(3/2),\ log(3/1),\ 0 ,\ 0,\ 0]\\
+    sentence2 <==> [\ 0.5*log(3/2),\ 0, 1*log(3/2),\ 0.5* log(3/2) ,\ 0,\ 0]\\
+    sentence3 <==> [\ 0, \ 0, \ 0,\ 0.5 * 1*log(3/2),\  log(3/1),\ 1*log(3/1)]
+    $$
 
-#### similarities between the user input and the sentences
-- user input: The IT have replaced all of the computers
-- keywords: [ 'IT', 'all',  'computer']
-- keywords found in dictionnary: [ 'IT','computer']
-- vectorization: [1,0,0,0,1]
+    **similarities between the user input and the sentences**
 
-#### scores
+    * user input: The IT have replaced all of the computers
+    * keywords: [ 'IT', 'all',  'computer']
+    * keywords found in dictionnary: [ 'IT','computer']
+    * vectorization: [1,0,0,0,1]
 
-$$
-sentence1: tfidf(sentence1)*vector 
-=  [\ 0.5*log(3/2),\ log(3/1),\ 0 ,\ 0,\ 0] *[1,0,0,0,1]
-=  0.5*log(3/2) \\
-sentence1:0.5*log(3/2)\\
-sentence2:  0.5*log(3/2)\\
-sentence3: log(3/1)
-$$
+    **scores**
 
-##  fonction: cosine_similarity_T
+    $$
+    sentence1: tfidf(sentence1)*vector
+    =  [\ 0.5*log(3/2),\ log(3/1),\ 0 ,\ 0,\ 0] *[1,0,0,0,1]
+    =  0.5*log(3/2) \\
+    sentence1:0.5*log(3/2)\\
+    sentence2:  0.5*log(3/2)\\
+    sentence3: log(3/1)
+    $$
 
+## fonction: cosine_similarity_T
 
 ```python
 def init(df_news):
@@ -464,8 +440,7 @@ def init(df_news):
 
 ```
 
-##  Create a vector for Query/search keywords
-
+## Create a vector for Query/search keywords
 
 ```python
 def gen_vector_T(tokens,df_news,vocabulary,tfidf,tfidf_tran):
@@ -485,7 +460,7 @@ def gen_vector_T(tokens,df_news,vocabulary,tfidf,tfidf_tran):
   return Q
 ```
 
-##  Cosine Similarity function
+## Cosine Similarity function
 
 ```python
 def cosine_sim(a, b):
@@ -528,9 +503,7 @@ def cosine_similarity_T(k, query,df_news,vocabulary=None,tfidf=None,tfidf_tran=N
     return a
 ```
 
-
-
-##  Test: cosine_similarity_T
+## Test: cosine_similarity_T
 
 ```python
 def test(data,sentence,init_=False,mine=True):
@@ -552,42 +525,39 @@ init(df_new)
 cosine_similarity_T(10,sentence,df_new )
 ```
 
+??? output "output"
 
+    ```plaintext
+    ------------pre_process--------
+    ['fournisseur', 'mdm', 'existe', 'pas']
 
-**Output**
+    ------------correction--------
+    ['fournisseur', 'mdm', 'existe', 'pas']
 
-```
-------------pre_process--------
-['fournisseur', 'mdm', 'existe', 'pas']
+    ------------stemming--------
+    ['fournisseur', 'mdm', 'exister', 'pas']
 
-------------correction--------
-['fournisseur', 'mdm', 'existe', 'pas']
+    ------------remove stop-words--------
+    ['fournisseur', 'mdm', 'exister']
 
-------------stemming--------
-['fournisseur', 'mdm', 'exister', 'pas']
+    -------------------------------------
 
-------------remove stop-words--------
-['fournisseur', 'mdm', 'exister']
+        index                   Subject                           Score
+    0  19  Message d'erreur "Le fournisseur MDM___ n’exis...  0.781490
+    1  0  Message d'erreur : "Le fournisseur ARIBA n'exi...  0.600296
+    2  20  Message d'erreur "Le fournisseur MDM___ est bl...  0.587467
+    3  14  Message d'erreur "Le centre de profit __ n'exi...  0.236420
+    4  33  Message d'erreur "Il existe des factures pour ...  0.214371
+    5  53  Message d'erreur "Fournisseur non present dans...  0.142208
+    6  18  Message d'erreur "Validation ___ : le compte _...  0.000000
+    7  30  Message d'erreur "Renseigner correctement le d...  0.000000
+    8  29  Message d'erreur "Article ___ non gere dans la...  0.000000
+    9  28  Message d'erreur "Fonctions oblig. Suivantes n...  0.000000
+    ...  ...  ...
+    ```
 
--------------------------------------
+## Conclusion and Discussions
 
-       index 	                 Subject 	                         Score
-0 	19 	Message d'erreur "Le fournisseur MDM___ n’exis... 	0.781490
-1 	0 	Message d'erreur : "Le fournisseur ARIBA n'exi... 	0.600296
-2 	20 	Message d'erreur "Le fournisseur MDM___ est bl... 	0.587467
-3 	14 	Message d'erreur "Le centre de profit __ n'exi... 	0.236420
-4 	33 	Message d'erreur "Il existe des factures pour ... 	0.214371
-5 	53 	Message d'erreur "Fournisseur non present dans... 	0.142208
-6 	18 	Message d'erreur "Validation ___ : le compte _... 	0.000000
-7 	30 	Message d'erreur "Renseigner correctement le d... 	0.000000
-8 	29 	Message d'erreur "Article ___ non gere dans la... 	0.000000
-9 	28 	Message d'erreur "Fonctions oblig. Suivantes n... 	0.000000
-... 	... 	...
-```
-
-
-# Conclusion and Discussions
-- The system is very fast and reliable
-- The shortlist, after tests is highly relevant to the user query with the best answer, appearing either first or second
-- Some methods employed must be adapted for english or other languages different of french
-
+* The system is very fast and reliable
+* The shortlist, after tests is highly relevant to the user query with the best answer, appearing either first or second
+* Some methods employed must be adapted for english or other languages different of french

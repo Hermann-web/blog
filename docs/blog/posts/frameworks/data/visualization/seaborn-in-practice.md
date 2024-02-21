@@ -15,17 +15,15 @@ categories:
 links:
   - blog/posts/a-roadmap-for-web-dev.md
   - blog/posts/code-practises/software-licences.md
-title: Seaborn in Practice
+title: "Seaborn in Practice: Syntax and Guide"
 ---
-
-
-# Seaborn in Practice: Syntax and Guide
 
 Seaborn is a powerful data visualization library in Python that provides a high-level interface for drawing attractive and informative statistical graphics. One common misconception about Seaborn and programming in general is the necessity to remember all the syntax. In reality, it's more about understanding the tool's capabilities and how to leverage its functions to visualize data effectively.
 
 ??? question "So, what can i do exactly with seaborn ?"
 
 ## import the library
+
 ```python
 import seaborn as sns
 sns.set(style="whitegrid")
@@ -34,12 +32,15 @@ sns.set(style="whitegrid")
 <!-- more -->
 
 ## Load some dataset
+
 we will be using a dataset containing tips from a restaurant. We will know more more about it down the road
+
 ```python
 df = sns.load_dataset("tips")
 ```
 
 Let's see a preview of the dataset
+
 ```python
 df
 ```
@@ -67,15 +68,17 @@ A quick way to visualize relationships in a dataset is by using the method `pair
 ```python
 sns.pairplot(df)
 ```
+
 ??? output "Result"
     ![pairplot example](./seaborn-in-practice/1-pairplot-example.png)
 
 You can see here, we have a table of graphs. The 3 rows and 3 columns correpond to the 3 numerical values in out dataset: `tip`, `total_bill` and `size`
 In each cell, one column is plot against another:
-  - In the diagonals, a column is plotted againt itselt and you have histograms 
-  - In the anti-diagonals, 2 columns are plotted against each other and you have a scatterplot 
 
-You can also notice only 3 columns of our dataframe is here. It is because they contain numerical values. The 3 others (`sex`, `smoker`, `day` and `time`) are 
+- In the diagonals, a column is plotted againt itselt and you have histograms
+- In the anti-diagonals, 2 columns are plotted against each other and you have a scatterplot
+
+You can also notice only 3 columns of our dataframe is here. It is because they contain numerical values. The 3 others (`sex`, `smoker`, `day` and `time`) are
 
 ## Histogram
 
@@ -108,7 +111,6 @@ Further stratifying by region:
 ```python
 sns.catplot(x='gender', hue='couleur', row='region', kind='count', data=ratings_df, height=3, aspect=2)
 ```
-
 
 ## Scatterplot
 
@@ -198,7 +200,6 @@ plt.show()
 
 These examples showcase how Seaborn can be effectively utilized for various visualization needs without the necessity to memorize all the syntax.
 
-
 Understanding the basic syntax and functionality of Seaborn allows you to explore various plots and graphs that suit your data analysis requirements. Through simple examples and by focusing on the visual representation of data, you can gain deeper insights without the burden of remembering intricate details.
 
 Remember, Seaborn is designed to assist in the visual exploration of your data, offering a wide range of options for customizing and fine-tuning plots to suit your specific needs.
@@ -206,4 +207,3 @@ Remember, Seaborn is designed to assist in the visual exploration of your data, 
 Experiment with different plot types and functionalities to better understand the story your data has to tell. And don't hesitate to refer to the documentation and various online resources available to enrich your understanding and application of Seaborn.
 
 Let the visualization journey begin, and may your data tell its story vividly through Seaborn!
-

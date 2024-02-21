@@ -6,6 +6,7 @@ title: Streamlit App for Formula OCR using pix2tex
 # Streamlit App for Formula OCR using pix2tex
 
 ## Introduction
+
 I've implemented and deployed a [Streamlit application](https://github.com/Hermann-web/pix2tex) designed for writing a LaTeX formula from an image containing that formula. The application is hosted on [Hugging Face Spaces](https://pix2tex.streamlit.app/y) and [github](https://pix2tex.streamlit.app/) so users can upload images freely and copy LaTeX formulas.
 
 For the frontend, I use Streamlit, a framework that makes frontend for data projects easy. For the backend converter, I use a Python module named [pix2tex](https://github.com/lukas-blecher/LaTeX-OCR) that uses computer vision to generate the LaTeX formula.
@@ -94,12 +95,12 @@ def process_image(image):
 
 The `LatexOCR` class from `pix2tex` is responsible for extracting LaTeX formulas from images, making the app suitable for mathematical content extraction.
 
-
 ### Streamlit for Frontend
 
 The frontend of the application is built using [Streamlit](https://streamlit.io/), a powerful Python library for creating web applications with minimal effort. Streamlit allowed for rapid prototyping and easy integration with the backend.
 
 The image is rendered with a streamlit function `st.latex`:
+
 ```python
 import streamlit as st
 st.latex(f"\n{latex_formula}\n")
@@ -111,7 +112,7 @@ Add information about how users can use the application, including any specific 
 
 ## Deployment Guide
 
-### With streamlit.io 
+### With streamlit.io
 
 Deployment on streamlit.io is pretty fastforward [^streamlit-create-an-app].
 You can put the application on a public repository. Then, Go to the website [https://share.streamlit.io/deploy](https://share.streamlit.io/deploy), signup with you github account for example, then choose the repository and your pyhton script.

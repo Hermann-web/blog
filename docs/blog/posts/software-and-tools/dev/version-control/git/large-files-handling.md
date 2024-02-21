@@ -60,7 +60,7 @@ Identify the large files you want to store using Git LFS and begin tracking them
 git lfs track "path/to/your/large/file"
 ```
 
-??? Example "Example: Track files `.avi` and `.gif` files larger than 19MB"
+??? example "Example: Track files `.avi` and `.gif` files larger than 19MB"
 
         For an efficient approach to track multiple files of specific extensions and sizes (such as `.avi` and `.gif` files larger than 19MB), a script can simplify the process. For exa:
 
@@ -79,10 +79,8 @@ git lfs track "path/to/your/large/file"
         ```
 
         Ensure to execute this script within your Git repository directory. 
-        
 
 !!! Warning "Always review in `.gitattributes` the file selections to confirm they match your requirements before committing changes to Git LFS."
-
 
 ### 4. Updating `.gitattributes`
 

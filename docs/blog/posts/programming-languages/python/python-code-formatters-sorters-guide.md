@@ -182,9 +182,9 @@ This command will format all `.py` files in the current directory.
 
 In addition to Black, isort, and YAPF, there are several other Python code formatters and sorters available, each with its own set of features and capabilities. Some notable mentions include:
 
-- **autopep8**: A tool that automatically formats Python code to conform to the PEP 8 style guide.
-- **pyfmt**: A code formatter that aims to balance flexibility and readability, offering customizable formatting options.
-- **pycodestyle**: A tool that checks Python code against the PEP 8 style guide and provides suggestions for improvements.
+- __autopep8__: A tool that automatically formats Python code to conform to the PEP 8 style guide.
+- __pyfmt__: A code formatter that aims to balance flexibility and readability, offering customizable formatting options.
+- __pycodestyle__: A tool that checks Python code against the PEP 8 style guide and provides suggestions for improvements.
 
 ## Supercharge Your CI with Formatters
 

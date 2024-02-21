@@ -26,7 +26,6 @@ In this exploration, we'll delve into the differences between `git pull origin d
 
 Let's dive into the nuances of `git pull` and `git merge` to optimize your Git workflow and ensure seamless collaboration across teams.
 
-
 ## Git Pull vs Merge
 
 ### `git checkout master && git merge dev`
@@ -52,11 +51,11 @@ Technically, `git pull origin dev` and `git merge origin/dev` both aim to integr
 
 However, they differ in approach:
 
-- **`git pull origin dev`**:
+- __`git pull origin dev`__:
   - Combines `git fetch` (retrieve changes from the remote repository) and `git merge` (integrate changes into your local branch) in one step.
   - Fetches changes from the remote `dev` branch and immediately merges them into your current local branch.
 
-- **`git merge origin/dev`**:
+- __`git merge origin/dev`__:
   - Directly attempts to merge changes from the remote `dev` branch into your current local branch without explicitly fetching changes separately.
   - Assumes you already have the remote branch's changes available in your local repository.
 

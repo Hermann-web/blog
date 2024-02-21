@@ -38,10 +38,10 @@ In this blog post, we will explore how to get started with gRPC in Python using 
 
 gRPC offers several advantages, making it a versatile and efficient choice for building distributed systems and microservices:
 
-- **Language Independence**: gRPC supports multiple languages seamlessly, allowing developers to build distributed systems using their preferred programming language.
-- **Open Source & Multilingual Support**: Being open source, gRPC enjoys support across various programming languages, making it a widely adopted solution for building distributed systems.
-- **Boilerplate Elimination**: gRPC generates code, reducing the need for boilerplate code and simplifying the development process.
-- **Efficient Data Encoding**: gRPC utilizes buffers instead of JSON for data encoding, resulting in lighter data transmission.
+- __Language Independence__: gRPC supports multiple languages seamlessly, allowing developers to build distributed systems using their preferred programming language.
+- __Open Source & Multilingual Support__: Being open source, gRPC enjoys support across various programming languages, making it a widely adopted solution for building distributed systems.
+- __Boilerplate Elimination__: gRPC generates code, reducing the need for boilerplate code and simplifying the development process.
+- __Efficient Data Encoding__: gRPC utilizes buffers instead of JSON for data encoding, resulting in lighter data transmission.
 
 ## Getting Started with gRPC in Python
 
@@ -50,7 +50,7 @@ gRPC offers several advantages, making it a versatile and efficient choice for b
 Follow the steps below to set up a Python environment for gRPC [^grpc-python-quickstart]:
 
 1. **Quick Setup:**
-   
+
    ```bash
    cd path/to/my/folder
    python -m venv .venv
@@ -59,7 +59,7 @@ Follow the steps below to set up a Python environment for gRPC [^grpc-python-qui
    ```
 
 2. **Install gRPC and gRPC Tools:**
-   
+
    ```bash
    python -m pip install grpcio
    python -m pip install grpcio-tools
@@ -111,7 +111,6 @@ The provided code includes a Protocol Buffers (protobuf) definition, a server-si
 
 The `helloworld.proto` file defines the `Greeter` service with three RPC methods. The `greeter_server.py` file implements the server for the `Greeter` service, and the `greeter_client.py` file implements the client to communicate with the server. The `python -m grpc_tools.protoc` command is used to compile the `.proto` file and generate the necessary Python code for the server and client.
 
-
 ### Adding an Extra Method on the Server
 
 - Modify [`../../protos/helloworld.proto`](grpc/examples/protos/helloworld.proto) and the files `greeter_server.py` and `greeter_client.py` in the `examples/python/helloworld` folder.
@@ -146,7 +145,6 @@ The `helloworld.proto` file defines the `Greeter` service with three RPC methods
     ...
     ```
 
-
 === ":octicons-file-code-16: `greeter_client.py`"
 
     ```python
@@ -162,6 +160,7 @@ The `helloworld.proto` file defines the `Greeter` service with three RPC methods
     ```
 
 - Compile the `.proto` file and generate the necessary Python code for the server and client
+
 ```bash
 python -m grpc_tools.protoc -I../../protos --python_out=. --pyi_out=. --grpc_python_out=. ../../protos/helloworld.proto
 ```
@@ -173,7 +172,7 @@ python greeter_server.py
 python greeter_client.py
 ```
 
-### What just happened 
+### What just happened
 
 Well, we have added another RPC method, called here `SayHelloAgain`. The implementation includes:
 
@@ -183,19 +182,21 @@ Well, we have added another RPC method, called here `SayHelloAgain`. The impleme
 So, when running the server then the client, we should receive two responses
 
 The server output should remain the same
+
 ```plaintext
 Server started, listening on 50051
 ```
 
 But the client will receive two responses from the server.
+
 ```plaintext
 Will try to greet world ...
 Greeter client received: Hello, you!
 Greeter client received: Hello again, you!
 ```
 
-
 The `python -m grpc_tools.protoc` command is used to compile the `.proto` file and generate the necessary Python code for the server and client. This command takes the following arguments:
+
 - `-I../../protos`: Specifies the directory containing the `.proto` file.
 - `--python_out=.`: Specifies the output directory for the generated Python code.
 - `--grpc_python_out=.`: Specifies the output directory for the generated gRPC Python code.
@@ -208,8 +209,7 @@ For more information, you can refer to the gRPC Python documentation and the Pro
 
 If you need to compile `.proto` files for other programming languages, the process may differ, and you can refer to the respective language's gRPC documentation for guidance.
 
-
-## Further Reading:
+## Further Reading
 
 - [Introduction to gRPC](https://grpc.io/docs/what-is-grpc/introduction/)
 - [gRPC Core Concepts](https://grpc.io/docs/what-is-grpc/core-concepts/)
@@ -217,10 +217,4 @@ If you need to compile `.proto` files for other programming languages, the proce
 
 For more detailed instructions, refer to the gRPC Python Quickstart [^grpc-python-quickstart].
 
-[^grpc-python-quickstart]: https://grpc.io/docs/languages/python/quickstart/
-[^1]: https://stackoverflow.com/questions/62649353/difference-between-protoc-and-python-m-grpc-tools-protoc
-[^3]: https://grpc.io/docs/languages/python/generated-code/
-[^4]: https://stackoverflow.com/questions/57909401/what-are-the-command-line-arguments-passed-to-grpc-tools-protoc
-[^0]: https://grpc.io/docs/languages/python/basics/
-[^5]: https://www.velotio.com/engineering-blog/grpc-implementation-using-python
-[^6]: https://realpython.com/python-microservices-grpc/
+[^grpc-python-quickstart]: <https://grpc.io/docs/languages/python/quickstart/>

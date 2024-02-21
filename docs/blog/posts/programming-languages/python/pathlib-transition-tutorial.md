@@ -21,7 +21,6 @@ title: "Pathlib Tutorial: Transitioning to Simplified File and Directory Handlin
 
 __Are you still using `import os` for file handling after 2020 ? Use `pathlib` instead !__
 
-
 If you're moving away from command line operations or 'os' module to Python's `pathlib`, you're at the right place.
 
 Well, in this tutorial, we'll dive into the powerful `pathlib` module in Python. It offers a clean transition for users accustomed to CLI or 'os' for file and directory handling, providing an elegant and intuitive approach.
@@ -45,19 +44,19 @@ While `os` and `pathlib` both handle file and directory operations, they differ 
     - **Enhanced functionality:** Offers extensive methods for path manipulation.
     - **Cross-platform:** Works well across different operating systems.
 
-## Making the Transition:
+## Making the Transition
 
-- **Preference for Object-Oriented Approach:** `pathlib` provides a more intuitive and readable experience.
-- **Compatibility and Legacy Code:** `os` may be necessary for older Python versions or existing code.
-- **Specific Functionality:** Some advanced operations might be easier with one module over the other.
-- **Project Style and Conventions:** Consider the overall project style and best practices.
+- __Preference for Object-Oriented Approach:__ `pathlib` provides a more intuitive and readable experience.
+- __Compatibility and Legacy Code:__ `os` may be necessary for older Python versions or existing code.
+- __Specific Functionality:__ Some advanced operations might be easier with one module over the other.
+- __Project Style and Conventions:__ Consider the overall project style and best practices.
 
-## Best Practices for Smooth Transition:
+## Best Practices for Smooth Transition
 
-- **Consistency:** Maintain a uniform approach within a project for easier maintenance.
-- **Descriptive Naming:** Use clear variable names for paths to enhance readability.
-- **Error Handling:** Implement robust error handling for potential issues.
-- **Thorough Testing:** Ensure correctness in file and directory operations.
+- __Consistency:__ Maintain a uniform approach within a project for easier maintenance.
+- __Descriptive Naming:__ Use clear variable names for paths to enhance readability.
+- __Error Handling:__ Implement robust error handling for potential issues.
+- __Thorough Testing:__ Ensure correctness in file and directory operations.
 
 ### Why Transition to `pathlib`?
 
@@ -71,9 +70,7 @@ The transition to `pathlib` allows for:
 
 Let's explore the functionalities of `pathlib` step by step.
 
-
-
-!!! Example "Usage Examples"
+!!! example "Usage Examples"
 
     ```python
     from pathlib import Path
@@ -113,8 +110,7 @@ Let's explore the functionalities of `pathlib` step by step.
 
 This table provides a comparison between Python's `os` module and the `pathlib` library operations alongside their Linux command equivalents for file and directory manipulation, information retrieval, traversal, file input/output (I/O), and path validation. It offers a comprehensive reference for developers familiar with Python who want to understand corresponding operations in Linux command line interfaces. The table is categorized by groups, making it easy to find specific functionalities and their corresponding commands in Python and Linux.
 
-
-??? Note "More on Table description"
+??? note "More on Table description"
 
     This table is a comprehensive guide detailing various file and directory operations along with path manipulation using Python's `os` and `pathlib` modules, alongside their Linux command equivalents.
 
@@ -164,8 +160,6 @@ This table provides a comparison between Python's `os` module and the `pathlib` 
 |                                  | Write contents to a file                    | `open('/file/path'', 'w').write(content)` | `Path('/file/path'').write_text(content)`                     | `echo content > /file/path`     |
 |                                  | Append contents to a file                   | `open('/file/path', 'a').write(content)` | `Path('/file/path'').open('a').write(content)`                | `echo content >> /file/path`    |
 | Path Accessibility                | Check path accessibility                    | `os.access()`                            | Use `Path` methods in combination with `os.access()` or `os.stat()` | `test -rwx /path`               |
-
-
 
 !!! note "Remember !"
     - Always handle potential errors with `try-except` blocks for file and directory operations.

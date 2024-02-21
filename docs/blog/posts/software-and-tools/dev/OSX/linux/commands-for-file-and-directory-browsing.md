@@ -22,7 +22,7 @@ This documentation aims to offer a comprehensive understanding of essential comm
 
 We'll embark on a journey by delving into the foundational usage of key commands like `wc`, `du`, `grep`, `awk`, and `find`, uncovering their individual functionalities. Additionally, we'll explore how these commands can be combined using powerful methods such as pipes (`|`), `-exec {} \;`, or `-exec {} +`, unlocking their synergistic potential.
 
-Moreover, to solidify your understanding, real-life examples showcasing practical applications will be demonstrated. 
+Moreover, to solidify your understanding, real-life examples showcasing practical applications will be demonstrated.
 
 <!-- more -->
 
@@ -37,9 +37,11 @@ Let the learning begin !
 The `wc` command is used to count lines, words, and characters in files.
 
 - **Counting lines in a file:**
+
   ```bash
   wc -l file.txt
   ```
+
   This command displays the number of lines in `file.txt`.
 
 ### du (Disk Usage)
@@ -47,9 +49,11 @@ The `wc` command is used to count lines, words, and characters in files.
 The `du` command estimates file and directory space usage.
 
 - **Getting the size of a directory:**
+
   ```bash
   du -h /path/to/directory
   ```
+
   This command provides the disk usage of the specified directory (`/path/to/directory`) in a human-readable format (`-h`).
 
 ### grep (Global Regular Expression Print)
@@ -57,9 +61,11 @@ The `du` command estimates file and directory space usage.
 The `grep` command searches for patterns in files.
 
 - **Searching for lines containing a pattern in a file:**
+
   ```bash
   grep "pattern" file.txt
   ```
+
   This command displays lines in `file.txt` that contain the specified `pattern`.
 
     ??? info "Additional `grep` options:"
@@ -104,9 +110,11 @@ The `grep` command searches for patterns in files.
 ### awk (Aho, Weinberger, and Kernighan)
 
 - **Basic Syntax:**
+
   ```bash
   awk 'pattern { action }' file.txt
   ```
+
   - `pattern`: The condition that a line must meet to trigger the action.
   - `action`: The set of commands to be executed when the pattern is matched.
 
@@ -118,7 +126,7 @@ The `grep` command searches for patterns in files.
         This command prints the first field of each line in `file.txt` where the pattern is found.
 
     ??? info "Common Use Cases:"
-    
+
         1. **Printing Specific Columns:**
           ```bash
           awk '{ print $2, $4 }' file.txt
@@ -142,7 +150,6 @@ The `grep` command searches for patterns in files.
           awk -F',' '{ print $1 }' data.csv
           ```
           Specifies ',' as the field separator in a CSV file.
-
 
     ??? info "Advanced Features:"
 
@@ -171,27 +178,35 @@ The `grep` command searches for patterns in files.
 The `head` command displays the beginning of a file, while `tail` shows the end.
 
 - **Viewing the first few lines of a file with `head`:**
+
   ```bash
   head file.txt
   ```
+
   This command displays the first few lines of `file.txt`.
 
 - **Displaying a specific number of lines at the beginning of a file with `head -n`:**
+
   ```bash
   head -n 10 file.txt
   ```
+
   This command displays the first 10 lines of `file.txt`. You can replace `10` with any number to view a different quantity of lines.
 
 - **Viewing the last few lines of a file with `tail`:**
+
   ```bash
   tail file.txt
   ```
+
   This command shows the last few lines of `file.txt`.
 
 - **Displaying a specific number of lines at the end of a file with `tail -n`:**
+
   ```bash
   tail -n 15 file.txt
   ```
+
   This command shows the last 15 lines of `file.txt`. Similarly, you can adjust `15` to any desired number to see a different quantity of lines.
 
 Using `-n` with `head` or `tail` allows you to precisely control the number of lines displayed from the beginning or end of a file.
@@ -201,15 +216,19 @@ Using `-n` with `head` or `tail` allows you to precisely control the number of l
 Both `less` and `more` are used to view text files in a paginated manner.
 
 - **Viewing a file with `less`:**
+
   ```bash
   less file.txt
   ```
+
   `less` allows you to navigate through the file interactively.
 
 - **Viewing a file with `more`:**
+
   ```bash
   more file.txt
   ```
+
   `more` displays the file content page by page, but it has more limited navigation options compared to `less`.
 
 These commands provide different ways to view file contents, either scrolling through the entire file or just a section at a time.
@@ -221,49 +240,63 @@ These commands provide different ways to view file contents, either scrolling th
 The `find` command searches for files and directories based on various criteria.
 
 - **Finding files by name:**
+
   ```bash
   find /path/to/search -name "filename.txt"
   ```
+
   Searches for `filename.txt` in `/path/to/search` and its subdirectories.
 
     !!! info "for case insensitive search, use `-iname` instead of `-name`
 
 - **Finding files matching pattern:**
+
   ```bash
   find /path/to/search -name "req*.txt"
   ```
+
   Searches ... in `/path/to/search` and its subdirectories.
 
 - **Finding files by type:**
+
   ```bash
   find /path/to/search -type f
   ```
+
   Finds all files in `/path/to/search` and its subdirectories.
 
     !!! info "`-type f` search files when `-type d` is for directories"
 
 - **Find and delete files:**
+
   ```bash
   find /path/to/search -name "file_to_delete.txt" -delete
   ```
+
   This command finds a file named `file_to_delete.txt` and deletes it.
 
 ### find: Enhanced Searching with more options
+
 - **Find files by size:**
+
   ```bash
   find /path/to/search -size +10M
   ```
+
   This command finds files larger than 10 megabytes in the specified directory.
 
 - **Find files modified within a time range:**
+
   ```bash
   find /path/to/search -mtime -7
   ```
+
   This command finds files modified within the last 7 days in the specified directory.
 
-
 ### Conclusion
+
 These commands offer different functionalities:
+
 - `wc` counts lines, words, or characters in a file.
 - `du` estimates disk usage for files and directories.
 - `grep` searches for patterns in files and prints lines containing the specified pattern.
@@ -272,8 +305,8 @@ These commands offer different functionalities:
 
 You can use these commands to perform various operations related to file content, size estimation, and pattern matching within files.
 
-
 ## 3. Combining find with Other Commands
+
 In this section, We explore how to combine the previous commands using pipes (`|`), `-exec {} \;`, or `-exec {} +`:
 
 ### Pipes (`|`)
@@ -281,9 +314,11 @@ In this section, We explore how to combine the previous commands using pipes (`|
 Using pipes to pass the output of one command as input to another.
 
 - **Finding specific files and counting them:**
+
     ```bash
     find /path/to/search -name "*.txt" | wc -l
     ```
+
     Finds `.txt` files and counts them using `wc -l`.
 
 ### `-exec {} \;`: Find and perform an action on each file
@@ -291,6 +326,7 @@ Using pipes to pass the output of one command as input to another.
 Executing a command for each matched file or directory.
 
 - **Finding files and displaying their sizes:**
+
     ```bash
     find /path/to/search -type f -exec du -h {} \;
     ```
@@ -298,6 +334,7 @@ Executing a command for each matched file or directory.
     !!! info "Displays sizes of files (each file in a different command) found by `find` using `du -h`."
 
 - **Finding files and performing deletion:**
+
     ```bash
     find /path/to/search -name "file_to_delete.txt" -exec rm {} \;
     ```
@@ -305,6 +342,7 @@ Executing a command for each matched file or directory.
     !!! info "Deletes files (each file in a different command) matching the name `file_to_delete.txt`."
 
 - **Finding and searching patterns:**
+
     ```bash
     find /path/to/search -name "*.txt" -exec grep "pattern" {} \;
     ```
@@ -316,12 +354,13 @@ Executing a command for each matched file or directory.
 Optimizing efficiency by passing multiple arguments to a command.
 
 - **Finding files and performing deletion:**
+
     ```bash
     find /path/to/search -name "file_to_delete.txt" -exec rm {} +
     ```
 
     !!! info "Deletes files (all in one command) matching the name `file_to_delete.txt`"
-    
+
 ### `\(` ... `\)`: Grouping Expressions
 
 When using `find` to search for files based on multiple criteria, such as file name patterns, types, or sizes, you may need to combine these criteria using logical operators like `-and`, `-or`, or `-not`. The `\( ... \)` construct allows you to group these expressions together to ensure they are evaluated as a single logical unit.
@@ -329,6 +368,7 @@ When using `find` to search for files based on multiple criteria, such as file n
 Grouping multiple expressions together for logical operations.
 
 - **Grouping Expressions in `find`:**
+
     ```bash
     find /path/to/search \( -name "*.txt" -o -name "*.pdf" \) -size +1M
     ```
@@ -340,8 +380,8 @@ Grouping multiple expressions together for logical operations.
 Overall, `\( ... \)` is a crucial construct in `find` commands for combining multiple search criteria and ensuring their proper evaluation. It helps create more complex search patterns while maintaining clarity and precision in the command syntax.
 
 ### fast conclusion
-`find` is an incredibly versatile command that can be combined with various flags and options to perform advanced searches based on filenames, types, sizes, modification times, and more. It's a great tool for locating specific files or performing actions on groups of files based on specific criteria.
 
+`find` is an incredibly versatile command that can be combined with various flags and options to perform advanced searches based on filenames, types, sizes, modification times, and more. It's a great tool for locating specific files or performing actions on groups of files based on specific criteria.
 
 ## 4. Application showcases
 
@@ -350,32 +390,35 @@ Overall, `\( ... \)` is a crucial construct in `find` commands for combining mul
 To count the number of files in a folder, you can use the following commands:
 
 1. Using `find`:
+
     ```bash
     find /path/to/folder -maxdepth 1 -type f | wc -l
     ```
 
     !!! info "More"
-        - This command uses `find` to search for files (`-type f`) in the specified folder without going into subdirectories (`-maxdepth 1`). 
+        - This command uses `find` to search for files (`-type f`) in the specified folder without going into subdirectories (`-maxdepth 1`).
         - The output is then piped to `wc -l`, which counts the number of lines, effectively giving you the count of files.
 
 2. Using `ls`:
+
     ```bash
     ls -l /path/to/folder | grep "^-" | wc -l
     ```
 
     !!! info "More"
-        Here, 
+        Here,
         - `ls -l` lists the contents of the folder with detailed information
         - `grep "^-"` filters out only the lines that represent files (as opposed to directories or other types of items)
         - `wc -l` counts the number of lines, providing the count of files in the folder.
-
 
 ### Counting Files/Folders in a Folder
 
 ```bash
 find /path/to/folder -maxdepth 1 | wc -l
 ```
+
 or
+
 ```bash
 ls -l /path/to/folder | wc -l
 ```
@@ -391,29 +434,33 @@ head -n 1 input/google-form-data.csv | grep -o "," | wc -l
 ### Finding `requirements.txt` Files Containing "openpyxl"
 
 - find all requirements.txt files
+
 ```bash
 find . -name requirements.txt
 ```
 
 - find all requirements.txt files who contain "openpyxl"
+
 ```bash
 find . -name requirements.txt -exec grep -l "openpyxl" {} \;
 ```
 
 ### Utilizing `maxdepth` for Search
 
-- find all `.txt` files non recursively 
+- find all `.txt` files non recursively
 
 ```bash
 find . -maxdepth 1 -type f -name "*.txt"
 ```
 
 - find ...
+
 ```bash
 find . -maxdepth 3
 ```
 
 - save the result
+
 ```bash
 find . -maxdepth 3 > output.txt
 ```
@@ -421,27 +468,33 @@ find . -maxdepth 3 > output.txt
 ### Skipping Certain Paths in a Search
 
 - find all py files but skip venv folders (paths containing venv)
+
 ```bash
 find . -name "*.py" ! -path "*venv*"
 ```
 
 - find all py files but skip venv folders and apply yapf on each file
+
 ```bash
 find . -name "*.py" ! -path "*venv*" -exec yapf --in-place {} \;
 ```
 
 - find all py files but skip folders(likely env) and apply yapf on each file
+
 ```bash
 find . -name "*.py" ! -path "*env/Scripts*" -exec yapf --in-place {} \;
 ```
 
 - search files where the word wrappers is mentionned and avoid some folders
+
 ```bash
 find . -type f -not -path '*/node_modules/*' -not -path '*env*' -not -name '*_*' -name '*.py' -exec grep -l 'wrappers' {} +
 ```
 
 ### git grep for version controlled files
-- search files where the word wrappers is mentionned withing the version controlled files 
+
+- search files where the word wrappers is mentionned withing the version controlled files
+
 ```bash
 git grep -l "wrapper" -- "*.py"
 ```
@@ -449,16 +502,18 @@ git grep -l "wrapper" -- "*.py"
 ### Using `tail` Command
 
 - display the last 50 lines of a file
+
 ```bash
 tail -50 cli.log
 ```
 
 - filter the output of another command
+
 ```bash
 tail -50 cli.log | grep "/api/"
-``` 
-This command will display the last 50 lines of the `cli.log` file and filter out only the lines that contain "/api/". This combination of `tail` and `grep` will help you isolate and display the relevant lines.
+```
 
+This command will display the last 50 lines of the `cli.log` file and filter out only the lines that contain "/api/". This combination of `tail` and `grep` will help you isolate and display the relevant lines.
 
 ### search for lines containing the word "black" within `.sh` files
 
@@ -480,15 +535,16 @@ find /path/to/search -type f -name "*.sh" -exec grep -l "black" {} +
 
         This method might be less efficient, especially for a large number of files, as it starts a new `grep` process for each file separately.
 
-
 ### search for folders
 
 - search folder by name (ex:all name containing eigen3)
+
 ```bash
 find -type d -name "*eigen3*"
 ```
 
-- search for a specific folder like "LAStools/bin" starting from the root directory `/home`. 
+- search for a specific folder like "LAStools/bin" starting from the root directory `/home`.
+
 ```bash
 sudo find /home -type d -name "bin" -path "*LAStools*"
 ```
@@ -500,11 +556,13 @@ sudo find /home -type d -name "bin" -path "*LAStools*"
 ### Searching for "AAA" in Files
 
 - search for "AAA" in all files
+
 ```bash
 find . -type f -exec grep "AAA" {} \;
 ```
 
 - search for "AAA" in all files with file name and line number display
+
 ```bash
 find . -type f -exec grep -Hn "AAA" {} \;
 ```
@@ -520,6 +578,7 @@ find .. -type f -exec grep -Hn "L337" {} \;
 ```
 
 - search for "L337" in all files with 5 lines after each match
+
 ```bash
 find .. -type f -exec grep -Hn "L337" {} \; -A 5
 ```
@@ -534,7 +593,8 @@ This command will find all occurrences of "L337" in files within the parent dire
 sort file1.txt file2.txt file3.txt | uniq -c | awk '$1 == 3 {print $2}'
 ```
 
-**Alternative** 
+**Alternative**
+
 ```bash
 sort file1.txt file2.txt file3.txt | uniq -c | awk '$1 >= 3 {print $2}'
 ```
@@ -550,6 +610,7 @@ This command will first find the unique lines common to all three files, then fi
 ### Additional Commands
 
 - extract names of females with the name 'Annabel' from the 'people' file
+
 ```bash
 cat people | awk '$3 == "F"' | grep 'Annabel' | awk '{print $1, $2}'
 ```
@@ -557,46 +618,46 @@ cat people | awk '$3 == "F"' | grep 'Annabel' | awk '{print $1, $2}'
 In the project, this command filter the lines of the file `people` containing the word `Annabel` and where the person is female (3rd fiel == `F`) then use `awk` to print from the filtered file, only the first and second fields. The fields in each line are separated by a space
 
 - search for 'Annabel' in all files and extract the names of females with the name 'Annabel'
+
 ```bash
 find . -type f -exec grep -w 'Annabel' {} \; -exec awk '$3 == "F" {print $1, $2}' {} \;
 ```
 
 This command will apply the precedent operation on each file returned by the `find` command
 
-
 ### Grouping Examples
 
-!!! Example "Finding files with either ".txt" or ".pdf" extensions and with a size greater than 1MB"
+!!! example "Finding files with either ".txt" or ".pdf" extensions and with a size greater than 1MB"
 
+ Suppose you want to find files with either ".txt" or ".pdf" extensions and with a size greater than 1MB. You can use `\( ... \)` to group the size condition with the extension conditions:
 
-	Suppose you want to find files with either ".txt" or ".pdf" extensions and with a size greater than 1MB. You can use `\( ... \)` to group the size condition with the extension conditions:
+ ```bash
+ find /path/to/search \( -name "*.txt" -o -name "*.pdf" \) -size +1M
+ ```
 
-	```bash
-	find /path/to/search \( -name "*.txt" -o -name "*.pdf" \) -size +1M
-	```
+ In this command:
 
-	In this command:
-	- `\( -name "*.txt" -o -name "*.pdf" \)` groups the conditions for finding files with ".txt" or ".pdf" extensions.
-	- `-size +1M` specifies the condition for files with a size greater than 1MB.
+- `\( -name "*.txt" -o -name "*.pdf" \)` groups the conditions for finding files with ".txt" or ".pdf" extensions.
+- `-size +1M` specifies the condition for files with a size greater than 1MB.
 
-	By grouping the extension conditions together, you ensure that the size condition is applied to both ".txt" and ".pdf" files.
+ By grouping the extension conditions together, you ensure that the size condition is applied to both ".txt" and ".pdf" files.
 
-!!! Example "Finding specific files with specific extensions"
+!!! example "Finding specific files with specific extensions"
 
-	Suppose you want to find specific files with extensions such as ".sh", ".md", or "Dockerfile" and then search for a particular pattern within them. You can use the following command:
+ Suppose you want to find specific files with extensions such as ".sh", ".md", or "Dockerfile" and then search for a particular pattern within them. You can use the following command:
 
-	```bash
-	find /home/ubuntu/Documents/GitHub/ \( -name "*.sh" -o -name "*.md" -o -name "Dockerfile" \) -exec grep -Hn "apt install ./mongodb-database-tools-*.deb &" {} \;
-	```
+ ```bash
+ find /home/ubuntu/Documents/GitHub/ \( -name "*.sh" -o -name "*.md" -o -name "Dockerfile" \) -exec grep -Hn "apt install ./mongodb-database-tools-*.deb &" {} \;
+ ```
 
-	In this command:
-	- `\( -name "*.sh" -o -name "*.md" -o -name "Dockerfile" \)` groups the conditions for finding files with the specified extensions.
-	- `-exec grep -Hn "apt install ./mongodb-database-tools-*.deb &" {} \;` executes the `grep` command to search for the specified pattern within each matched file.
+ In this command:
 
-	The `\( ... \)` construct is used to group the `-name` expressions together. This grouping is necessary because the `-o` operator (logical OR) has lower precedence than the implicit logical AND applied to separate `find` expressions. By using `\( ... \)`, you ensure that the logical OR operation is applied correctly within the grouped expressions.
+- `\( -name "*.sh" -o -name "*.md" -o -name "Dockerfile" \)` groups the conditions for finding files with the specified extensions.
+- `-exec grep -Hn "apt install ./mongodb-database-tools-*.deb &" {} \;` executes the `grep` command to search for the specified pattern within each matched file.
 
-	Without the grouping, the command would not function as intended because each `-name` expression would be evaluated separately, potentially leading to unexpected results.
+ The `\( ... \)` construct is used to group the `-name` expressions together. This grouping is necessary because the `-o` operator (logical OR) has lower precedence than the implicit logical AND applied to separate `find` expressions. By using `\( ... \)`, you ensure that the logical OR operation is applied correctly within the grouped expressions.
 
+ Without the grouping, the command would not function as intended because each `-name` expression would be evaluated separately, potentially leading to unexpected results.
 
 ## Conclusion
 

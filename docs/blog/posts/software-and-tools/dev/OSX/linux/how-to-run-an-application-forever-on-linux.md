@@ -26,8 +26,8 @@ To run a Java application as a background process and keep it running forever, y
 
 Certainly! Here are the steps named as per their actions:
 
-
 ## Step 1: Create Service File
+
 Create a new systemd service file for your Java application using a text editor:
 
 ```bash
@@ -35,10 +35,10 @@ sudo nano /etc/systemd/system/myapp.service
 ```
 
 ## Step 2: Configure Service
+
 Paste the following configuration into the file, replacing `<jar-file-name>` with the name of your JAR file:
 
 <!-- more -->
-
 
 ```ini
 [Unit]
@@ -54,9 +54,11 @@ WantedBy=multi-user.target
 ```
 
 ## Step 3: Save and Exit
+
 Save the file and exit the text editor.
 
 ## Step 4: Reload Daemon
+
 Reload the systemd daemon to pick up the new service file:
 
 ```bash
@@ -64,6 +66,7 @@ sudo systemctl daemon-reload
 ```
 
 ## Step 5: Start Service
+
 Start the new `myapp` service:
 
 ```bash
@@ -71,6 +74,7 @@ sudo systemctl start myapp
 ```
 
 ## Step 6: Check Service Status
+
 Check the status of the service to make sure it's running:
 
 ```bash

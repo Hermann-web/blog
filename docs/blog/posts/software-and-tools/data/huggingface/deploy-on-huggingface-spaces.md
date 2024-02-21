@@ -18,7 +18,6 @@ links:
 title: "How to deploy a Streamlit Application on Hugging Face"
 ---
 
-# How to deploy a Streamlit Application on Hugging Face
 
 In this guide, we'll walk through the steps to deploy a Streamlit app using the Hugging Face platform. For demonstration purposes, we'll create an app that utilizes the Python module Pix2Tex. Users will be able to upload an image and get the corresponding LaTeX formula along with a rendered version.
 
@@ -115,25 +114,30 @@ In this guide, we'll walk through the steps to deploy a Streamlit app using the 
 
     - Visit [Hugging Face Token Settings](https://huggingface.co/settings/tokens).
     - Create a new token. the format is `hf_****`
-    
+
     ![generate new token](./assets/1-generate-token.png)
     ![generate new token](./assets/2-generate-token.png)
 
 7. Clone the repository and push your app:
     - clone the repo
+
         ```bash
         git clone https://<user_name>:<token>@huggingface.co/<user_name>/<repo_name>
         cd <repo_name>
         ```
+
     the token is from step 6
     - add `app.py` and `requirements.txt` into the folder
     - push the changes to huggingface
+
         ```bash
         git add .
         git commit -m "Add application"
         git push
         ```
+
     - example
+
         ```bash
         git clone https://hermann-web:hf_****@huggingface.co/spaces/hermann-web/pix2tex 
         cd pix2tex

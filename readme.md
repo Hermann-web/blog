@@ -1,3 +1,5 @@
+# readme
 
+## tools
 
-- [formula parsing with katex](from https://squidfunk.github.io/mkdocs-material/reference/math/)
+- [formula parsing with katex](from <https://squidfunk.github.io/mkdocs-material/reference/math/>)

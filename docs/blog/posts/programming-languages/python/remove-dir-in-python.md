@@ -46,6 +46,7 @@ To remove an **empty directory**, you can use `os.rmdir()` with os and `Path.rmd
 <!-- more -->
 
 ## Remove Non-Empty Directories in Python
+
 For directories that contain files or other directories, use `shutil.rmtree()` to remove them along with their contents.
 
 === ":octicons-file-code-16: `index.py`"

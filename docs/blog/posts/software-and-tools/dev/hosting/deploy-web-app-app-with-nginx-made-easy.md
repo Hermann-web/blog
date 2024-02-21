@@ -15,15 +15,15 @@ title: "Deploying any Web application with Nginx: Example of Flask"
 ---
 
 ## Introduction
+
 You have created your flask application. How nice !
-Now, you want to go a step further and deploy it. 
+Now, you want to go a step further and deploy it.
 For most hosting services, you have nice interfaces to deploy your python applications with support for flask.
 But sometimes, you only have access via ssh to the server.
 
 This is a very straigthforward tutorial on how to do it.
 
 !!! note "This tutorial also applies to any web server you can run on local but want to deploy"
-
 
 ## Step 1: Install Nginx and Flask
 
@@ -62,11 +62,13 @@ This will enable your Nginx configuration.
 ## Step 4: Test the configuration
 
 Test your Nginx configuration by running the following command:
+
 ```bash
 sudo nginx -t
 ```
 
 If there are no errors, reload Nginx by running:
+
 ```bash
 sudo service nginx reload
 ```
@@ -74,6 +76,7 @@ sudo service nginx reload
 ## Step 5: Start the Flask app
 
 Start your Flask app by running the following command:
+
 ```bash
 python app.py
 ```
@@ -81,6 +84,7 @@ python app.py
 Your Flask app should now be running and accessible through Nginx at `http://yourdomain.com`.
 
 ## exemple of flask app
+
 ```python
 from flask import Flask
 

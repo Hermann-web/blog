@@ -21,7 +21,6 @@ title: "Simplified Logging in Python: A Practical Guide to Effective Debugging a
 
 __Are you still using print() statements for debugging in Python? Upgrade your logging game with Python's built-in logging module or the Loguru library!__
 
-
 If you're tired of scattered print statements cluttering your codebase, it's time to embrace the power of logging in Python. Whether you're a beginner or an experienced developer, mastering logging techniques is essential for effective debugging, monitoring, and troubleshooting of your Python applications.
 
 <div align="center"><div class="simple-img-container">
@@ -72,7 +71,7 @@ In the following sections, we'll delve deeper into the features and usage of bot
 
 ### Basic Setup
 
-!!! Example "Basic Setup with Built-in Logging"
+!!! example "Basic Setup with Built-in Logging"
 
     ```python
     import logging
@@ -88,7 +87,7 @@ In the following sections, we'll delve deeper into the features and usage of bot
 
 Handlers in logging are responsible for taking the log records (created by loggers) and outputting them to the desired destination, such as the console, files, or network sockets. Using handlers allows developers to control where log messages are sent and how they are formatted. For example, a console handler might be used for debugging during development, while a file handler could be used to store logs for later analysis.
 
-!!! Example "Using Handlers with Built-in Logging"
+!!! example "Using Handlers with Built-in Logging"
 
     ```python
     # Adding a console handler
@@ -108,7 +107,7 @@ Handlers in logging are responsible for taking the log records (created by logge
 
 Logging levels provide a way to categorize log messages based on their severity. By setting the logging level, developers can control which messages are emitted by the logger. This is essential for managing the volume of log output and focusing on relevant information. For instance, during development, setting the level to DEBUG allows developers to see detailed debugging information, while in production, it might be set to WARNING or higher to only capture critical issues.
 
-!!! Example "Logging Levels with Built-in Logging"
+!!! example "Logging Levels with Built-in Logging"
 
     ```python
     logger.debug("Debug message")
@@ -124,7 +123,7 @@ To achieve this, use the `suppress_logging` context manager, which temporarily d
 
  within the specified namespace.
 
-!!! Example "Suppressing Logging with Built-in Logging"
+!!! example "Suppressing Logging with Built-in Logging"
 
     ```python
     from contextlib import contextmanager
@@ -163,7 +162,7 @@ pip install loguru
 
 ### Usage
 
-!!! Example "Usage with Loguru"
+!!! example "Usage with Loguru"
 
     ```python
     from loguru import logger

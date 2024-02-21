@@ -25,6 +25,7 @@ title: Flask based File Hosting (web app & api & python module & cli app)
 This guide will walk you through creating a basic file hosting web application using Flask, a lightweight web framework for Python. The application will include features such as user login, file uploads, and file listing. We'll also explore adding a simple API for interacting with the application.
 
 ## Prerequistes
+
 - python >=3.9
 
 ## Setup Environment
@@ -218,6 +219,7 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 ```
+
 ??? tip "Here is how it works"
 
     - `login_required` is a wrapper that use the function `is_logged_in` to check if a user is logged in
@@ -225,6 +227,7 @@ def login_required(f):
     - `validate_credentials` check if the `username` and `password` sent by the user match those we have from `constants.py`
 
 Now, we will create the login page and add the login wrapper to the home page
+
 ```python
 @app.route('/')
 @login_required
@@ -262,20 +265,23 @@ def login():
     - If the credentials match, the user is redirected to the page he asks for. For example, in an unauthenticated user go the the home page, he is redirected to the login page. And if his crede,tials match, he is redirected back to the home page.
 
 ## create your credentials to access the app
+
 As i've 've said, i use the most basic authentication for this simple login protected web app.To add the credentials for the web app, create a file `.env` like [.env.example](https://raw.githubusercontent.com/Hermann-web/simple-file-hosting-with-flask/e3807c55fa25e19b914173555929adfd2aa5567c/.env.example)
 
 `.env`
+
 ```.env
 USERNAME=myuser
 PASSWORD=mypassword
 ```
+
 !!! warning
     Modify it to match the credentials for your app
 
     Also, go into the constants.py file and make sure `DEBUG` is set to `False` to use it
 
-
 ## (Optional) Session Timeout and Logout Page
+
 You can add a timeout of the session. So a user will not stay logged in forever. It is important for data sentivive related apps.
 You can also let the user logout if he wants.
 There is a logout bouton in the home page.
@@ -301,7 +307,6 @@ def logout():
 ```
 
 ## Adding File Download and Upload Features
-
 
 1. Add functions for file download:
 
@@ -351,8 +356,8 @@ def upload():
 ```
 
 ??? tip "Here is how it works"
-    We have added a upload endpoint 
-    
+    We have added a upload endpoint
+
     - that will receive user files and save them using the `handle_file_saving` function
     - that is protected with `login_required`
     - The function `slugify_filename` will rewrite the filename to use only lowercase alphanumeric characters an `-` as separators instead of space
@@ -408,9 +413,9 @@ The code for these features is available in the [GitHub repository](https://gith
 To filter the files, you can use a database to add which files to show. To be simple, i've used a json file.
 
 So the
+
 - home page will look into the json file to show the files
 - the upload page will save the file on the server and also add it in the json file
-
 
 1. Modify the listing feature to filter files using a JSON file:
 
@@ -463,9 +468,10 @@ def upload():
 
 The complete code with file filtering and other features is available in the [GitHub repository](https://github.com/Hermann-web/simple-file-hosting-with-flask).
 
-
 ## (Optional) Adding an api along the web page
+
 1. login
+
 ```python
 @app.route('/api/login', methods=['POST'])
 def api_login():
@@ -479,6 +485,7 @@ def api_login():
 ```
 
 2. get all the files
+
 ```python
 @app.route('/api')
 def api_index():
@@ -490,6 +497,7 @@ def api_index():
 ```
 
 3. upload a file
+
 ```python
 @app.route('/api/upload', methods=['POST'])
 def api_upload():
@@ -505,6 +513,7 @@ def api_upload():
 ```
 
 4. download a file
+
 ```python
 @app.route('/api/uploads/<path:filename>')
 def api_download(filename):
@@ -515,11 +524,13 @@ def api_download(filename):
 ```
 
 ## (Bonus) How to use the api
+
 - You can access the api with the routes `http://localhost:5000/api/*`
 - The file [cli_app/cli_app.py](https://github.com/Hermann-web/simple-file-hosting-with-flask/blob/e3807c55fa25e19b914173555929adfd2aa5567c/cli_app/cli_app.py) to access the api along with a context manager to handle sessions
 - you can read the [api documentation](https://github.com/Hermann-web/simple-file-hosting-with-flask/blob/e3807c55fa25e19b914173555929adfd2aa5567c/docs/api.md)
 
 ## (Bonus) How to use the cli app
+
 - The script [cli_app/sharefile.py](https://github.com/Hermann-web/simple-file-hosting-with-flask/blob/e3807c55fa25e19b914173555929adfd2aa5567c/cli_app/sharefile.py) provides a cli app to access the api context manager
 - Using your cli, you can list, upload and download files. The api will be called behind the hood by [cli_app/cli_app.py](https://github.com/Hermann-web/simple-file-hosting-with-flask/blob/e3807c55fa25e19b914173555929adfd2aa5567c/cli_app/cli_app.py)
 - you can read the [cli-app documentation](https://github.com/Hermann-web/simple-file-hosting-with-flask/blob/e3807c55fa25e19b914173555929adfd2aa5567c/docs/cli-app.md)
@@ -539,4 +550,3 @@ Create a 'static' folder and place your static files inside it.
 It can be interesting for custom css/js files and others
 
 You can find all this code in the repository [https://github.com/Hermann-web/simple-file-hosting-with-flask](https://github.com/Hermann-web/simple-file-hosting-with-flask)
-

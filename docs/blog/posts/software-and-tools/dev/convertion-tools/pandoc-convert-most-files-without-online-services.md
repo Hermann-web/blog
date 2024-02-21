@@ -18,6 +18,7 @@ title: "pandoc: convert most files without online services"
 ---
 
 ## Introduction
+
 Pandoc is a versatile document conversion tool that can convert Markdown documents to PDF, HTML, Word DOCX, and many other formats. Pandoc provides a wide range of options to customize the output of the converted document. Here is a list of some of the most commonly used options:
 
 - `-s`: Create a standalone document with a header and footer.
@@ -37,94 +38,109 @@ Pandoc is a versatile document conversion tool that can convert Markdown documen
 
 For a full list of options, see the Pandoc User's Guide[^pandoc-cli-1] or the Pandoc manual [^pandoc-cli-5].
 
-
 [^pandoc-cli-1]: [Pandoc Manual - pandoc.org](https://pandoc.org/MANUAL.html)
-[^pandoc-cli-2]: [Pandoc Extras - pandoc.org](https://pandoc.org/extras.html)
-[^pandoc-cli-3]: [Pandoc Filters - pandoc.org](https://pandoc.org/filters.html)
-[^pandoc-cli-4]: [RMarkdown Cookbook - LaTeX Variables - bookdown.org/yihui](https://bookdown.org/yihui/rmarkdown-cookbook/latex-variables.html)
 [^pandoc-cli-5]: [Pandoc General Writer Options - pandoc.org](https://pandoc.org/chunkedhtml-demo/3.3-general-writer-options.html)
-[^pandoc-cli-6]: [Pandoc Specifying Formats - pandoc.org](https://pandoc.org/chunkedhtml-demo/2.2-specifying-formats.html)
 [^pandoc-cli-7]: [Converting Markdown to Beautiful PDF with Pandoc - jdhao.github.io](https://jdhao.github.io/2019/05/30/markdown2pdf_pandoc/)
 
 ## Installing pandoc
+
 - Installing Pandoc on Ubuntu
 remove any previous versions of Pandoc.
+
 ```bash
 sudo apt-get purge --auto-remove pandoc
 ```
 
 - Download the latest version of Pandoc from the [Pandoc GitHub releases page](https://github.com/jgm/pandoc/releases)
 for example,
+
 ```bash
 wget https://github.com/jgm/pandoc/releases/download/3.1.8/pandoc-3.1.8-1-arm64.deb
 ```
 
 - Install the downloaded package by running the command sudo dpkg -i pandoc-<version>-1-amd64.deb, replacing <version> with the version number of the package you downloaded.
 for example,
+
 ```bash
 dpkg -i pandoc-3.1.8-1-arm64.deb
 ```
 
 - Run the following command
+
 ```bash
 pandoc -f markdown -t latex input.md -o output.tex
 ```
+
 where `input.md` is the name of your markdown file and `output.tex` is the name you want to give to the resulting LaTeX file.
 
 !!! quote "[For a hard markdown user like me, pandoc is a big time relief as i can note in markdown, store mostly markdown files and still, receiving and sharing files in proprietary like pdf, docx, ...]"
 
 ### get your options
-You can convert from any to any. 
+
+You can convert from any to any.
 To see available input (-f) format, use `pandoc --list-input-formats`
 To see available output (-t) format, use `pandoc --list-output-formats`
 
 ```bash
 pandoc -f markdown -t latex input.md -o output.tex
 ```
+
 where `input.md` is the name of your markdown file and `output.tex` is the name you want to give to the resulting LaTeX file.
 
 ### Quick examples
+
 - md to docx
+
 ```
 pandoc my_file.md -s -t docx -o my_file.docx
 ```
+
 `-s` is for standalone, `-o` to specify output file path, `-t` to specify output format (but no need as he guess from output file format given)
 
 - md to tex
+
 ```
 pandoc my_file.md -s -t latex -o my_file.tex
 ```
 
 - one md to pdf
+
 ```
 pandoc my_file.md -o my_file.pdf
 ```
 
-- if there is an encoding problem 
+- if there is an encoding problem
+
 ```
 pandoc my_file.md -o my_file.pdf --pdf-engine=lualatex
 ```
+
 found in [this stackexchange discussion](https://tex.stackexchange.com/questions/685719/pandoc-latex-error-unicode-character-%E2%88%80-u2200not-set-up-for-use-with-latex)
 
 - many md to pdf
+
 ```
 pandoc *.md -o markdown_book.pdf 
 ```
+
 found in [this stackoverflow discussion](https://stackoverflow.com/questions/4779582/markdown-and-including-multiple-files)
 
 - many md to pdf accross folders
+
 ```
 pandoc *.md */*.md -o markdown_book.pdf --pdf-engine=lualatex
 ```
+
 note that images not accessible from the current directory will not be parsed
 
 - add automatic section numbering like in latex
+
 ```
 pandoc my_file.md -s -o my_file.pdf --number-sections
 ```
 
-
 ## Cool features in md to pdf
+>
 > from is a great blog in this [^pandoc-cli-7]
 There are several cool options available when converting Markdown to PDF using Pandoc. Here are some of them:
 
@@ -207,13 +223,15 @@ Replace `myfile.md` with the name of your Markdown file and `references.bib` wit
 Pandoc will process the citations marked in `[@citation]` format within your Markdown file and generate the corresponding footnotes or bibliography entries in the resulting PDF.
 
 Remember to adjust the citation style and bibliography file as per your requirements.
-https://pandoc.org/chunkedhtml-demo/8.20-citation-syntax.html
+<https://pandoc.org/chunkedhtml-demo/8.20-citation-syntax.html>
 
 ### footnote citations
+
 You still can use `[^]` based citations.
 There will appear at the end of each page, not at the end of the file.
 
 **Examples**
+
 ```markdown
 [^citation-1]: Full citation details here.
 [^citation-2]: https://pandoc.org/chunkedhtml-demo/8.20-citation-syntax.html
@@ -225,7 +243,9 @@ You can see more on citation styles with [^citation-styles]
 [^citation-styles]: [more on citation styles](https://github.com/KurtPfeifle/pandoc-csl-testing)
 
 ## Resize image in markdown
+
 For example, if you want the image to take 50% of the page wifth, use
+
 ```md
 ![Caption text](/path/to/image){ width=50% }
 ```
