@@ -49,6 +49,15 @@ sudo systemctl enable apache2
 sudo systemctl start apache2
 ```
 
+??? info "When systemd is not running in this container"
+    If you encounter the error message `systemd" is not running in this container due to its overhead. Use the "service" command to start services instead. e.g.: service --status-all`, use the `service` command instead of `systemctl`.
+
+    For example, instead of `sudo systemctl enable apache2 & sudo systemctl start apache2`, use `sudo service apache2 start`. To stop or reload the service, use `sudo service apache2 stop` or `sudo service apache2 reload`, respectively.
+
+    Similarly, for stopping or reloading other services, use the `service` command instead of `systemctl`.
+
+
+
 - Install php
 
 ```bash
@@ -140,6 +149,10 @@ sudo mysqld_safe --skip-grant-tables --skip-networking &
 If there's a process conflict, kill the processes and restart MySQL.
 
 In another terminal:
+
+```bash
+mysql -u root -p
+```
 
 ```sql
 use mysql;
