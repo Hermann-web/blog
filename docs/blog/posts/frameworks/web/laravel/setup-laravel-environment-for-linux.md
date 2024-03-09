@@ -56,8 +56,6 @@ sudo systemctl start apache2
 
     Similarly, for stopping or reloading other services, use the `service` command instead of `systemctl`.
 
-
-
 - Install php
 
 ```bash
@@ -294,34 +292,39 @@ php artisan serve
 
 Both Laravel (PHP) and Django (Python) frameworks use a MVC-like architecture. Here are the analogies.
 
-### Laravel (PHP)
+=== ":octicons-file-code-16: `Laravel (PHP)`"
 
-- **Routes**: Defined in `routes/web.php`.
-  - Invokes PHP controllers.
-  - Calls `resources\views\partials\js\custom_js.blade.php` (JavaScript) on form submission, writing to the console.
-- **Serializers**: Located in `app/http/requests`.
-  - Used in controllers for data validation.
-- **Controllers**: Found in `app/http/controllers`.
-  - Utilizes serializers automatically for data validation.
-  - Uses models for CRUD operations.
-  - Returns `parse(a_view, data_for_client)` similar to Django.
-- **Models**: Reside in `app/models`.
-  - Utilized in controllers for CRUD operations.
-- **Views (Blade)**: Located in `resources/views`.
-  - Similar to PHP-client in Django, handling the presentation layer.
+    1. **Routes**: Defined in `routes/web.php`.
+        - Invokes PHP controllers.
+        - Calls `resources\views\partials\js\custom_js.blade.php` (JavaScript) on form submission, writing to the console.
+    1. **Serializers**: Located in `app/http/requests`.
+        - Used in controllers for data validation.
+    1. **Controllers**: Found in `app/http/controllers`.
+        - Utilizes serializers automatically for data validation.
+        - Uses models for CRUD operations.
+        - Returns `parse(a_view, data_for_client)` similar to Django.
+    1. **Models**: Reside in `app/models`.
+        - Utilized in controllers for CRUD operations.
+    1. **Views (Blade)**: Located in `resources/views`.
+        - Similar to PHP-client in Django, handling the presentation layer.
 
-### Django (Python)
+=== ":octicons-file-code-16: `Django (Python)`"
 
-- **URL Patterns**: Defined in `urls.py`.
-  - Maps to Python views.
-  - Handles HTTP requests and defines the view functions.
-- **Serializers**: Often part of Django REST framework in Python.
-  - Used for serialization and deserialization of data.
-- **Views**: Python files corresponding to the application's logic.
-  - Utilizes serializers for data validation.
-  - Performs database operations and returns rendered templates.
-- **Models**: Represented as Python classes in `models.py`.
-  - Represents the application's data structure.
-  - Interacts with the database via Django's ORM.
-- **Templates**: HTML files residing in `templates` directory.
-  - Renders the user interface based on data provided by views.
+    1. **URL Patterns**: Defined in `urls.py`.
+        - Maps to Python views.
+        - Handles HTTP requests and defines the view functions.
+    1. **Serializers**: Often part of Django REST framework in Python.
+        - Used for serialization and deserialization of data.
+    1. **Views**: Python files corresponding to the application's logic.
+        - Utilizes serializers for data validation.
+        - Performs database operations and returns rendered templates.
+    1. **Models**: Represented as Python classes in `models.py`.
+        - Represents the application's data structure.
+        - Interacts with the database via Django's ORM.
+    1. **Templates**: HTML files residing in `templates` directory.
+        - Renders the user interface based on data provided by views.
+
+## Related pages
+
+- [Guide to Installing MySQL and Connecting to Databases](../../../software-and-tools/sgbd/mysql/comprehensive-guide-to-installing-mysql-and-connecting-to-databases.md)
+- [Setting Up Laravel Environment on Windows](./setup-laravel-environment-on-windows.md)

@@ -30,20 +30,20 @@ Let's dive into the nuances of `git pull` and `git merge` to optimize your Git w
 
 ### `git checkout master && git merge dev`
 
-- `git checkout master`: Switches to the local `master` branch.
-- `git merge dev`: Attempts to merge the local `dev` into the local `master`.
+1. `git checkout master`: Switches to the local `master` branch.
+1. `git merge dev`: Attempts to merge the local `dev` into the local `master`.
 
 ### `git checkout master && git merge origin/dev`
 
-- `git checkout master`: Switches to the local `master` branch.
-- `git merge origin/dev`: Attempts to merge the remote `dev` into the local `master`.
+1. `git checkout master`: Switches to the local `master` branch.
+1. `git merge origin/dev`: Attempts to merge the remote `dev` into the local `master`.
 
 ### `git checkout master && git pull origin dev`
 
-- `git checkout master`: Switches to the local `master` branch.
-- `git pull origin dev`:
-  - Fetches changes from the remote `dev` to the local `dev` like `git fetch origin dev`.
-  - Attempts to merge the remote `dev` into the local `master` like `git merge origin/dev`.
+1. `git checkout master`: Switches to the local `master` branch.
+1. `git pull origin dev`:
+    - Fetches changes from the remote `dev` to the local `dev` like `git fetch origin dev`.
+    - Attempts to merge the remote `dev` into the local `master` like `git merge origin/dev`.
 
 ### Understanding the Differences
 
@@ -51,14 +51,16 @@ Technically, `git pull origin dev` and `git merge origin/dev` both aim to integr
 
 However, they differ in approach:
 
-- __`git pull origin dev`__:
-  - Combines `git fetch` (retrieve changes from the remote repository) and `git merge` (integrate changes into your local branch) in one step.
-  - Fetches changes from the remote `dev` branch and immediately merges them into your current local branch.
+=== ":octicons-file-code-16: __`git pull origin dev`__"
 
-- __`git merge origin/dev`__:
-  - Directly attempts to merge changes from the remote `dev` branch into your current local branch without explicitly fetching changes separately.
-  - Assumes you already have the remote branch's changes available in your local repository.
+    - Combines `git fetch` (retrieve changes from the remote repository) and `git merge` (integrate changes into your local branch) in one step.
+    - Fetches changes from the remote `dev` branch and immediately merges them into your current local branch.
 
+=== ":octicons-file-code-16: __`git merge origin/dev`__"
+
+    - Directly attempts to merge changes from the remote `dev` branch into your current local branch without explicitly fetching changes separately.
+    - Assumes you already have the remote branch's changes available in your local repository.
+  
 ### Practical Considerations
 
 - `git pull` is often preferred for its convenience and safety in ensuring your local branch is up-to-date with the remote before merging.

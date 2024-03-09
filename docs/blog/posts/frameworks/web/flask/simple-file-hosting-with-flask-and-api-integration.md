@@ -288,72 +288,72 @@ There is a logout bouton in the home page.
 
 1. Set the session timeout:
 
-```python
-# ... (Previous code)
+    ```python
+    # ... (Previous code)
 
-# Set the session timeout to 30 minutes (1800 seconds)
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
-```
+    # Set the session timeout to 30 minutes (1800 seconds)
+    app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
+    ```
 
 2. Add a logout page:
 
-```python
-# ... (Previous code)
+    ```python
+    # ... (Previous code)
 
-@app.route('/logout')
-def logout():
-    session.clear()
-    return redirect('/login')
-```
+    @app.route('/logout')
+    def logout():
+        session.clear()
+        return redirect('/login')
+    ```
 
 ## Adding File Download and Upload Features
 
 1. Add functions for file download:
 
-```python
-# ... (Previous code)
+    ```python
+    # ... (Previous code)
 
-@app.route('/uploads/<path:filename>')
-def download(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
-```
+    @app.route('/uploads/<path:filename>')
+    def download(filename):
+        return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+    ```
 
 2. Add functions for file upload:
 
-```python
-# ... (Previous code)
+    ```python
+    # ... (Previous code)
 
-@app.route('/uploads/<path:filename>')
-def download(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+    @app.route('/uploads/<path:filename>')
+    def download(filename):
+        return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 
-def slugify_filename(filename):
-    # Split the filename and extension
-    _ = filename.rsplit('.', 1)
-    if len(_)<2: return 
-    base, extension = _
-    # Slugify the base part
-    slug_base = slugify(base)
-    # Join the slugified base with the original extension
-    slug_filename = f"{slug_base}.{extension}"
-    return slug_filename
+    def slugify_filename(filename):
+        # Split the filename and extension
+        _ = filename.rsplit('.', 1)
+        if len(_)<2: return 
+        base, extension = _
+        # Slugify the base part
+        slug_base = slugify(base)
+        # Join the slugified base with the original extension
+        slug_filename = f"{slug_base}.{extension}"
+        return slug_filename
 
-def handle_file_saving(file):
-    filename = slugify_filename(file.filename)
-    file_save = app.config['UPLOAD_FOLDER'] / filename
-    print(f"saving {file_save.resolve()}")
-    file.save(file_save)
-    return filename
+    def handle_file_saving(file):
+        filename = slugify_filename(file.filename)
+        file_save = app.config['UPLOAD_FOLDER'] / filename
+        print(f"saving {file_save.resolve()}")
+        file.save(file_save)
+        return filename
 
-@app.route('/upload', methods=['POST'])
-@login_required
-def upload():
-    file = request.files['file']
-    if file:
-        filename = handle_file_saving(file)
-    return redirect('/')
-```
+    @app.route('/upload', methods=['POST'])
+    @login_required
+    def upload():
+        file = request.files['file']
+        if file:
+            filename = handle_file_saving(file)
+        return redirect('/')
+    ```
 
 ??? tip "Here is how it works"
     We have added a upload endpoint
@@ -369,42 +369,42 @@ The complete code with file download and upload features can be found in the [Gi
 
 1. Add endpoints for opening a file, displaying raw content, and API:
 
-```python
-# ... (Previous code)
+    ```python
+    # ... (Previous code)
 
-@app.route('/open/<path:filename>')
-@login_required
-def open_file(filename):
-    file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    @app.route('/open/<path:filename>')
+    @login_required
+    def open_file(filename):
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
-    if not os.path.exists(file_path):
-        return "File not found"
+        if not os.path.exists(file_path):
+            return "File not found"
 
-    mime_type = get_content_type(file_path)
+        mime_type = get_content_type(file_path)
 
-    # Map .md and .mmd extensions to text/plain
-    if mime_type == 'text/markdown' or mime_type == 'text/x-markdown':
-        mime_type = 'text/plain'
+        # Map .md and .mmd extensions to text/plain
+        if mime_type == 'text/markdown' or mime_type == 'text/x-markdown':
+            mime_type = 'text/plain'
 
-    if mime_type:
+        if mime_type:
+            with open(file_path, 'rb') as file:
+                file_content = file.read()
+            return Response(file_content, content_type=mime_type)
+
+        return "Unknown file type"
+
+    @app.route('/raw/<path:filename>')
+    @login_required
+    def raw_file(filename):
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+
+        if not os.path.exists(file_path):
+            return "File not found"
+
         with open(file_path, 'rb') as file:
             file_content = file.read()
-        return Response(file_content, content_type=mime_type)
-
-    return "Unknown file type"
-
-@app.route('/raw/<path:filename>')
-@login_required
-def raw_file(filename):
-    file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-
-    if not os.path.exists(file_path):
-        return "File not found"
-
-    with open(file_path, 'rb') as file:
-        file_content = file.read()
-    return file_content
-```
+        return file_content
+    ```
 
 The code for these features is available in the [GitHub repository](https://github.com/Hermann-web/simple-file-hosting-with-flask).
 
@@ -419,52 +419,52 @@ So the
 
 1. Modify the listing feature to filter files using a JSON file:
 
-```python
-def load_data_from_json():
-    if os.path.exists(app.config['DATA_FILE']):
-        with open(app.config['DATA_FILE'], 'r') as file:
-            try:
-                return json.load(file)
-            except json.JSONDecodeError:
-                pass
-    return {}
+    ```python
+    def load_data_from_json():
+        if os.path.exists(app.config['DATA_FILE']):
+            with open(app.config['DATA_FILE'], 'r') as file:
+                try:
+                    return json.load(file)
+                except json.JSONDecodeError:
+                    pass
+        return {}
 
-def get_files_with_dates():
-    data = load_data_from_json()
-    return [(filename, data[filename]) for filename in sorted(data, key=data.get) if (app.config['UPLOAD_FOLDER']/filename).exists()]
+    def get_files_with_dates():
+        data = load_data_from_json()
+        return [(filename, data[filename]) for filename in sorted(data, key=data.get) if (app.config['UPLOAD_FOLDER']/filename).exists()]
 
-@app.route('/')
-@login_required
-def index():
-    files = get_files_with_dates()
-    return render_template('index.html', files=files)
-```
+    @app.route('/')
+    @login_required
+    def index():
+        files = get_files_with_dates()
+        return render_template('index.html', files=files)
+    ```
 
 2. Modify the upload feature to filter files using a JSON file:
 
-```python
-def update_data_file(filename):
-    data = load_data_from_json()
-    data[filename] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open(app.config['DATA_FILE'], 'w') as file:
-        json.dump(data, file)
+    ```python
+    def update_data_file(filename):
+        data = load_data_from_json()
+        data[filename] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        with open(app.config['DATA_FILE'], 'w') as file:
+            json.dump(data, file)
 
-def handle_file_saving(file):
-    filename = slugify_filename(file.filename)
-    file_save = app.config['UPLOAD_FOLDER'] / filename
-    print(f"saving {file_save.resolve()}")
-    file.save(file_save)
-    update_data_file(filename)
-    return filename
+    def handle_file_saving(file):
+        filename = slugify_filename(file.filename)
+        file_save = app.config['UPLOAD_FOLDER'] / filename
+        print(f"saving {file_save.resolve()}")
+        file.save(file_save)
+        update_data_file(filename)
+        return filename
 
-@app.route('/upload', methods=['POST'])
-@login_required
-def upload():
-    file = request.files['file']
-    if file:
-        filename = handle_file_saving(file)
-    return redirect('/')
-```
+    @app.route('/upload', methods=['POST'])
+    @login_required
+    def upload():
+        file = request.files['file']
+        if file:
+            filename = handle_file_saving(file)
+        return redirect('/')
+    ```
 
 The complete code with file filtering and other features is available in the [GitHub repository](https://github.com/Hermann-web/simple-file-hosting-with-flask).
 
@@ -472,56 +472,56 @@ The complete code with file filtering and other features is available in the [Gi
 
 1. login
 
-```python
-@app.route('/api/login', methods=['POST'])
-def api_login():
-    username = request.json.get('username')
-    password = request.json.get('password')
+    ```python
+    @app.route('/api/login', methods=['POST'])
+    def api_login():
+        username = request.json.get('username')
+        password = request.json.get('password')
 
-    if validate_credentials(username, password):
-        return jsonify({'message': 'Login successful'})
-    else:
-        return jsonify({'message': 'Invalid credentials'}), 401
-```
+        if validate_credentials(username, password):
+            return jsonify({'message': 'Login successful'})
+        else:
+            return jsonify({'message': 'Invalid credentials'}), 401
+    ```
 
 2. get all the files
 
-```python
-@app.route('/api')
-def api_index():
-    if not is_logged_in():
-        return jsonify({'message': 'Unauthorized'}), 401
+    ```python
+    @app.route('/api')
+    def api_index():
+        if not is_logged_in():
+            return jsonify({'message': 'Unauthorized'}), 401
 
-    files = get_files()
-    return jsonify({'files': files})
-```
+        files = get_files()
+        return jsonify({'files': files})
+    ```
 
 3. upload a file
 
-```python
-@app.route('/api/upload', methods=['POST'])
-def api_upload():
-    if not is_logged_in():
-        return jsonify({'message': 'Unauthorized'}), 401
+    ```python
+    @app.route('/api/upload', methods=['POST'])
+    def api_upload():
+        if not is_logged_in():
+            return jsonify({'message': 'Unauthorized'}), 401
 
-    file = request.files['file']
-    if file:
-        filename = handle_file_saving(file)
-        return jsonify({'message': f'File uploaded: {filename}'})
-    else:
-        return jsonify({'message': 'No file provided'}), 400
-```
+        file = request.files['file']
+        if file:
+            filename = handle_file_saving(file)
+            return jsonify({'message': f'File uploaded: {filename}'})
+        else:
+            return jsonify({'message': 'No file provided'}), 400
+    ```
 
 4. download a file
 
-```python
-@app.route('/api/uploads/<path:filename>')
-def api_download(filename):
-    if not is_logged_in():
-        return jsonify({'message': 'Unauthorized'}), 401
+    ```python
+    @app.route('/api/uploads/<path:filename>')
+    def api_download(filename):
+        if not is_logged_in():
+            return jsonify({'message': 'Unauthorized'}), 401
 
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
-```
+        return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+    ```
 
 ## (Bonus) How to use the api
 

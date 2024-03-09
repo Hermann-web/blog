@@ -20,7 +20,9 @@ __Ever glanced at those cryptic licenses in software projects—like the `MIT Li
 
 Whether you're a code wizard or just dipping your toes in tech, understanding these licenses is like decoding a secret language. Which one suits your project best? What's the deal when you borrow or tweak someone else's code?
 
-This markdown unravels the mystery, diving into the world of software licenses. Discover their quirks, choose wisely between the MIT, Apache, or GPL licenses, and learn the ropes for handling borrowed or tweaked code. Get ready to crack the code of software licenses!
+This document unravels the mystery, diving into the world of software licenses. Discover their quirks, choose wisely between the MIT, Apache, or GPL licenses, and learn the ropes for handling borrowed or tweaked code. Get ready to crack the code of software licenses!
+
+!!! warning "Please note that the information provided here is for educational purposes only and should not be construed as legal advice."
 
 <!-- more -->
 
@@ -47,20 +49,23 @@ It can be permissive (MIT, Apache, ...), copyleft (you should distribute under t
 
 They allow anyone to use, modify, distribute, and sell the software with few restrictions. Though you're not obligated to share modifications, distributing in source code form implies sharing. Here are the most common exemples.
 
-- __MIT License:__:
-  - Allows users `U1` to use, modify, and distribute (release to user `U2`) the software ( which a part is a derivative from `U0` work) for any purpose, including commercial use, without having to share ( to user `U2`) their modifications or contributions
-  - Essentially, it offers considerable freedom.
+=== ":octicons-file-code-16: `MIT License:`"
 
-- __Apache License / Microsoft Public License (Ms-PL):__:
-  - Permits users `U1` to use, modify, and distribute the software without having to share their modifications with `U2`
-  - Requires users to provide attribution (a mention of the original author' name `U0`) and a copy of the license when distributing the software to `U2`.
-  - Includes a patent license, ensuring users won't be sued for patents related to the software.
-  - So basically, keep the original author's name and no patent (warranties) problem
+    - Allows users `U1` to use, modify, and distribute (release to user `U2`) the software ( which a part is a derivative from `U0` work) for any purpose, including commercial use, without having to share ( to user `U2`) their modifications or contributions
+    - Essentially, it offers considerable freedom.
 
-- __BSD License:__:
-      - Allows redistribution and modification
-      - Requires that the original copyright notice and disclaimer be retained.
-      - Essentially, it ensures the original author (`U0` or `U1`) are not legally responsible for any issues arising from User `U2`'s use.
+=== ":octicons-file-code-16: `Apache License / Microsoft Public License (Ms-PL)`"
+
+    - Permits users `U1` to use, modify, and distribute the software without having to share their modifications with `U2`
+    - Requires users to provide attribution (a mention of the original author' name `U0`) and a copy of the license when distributing the software to `U2`.
+    - Includes a patent license, ensuring users won't be sued for patents related to the software.
+    - So basically, keep the original author's name and no patent (warranties) problem
+
+=== ":octicons-file-code-16: `BSD License`"
+
+    - Allows redistribution and modification
+    - Requires that the original copyright notice and disclaimer be retained.
+    - Essentially, it ensures the original author (`U0` or `U1`) are not legally responsible for any issues arising from User `U2`'s use.
 
 ### Copyleft Licenses
 
@@ -73,32 +78,38 @@ This helps ensure that the software remains open source and that any improvement
 
 Examples include
 
-- __LGPL (Lesser General Public License):__:
-  - Requires users (`U1`) to share modifications and contributions (only the part of the software that use a LGPL licenced code) to the software under the same license (LGPL).
-  - Mandates `U1` making the source code available to anyone (`U2`) receiving the software and providing a copy of the license along with it.
-  - So basically, requires that modifications to the code be released under the same license.
+=== ":octicons-file-code-16: `LGPL (Lesser General Public License)`"
 
-- **Others**
-  - Microsoft Reciprocal License (Ms-RL)
-  - LGPL + disclaimer
+    - Requires users (`U1`) to share modifications and contributions (only the part of the software that use a LGPL licenced code) to the software under the same license (LGPL).
+    - Mandates `U1` making the source code available to anyone (`U2`) receiving the software and providing a copy of the license along with it.
+    - So basically, requires that modifications to the code be released under the same license.
 
-- __GPL (General Public License):__:
-  - Extend LGPL rules
-  - Require the entire codebase become GPL licenced if any part uses GPL-licensed code, ensuring the software remains open source.
-  - Require the entire codebase should to be shared with user `U2` when distributing the software
-  - So basically, requires that any software that use a GPL licenced code become a GPL licence software that share its codebase.
+=== ":octicons-file-code-16: `GPL (General Public License)`"
 
-- __AGPL (Affero General Public License):__:
-  - Extends GPL's rules to apply even when software is accessed via a network.
+    - Extend LGPL rules
+    - Require the entire codebase become GPL licenced if any part uses GPL-licensed code, ensuring the software remains open source.
+    - Require the entire codebase should to be shared with user `U2` when distributing the software
+    - So basically, requires that any software that use a GPL licenced code become a GPL licence software that share its codebase.
 
-- __SSPL (Server Side Public License):__:
-  - Extend AGPL rules
-  - Requires sharing the entire codebase (at least, containing one SSPL-licensed code) with the public (not only user `U2` whose you distribute it to) when using SSPL-licensed code.
-  - Mongo DB uses this license.
+=== ":octicons-file-code-16: `AGPL (Affero General Public License)`"
 
-- __MPL (Mozilla Public License) / EPL (Eclipse Public License):__:
-  - Similar to LGPL, these licenses require modified code portions to be released under the same license but not the entire program. So it allows linking with non-free software
-  - Similar to LGPL, requires that modifications to the code be released under the same license
+    - Extends GPL's rules to apply even when software is accessed via a network.
+
+=== ":octicons-file-code-16: `SSPL (Server Side Public License)`"
+
+    - Extend AGPL rules
+    - Requires sharing the entire codebase (at least, containing one SSPL-licensed code) with the public (not only user `U2` whose you distribute it to) when using SSPL-licensed code.
+    - Mongo DB uses this license.
+
+=== ":octicons-file-code-16: `MPL (Mozilla Public License) / EPL (Eclipse Public License)`"
+
+    - Similar to LGPL, these licenses require modified code portions to be released under the same license but not the entire program. So it allows linking with non-free software
+    - Similar to LGPL, requires that modifications to the code be released under the same license
+
+=== ":octicons-file-code-16: `Others`"
+
+    - Microsoft Reciprocal License (Ms-RL)
+    - LGPL + disclaimer
 
 ## Proprietary Licenses
 
@@ -157,9 +168,10 @@ Constant vigilance is required to stay updated with license changes and adhere t
 
 ## Conclusion: The Significance of Open Source and Challenges with Dual Licensing
 
-Open source licenses can be copyleft ( you should distribute under the same license and/or keep track of the modification abd/or not remove the claim in the license).  For example, for GPL, if you distribute ( give a software which one part of the code source is under gpl), you should give the source too.
-It also can be permissive ( MIT, Apache,...).
+Open source licenses come in various forms, ranging from permissive ones like MIT and Apache to copyleft licenses where you should distribute under the same license and/or keep track of the modification abd/or not remove the claim in the license.  For example, for GPL, if you distribute ( give a software which one part of the code source is under gpl), you should give the source too. It's crucial to understand their implications for your project and how they impact collaboration, distribution, and legal obligations.
 
-A part of open source and proprietary licenses, emerge the dual licences that combine multiples licenses for differents parts of the same project.
+Beside open source and proprietary licenses, the dual licences has emerged, combining multiples licenses for differents parts of the same project.
 
-The significance of open source in fostering collaboration, innovation, and community-driven development cannot be overstated. While dual licensing attempts to address various needs, it often introduces complexities and limitations, hindering the core principles of open source collaboration and transparency.
+So, dual licensing is a strategy used to address different needs within a project, but it can introduce complexities and limitations. While open source fosters collaboration, innovation, and community-driven development, navigating through licensing choices requires careful consideration and understanding.
+
+Please remember that the information provided in this document is for educational purposes only and should not be considered legal advice. It's essential to consult with legal professionals for specific legal guidance related to software licenses and intellectual property matters.

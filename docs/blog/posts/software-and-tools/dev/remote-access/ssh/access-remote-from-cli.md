@@ -41,46 +41,53 @@ This document break down the process of connecting via SSH and file transfer and
 ### Steps to Connect
 
 1. __Open Terminal__: Or search for Git Bash in your applications and open it.
+
 2. __Accessing the Server__:
-   - Use the command
 
-      ```bash
-      ssh {username}@{domain}
-      ```
+    - Use the command
 
-      or
+        ```bash
+        ssh {username}@{domain}
+        ```
 
-      ```bash
-      ssh {username}@{server_ip}
-      ```
+        or
 
-   - Replace `{username}` with your remote server username.
-   - Replace `{domain}` with the domain name or `{server_ip}` with the server's IP address.
+        ```bash
+        ssh {username}@{server_ip}
+        ```
+
+    - Replace `{username}` with your remote server username.
+    - Replace `{domain}` with the domain name or `{server_ip}` with the server's IP address.
+
 3. __Adding a Specific Port__:
-   - If the server uses a different port (usually 22), use `ssh {username}@{domain} -p {port}`. Replace `{port}` with the correct port number.
+
+    - If the server uses a different port (usually 22), use `ssh {username}@{domain} -p {port}`. Replace `{port}` with the correct port number.
 
 4. __Entering Credentials__:
-   - After executing the command, you'll be prompted to enter your remote server account password. Type it in and press Enter.
+
+    - After executing the command, you'll be prompted to enter your remote server account password. Type it in and press Enter.
 
 ## Troubleshooting SSH Connection Issues
 
 ### Error: "Unable to negotiate with... port..."
 
-- If you encounter the error `Unable to negotiate with <IP> port <Port>: no matching host key type found. Their offer: ssh-rsa,ssh-dss`
-- Solution:
-  - Configure the client to accept the host key sent by the server.
-  - Edit the `~/.ssh/config` file:
+If you encounter the error `Unable to negotiate with <IP> port <Port>: no matching host key type found. Their offer: ssh-rsa,ssh-dss`
 
-   ```plaintext
-   Host {domain}
-       HostKeyAlgorithms +ssh-rsa,ssh-dss
-   ```
+!!! info "The Solution"
 
-  - Use a text editor like Nano, Vim, or Notepad to modify the file.
+    - Configure the client to accept the host key sent by the server.
+    - Edit the `~/.ssh/config` file:
 
-- Other Common SSH errors:
-  - Permissions: Ensure correct file permissions for `~/.ssh` and authorized_keys.
-  - Network problems: Check firewall settings and network connectivity.
+    ```plaintext
+    Host {domain}
+        HostKeyAlgorithms +ssh-rsa,ssh-dss
+    ```
+
+    - Use a text editor like Nano, Vim, or Notepad to modify the file.
+
+??? example "Other Common SSH errors:"
+    - Permissions: Ensure correct file permissions for `~/.ssh` and authorized_keys.
+    - Network problems: Check firewall settings and network connectivity.
 
 ## Alternative to ssh access though a cli: Putty and OpenSSH
 
@@ -116,21 +123,21 @@ You can use `scp` command to transfer files directly between two servers (local 
 
 Similar to local to server transfer, use `scp` between two remote servers by specifying their addresses.
 
-- Use the `scp` command to transfer files directly between two remote servers:
+Use the `scp` command to transfer files directly between two remote servers:
 
-   ```bash
-   remote_file_source="$remote_user1@$remote_host1:/path/to/source/file"
-   remote_file_destination="$remote_user2@$remote_host2:/path/to/destination/folder"
-   scp "$remote_file_source" "$remote_file_destination"
-   ```
+    ```bash
+    remote_file_source="$remote_user1@$remote_host1:/path/to/source/file"
+    remote_file_destination="$remote_user2@$remote_host2:/path/to/destination/folder"
+    scp "$remote_file_source" "$remote_file_destination"
+    ```
 
-- Replace:
-  - `$remote_user1` with the username for the first remote server.
-  - `$remote_host1` with the address or IP of the first remote server.
-  - `$remote_user2` with the username for the second remote server.
-  - `$remote_host2` with the address or IP of the second remote server.
+Replace:
+    - `$remote_user1` with the username for the first remote server.
+    - `$remote_host1` with the address or IP of the first remote server.
+    - `$remote_user2` with the username for the second remote server.
+    - `$remote_host2` with the address or IP of the second remote server.
 
-- This will transfer the specified file from the first remote server to the specified folder on the second remote server.
+This will transfer the specified file from the first remote server to the specified folder on the second remote server.
 
 ### SCP Options
 
@@ -160,26 +167,27 @@ ssh "$remote_user@$remote_host" "cd $remote_path && git fetch"
 
 To avoid being prompted to write the password, `sshpass` is a tool you want
 
-- __Install sshpass__:
-  - If needed, install sshpass using `sudo apt install sshpass`.
-- __Accessing SSH without Password Prompt__:
-   Instead of
+1. __Install sshpass__:
+    If needed, install sshpass using `sudo apt install sshpass`.
 
-   ```bash
-   ssh "$remote_user@$remote_host"
-   ```
+2. __Accessing SSH without Password Prompt__:
+    Instead of
 
-   use
+    ```bash
+    ssh "$remote_user@$remote_host"
+    ```
 
-   ```bash
-   sshpass -p "$password" ssh "$remote_user@$remote_host"
-   ```
+    use
 
-- Example: If want to tetch latest changes from the remote repository, i run
+    ```bash
+    sshpass -p "$password" ssh "$remote_user@$remote_host"
+    ```
 
-```bash
-sshpass -p "$password" ssh "$remote_user@$remote_host" "cd $remote_path && git fetch"
-```
+!!! example "to tetch latest changes from the remote repository, run"
+
+    ```bash
+    sshpass -p "$password" ssh "$remote_user@$remote_host" "cd $remote_path && git fetch"
+    ```
 
 ## Conclusion
 

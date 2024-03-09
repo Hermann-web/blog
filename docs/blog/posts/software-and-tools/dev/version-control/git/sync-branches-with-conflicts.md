@@ -43,14 +43,14 @@ git checkout feature-branch
 git rebase origin main 
 ```
 
-**Pros:**
+=== ":octicons-file-code-16: `Pros`"
 
-- Keeps a linear, clean commit history.
-- Integrates local changes after remote ones, maintaining chronological order.
+    - Keeps a linear, clean commit history.
+    - Integrates local changes after remote ones, maintaining chronological order.
 
-**Cons:**
+=== ":octicons-file-code-16: `Cons`"
 
-- Requires manual resolution of conflicts that may arise during rebase.
+    - Requires manual resolution of conflicts that may arise during rebase.
 
 ### Handling Conflicts during Rebase
 
@@ -70,11 +70,11 @@ Visual Studio Code (VSCode) offers a user-friendly interface to resolve conflict
 
 1. __Start the Rebase:__ Execute the rebase command in your terminal:
 
-   ```bash
-   git rebase <branch_name>
-   ```
+    ```bash
+    git rebase <branch_name>
+    ```
 
-   This command initiates the rebase process.
+    This command initiates the rebase process.
 
 2. __Conflict Indication:__ When conflicts occur, VSCode visually highlights them within the editor. You'll notice markers indicating the conflicted sections.
 
@@ -86,11 +86,11 @@ Visual Studio Code (VSCode) offers a user-friendly interface to resolve conflict
 
 6. __Continue Rebase:__ Once conflicts are resolved and staged, return to your terminal and continue the rebase:
 
-   ```bash
-   git rebase --continue
-   ```
+    ```bash
+    git rebase --continue
+    ```
 
-   This command proceeds with the rebase process using the resolved changes.
+    This command proceeds with the rebase process using the resolved changes.
 
 VSCode streamlines the conflict resolution process by providing a visual and intuitive interface, making it easier to handle conflicts during a rebase operation.
 
@@ -98,15 +98,15 @@ VSCode streamlines the conflict resolution process by providing a visual and int
 
 Using `merge` in Git combines changes from different branches, preserving their individual commit histories. This method creates a new commit to capture the integration of changes from one branch into another.
 
-**Pros:**
+=== ":octicons-file-code-16: `Pros`"
 
-- Preserves the complete history of changes made in each branch.
-- Maintains a clear track record of when and where changes were integrated.
+    - Preserves the complete history of changes made in each branch.
+    - Maintains a clear track record of when and where changes were integrated.
 
-**Cons:**
+=== ":octicons-file-code-16: `Cons`"
 
-- May result in a non-linear history with multiple merge commit points.
-- Can potentially clutter the commit history with merge commits.
+    - May result in a non-linear history with multiple merge commit points.
+    - Can potentially clutter the commit history with merge commits.
 
 ### Handling Conflicts
 
@@ -116,16 +116,16 @@ Similar to the rebase operation, merging branches in Git can lead to conflicts, 
 
 Suppose you're merging `branchA` into `branchB` and wish to favor the changes from `branchB` in case of conflicts:
 
-```bash
-git checkout branchB  # Switch to the target branch (branchB)
-git merge -X ours branchA  # Merge branchA into branchB, favoring branchB changes in conflicts
-```
+  ```bash
+  git checkout branchB  # Switch to the target branch (branchB)
+  git merge -X ours branchA  # Merge branchA into branchB, favoring branchB changes in conflicts
+  ```
 
-Explanation:
+!!! note "Explanation:"
 
-1. `git checkout branchB`: Switches to the target branch where changes will be merged (in this case, `branchB`).
+    1. `git checkout branchB`: Switches to the target branch where changes will be merged (in this case, `branchB`).
 
-2. `git merge -X ours branchA`: Merges `branchA` into `branchB`, and the `-X ours` option ensures conflicts are resolved by favoring changes from the current branch (`branchB`).
+    2. `git merge -X ours branchA`: Merges `branchA` into `branchB`, and the `-X ours` option ensures conflicts are resolved by favoring changes from the current branch (`branchB`).
 
 Upon executing this command, Git will merge the changes from `branchA` into `branchB`, automatically resolving conflicts by favoring the modifications present in `branchB`.
 

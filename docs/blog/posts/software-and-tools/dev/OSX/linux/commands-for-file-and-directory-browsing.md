@@ -68,44 +68,44 @@ The `grep` command searches for patterns in files.
 
   This command displays lines in `file.txt` that contain the specified `pattern`.
 
-    ??? info "Additional `grep` options:"
+??? info "Additional `grep` options:"
 
-        - `-H`: Print the filename for each match when searching in multiple files.
-          ```bash
-          grep -H "pattern" file1.txt file2.txt
-          ```
+    - `-H`: Print the filename for each match when searching in multiple files.
+      ```bash
+      grep -H "pattern" file1.txt file2.txt
+      ```
 
-        - `-l`: Display only the names of files that contain at least one match, instead of showing the matching lines.
-          ```bash
-          grep -l "pattern" file1.txt file2.txt
-          ```
+    - `-l`: Display only the names of files that contain at least one match, instead of showing the matching lines.
+      ```bash
+      grep -l "pattern" file1.txt file2.txt
+      ```
 
-        - `-n`: Display the line numbers along with the matching lines.
-          ```bash
-          grep -n "pattern" file.txt
-          ```
+    - `-n`: Display the line numbers along with the matching lines.
+      ```bash
+      grep -n "pattern" file.txt
+      ```
 
-        - `-w`: Match the whole word, ensuring that only entire words are considered.
-          ```bash
-          grep -w "word" file.txt
-          ```
+    - `-w`: Match the whole word, ensuring that only entire words are considered.
+      ```bash
+      grep -w "word" file.txt
+      ```
 
-        - `-i`: Perform case-insensitive matching, ignoring differences in case when searching for the pattern.
-          ```bash
-          grep -i "pattern" file.txt
-          ```
-        
-        - `-B N`: Display N lines before the matching line.
-          ```bash
-          grep -B 2 "pattern" file.txt
-          ```
+    - `-i`: Perform case-insensitive matching, ignoring differences in case when searching for the pattern.
+      ```bash
+      grep -i "pattern" file.txt
+      ```
+    
+    - `-B N`: Display N lines before the matching line.
+      ```bash
+      grep -B 2 "pattern" file.txt
+      ```
 
-        - `-A N`: Display N lines after the matching line.
-          ```bash
-          grep -A 2 "pattern" file.txt
-          ```
+    - `-A N`: Display N lines after the matching line.
+      ```bash
+      grep -A 2 "pattern" file.txt
+      ```
 
-        These options enhance the functionality of `grep` by providing more context, line numbers, and filename information when searching for patterns in files.
+    These options enhance the functionality of `grep` by providing more context, line numbers, and filename information when searching for patterns in files.
 
 ### awk (Aho, Weinberger, and Kernighan)
 

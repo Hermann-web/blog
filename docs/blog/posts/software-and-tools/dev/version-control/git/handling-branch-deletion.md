@@ -42,12 +42,11 @@ git push origin --delete <branch-name>
 
 ## Deleting a Branch Online (GitHub Interface)
 
-1. __Using GitHub's Website__:
-   - Go to the repository on GitHub.
-   - Click on the "Branches" tab.
-   - Locate the branch you want to delete.
-   - Click on the trash can icon or "Delete" button next to the branch name.
-   - Confirm the deletion if prompted.
+- Go to the repository on GitHub.
+- Click on the "Branches" tab.
+- Locate the branch you want to delete.
+- Click on the trash can icon or "Delete" button next to the branch name.
+- Confirm the deletion if prompted.
 
 ## Fetching and Cleaning Up Deletions
 
