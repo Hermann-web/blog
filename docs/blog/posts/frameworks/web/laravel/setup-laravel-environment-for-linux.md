@@ -328,3 +328,4 @@ Both Laravel (PHP) and Django (Python) frameworks use a MVC-like architecture. H
 
 - [Guide to Installing MySQL and Connecting to Databases](../../../software-and-tools/sgbd/mysql/comprehensive-guide-to-installing-mysql-and-connecting-to-databases.md)
 - [Setting Up Laravel Environment on Windows](./setup-laravel-environment-on-windows.md)
+- [Laravel PWA Integration Guide for Mobile Views](./pwa-with-laravel.md)
