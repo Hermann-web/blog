@@ -10,7 +10,6 @@ services:
       - "49161:8000"
     command: >
       bash -c "
-        pip install uv && uv venv &&
-        uv pip install -r requirements.txt &&
-        source .venv/bin/activate &&
+        pip install uv &&
+        uv pip install -r requirements.txt --python /usr/local/bin/python3 &&
         mkdocs serve -a 0.0.0.0:8000"
