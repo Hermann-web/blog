@@ -5,7 +5,6 @@ comments: true
 description: |
   Learn the ins and outs of managing Git branches effortlessly. From deleting branches locally and on remote repositories to recovering mistakenly deleted branches, this guide equips you with essential Git branch handling techniques, ensuring a streamlined version control workflow.
 categories:
-  - devops
   - version-control
   - git
   - recovery

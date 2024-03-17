@@ -5,7 +5,6 @@ comments: true
 description: |
   Explore the differences between git pull and git merge to streamline your Git workflow and manage branch integration effectively.
 categories:
-  - devops
   - version-control
   - git
   - beginners

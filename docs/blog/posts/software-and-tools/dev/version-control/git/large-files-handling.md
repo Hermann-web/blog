@@ -5,7 +5,6 @@ comments: true
 description: |
   Simplifying Large File Management in Git with Git LFS: A Comprehensive Guide for Developers.
 categories:
-  - devops
   - version-control
   - git
 links:

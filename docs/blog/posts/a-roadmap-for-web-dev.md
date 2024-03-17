@@ -7,7 +7,6 @@ description: >
   It is flavored by mkdocs
 categories:
   - Blog
-  - devops
   - web
   - beginners
 links:

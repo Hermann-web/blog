@@ -6,7 +6,6 @@ description: |
   Unveiling the Code Chronicles: Navigating the Realm of Software Licenses in Development, Enriched with mkdocs.
 categories:
   - Blog
-  - devops
   - beginners
 links:
   - blog/posts/a-roadmap-for-web-dev.md

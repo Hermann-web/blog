@@ -5,7 +5,6 @@ comments: true
 description: |
   Discover the best practices in Git merge strategies—rebase and merge. Navigate the maze of version control to maintain a pristine repository history, perfect for developers entering collaborative coding environments.
 categories:
-  - devops
   - version-control
   - git
 title: "Mastering Git Merge Strategies: A Developer's Guide"

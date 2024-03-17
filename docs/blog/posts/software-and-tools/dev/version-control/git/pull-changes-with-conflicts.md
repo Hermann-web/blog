@@ -5,7 +5,6 @@ comments: true
 description: |
   A comprehensive guide to managing local modifications and remote changes in Git, exploring various options and their implications for seamless collaboration.
 categories:
-  - devops
   - version-control
   - git
   - beginners
