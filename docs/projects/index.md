@@ -17,3 +17,4 @@ title: My Projects
 ## Web development
 
 - [Flask based File Hosting (web app & api & python module & cli app)](./file-hosting-app.md)
+- [Introducing Two New Packages for Streamlining File Conversions in Python](./introducing-two-new-packages-for-streamlining-file-conversions-in-python.md)
