@@ -248,3 +248,7 @@ For example, if you want the image to take 50% of the page wifth, use
 ```md
 ![Caption text](/path/to/image){ width=50% }
 ```
+
+## Related links
+
+- [Introducing Two New Packages for Streamlining File Conversions in Python](../../../../../projects/introducing-two-new-packages-for-streamlining-file-conversions-in-python.md)

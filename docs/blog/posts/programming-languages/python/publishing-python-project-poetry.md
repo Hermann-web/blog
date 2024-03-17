@@ -165,7 +165,6 @@ Now, go ahead and share your amazing Python projects with the world!
 
 Related resources:
 
-- [Test PyPI](https://test.pypi.org/help/#twofa)
-- [PyPI](https://pypi.org/)
-- [Poetry Documentation](https://python-poetry.org/docs/)
-- [Python Packaging](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+- [Test PyPI](https://test.pypi.org/help/#twofa), [PyPI](https://pypi.org/), [Python Packaging](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+- [beginner's guide to poetry](./poetry-in-practise.md), [python dependency management cheat](./package-managers-in-python.md)
+- [Introducing Two New Packages for Streamlining File Conversions in Python](../../../../../projects/introducing-two-new-packages-for-streamlining-file-conversions-in-python.md)
