@@ -12,4 +12,5 @@ services:
       bash -c "
         pip install uv &&
         uv pip install -r requirements.txt --python /usr/local/bin/python3 &&
+        git config --global --add safe.directory /app &&
         mkdocs serve -a 0.0.0.0:8000"

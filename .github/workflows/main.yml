@@ -8,8 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v2
         with:
           python-version: '3.11'
-      - run: pip install mkdocs==1.5.3 mkdocs-material==9.4.7 mkdocs-minify-plugin==0.7.1
+      - run: pip install uv
+      - run: uv pip install -r requirements.txt --python $(which python3)
       - run: mkdocs gh-deploy --force --clean --verbose
