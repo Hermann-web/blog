@@ -21,6 +21,10 @@ title: "Laravel PWA Integration Guide for Mobile Views"
 
 __Have you ever wanted to provide mobile views for your web applications without the hassle of native mobile app development?__
 
+<div class="float-img-container float-img-left">
+  <a title="Diego González-Zúñiga, Creative Commons Zero, Public Domain Dedication CC0 &lt;http://creativecommons.org/publicdomain/zero/1.0/deed.en&gt;, via Wikimedia Commons" href="https://github.com/webmaxru/progressive-web-apps-logo"><img width="512" alt="Mergevsrebase" src="https://user-images.githubusercontent.com/3104648/28351989-7f68389e-6c4b-11e7-9bf2-e9fcd4977e7a.png"></a>
+</div>
+
 With the Laravel PWA package, you can effortlessly create mobile views for your Laravel application, catering to both Android and iOS users.
 
 This documentation serves as a step-by-step guide to help you integrate the Laravel PWA package into your Laravel application effortlessly. Whether you're a seasoned developer or just starting your journey with Laravel, this guide will walk you through the process, making PWA implementation a breeze.

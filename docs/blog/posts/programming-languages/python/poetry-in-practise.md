@@ -15,7 +15,13 @@ title: "Managing Python Projects with Poetry: A Comprehensive Guide"
 
 # Managing Python Projects with Poetry
 
-Poetry is a powerful tool for simplifying Python project management and dependency handling. Follow these steps to initialize, add dependencies, and manage your project effortlessly:
+<div class="float-img-container float-img-left">
+  <a title="python-poetry authors, Sébastien Eustace, MIT License &lt;https://github.com/python-poetry/poetry/blob/main/LICENSE&gt;, via Github" href="https://python-poetry.org/"><img width="100" alt="python-poetry" src="https://python-poetry.org/images/logo-origami.svg"></a>
+</div>
+
+Poetry simplifies Python project management and dependency handling. It's beginner-friendly and offers advantages like streamlined dependency management, integrated virtual environments, and simplified workflow. Give it a try to experience efficient Python development.
+
+Follow these steps to initialize, add dependencies, and manage your project effortlessly:
 
 ## 1. Install Poetry
 
@@ -26,6 +32,8 @@ pip install poetry
 ```
 
 <!-- more -->
+
+![Poetry Install](https://raw.githubusercontent.com/python-poetry/poetry/master/assets/install.gif){width=250}
 
 ## 2. Create a New Project
 

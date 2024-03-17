@@ -23,7 +23,13 @@ title: "Navigating Redirect Challenges With GitHub Pages: A Creative Approach to
 
 ## Introduction
 
-Imagine having a GitHub Pages website. Now, you've migrated to project on another GitHub Pages website. As reports surfaced about users being unable to access the site, the need for a swift redirection from old URLs to the current ones became paramount. The catch? The solution had to operate within the constraints of a static web page, using only HTML, CSS, and JavaScript.
+Imagine having a GitHub Pages website. Now, you've migrated to project on another GitHub Pages website. As reports surfaced about users being unable to access the site, the need for a swift redirection from old URLs to the current ones became paramount.
+
+<div class="float-img-container float-img-left">
+<a title="GitHub, CC BY 4.0 &lt;https://creativecommons.org/licenses/by/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:GitHub_Invertocat_Logo.svg"><img width="64" alt="GitHub Invertocat Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/256px-GitHub_Invertocat_Logo.svg.png"></a>
+</div>
+
+The catch? The solution had to operate within the constraints of a static web page, using only HTML, CSS, and JavaScript.
 
 While conventional methods like Flask and Frozen-Flask failed, the journey led to a creative solution using HTML and JavaScript. In this blog post, I'll share the step-by-step process of how I navigated through the obstacles and achieved seamless redirection.
 

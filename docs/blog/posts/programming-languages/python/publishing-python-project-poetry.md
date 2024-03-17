@@ -17,6 +17,12 @@ links:
 
 __Are you ready to share your Python project with the world and make it accessible to users and developers alike?__
 
+<div class="float-img-container float-img-left">
+  <a title="py-packages" href="https://py-pkgs.org/04-package-structure.html">
+    <img alt="py-packages-logo" src="https://py-pkgs.org/_images/04-pkg-cycle.png">
+  </a>
+</div>
+
 Publishing your work not only showcases your creation but also enables others to benefit from and contribute to your project. Discover the simplest way to publish Python projects using Poetry, a powerful dependency management and packaging tool.
 
 In this guide, we'll walk you through setting up your project with [Poetry](https://python-poetry.org/docs/) and publishing it on both test.pypi and production PyPI.

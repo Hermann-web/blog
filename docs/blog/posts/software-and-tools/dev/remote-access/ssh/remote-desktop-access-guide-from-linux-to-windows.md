@@ -16,7 +16,14 @@ title: Setting Up Remote Desktop Access with Remmina on Ubuntu
 
 # How to Set Up Remote Desktop Access from Linux to Windows 10 Using Remmina
 
-Remote desktop access has become an essential feature in today's digital landscape, allowing users to connect to their computers from anywhere. While Windows users have built-in options for remote desktop access, Linux users often need to rely on third-party applications. In this guide, we'll explore how to set up remote desktop access from a Linux system to a Windows 10 machine using Remmina.
+<div class="float-img-container float-img-right">
+  <a title="Remmina App authors, Antenore Gatta, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Org.remmina.Remmina.svg"><img width="100" alt="Org.remmina.Remmina" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Org.remmina.Remmina.svg/128px-Org.remmina.Remmina.svg.png"></a>
+</div>
+
+Remote desktop access has become an essential feature in today's digital landscape, allowing users to connect to their computers from anywhere.
+While Windows users have built-in options for remote desktop access, Linux users often need to rely on third-party applications.
+
+In this guide, we'll explore how to set up remote desktop access from a Linux system to a Windows 10 machine using Remmina.
 
 <!-- more -->
 
@@ -38,15 +45,19 @@ Before connecting remotely to your Windows 10 machine, you'll need to enable rem
 
 Remmina is an open-source remote desktop client for Linux systems, offering an intuitive interface and robust features.
 
-1. **Install Remmina**: Open a terminal on your Linux system and install Remmina using your package manager:
+**1. Install Remmina**: Open a terminal on your Linux system and install Remmina using your package manager:
 
-   ```bash
-   sudo apt install remmina
-   ```
+```bash
+sudo apt install remmina
+```
 
-2. **Create a New Connection**: Launch Remmina and create a new connection profile. Enter the private IP address of your Windows 10 machine as the server address, and provide the username and password of the session you added in the previous step.
+<div class="float-img-container float-img-right">
+  <a title="Flidster, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Remmina_setup.png"><img width="512" alt="Remmina setup" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Remmina_setup.png/512px-Remmina_setup.png"></a>
+</div>
 
-3. **Establish the Connection**: Once you've entered the necessary information, click "Connect" to establish the remote desktop connection to your Windows 10 machine.
+**2. Create a New Connection**: Launch Remmina and create a new connection profile. Enter the private IP address of your Windows 10 machine as the server address, and provide the username and password of the session you added in the previous step.
+
+**3. Establish the Connection**: Once you've entered the necessary information, click "Connect" to establish the remote desktop connection to your Windows 10 machine.
 
 ## Step 3: Testing Remote Desktop Access
 
