@@ -1,0 +1,32 @@
+.float-img-container > a {
+    display: flex;
+    justify-content: center;
+}
+
+/* For mobile devices */
+@media screen and (max-width: 767px) {
+    .float-img-container{
+        text-align: center; /* Center align the contents */
+    }
+    
+    .float-img-container img {
+        display: inline-block; /* Ensure the image is treated as a block element */
+    } 
+}
+@media screen and (min-width: 767px) {
+    .simple-img-container {
+        width: 50%;
+    }
+    .float-img-container {
+        width: 30%;
+    }
+    .float-img-right{
+        float: right;
+        margin: 1rem 1rem 0rem 10%;
+    }
+    
+    .float-img-left{
+        float: left;
+        margin: 0rem 10% 1rem 1rem;
+    }    
+}
