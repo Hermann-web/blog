@@ -145,6 +145,8 @@ Grasping their strengths, weaknesses, and use cases empowers you to make informe
     - **Resolution Strategy Customization:**
       uv allows customization of its resolution strategy. With `--resolution=lowest`, uv installs the lowest compatible versions for all dependencies, while `--resolution=lowest-direct` focuses on lowest compatible versions for direct dependencies and latest compatible versions for transitive dependencies.
 
+??? info "read [this docu](./integrating-requirements-with-poetry.md) about how to add dependencies from a `requirements.txt` file"
+
 ## Conclusion
 
 Congratulations! You've now equipped yourself with insights into managing Python dependencies effectively using pip, pipenv, poetry, conda and more. By understanding their strengths and use cases, you're better equipped to make informed decisions for your projects.

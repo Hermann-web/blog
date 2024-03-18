@@ -499,7 +499,7 @@ find . -type f -not -path '*/node_modules/*' -not -path '*env*' -not -name '*_*'
 git grep -l "wrapper" -- "*.py"
 ```
 
-### Using `tail` Command
+### Using `head` and `tail` Commands
 
 - display the last 50 lines of a file
 
@@ -514,6 +514,16 @@ tail -50 cli.log | grep "/api/"
 ```
 
 This command will display the last 50 lines of the `cli.log` file and filter out only the lines that contain "/api/". This combination of `tail` and `grep` will help you isolate and display the relevant lines.
+
+- install the first lines of `requirements.txt` using `head` and `xargs`
+
+```bash
+head -n 18 requirements.txt | xargs -n 1 pip3 install
+```
+
+This command will read the first 18 lines of `requirements.txt`, then install each package listed there using `pip3`.
+
+!!! tip "An improvement of this command has been proposed [here](../../../../programming-languages/python/integrating-requirements-with-poetry.md) using `sed` to remove from the requirement file, spaces, comment, empty lines, ..."
 
 ### search for lines containing the word "black" within `.sh` files
 
