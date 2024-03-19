@@ -108,9 +108,9 @@ This document simplifies Git submodules in a beginner-friendly way, offering dev
 
 Now that you've successfully cloned the main repository along with its submodules, let's explore how to create and manage submodules within an existing repository.
 
-## Creating a Git Submodule
+!!! warning "If the update fails, you may want to read [this stackoverflow thread](https://stackoverflow.com/questions/8844217/git-submodule-update-fails-with-error-on-one-machine-but-works-on-another-machin)"
 
-### Navigate to the Parent Repository
+## Creating a Git Submodule
 
 1. **Move to the parent repository's root directory:**
 
@@ -206,6 +206,56 @@ Now, let's delve into pulling changes from both the main repository and its subm
     cd path/to/submodule
     git commit -am "Update submodule"
     git push origin master
+    ```
+
+## Removing a Git Submodule
+
+To remove a submodule from your repository, follow these steps. The following instructions are based on a detailed explanation found on Stack Overflow ([source](https://stackoverflow.com/a/16162000)).
+
+1. **Move to the parent repository's root directory:**
+
+    Before removing the submodule, move it temporarily to a different location within your working directory.
+
+    ```bash
+    mv <submodule_path> <submodule_path>_tmp
+    ```
+
+1. **Deinitialize the Submodule:**
+    Use the following command to deinitialize the submodule:
+
+    ```bash
+    git submodule deinit -f -- <submodule_path>
+    ```
+
+2. **Remove Submodule Configuration:**
+    Delete the submodule's configuration from the `.git/modules` directory:
+
+    ```bash
+    rm -rf .git/modules/<submodule_path>
+    ```
+
+3. **Remove Submodule from Repository:**
+    There are two options to remove the submodule from the repository:
+
+    a. If you want to completely remove it from the repository and your working tree:
+
+       ```bash
+       git rm -f <submodule_path>
+       ```
+ 
+       Note: Replace `<submodule_path>` with the actual submodule path.
+
+    b. If you want to keep it in your working tree but remove it from the repository:
+
+       ```bash
+       git rm --cached <submodule_path>
+       ```
+
+4. **Restore Submodule (Optional):**
+    If you moved the submodule in step 0, restore it to its original location:
+
+    ```bash
+    mv <submodule_path>_tmp <submodule_path>
     ```
 
 By following these steps, you'll effortlessly manage main repositories and their submodules, ensuring your projects are up to date.
