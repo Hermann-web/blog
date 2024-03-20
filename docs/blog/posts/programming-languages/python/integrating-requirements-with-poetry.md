@@ -18,6 +18,8 @@ Managing dependencies is a crucial aspect of any software project. Whether you'r
 
 So, when working with Poetry, you might need to integrate your existing `requirements.txt` file into your project. This document outlines how to achieve that efficiently.
 
+<!-- more -->
+
 It's essential to ensure that the file contains only abstract requirements, akin to manual maintenance. Conversely, if the `requirements.txt` file is generated from a `pip freeze`, it includes all packages, not just high-level requirements.
 
 ## Removing Spaces, Comments, and Empty Lines
