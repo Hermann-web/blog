@@ -61,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hermann-web.github.io/blog/blog/2024/03/21/javascript-es6-syntax-overview/</loc>
+         <lastmod>2024-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hermann-web.github.io/blog/blog/2024/03/10/integrating-requirementstxt-with-poetry/</loc>
          <lastmod>2024-03-21</lastmod>
          <changefreq>daily</changefreq>
@@ -276,7 +281,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/devops/</loc>
+         <lastmod>2024-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/osx/</loc>
+         <lastmod>2024-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/linux/</loc>
+         <lastmod>2024-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/command-line/</loc>
+         <lastmod>2024-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/file-handling/</loc>
+         <lastmod>2024-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/deployment/</loc>
          <lastmod>2024-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -297,11 +327,6 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/packaging/</loc>
-         <lastmod>2024-03-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/linux/</loc>
          <lastmod>2024-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -347,11 +372,6 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/pwa/</loc>
-         <lastmod>2024-03-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/deployment/</loc>
          <lastmod>2024-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -451,21 +471,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/devops/</loc>
-         <lastmod>2024-03-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/command-line/</loc>
-         <lastmod>2024-03-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/file-handling/</loc>
-         <lastmod>2024-03-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/mkdocs/</loc>
          <lastmod>2024-03-21</lastmod>
          <changefreq>daily</changefreq>
@@ -547,6 +552,11 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/page/4/</loc>
+         <lastmod>2024-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/page/5/</loc>
          <lastmod>2024-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
