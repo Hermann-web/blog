@@ -143,3 +143,7 @@ If you encounter any issues or have further questions, feel free to ask. Happy D
 
 [^1]: [Running Docker on WSL2 without Docker Desktop (the right way), Felipe Santos, 11 oct. 2022](https://dev.to/felipecrs/simply-run-docker-on-wsl2-3o8)
 [^2]: [basic commands for working with wsl](https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command)
+
+## Related links
+
+- [Mastering Docker: A Comprehensive Guide to Efficient Container Management](../OSX/docker/mastering-docker-comprehensive-guide-efficient-container-management.md)
