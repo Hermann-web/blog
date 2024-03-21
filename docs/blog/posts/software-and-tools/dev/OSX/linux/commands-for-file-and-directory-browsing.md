@@ -637,37 +637,56 @@ This command will apply the precedent operation on each file returned by the `fi
 
 ### Grouping Examples
 
-!!! example "Finding files with either ".txt" or ".pdf" extensions and with a size greater than 1MB"
+??? example "Finding files with either ".txt" or ".pdf" extensions and with a size greater than 1MB"
 
- Suppose you want to find files with either ".txt" or ".pdf" extensions and with a size greater than 1MB. You can use `\( ... \)` to group the size condition with the extension conditions:
+    Suppose you want to find files with either ".txt" or ".pdf" extensions and with a size greater than 1MB. You can use `\( ... \)` to group the size condition with the extension conditions:
 
- ```bash
- find /path/to/search \( -name "*.txt" -o -name "*.pdf" \) -size +1M
- ```
+    ```bash
+    find /path/to/search \( -name "*.txt" -o -name "*.pdf" \) -size +1M
+    ```
+   
+    In this command:
+   
+    - `\( -name "*.txt" -o -name "*.pdf" \)` groups the conditions for finding files with ".txt" or ".pdf" extensions.
+    - `-size +1M` specifies the condition for files with a size greater than 1MB.
+   
+    By grouping the extension conditions together, you ensure that the size condition is applied to both ".txt" and ".pdf" files.
 
- In this command:
+??? example "Finding specific files with specific extensions"
 
-- `\( -name "*.txt" -o -name "*.pdf" \)` groups the conditions for finding files with ".txt" or ".pdf" extensions.
-- `-size +1M` specifies the condition for files with a size greater than 1MB.
+    Suppose you want to find specific files with extensions such as ".sh", ".md", or "Dockerfile" and then search for a particular pattern within them. You can use the following command:
 
- By grouping the extension conditions together, you ensure that the size condition is applied to both ".txt" and ".pdf" files.
+    ```bash
+    find /home/ubuntu/Documents/GitHub/ \( -name "*.sh" -o -name "*.md" -o -name "Dockerfile" \) -exec grep -Hn "apt install ./mongodb-database-tools-*.deb &" {} \;
+    ```
+   
+    In this command:
+   
+    - `\( -name "*.sh" -o -name "*.md" -o -name "Dockerfile" \)` groups the conditions for finding files with the specified extensions.
+    - `-exec grep -Hn "apt install ./mongodb-database-tools-*.deb &" {} \;` executes the `grep` command to search for the specified pattern within each matched file.
+   
+    The `\( ... \)` construct is used to group the `-name` expressions together. This grouping is necessary because the `-o` operator (logical OR) has lower precedence than the implicit logical AND applied to separate `find` expressions. By using `\( ... \)`, you ensure that the logical OR operation is applied correctly within the grouped expressions.
+   
+    Without the grouping, the command would not function as intended because each `-name` expression would be evaluated separately, potentially leading to unexpected results.
 
-!!! example "Finding specific files with specific extensions"
+??? example "running a linter script md files from a repo subfolder and the readme file in the main directory"
 
- Suppose you want to find specific files with extensions such as ".sh", ".md", or "Dockerfile" and then search for a particular pattern within them. You can use the following command:
+    To find both `.md` files in the `./docs` directory and `README.md` files in the current directory, you can use the `-o` (OR) operator along with the `-exec` option. Here's how you can do it:
 
- ```bash
- find /home/ubuntu/Documents/GitHub/ \( -name "*.sh" -o -name "*.md" -o -name "Dockerfile" \) -exec grep -Hn "apt install ./mongodb-database-tools-*.deb &" {} \;
- ```
-
- In this command:
-
-- `\( -name "*.sh" -o -name "*.md" -o -name "Dockerfile" \)` groups the conditions for finding files with the specified extensions.
-- `-exec grep -Hn "apt install ./mongodb-database-tools-*.deb &" {} \;` executes the `grep` command to search for the specified pattern within each matched file.
-
- The `\( ... \)` construct is used to group the `-name` expressions together. This grouping is necessary because the `-o` operator (logical OR) has lower precedence than the implicit logical AND applied to separate `find` expressions. By using `\( ... \)`, you ensure that the logical OR operation is applied correctly within the grouped expressions.
-
- Without the grouping, the command would not function as intended because each `-name` expression would be evaluated separately, potentially leading to unexpected results.
+    ```bash
+    find . \( -path "./docs" -name "*.md" -o -path "./README.md" \) -exec markdownlint-cli2 --fix {} +
+    ```
+    
+    In this command:
+    
+    - `.`: Specifies the current directory as the starting point for the `find` command.
+    - `\( ... \)`: Groups conditions together.
+    - `-path "./docs" -name "*.md"`: Specifies files with the `.md` extension in the `./docs` directory.
+    - `-o`: Acts as the logical OR operator.
+    - `-path "./README.md"`: Specifies the `README.md` file in the current directory.
+    - `-exec markdownlint-cli2 --fix {} +`: Executes the `markdownlint-cli2 --fix` command on the found files. The `{}` is replaced by the found file names.
+    
+    This command will execute `markdownlint-cli2 --fix` on all `.md` files in the `./docs` directory and `README.md` in the current directory.
 
 ## Conclusion
 
