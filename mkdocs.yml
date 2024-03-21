@@ -193,6 +193,10 @@ nav:
     - Flask based File Hosting (web app & api & python module & cli app): projects/file-hosting-app.md
     - Streamlit App for Formula OCR using pix2tex: projects/image-to-latex-formula.md
     - Introducing Two New Packages for Streamlining File Conversions in Python: projects/introducing-two-new-packages-for-streamlining-file-conversions-in-python.md
+  - The JavaScript Edge:
+    - Home: projects/js-course/index.md
+    - JavaScript Syntax Fundamentals: projects/js-course/javascript-fundamentals-simplified.md
+    - Intermediate JavaScript Concepts: projects/js-course/javascript-concepts-intermediate.md
   - Blog:
     - blog/index.md
 
