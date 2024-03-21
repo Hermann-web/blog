@@ -35,7 +35,7 @@ This documentation serves as a step-by-step guide to help you integrate the Lara
 
 Before diving into the details, let's explore the motivation behind using Progressive Web Apps (PWAs) compared to native mobile app development:
 
-=== ":octicons-file-code-16: `Laravel (PHP)`"
+=== ":octicons-file-code-16: `Pros of PWA`"
 
     - __Cross-Platform Compatibility:__ PWAs work seamlessly across various platforms, including Android, iOS, and desktop browsers, eliminating the need for separate development efforts for each platform.
   
