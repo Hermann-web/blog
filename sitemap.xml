@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hermann-web.github.io/blog/blog/2024/03/21/security-practices-for-authentication-a-guide-for-developers/</loc>
+         <lastmod>2024-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hermann-web.github.io/blog/blog/2023/10/24/unveiling-the-code-chronicles-navigating-software-licenses/</loc>
          <lastmod>2024-03-21</lastmod>
          <changefreq>daily</changefreq>
@@ -251,6 +256,26 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/blog/</loc>
+         <lastmod>2024-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/security/</loc>
+         <lastmod>2024-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/authentication/</loc>
+         <lastmod>2024-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/best-practices/</loc>
+         <lastmod>2024-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/osx/</loc>
          <lastmod>2024-03-21</lastmod>
          <changefreq>daily</changefreq>
@@ -362,11 +387,6 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/project-management/</loc>
-         <lastmod>2024-03-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/blog/</loc>
          <lastmod>2024-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
