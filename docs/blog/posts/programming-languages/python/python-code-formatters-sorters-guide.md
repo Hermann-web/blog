@@ -215,3 +215,7 @@ In addition to Black, isort, and YAPF, there are several other Python code forma
 ## Conclusion
 
 Python code formatters and sorters are valuable tools for improving the consistency, readability, and maintainability of Python code. By using tools like Black, isort, YAPF, and others, developers can ensure that their code adheres to established standards and best practices, leading to more efficient and collaborative development processes.
+
+## Related links
+
+- [Some notes on the right formater to use for your project](https://github.com/orsinium/notes/blob/master/notes-python/black.md)

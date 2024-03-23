@@ -68,6 +68,14 @@ The `grep` command searches for patterns in files.
 
   This command displays lines in `file.txt` that contain the specified `pattern`.
 
+- **Searching for lines containing multiple patterns in a file:**
+
+  ```bash
+  grep -e "pattern1" -e "pattern2" file.txt
+  ```
+
+  This command displays lines in `file.txt` that contain either "pattern1" or "pattern2".
+
 ??? info "Additional `grep` options:"
 
     - `-H`: Print the filename for each match when searching in multiple files.

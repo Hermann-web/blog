@@ -92,10 +92,10 @@ Grasping their strengths, weaknesses, and use cases empowers you to make informe
 
 ### Common Commands
 
-| Feature               | pip                                       | pipenv                                    | poetry                                      | conda                                       | uv                                         |
+| Feature               | pip                                       | pipenv                                    | [poetry](https://python-poetry.org/docs/cli)                                      | conda                                       | uv                                         |
 |-----------------------|-------------------------------------------|--------------------------------------------|---------------------------------------------|---------------------------------------------|--------------------------------------------|
-| **Create a project**  | -                                         | `pipenv --python <python-version>`          | `poetry init`                               | `conda create -n <env-name> python=<python-version>` | `uv venv`                                 |
-| **Use a virtual environment** | `python -m venv <env-name>`, then `source <env-name>/bin/activate` | `pipenv shell`                       | `poetry shell`                              | `conda activate <env-name>`                   | Same as pip                                        |
+| **Create a project**  | `python -m venv <env-name>`               | `pipenv --python <python-version>`          | `poetry init`                               | `conda create -n <env-name> python=<python-version>` | `uv venv` (creates virtualenv at: `.venv/`)                                  |
+| **Use a virtual environment** | `source <env-name>/bin/activate` (linux) or `<env-name>/Scripts/activate` (windows) | `pipenv shell`                       | `poetry shell`                              | `conda activate <env-name>`                   | Same as pip                                        |
 | **Install a package** | `pip install <package-name>`              | `pipenv install <package-name>`             | `poetry add <package-name>`                 | `conda install <package-name>`               | `uv pip install <package-name>`            |
 | **Remove a package**  | `pip uninstall <package-name>`            | `pipenv uninstall <package-name>`           | `poetry remove <package-name>`              | `conda uninstall <package-name>`             | `uv pip uninstall <package-name>`          |
 | **Install from requirements** | `pip install -r requirements.txt`      | `pipenv install` (reads from Pipfile)       | `poetry install` (reads from pyproject.toml) | `conda install --file requirements.txt`       | `uv pip sync requirements.txt` or `uv pip install -r requirements.txt`           |
@@ -104,6 +104,8 @@ Grasping their strengths, weaknesses, and use cases empowers you to make informe
 | **Transport project**  | Manually copy files or create a setup.py   | Copy Pipfile and Pipfile.lock               | Copy pyproject.toml and pyproject.toml.lock  | Export environment to .yml file (conda env export > environment.yml) | Not directly supported (requires rebuilding with UV) |
 | **Install from lock file** | N/A                                   | `pipenv install --ignore-pipfile`           | `poetry install --no-dev` (reads from pyproject.toml.lock) | `conda install --file environment.yml`       | N/A (Dependency resolution handled by UV directly) |
 | **Delete the venv**   | Remove directory manually                  | `pipenv --rm`                              | `poetry env remove <env-name>`              | `conda remove --name <env-name> --all`      | N/A                                        |
+| **Update a package to its latest version** | `pip install <package-name> --upgrade`   | `pipenv update <package-name>`              | `poetry update <package-name>`              | `conda update <package-name>`               | `uv pip install <package-name> --upgrade` |
+| **Update all packages to their latest versions** | N/A                                 | `pipenv update`                             | `poetry update`                             | `conda update -n <env-name> --all` (be aware of potential conflicts)                  | N/A                                        |
 
 <!-- ### Additional Features
 
@@ -154,3 +156,5 @@ Congratulations! You've now equipped yourself with insights into managing Python
 Stay proactive in exploring and adapting these tools to optimize your Python development experience!
 
 ## Related Links
+
+- [is it safe to update all conda package at once ?](https://stackoverflow.com/a/44072944)
