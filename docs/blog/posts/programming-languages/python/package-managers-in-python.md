@@ -102,7 +102,7 @@ Grasping their strengths, weaknesses, and use cases empowers you to make informe
 | **Dev packages vs others** | No explicit distinction                | `--dev` flag for development dependencies  | `[tool.poetry.dev-dependencies]` section in pyproject.toml | No explicit distinction | Not currently supported (planned for future) |
 | **List requirements**  | `pip freeze > requirements.txt` or use `pipreqs`            | `pipenv lock -r > requirements.txt`        | `poetry export -f requirements.txt > requirements.txt` | `conda list --export > requirements.txt`     | Same as pip (e.g., `uv pip freeze > requirements.txt`) |
 | **Transport project**  | Manually copy files or create a setup.py   | Copy Pipfile and Pipfile.lock               | Copy pyproject.toml and pyproject.toml.lock  | Export environment to .yml file (conda env export > environment.yml) | Not directly supported (requires rebuilding with UV) |
-| **Install from lock file** | N/A                                   | `pipenv install --ignore-pipfile`           | `poetry install --no-dev` (reads from pyproject.toml.lock) | `conda install --file environment.yml`       | N/A (Dependency resolution handled by UV directly) |
+| **Install from lock file** | N/A                                   | `pipenv install --ignore-pipfile`           | `poetry install --no-dev` (reads from pyproject.toml.lock) | `conda env update --file environment.yml`       | N/A (Dependency resolution handled by UV directly) |
 | **Delete the venv**   | Remove directory manually                  | `pipenv --rm`                              | `poetry env remove <env-name>`              | `conda remove --name <env-name> --all`      | N/A                                        |
 | **Update a package to its latest version** | `pip install <package-name> --upgrade`   | `pipenv update <package-name>`              | `poetry update <package-name>`              | `conda update <package-name>`               | `uv pip install <package-name> --upgrade` |
 | **Update all packages to their latest versions** | N/A                                 | `pipenv update`                             | `poetry update`                             | `conda update -n <env-name> --all` (be aware of potential conflicts)                  | N/A                                        |
@@ -148,6 +148,22 @@ Grasping their strengths, weaknesses, and use cases empowers you to make informe
       uv allows customization of its resolution strategy. With `--resolution=lowest`, uv installs the lowest compatible versions for all dependencies, while `--resolution=lowest-direct` focuses on lowest compatible versions for direct dependencies and latest compatible versions for transitive dependencies.
 
 ??? info "read [this docu](./integrating-requirements-with-poetry.md) about how to add dependencies from a `requirements.txt` file"
+
+?? question "How to use two conda environment at the same time without breaking anything ?"
+
+    To simultaneously utilize two Conda environments without causing conflicts, you can leverage Conda's nested activation feature. Here's how you can achieve this:
+
+    ```bash
+    conda activate old_project_env
+    conda activate --stack new_project_env
+    ```
+
+    This sequence of commands allows you to activate a parent environment (`old_project_env`) while retaining access to the command-line options from the old environment. Then, by using `conda activate --stack new_project_env`, you can activate a new environment (`new_project_env`) within the context of the parent environment.
+
+    This approach ensures that you can work within the specified environment (`new_project_env`) without interfering with the configurations or dependencies of the parent environment (`old_project_env`).
+
+    For more information on Conda environments and nested activation, you can refer to the [official Conda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#nested-activation).
+    ```
 
 ## Conclusion
 

@@ -81,6 +81,8 @@ git lfs track "path/to/your/large/file"
 
 !!! Warning "Always review in `.gitattributes` the file selections to confirm they match your requirements before committing changes to Git LFS."
 
+!!! note "You should also note there is a quota limit. read more [here](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-storage-and-bandwidth-usage)"
+
 ### 4. Updating `.gitattributes`
 
 After tracking the files, update your `.gitattributes` file with the tracking information:
