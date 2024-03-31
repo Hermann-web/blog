@@ -240,3 +240,9 @@ poetry run black .
 This will run `isort` and `black` with the configurations specified in the `pyproject.toml` file on your project files.
 
 Enjoy seamless Python project management with Poetry! Happy coding!
+
+---
+
+Related resources:
+
+- [How to publish your python project (to pypi or testPypi) with Poetry then install as dependency in another project ?](./publishing-python-project-poetry.md)

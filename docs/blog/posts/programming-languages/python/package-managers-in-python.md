@@ -163,7 +163,6 @@ Grasping their strengths, weaknesses, and use cases empowers you to make informe
     This approach ensures that you can work within the specified environment (`new_project_env`) without interfering with the configurations or dependencies of the parent environment (`old_project_env`).
 
     For more information on Conda environments and nested activation, you can refer to the [official Conda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#nested-activation).
-    ```
 
 ## Conclusion
 

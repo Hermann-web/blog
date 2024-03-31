@@ -153,6 +153,64 @@ Once you've tested your project on test.pypi and are ready to release it to the 
     poetry publish
     ```
 
+## Using the Package from PyPI or TestPyPI
+
+Once your Python project is packaged and published on PyPI or TestPyPI, other developers can easily use it in their projects. Here's how they can add your package as a dependency using both pip and Poetry:
+
+### Using pip
+
+To use your package from PyPI, other developers can simply add it to their project's dependencies using pip. They can do this by running the following command:
+
+```bash
+# for pypi
+pip install your-package-name
+```
+
+Replace `your-package-name` with the name of your package as published on PyPI.
+
+### Using Poetry
+
+For developers using Poetry, they can add your package to their project by specifying it in their `pyproject.toml` file. They can do this by running:
+
+```bash
+poetry add your-package-name
+```
+
+Again, replace `your-package-name` with the name of your package as published on PyPI.
+
+### Using TestPyPI
+
+If your package is published on TestPyPI for testing purposes, developers can also add it to their projects similarly using pip and Poetry, but they need to specify the TestPyPI repository URL. Here's how they can do it:
+
+#### Using pip with TestPyPI
+
+```bash
+pip install --index-url https://test.pypi.org/simple/ your-package-name
+```
+
+Replace `your-package-name` with the name of your package as published on TestPyPI.
+
+#### Using Poetry with TestPyPI
+
+For Poetry users, they can specify the TestPyPI repository URL in their `pyproject.toml` file before adding the package ([more details here](https://stackoverflow.com/a/77811456)):
+
+```toml
+[[tool.poetry.source]]
+name = "test-pypi"
+url = "https://test.pypi.org/simple/"
+priority = "explicit"
+```
+
+Then, they can add the package using Poetry as usual:
+
+```bash
+poetry add your-package-name --source test-pypi
+```
+
+Again, replace `your-package-name` with the name of your package as published on TestPyPI.
+
+By following these steps, other developers can easily include your package as a dependency in their Python projects, whether it's from PyPI or TestPyPI.
+
 ## Conclusion
 
 Congratulations! You've learned how to publish your Python project using Poetry. Whether you're testing your package on test.pypi or releasing it to the production PyPI, Poetry simplifies the process and ensures smooth distribution of your projects.
@@ -166,5 +224,6 @@ Now, go ahead and share your amazing Python projects with the world!
 Related resources:
 
 - [Test PyPI](https://test.pypi.org/help/#twofa), [PyPI](https://pypi.org/), [Python Packaging](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
-- [beginner's guide to poetry](./poetry-in-practise.md), [python dependency management cheat](./package-managers-in-python.md)
+- [beginner's guide to poetry](./poetry-in-practise.md)
+- [python dependency management cheat including poetry, conda and more](./package-managers-in-python.md)
 - [Introducing Two New Packages for Streamlining File Conversions in Python](../../../../../projects/introducing-two-new-packages-for-streamlining-file-conversions-in-python.md)
