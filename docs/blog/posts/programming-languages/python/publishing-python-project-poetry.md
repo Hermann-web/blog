@@ -83,6 +83,22 @@ project-folder-name/
 
 For Python project management with Poetry, refer to [this documentation](https://python-poetry.org/docs/). If you're not familiar with Poetry, you can check out [this beginner's guide](./poetry-in-practise.md) to get started or this [this python dependency management cheat](./package-managers-in-python.md) for usual commands.
 
+??? tip "Package name vs Module name"
+
+    If you want to set your custom module name, you can [update your pyproject.toml file](https://github.com/python-poetry/poetry/issues/705#issuecomment-444742697) to do so
+   
+    For example, if you want you package name on pypi to be `openconv-python`, but the name of the module `openconv` instead of `openconv_python`, you can do as below. 
+
+    ```toml
+    [tool.poetry]
+    name = "openconv-python"
+    packages = [
+        {include = "openconv"}
+    ]
+    ```
+
+    Then, make sure put your module files inside the directory `openconv`
+
 ## Publishing Your Project on Test PyPI
 
 ### Account Setup (One-Time Process)
@@ -123,6 +139,10 @@ When you're ready to publish your project for testing:
     poetry version prerelease
     # or
     poetry version patch
+    # or
+    poetry version minor
+    # or
+    poetry version major
     ```
 
 2. Publish your project to test.pypi:
@@ -144,7 +164,7 @@ Once you've tested your project on test.pypi and are ready to release it to the 
 2. Bump the version using Poetry:
 
     ```bash
-    poetry version patch
+    poetry version patch #prerelease, or patch, or minor or major
     ```
 
 3. Publish your project to PyPI:
