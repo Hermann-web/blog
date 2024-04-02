@@ -14,7 +14,8 @@ title: My Projects
 - [Search Engine for domain specific french users](./search-engine-for-domain-specific-french-users.md)
 - [Streamlit App for Formula OCR using pix2tex](./image-to-latex-formula.md)
 
-## Web development
+## Software development
 
 - [Flask based File Hosting (web app & api & python module & cli app)](./file-hosting-app.md)
 - [Introducing Two New Packages for Streamlining File Conversions in Python](./introducing-two-new-packages-for-streamlining-file-conversions-in-python.md)
+- [Introducing the `lissajou` Package: Animate Stunning Lissajou Curves and Beyond](./introducing-lissajou-for-animated-plots.md)
