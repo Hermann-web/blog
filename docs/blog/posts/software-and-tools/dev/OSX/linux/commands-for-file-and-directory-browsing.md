@@ -743,12 +743,10 @@ find . -type f -exec grep "AAA" {} \;
 find . -type f -exec grep -Hn "AAA" {} \;
 ```
 
-Certainly! Let's integrate the additional commands into the existing explanation:
-
-```bash
 ### Searching for a keyword in Files from the parent directory
 
 - search for "L337" in all files
+
 ```bash
 find .. -type f -exec grep -Hn "L337" {} \;
 ```

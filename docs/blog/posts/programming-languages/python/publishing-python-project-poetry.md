@@ -99,37 +99,53 @@ For Python project management with Poetry, refer to [this documentation](https:/
 
     Then, make sure put your module files inside the directory `openconv`
 
-## Publishing Your Project on Test PyPI
+## Publishing Your Project on PyPi or Test PyPI
 
 ### Account Setup (One-Time Process)
 
-Before publishing your project on test.pypi, ensure your account setup is complete:
+Before publishing your project on pypi test.pypi, ensure your account setup is complete:
 
-1. __Create an account__: Visit [test.pypi.org](https://test.pypi.org/account/register/) and create an account using your email address.
+1. __Create an account__: Visit [pypi.org](https://pypi.org/account/register/) or [test.pypi.org](https://test.pypi.org/account/register/) and create an account using your email address.
 
-2. __Verify your email__: Check your inbox for a verification email from test.pypi.org and follow the instructions to verify your email address.
+2. __Verify your email__: Check your inbox for a verification email from pypi.org or test.pypi.org and follow the instructions to verify your email address.
 
-3. __Set up Two-Factor Authentication (2FA)__: Navigate to your account settings on test.pypi.org and enable 2FA for added security. Follow the instructions to set up 2FA using an authenticator app or SMS.
+3. __Set up Two-Factor Authentication (2FA)__: Navigate to your account settings on pypi.org test.pypi.org and enable 2FA for added security. Follow the instructions to set up 2FA using an authenticator app or SMS.
 
 Once your account setup is complete, proceed with configuring Poetry for publishing your project.
 
-### Configuring Poetry for Test PyPI (One-Time Setup)
+### Configuring Poetry (One-Time Setup)
 
 Follow these steps to configure Poetry for publishing on test.pypi:
 
-1. Add the test.pypi repository to your Poetry config:
+=== ":octicons-file-code-16: `for test-pypi`"
 
-    ```bash
-    poetry config repositories.test-pypi https://test.pypi.org/legacy/
-    ```
+    1. Add the test.pypi repository to your Poetry config:
 
-2. Obtain a token from [test.pypi.org](https://test.pypi.org/manage/account/token/) and store it:
+        ```bash
+        poetry config repositories.test-pypi https://test.pypi.org/legacy/
+        ```
 
-    ```bash
-    poetry config pypi-token.test-pypi pypi-YYYYYYYY
-    ```
+    2. Obtain a token from [test.pypi.org](https://test.pypi.org/manage/account/token/) and store it:
 
-### Publishing to Test PyPI
+        ```bash
+        poetry config pypi-token.test-pypi pypi-YYYYYYYY
+        ```
+
+=== ":octicons-file-code-16: `for pypi`"
+
+    1. Add the pypi repository to your Poetry config:
+
+        ```bash
+        poetry config repositories.pypi https://pypi.org/legacy/
+        ```
+
+    2. Obtain a token from [pypi.org](https://pypi.org/manage/account/token/) and store it:
+
+        ```bash
+        poetry config pypi-token.pypi pypi-YYYYYYYY
+        ```
+
+### Publishing to Pypi or Test PyPI
 
 When you're ready to publish your project for testing:
 
@@ -145,33 +161,27 @@ When you're ready to publish your project for testing:
     poetry version major
     ```
 
-2. Publish your project to test.pypi:
-
+2. Build the new version
+  
     ```bash
-    poetry publish -r test-pypi
+    poetry build
     ```
 
-## Publishing Your Project on PyPI
+    !!! tip "At this point, you can even use the package on your own computer"
 
-Once you've tested your project on test.pypi and are ready to release it to the public, follow these steps:
+3. Publish your project:
 
-1. Obtain a token from [pypi.org](https://pypi.org/manage/account/token/) and store it:
+    === ":octicons-file-code-16: `to test-pypi`"
 
-    ```bash
-    poetry config pypi-token.pypi pypi-XXXXXXXX
-    ```
+        ```bash
+        poetry publish -r test-pypi
+        ```
 
-2. Bump the version using Poetry:
+    === ":octicons-file-code-16: `to pypi`"
 
-    ```bash
-    poetry version patch #prerelease, or patch, or minor or major
-    ```
-
-3. Publish your project to PyPI:
-
-    ```bash
-    poetry publish
-    ```
+        ```bash
+        poetry publish
+        ```
 
 ## Using the Package from PyPI or TestPyPI
 
@@ -179,55 +189,56 @@ Once your Python project is packaged and published on PyPI or TestPyPI, other de
 
 ### Using pip
 
-To use your package from PyPI, other developers can simply add it to their project's dependencies using pip. They can do this by running the following command:
+=== ":octicons-file-code-16: `from pypi`"
 
-```bash
-# for pypi
-pip install your-package-name
-```
+    To use your package from PyPI, other developers can simply add it to their project's dependencies using pip. They can do this by running the following command:
 
-Replace `your-package-name` with the name of your package as published on PyPI.
+    ```bash
+    pip install your-package-name
+    ```
+
+    Replace `your-package-name` with the name of your package as published on PyPI.
+
+=== ":octicons-file-code-16: `from test-pypi`"
+
+    If your package is published on TestPyPI for testing purposes, developers can also add it to their projects similarly using pip and Poetry, but they need to specify the TestPyPI repository URL. Here's how they can do it:
+
+    ```bash
+    pip install --index-url https://test.pypi.org/simple/ your-package-name
+    ```
+
+    Replace `your-package-name` with the name of your package as published on TestPyPI.
 
 ### Using Poetry
 
-For developers using Poetry, they can add your package to their project by specifying it in their `pyproject.toml` file. They can do this by running:
+=== ":octicons-file-code-16: `from test-pypi`"
 
-```bash
-poetry add your-package-name
-```
+    For Poetry users, they can specify the TestPyPI repository URL in their `pyproject.toml` file before adding the package ([more details here](https://stackoverflow.com/a/77811456)):
 
-Again, replace `your-package-name` with the name of your package as published on PyPI.
+    ```toml
+    [[tool.poetry.source]]
+    name = "test-pypi"
+    url = "https://test.pypi.org/simple/"
+    priority = "explicit"
+    ```
 
-### Using TestPyPI
+    Then, they can add the package using Poetry as usual:
 
-If your package is published on TestPyPI for testing purposes, developers can also add it to their projects similarly using pip and Poetry, but they need to specify the TestPyPI repository URL. Here's how they can do it:
+    ```bash
+    poetry add your-package-name --source test-pypi
+    ```
 
-#### Using pip with TestPyPI
+    Again, replace `your-package-name` with the name of your package as published on TestPyPI.
 
-```bash
-pip install --index-url https://test.pypi.org/simple/ your-package-name
-```
+=== ":octicons-file-code-16: `from pypi`"
 
-Replace `your-package-name` with the name of your package as published on TestPyPI.
+    For developers using Poetry, they can add your package to their project by specifying it in their `pyproject.toml` file. They can do this by running:
 
-#### Using Poetry with TestPyPI
+    ```bash
+    poetry add your-package-name
+    ```
 
-For Poetry users, they can specify the TestPyPI repository URL in their `pyproject.toml` file before adding the package ([more details here](https://stackoverflow.com/a/77811456)):
-
-```toml
-[[tool.poetry.source]]
-name = "test-pypi"
-url = "https://test.pypi.org/simple/"
-priority = "explicit"
-```
-
-Then, they can add the package using Poetry as usual:
-
-```bash
-poetry add your-package-name --source test-pypi
-```
-
-Again, replace `your-package-name` with the name of your package as published on TestPyPI.
+    Again, replace `your-package-name` with the name of your package as published on PyPI.
 
 By following these steps, other developers can easily include your package as a dependency in their Python projects, whether it's from PyPI or TestPyPI.
 

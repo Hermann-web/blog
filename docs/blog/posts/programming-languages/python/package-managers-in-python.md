@@ -149,7 +149,7 @@ Grasping their strengths, weaknesses, and use cases empowers you to make informe
 
 ??? info "read [this docu](./integrating-requirements-with-poetry.md) about how to add dependencies from a `requirements.txt` file"
 
-?? question "How to use two conda environment at the same time without breaking anything ?"
+??? question "How to use two conda environment at the same time without breaking anything ?"
 
     To simultaneously utilize two Conda environments without causing conflicts, you can leverage Conda's nested activation feature. Here's how you can achieve this:
 

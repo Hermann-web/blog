@@ -1,10 +1,10 @@
-# Introducing the `lissajou` Package: Animate Stunning Lissajou Curves and Beyond
+# Introducing the [lissajou Package](https://pypi.org/project/lissajou/): Animate Stunning Lissajou Curves and Beyond
 
-Lissajou curves have always held a certain fascination for me. Their intricate, ever-changing patterns hold a beauty that's both mathematical and artistic. So, one day, I decided to embark on a journey to bring these curves to life through animation.
+[Lissajou curves](https://en.wikipedia.org/wiki/Lissajous_curve) have always held a certain fascination for me. Their intricate, ever-changing patterns hold a beauty that's both mathematical and artistic. So, one day, I decided to embark on a journey to bring these curves to life through animation.
 
 **A Look Back: The Spark of Inspiration:**
 
-It all started with a simple Wikipedia search wiki: [https://en.wikipedia.org/wiki/Lissajous_curve](https://en.wikipedia.org/wiki/Lissajous_curve). I was particularly drawn to the idea of closed sinusoids, those graceful loops that seemed to dance across the screen. As an educator who enjoys helping students visualize complex concepts, I saw an opportunity to explore the animation of functions changing over time, something I hadn't delved into deeply before.
+It all started with a simple Wikipedia search. I was particularly drawn to the idea of closed sinusoids, those graceful loops that seemed to dance across the screen. As an educator who enjoys helping students visualize complex concepts, I saw an opportunity to explore the animation of functions changing over time, something I hadn't delved into deeply before.
 
 Finding a solution for plotting functions dynamically with matplotlib wasn't too challenging. I stumbled upon some [helpful code online online](https://stackoverflow.com/a/68957469) that dealt with animating images. However, I wanted to adapt it to my specific needs. While the original code relied on global variables to maintain persistence across animation frames, I opted for a more structured approach using classes. This allowed for cleaner code organization and easier abstraction for generating various figures.
 
@@ -48,7 +48,7 @@ And like in a restaurant, you can update the parameters of the lissajou function
 
 Also, like in a restaurant, you have more a variety of proposotions: Instead of the  Generic Lissajou Curve (`GenericLissajou`), you can also test out Lissajou Curve with Varying Amplitude, with Sinusoidal Amplitude Lissajou Curve, with Fixed Ratio, Ellipse Animation and more.
 
-You will find more informations on the [documentation online](https://test.pypi.org/project/lissajou/)
+You will find more informations on the [documentation online](https://pypi.org/project/lissajou/)
 
 **Beyond the Basics: Explore the Full Potential:**
 
@@ -62,6 +62,6 @@ The framework also includes pre-implemented animations for various Lissajou curv
 
 **Dive Deeper:**
 
-For a comprehensive look at the framework's capabilities and advanced usage, check out the [full documentation](https://test.pypi.org/project/lissajou/). But don't be afraid to experiment and explore on your own! The world of animation awaits.
+For a comprehensive look at the framework's capabilities and advanced usage, check out the [pypi project](https://pypi.org/project/lissajou/) including [full documentation](https://github.com/Hermann-web/lissajou/blob/master/docs/index.md). But don't be afraid to experiment and explore on your own! The world of animation awaits.
 
 Let's create something beautiful together!
