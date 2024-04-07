@@ -146,4 +146,4 @@ If you encounter any issues or have further questions, feel free to ask. Happy D
 
 ## Related links
 
-- [Mastering Docker: A Comprehensive Guide to Efficient Container Management](../OSX/docker/mastering-docker-comprehensive-guide-efficient-container-management.md)
+- [Mastering Docker: A Comprehensive Guide to Efficient Container Management](./mastering-docker-comprehensive-guide-efficient-container-management.md)

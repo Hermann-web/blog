@@ -112,7 +112,7 @@ The `helloworld.proto` file defines the `Greeter` service with three RPC methods
 
 ### Adding an Extra Method on the Server
 
-- Modify [`../../protos/helloworld.proto`](grpc/examples/protos/helloworld.proto) and the files `greeter_server.py` and `greeter_client.py` in the `examples/python/helloworld` folder.
+- Modify `../../protos/helloworld.proto` (`grpc/examples/protos/helloworld.proto`) and the files `greeter_server.py` and `greeter_client.py` in the `examples/python/helloworld` folder.
 
 === ":octicons-file-code-16: `examples/protos/helloworld.proto`"
 

@@ -257,4 +257,4 @@ Related resources:
 - [Test PyPI](https://test.pypi.org/help/#twofa), [PyPI](https://pypi.org/), [Python Packaging](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 - [beginner's guide to poetry](./poetry-in-practise.md)
 - [python dependency management cheat including poetry, conda and more](./package-managers-in-python.md)
-- [Introducing Two New Packages for Streamlining File Conversions in Python](../../../../../projects/introducing-two-new-packages-for-streamlining-file-conversions-in-python.md)
+- [Introducing Two New Packages for Streamlining File Conversions in Python](../../../../projects/introducing-two-new-packages-for-streamlining-file-conversions-in-python.md)

@@ -699,7 +699,7 @@ On transforme la série en variable catégorielle
 ![image](./media/bot_detection_in_auction/image43.png)
 
 On sépare la série en deux échantillons (outcome=0 vs outcome=1).
-Puis, on réalise un [test de student](<https://doc> s.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)
+Puis, on réalise un [test de student](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)
 pour les moyennes de deux échantillons pour voir s'ils sont significativement différents
 
 ![image](./media/bot_detection_in_auction/image43.png)
