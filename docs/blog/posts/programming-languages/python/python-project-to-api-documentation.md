@@ -72,6 +72,7 @@ Before we can generate documentation with Sphinx-apidoc, we need to install Sphi
        pip uninstall sphinx
        ``` 
     === ":octicons-file-code-16: `using apt`" 
+
        ```bash
        sudo apt remove python3-sphinx
        sudo apt autoremove
@@ -271,7 +272,7 @@ extensions = [
     Ensure Sphinx is included in your development dependencies. You can achieve this by adding it to your project using Poetry or pip:
 
     ```bash
-    poetry add sphinx
+    poetry add sphinx --group buildthedocs
     ```
 
     or
@@ -304,7 +305,7 @@ Install your chosen theme using pip and update the `html_theme` in your `conf.py
     Install in the environment with the method you use (I use Poetry):
 
     ```bash
-    poetry add sphinx-rtd-theme
+    poetry add sphinx-rtd-theme --group buildthedocs
     ```
 
     Update the `html_theme` in the `conf.py` file:
@@ -323,9 +324,143 @@ Here was my output of my python package [statanalysis](https://test.pypi.org/pro
 
 ![statanalysis sphinx documentation](./images/docu-statanalysis.png)
 
+## Integrating README.md into Sphinx Documentation
+
+To include your `README.md` file as an introduction to your Sphinx documentation, you can use the [`m2r2` extension](https://github.com/CrossNox/m2r2) as implicitely mentioned [in this stackoverflow answer](https://stackoverflow.com/a/46286751). Follow these steps to seamlessly integrate your `README.md` file into your Sphinx documentation:
+
+1. **Install m2r2 Extension**: First, install the `m2r2` extension in your development environment using Poetry or pip:
+
+    === ":octicons-file-code-16: `using poetry`"
+
+        ```bash
+        poetry add m2r2 --group buildthedocs
+        ```
+
+    === ":octicons-file-code-16: `using pip`"
+
+        ```bash
+        pip install m2r2
+        ```
+
+2. **Create `readme.rst` File**: Create a `readme.rst` file in your Sphinx documentation source directory (`./docs/source/readme.rst`).
+
+    === ":octicons-file-code-16: `readme.rst`"
+
+         In your `readme.rst` file, use the `mdinclude` directive to include the content of your `README.md` file:
+     
+         ```rst
+         -----------
+         Introduction
+         -----------
+     
+         .. mdinclude:: ../../README.md
+         ```
+
+    === ":octicons-file-code-16: `using poetry`"
+
+         Update your `index.rst` file to include the `readme.rst` file in the table of contents (`toctree` directive):
+ 
+         ```rst
+         ...
+ 
+         .. toctree::
+             :maxdepth: 2
+             :caption: Contents:
+ 
+             readme  # Include readme.rst here
+             reference
+ 
+         ...
+         ```
+
+By following these steps, you can seamlessly integrate your `README.md` file into your Sphinx documentation, providing an informative introduction to your project.
+
+## Deploying Documentation to ReadTheDocs
+
+Once you've generated your Sphinx documentation, deploying it to [ReadTheDocs](https://readthedocs.org) allows you to host and share your documentation with ease.
+
+!!! example "For example I've deployed the [statanalysis api reference](https://statanalysis.readthedocs.io/en/latest/) or the [lissajou api reference](https://lissajou.readthedocs.io/en/latest)"
+
+To deploy your documentation to ReadTheDocs, you need to prepare your documentation and configuration files, then you can import your project to ReadTheDocs and initiate the build process. Follow this step-by-step guide:
+
+1. **Export Dependencies**:
+
+    Before deploying your documentation, you need to export your project dependencies to ensure that ReadTheDocs builds your documentation with the correct dependencies.
+
+    Depending on your package manager (e.g., Poetry, pip), export your dependencies to a `requirements.txt` file.
+
+    !!! tip "Depending on your package manager, to get the right syntax, refer to this [cheat on package managers](./package-managers-in-python.md)"
+
+    ??? example "Example Using Poetry"
+
+         ```bash
+         poetry export -f requirements.txt --output ./docs/requirements.txt --without-hashes --with buildthedocs
+         ```
+         This command exports the dependencies specified in your Poetry project, excluding development dependencies, and includes the dependencies grouped under `buildthedocs`.
+
+1. **Create Configuration File**: Next, you need to create a `.readthedocs.yaml` file in the root directory of your project. This file specifies the build configuration for ReadTheDocs.
+
+    ??? example "Example of `.readthedocs.yaml`"
+
+         ```yaml
+         # Required
+         version: 2
+ 
+         # Set the OS, Python version, and other tools you might need
+         build:
+           os: ubuntu-22.04
+           tools:
+             python: "3.8"
+ 
+         # Build documentation in the "docs/" directory with Sphinx
+         sphinx:
+           configuration: docs/source/conf.py
+ 
+         # Optionally build your docs in additional formats such as PDF and ePub
+         formats:
+           - pdf
+           - epub
+ 
+         python:
+           install:
+             - requirements: docs/requirements.txt
+         ```
+
+    This configuration file specifies the Python version, operating system, and build tools required for building your documentation. Additionally, it defines the location of your Sphinx configuration file and specifies the dependencies needed for the build.
+
+1. **Create ReadTheDocs Account**: If you haven't already, create an account on the [ReadTheDocs website](https://readthedocs.org).
+
+1. **Import Project**: Import your project to ReadTheDocs, linking it to your GitHub repository or other version control system. You can either use the GitHub integration or import your project manually.
+
+    !!! example "Manual Import Example"
+
+        - Navigate to the [manual import page](https://readthedocs.org/dashboard/import/manual/?).
+    
+            ![read the docs - manual import - interface](./images/readthedocs-manual-import-interface.png){width=50%}
+    
+        - Enter the URL of your repository (e.g., `https://github.com/hermann-web/lissajou`) 
+        
+        - Specify the desired project name. 
+        
+            !!! note "That name will appear in `https://<name>.readthedocs.io/en/latest`"
+    
+        - Follow the prompts to complete the import process.
+
+1. **Build Documentation**: Once your project is imported, initiate the build process on ReadTheDocs. The platform will automatically detect changes in your repository and trigger builds accordingly.
+
+1. **Monitor Builds on ReadTheDocs Dashboard**: After initiating the build process, you can monitor the progress and status of your documentation builds on the [ReadTheDocs dashboard](https://readthedocs.org/dashboard/). This allows you to track build successes, view logs, and troubleshoot any errors that may occur during the build process.
+
+    ![ReadTheDocs Builds](./images/my-readthedocs-builds.png){width=80%}
+
+By following these steps, you can successfully deploy your Sphinx documentation to ReadTheDocs and make it accessible to your audience.
+
 ## Additional Resources
 
 For more information on Sphinx and its capabilities, refer to the official Sphinx documentation. Additionally, you can explore the available themes and extensions to further enhance your documentation.
 
 - [Sphinx Documentation - PDF](https://www.sphinx-doc.org/_/downloads/en/master/pdf/)
 - [sphinx-autodoc-example - github](https://github.com/cimarieta/sphinx-autodoc-example)
+- [Sphinx Quickstart](https://sphinx-rtd-tutorial.readthedocs.io/en/latest/sphinx-quickstart.html)
+- [`lissajou` Module Documentation](https://lissajou.readthedocs.io/en/latest)
+- [`statanalysis` Module Documentation](https://statanalysis.readthedocs.io/en/latest)
+- [Readthedocs Configuration File Reference](https://docs.readthedocs.io/en/stable/config-file/v2.html)
