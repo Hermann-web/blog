@@ -11,24 +11,20 @@ pour éviter toute sorte de fraude. Enfin, nous allons choisir au maximum 5 vari
 
 La base de données fournie contient des informations sur les soumissionnaires de l'enchère et sur l'enchère. Les features donnés sont expliqués ci-dessous :
 
-!!! output
-
-    ```markdown
-    | **Feature**         | **Explication**                                                |
-    |---------------------|---------------------------------------------------------------|
-    | Bidder_id           | Un identifiant unique pour le soumissionnaire                  |
-    | Bid_id              | Un identifiant unique de l'offre fait par le soumissionnaire   |
-    | Auction             | Un identifiant unique de l'enchère (l'offre publique)          |
-    | Merchandise         | La catégorie du produit/offre                                  |
-    | Device              | Modèle de téléphone d'un visiteur                              |
-    | Time                | Temps à lequel la transaction a été faite pour l'enchère      |
-    | Country             | Le pays auquel appartient l'IP                                 |
-    | IP                  | Adresse IP de l'enrichisseur                                   |
-    | Url                 | Le site à partir duquel l'enrichisseur a été référé            |
-    | Payment_account     | Le compte à partir duquel l'enrichisseur a payé                |
-    | Address             | L'adresse de l'enrichisseur                                    |
-    | Outcome             | 1 si robot, 0 si homme                                         |
-    ```
+| **Feature**         | **Explication**                                                |
+|---------------------|---------------------------------------------------------------|
+| Bidder_id           | Un identifiant unique pour le soumissionnaire                  |
+| Bid_id              | Un identifiant unique de l'offre fait par le soumissionnaire   |
+| Auction             | Un identifiant unique de l'enchère (l'offre publique)          |
+| Merchandise         | La catégorie du produit/offre                                  |
+| Device              | Modèle de téléphone d'un visiteur                              |
+| Time                | Temps à lequel la transaction a été faite pour l'enchère      |
+| Country             | Le pays auquel appartient l'IP                                 |
+| IP                  | Adresse IP de l'enrichisseur                                   |
+| Url                 | Le site à partir duquel l'enrichisseur a été référé            |
+| Payment_account     | Le compte à partir duquel l'enrichisseur a payé                |
+| Address             | L'adresse de l'enrichisseur                                    |
+| Outcome             | 1 si robot, 0 si homme                                         |
 
 ## Analyse descriptive et sélection de variables
 
@@ -47,27 +43,15 @@ ADD_LEN_TO_GROUPBY = True
 
 ```python
 df = pd.read_csv("Projet_ML.csv")
-```
-
-```python
-df.bidder_id.nunique()
-```
-
-```plaintext
-87
+df.bidder_id.nunique() # 87
 ```
 
 ### **Preview**
 
 Voici un aperçu de la dataset :
 
-```python
-df
-```
+??? output ">>> df"
 
-??? output
-
-    ```markdown
     | bidder_id                              | bid_id  | auction | merchandise       | device    | time          | country | ip              | url            | payment_account                      | address                             | outcome |
     |----------------------------------------|---------|---------|-------------------|-----------|---------------|---------|-----------------|----------------|--------------------------------------|-------------------------------------|---------|
     | 001068c415025a009fee375a12cff4fcnht8y | 7179832 | 4ifac   | jewelry           | phone561  | 5.140996e-308 | bn      | 139.226.147.115 | vasstdc27m7nks3 | a3d2de7675556553a5f08e4c88d2c228iiasc | a3d2de7675556553a5f08e4c88d2c2282aj35 | 0       |
@@ -82,27 +66,21 @@ df
     | 0ad17aa9111f657d71cd3005599afc24fd44y | 1411877 | toaj7   | mobile            | phone26   | 5.201508e-308 | in      | 17.66.120.232   | 4dd8ei0o5oqsua3 | 22cdb26663f071c00de61cc2dcde7b556rido | db147bf6056d00428b1bbf250c6e97594ewjy | 1       |
     | 0ad17aa9111f657d71cd3005599afc24fd44y | 1412085 | 07axb   | mobile            | phone25   | 5.201509e-308 | in      | 64.30.57.156    | 8zdkeqk4yby6lz2 | 22cdb26663f071c00de61cc2dcde7b556rido | db147bf6056d00428b1bbf250c6e97594ewjy | 1       |
 
-    ```
-
 ### variable à prédire
 
-```python
-df[TARGET_COL].value_counts()
-```
+!!! output "`>>> df[TARGET_COL].value_counts()`"
 
-0    90877
-1     9123
-Name: outcome, dtype: int64
+    ```plaintext
+    0    90877
+    1     9123
+    Name: outcome, dtype: int64
+    ```
 
 c'est une classification binaire
 
 ### **Description des champs numériques**
 
-```python
-df.info()
-```
-
-!!! output
+!!! output "`>>> df.info()`"
 
     ```markdown
     <class 'pandas.core.frame.DataFrame'>
@@ -148,7 +126,7 @@ L'image ci-dessous présente plusieurs caractéristiques de chaque champ de la t
 
 - is_cat: 1 si la variable peut être considérée categorielle (ici, moins de 10 valeurs uniques) 0 sinon
 
-??? code "get_cols_info"
+??? info "`>>> def get_cols_info`"
 
     ```python
     from math import ceil
@@ -176,7 +154,7 @@ L'image ci-dessous présente plusieurs caractéristiques de chaque champ de la t
     get_cols_info(df, "bidder_id")
     ```
 
-??? output
+???+ output "`>>> get_cols_info(df, "bidder_id")`"
 
     ```markdown
       >>> df.shape=  (100000, 12)
@@ -267,29 +245,29 @@ Les variables avec un « nunique_per_bid » prenant la valeur nulle, n'apporte
 
 ### **Valeurs nulles**
 
-lignes vides par colonne
+On affiche le nombre de lignes vides par colonne
 
-```python
-df.isnull().sum()
-```
+!!! output "`>>> df.isnull().sum()`"
 
-bidder_id            0
-bid_id               0
-auction              0
-merchandise          0
-device               0
-time                 0
-country            184
-ip                   0
-url                  0
-payment_account      0
-address              0
-outcome              0
-dtype: int64
+    ```plaintext
+    bidder_id            0
+    bid_id               0
+    auction              0
+    merchandise          0
+    device               0
+    time                 0
+    country            184
+    ip                   0
+    url                  0
+    payment_account      0
+    address              0
+    outcome              0
+    dtype: int64
+    ```
 
 Il n'y a de cellules vides que dans country
 
-Valeurs dupliquées ?
+### Valeurs dupliquées ?
 
 ![image](./media/bot_detection_in_auction/image7.png)
 
@@ -331,10 +309,9 @@ df.country.isnull().sum()/len(df)
 
 ### **Transformation (ip)**
 
-```python
-df.ip
-```
+??? info "`>>> df.ip`"
 
+    ```plaintext
     0        139.226.147.115
     1           21.67.17.162
     2         103.165.41.136
@@ -347,16 +324,17 @@ df.ip
     99998      17.66.120.232
     99999       64.30.57.156
     Name: ip, Length: 100000, dtype: object
+    ```
+
 
 ```python
 ## identify network instead of device
 df["ip"] = df.ip.apply(lambda x: '.'.join(x.split('.')[:2]))
 ```
 
-```python
-df.ip
-```
+??? info "`>>> df.ip`"
 
+    ```plaintext
     0        139.226
     1          21.67
     2        103.165
@@ -369,11 +347,11 @@ df.ip
     99998      17.66
     99999      64.30
     Name: ip, Length: 100000, dtype: object
+    ```
 
-```python
-df.groupby("ip").agg({"country": lambda x: x.nunique()}).country.value_counts()
-```
+??? info "`>>> df.groupby("ip").agg({"country": lambda x: x.nunique()}).country.value_counts()`"
 
+    ```plaintext
     1     25426
     2      7918
     3      1469
@@ -386,15 +364,15 @@ df.groupby("ip").agg({"country": lambda x: x.nunique()}).country.value_counts()
     9         2
     13        1
     Name: country, dtype: int64
+    ```
 
 ### **Normalisation (time)**
 
 La variable « time » prends des valeurs très petites (de l'ordre de 10\*\*(-308)). On appliquera une normalisation linéaire et qui donc ne réduit pas l'information de cette variable.
 
-```python
-df.time.describe()
-```
+??? info "`>>> df["time"].describe()`"
 
+    ```plaintext
     count     1.000000e+05
     mean     5.143168e-308
     std       0.000000e+00
@@ -404,16 +382,16 @@ df.time.describe()
     75%      5.197759e-308
     max      5.206746e-308
     Name: time, dtype: float64
+    ```
 
 ```python
 ## normalize time
 df["time"] = (df.time - df.time.min())/(df.time.max() - df.time.min())
 ```
 
-```python
-df["time"].describe()
-```
+??? info "`>>> df["time"].describe()`"
 
+    ```plaintext
     count    100000.000000
     mean          0.543571
     std           0.362483
@@ -423,6 +401,7 @@ df["time"].describe()
     75%           0.935483
     max           1.000000
     Name: time, dtype: float64
+    ```
 
 ### **Visualisation (Merchandise)**
 
@@ -449,63 +428,59 @@ def bot(x): return (x==1).sum()
 df.groupby("merchandise").agg({"outcome": [human, bot] })
 ```
 
-|            |     outcome     |        |
-|            |  **human**     | **bot**|
-|------------|-----------------|--------|
-| merchandise|                 |        |
-| books and music|   227         | 0      |
-| home goods     |  13002        | 2093   |
-| jewelry        |  25004        | 0      |
-| mobile         |  26228        | 6853   |
-| office equipment| 21          | 0      |
-| sporting goods  | 26395        | 177    |
+| Category          | Human | Bot  |
+|-------------------|-------|------|
+| Merchandise       |       |      |
+| Books and Music   | 227   | 0    |
+| Home Goods        | 13002 | 2093 |
+| Jewelry           | 25004 | 0    |
+| Mobile            | 26228 | 6853 |
+| Office Equipment  | 21    | 0    |
+| Sporting Goods    | 26395 | 177  |
 
 ### **Encoding (Merchandise)**
 
-```python
-df.merchandise.unique()
-```
+!!! info "`>>> df.merchandise.unique()`"
 
     array(['jewelry', 'mobile', 'books and music', 'office equipment',
            'sporting goods', 'home goods'], dtype=object)
 
-```python
-REMOVE_EVIDENT_MERCHANDISE = False
-```
+??? info "`>>> def one_hot_encoder`"
 
-```python
-if REMOVE_EVIDENT_MERCHANDISE : df = df[df.merchandise.apply(lambda x: x in ["mobile", "sporting goods", "home goods"])]
-else: df["non_robot_merchandise"] = df.merchandise.apply(lambda x: int(x in ['jewelry', 'books and music', 'office equipment']))
-```
+    ```python
+    REMOVE_EVIDENT_MERCHANDISE = False
 
-```python
+    if REMOVE_EVIDENT_MERCHANDISE : df = df[df.merchandise.apply(lambda x: x in ["mobile", "sporting goods", "home goods"])]
+    else: df["non_robot_merchandise"] = df.merchandise.apply(lambda x: int(x in ['jewelry', 'books and music', 'office equipment']))
 
-def one_hot_encoder_v2(data, col_name):
-  data = data.copy()
-  new_cols = []
-  for i, elt in enumerate(data[col_name].unique()):
-    new_cols.append(f"{col_name}_{i+1}")
-    data[new_cols[-1]] = data[col_name].apply(lambda x: int(x==elt))
-  del data[col_name]
-  return data, new_cols
+    def one_hot_encoder_v2(data, col_name):
+      data = data.copy()
+      new_cols = []
+      for i, elt in enumerate(data[col_name].unique()):
+        new_cols.append(f"{col_name}_{i+1}")
+        data[new_cols[-1]] = data[col_name].apply(lambda x: int(x==elt))
+      del data[col_name]
+      return data, new_cols
 
-df2, new_cols = one_hot_encoder_v2(df, "merchandise")
-df2
-```
+    df2, new_cols = one_hot_encoder_v2(df, "merchandise")
+    df2
+    ```
 
-|     | bidder_id                                 | auction | device     | time    | country | ip     | url           | outcome | non_robot_merchandise | merchandise_1 | merchandise_2 | merchandise_3 | merchandise_4 | merchandise_5 | merchandise_6 |
-|-----|------------------------------------------|---------|------------|---------|---------|--------|---------------|---------|-----------------------|---------------|---------------|---------------|---------------|---------------|---------------|
-| 0   | 001068c415025a009fee375a12cff4fcnht8y    | 4ifac   | phone561   | 0.527973| bn      | 139.226| vasstdc27m7nks3| 0       | 1                     | 1             | 0             | 0             | 0             | 0             | 0             |
-| 1   | 0030a2dd87ad2733e0873062e4f83954mkj86   | obbny   | phone313   | 0.515267| ir      | 21.67  | vnw40k8zzokijsv| 0       | 0                     | 0             | 1             | 0             | 0             | 0             | 0             |
-| 2   | 00a0517965f18610417ee784a05f494d4dw6e   | l3o6q   | phone451   | 0.002705| bh      | 103.165| kk7rxe25ehseyci| 0       | 1                     | 0             | 0             | 1             | 0             | 0             | 0             |
-| 3   | 00a0517965f18610417ee784a05f494d4dw6e   | du967   | phone117   | 0.008986| tr      | 239.250| iu2iu3k137vakme| 0       | 1                     | 0             | 0             | 1             | 0             | 0             | 0             |
-| 4   | 00a0517965f18610417ee784a05f494d4dw6e   | wx3kf   | phone16    | 0.009710| in      | 255.108| u85yj2e7owkz6xp| 0       | 1                     | 0             | 0             | 1             | 0             | 0             | 0             |
-| ... | ...                                      | ...     | ...        | ...     | ...     | ...    | ...           | ...     | ...                   | ...           | ...           | ...           | ...           | ...           | ...           |
-| 99995| 0ad17aa9111f657d71cd3005599afc24fd44y  | toxfq   | phone1036  | 0.962363| in      | 186.94 | vasstdc27m7nks3| 1       | 0                     | 1             | 0             | 0             | 0             | 0             | 0             |
-| 99996| 0ad17aa9111f657d71cd3005599afc24fd44y  | ucb4u   | phone127   | 0.962380| in      | 119.27 | vasstdc27m7nks3| 1       | 0                     | 1             | 0             | 0             | 0             | 0             | 0             |
-| 99997| 0ad17aa9111f657d71cd3005599afc24fd44y  | sg8yd   | phone383   | 0.962386| in      | 243.25 | yweo7wfejrgbi2d| 1       | 0                     | 1             | 0             | 0             | 0             | 0             | 0             |
-| 99998| 0ad17aa9111f657d71cd3005599afc24fd44y  | toaj7   | phone26    | 0.962393| in      | 17.66  | 4dd8ei0o5oqsua3| 1       | 0                     | 1             | 0             | 0             | 0             | 0             | 0             |
-| 99999| 0ad17aa9111f657d71cd3005599afc24fd44y  | 07axb   | phone25    | 0.962401| in      | 64.30  | 8zdkeqk4yby6lz2| 1       | 0                     | 1             | 0             | 0             | 0             | 0             | 0             |
+???+ output "`>>> df2`"
+
+    |     | bidder_id                                 | auction | device     | time    | country | ip     | url           | outcome | non_robot_merchandise | merchandise_1 | merchandise_2 | merchandise_3 | merchandise_4 | merchandise_5 | merchandise_6 |
+    |-----|------------------------------------------|---------|------------|---------|---------|--------|---------------|---------|-----------------------|---------------|---------------|---------------|---------------|---------------|---------------|
+    | 0   | 001068c415025a009fee375a12cff4fcnht8y    | 4ifac   | phone561   | 0.527973| bn      | 139.226| vasstdc27m7nks3| 0       | 1                     | 1             | 0             | 0             | 0             | 0             | 0             |
+    | 1   | 0030a2dd87ad2733e0873062e4f83954mkj86   | obbny   | phone313   | 0.515267| ir      | 21.67  | vnw40k8zzokijsv| 0       | 0                     | 0             | 1             | 0             | 0             | 0             | 0             |
+    | 2   | 00a0517965f18610417ee784a05f494d4dw6e   | l3o6q   | phone451   | 0.002705| bh      | 103.165| kk7rxe25ehseyci| 0       | 1                     | 0             | 0             | 1             | 0             | 0             | 0             |
+    | 3   | 00a0517965f18610417ee784a05f494d4dw6e   | du967   | phone117   | 0.008986| tr      | 239.250| iu2iu3k137vakme| 0       | 1                     | 0             | 0             | 1             | 0             | 0             | 0             |
+    | 4   | 00a0517965f18610417ee784a05f494d4dw6e   | wx3kf   | phone16    | 0.009710| in      | 255.108| u85yj2e7owkz6xp| 0       | 1                     | 0             | 0             | 1             | 0             | 0             | 0             |
+    | ... | ...                                      | ...     | ...        | ...     | ...     | ...    | ...           | ...     | ...                   | ...           | ...           | ...           | ...           | ...           | ...           |
+    | 99995| 0ad17aa9111f657d71cd3005599afc24fd44y  | toxfq   | phone1036  | 0.962363| in      | 186.94 | vasstdc27m7nks3| 1       | 0                     | 1             | 0             | 0             | 0             | 0             | 0             |
+    | 99996| 0ad17aa9111f657d71cd3005599afc24fd44y  | ucb4u   | phone127   | 0.962380| in      | 119.27 | vasstdc27m7nks3| 1       | 0                     | 1             | 0             | 0             | 0             | 0             | 0             |
+    | 99997| 0ad17aa9111f657d71cd3005599afc24fd44y  | sg8yd   | phone383   | 0.962386| in      | 243.25 | yweo7wfejrgbi2d| 1       | 0                     | 1             | 0             | 0             | 0             | 0             | 0             |
+    | 99998| 0ad17aa9111f657d71cd3005599afc24fd44y  | toaj7   | phone26    | 0.962393| in      | 17.66  | 4dd8ei0o5oqsua3| 1       | 0                     | 1             | 0             | 0             | 0             | 0             | 0             |
+    | 99999| 0ad17aa9111f657d71cd3005599afc24fd44y  | 07axb   | phone25    | 0.962401| in      | 64.30  | 8zdkeqk4yby6lz2| 1       | 0                     | 1             | 0             | 0             | 0             | 0             | 0             |
 
 ### country
 
@@ -519,9 +494,7 @@ no unique on merchandise because of unicite/bidder_id
 
 Les variables actuelles
 
-```python
-df.columns
-```
+!!! info "`>>> df.columns`"
 
     Index(['bidder_id', 'auction', 'device', 'time', 'country', 'ip', 'url',
            'outcome', 'non_robot_merchandise', 'merchandise_1', 'merchandise_2',
@@ -569,30 +542,32 @@ quantités.
 Ainsi, pour chaque bidder_id, on a une série de valeurs sur laquelle on calcule des statistiques simples telles que la moyenne
 (my_agg_mean), la somme(my_agg_sum), l'écart-type(my_agg_std) et le max(my_agg_max)
 
-```python
-def compute_groupby(filename):
-  dd = df.groupby(["bidder_id", "time"]).agg({
-              "auction":lambda x: x.nunique() - 1,
-              "device":lambda x: x.nunique() - 1,
-              "country":lambda x: x.nunique() - 1,
-              "ip":lambda x: x.nunique() - 1,
-              "url":lambda x: x.nunique() - 1,
-              "outcome":lambda x: x.unique()[0]
-              })
-  cls_ =list(set(dd.columns)-{'outcome','bidder_id','time'})
-  dd["my_agg"] = dd[cls_].sum(axis=1)
-  dd2 = dd.reset_index()
-  dd_min_per_bidder_id = {bidder_id: dd2[dd2.bidder_id==bidder_id].time.min() for bidder_id in dd2.bidder_id.unique()}
+??? example "`>>> def compute_groupby`"
 
-  def modif_time(x):
-    x["time"] = x["time"] - dd_min_per_bidder_id[x["bidder_id"]]
-    return x
+    ```python
+    def compute_groupby(filename):
+      dd = df.groupby(["bidder_id", "time"]).agg({
+                  "auction":lambda x: x.nunique() - 1,
+                  "device":lambda x: x.nunique() - 1,
+                  "country":lambda x: x.nunique() - 1,
+                  "ip":lambda x: x.nunique() - 1,
+                  "url":lambda x: x.nunique() - 1,
+                  "outcome":lambda x: x.unique()[0]
+                  })
+      cls_ =list(set(dd.columns)-{'outcome','bidder_id','time'})
+      dd["my_agg"] = dd[cls_].sum(axis=1)
+      dd2 = dd.reset_index()
+      dd_min_per_bidder_id = {bidder_id: dd2[dd2.bidder_id==bidder_id].time.min() for bidder_id in dd2.bidder_id.unique()}
 
-  dd2 = dd2.apply(modif_time, axis=1)
-  dd2.to_csv(filename)
-  return dd2
+      def modif_time(x):
+        x["time"] = x["time"] - dd_min_per_bidder_id[x["bidder_id"]]
+        return x
 
-```
+      dd2 = dd2.apply(modif_time, axis=1)
+      dd2.to_csv(filename)
+      return dd2
+
+    ```
 
 ### **Normalisation (tous les features)**
 
@@ -600,49 +575,49 @@ Chaque variable est normalisée entre 0 et 1 à l'aide d'un min-max-scaler
 
 ??? info "Preview"
 
-  ![image](./media/bot_detection_in_auction/image15.png)
+    ![image](./media/bot_detection_in_auction/image15.png)
 
-  ![image](./media/bot_detection_in_auction/image16.png)
+    ![image](./media/bot_detection_in_auction/image16.png)
 
-  ![image](./media/bot_detection_in_auction/image17.png)
+    ![image](./media/bot_detection_in_auction/image17.png)
 
-??? info "Histogramme"
+### Visualisation - Histogramme
 
 Pour chaque variable, nous faisons un histogramme afin de comprendre l'explicabilité de nos variables explicatives par rapport à notre variable expliqué « outcome ». Nous ajoutons à ces diagrammes une estimation de la densité de chacune de ses variables.
 
 Comme nos données sont déséquilibrées par rapport à la variable expliqué, nous effectuons une augmentation de données par duplication pour ces visualisations.
 
-Les agrégations sur bidder_id :
+#### Les agrégations sur bidder_id
 
-- **Nb_ip**
+=== ":octicons-file-code-16: `Nb_ip`"
 
-![image](./media/bot_detection_in_auction/image18.png)
-![image](./media/bot_detection_in_auction/image19.png)
+    ![image](./media/bot_detection_in_auction/image18.png)
+    ![image](./media/bot_detection_in_auction/image19.png)
 
-- **Nb_auction**
+=== ":octicons-file-code-16: `Nb_auction`"
 
-![image](./media/bot_detection_in_auction/image20.png)
-![image](./media/bot_detection_in_auction/image21.png)
+    ![image](./media/bot_detection_in_auction/image20.png)
+    ![image](./media/bot_detection_in_auction/image21.png)
 
-- **Nb_device**
+=== ":octicons-file-code-16: `Nb_device`"
 
-![image](./media/bot_detection_in_auction/image22.png)
-![image](./media/bot_detection_in_auction/image23.png)
+    ![image](./media/bot_detection_in_auction/image22.png)
+    ![image](./media/bot_detection_in_auction/image23.png)
 
-- **Nb_url**
+=== ":octicons-file-code-16: `Nb_url`"
 
-![image](./media/bot_detection_in_auction/image24.png)
-![image](./media/bot_detection_in_auction/image25.png)
+    ![image](./media/bot_detection_in_auction/image24.png)
+    ![image](./media/bot_detection_in_auction/image25.png)
 
-- Nb_country
+=== ":octicons-file-code-16: `Nb_country`"
 
-![image](./media/bot_detection_in_auction/image26.png)
-![image](./media/bot_detection_in_auction/image27.png)
+    ![image](./media/bot_detection_in_auction/image26.png)
+    ![image](./media/bot_detection_in_auction/image27.png)
 
-- Nb_bid
+=== ":octicons-file-code-16: `Nb_bid`"
 
-![image](./media/bot_detection_in_auction/image28.png)
-![image](./media/bot_detection_in_auction/image29.png)
+    ![image](./media/bot_detection_in_auction/image28.png)
+    ![image](./media/bot_detection_in_auction/image29.png)
 
 On s'attends à ce que les robots effectuent plus d'opérations que les humains, ce qui se vérifie facilement dans ces diagrammes. En effet,
 on représente les histogrammes des variables (nb_ip, nb_auction,
@@ -650,25 +625,33 @@ nb_device, nb_url, nb_country, nb_bid) (bleu pour les humains et rouge pour les 
 
 D'abord, on remarque qu'il y a beaucoup de valeurs nulles, ce qui signifie que pour chaque ressource (ip, url, ...), l'usage multiple de ces ressources n'est pas courant. En plus, parmi ceux qui font un usage multiple de ces ressources, on note des robots mais aussi des humains pour certaines ressources comme l'url ou l'appareil. Ce qui est contre intuitif, c'est que les humains dépassent parfois les robots sur ces métriques.
 
+#### produits achetés
+
 Avec les variables suivantes, nous introduiront les produits achetés ainsi que le temps qui est très important.
 
-- **Nb_merchandise_1 et 2 et 4 et 6**
+=== ":octicons-file-code-16: `Nb_merchandise_1 & 2`"
 
-![image](./media/bot_detection_in_auction/image30.png)
-![image](./media/bot_detection_in_auction/image31.png)
-![image](./media/bot_detection_in_auction/image32.png)
-![image](./media/bot_detection_in_auction/image33.png)
+    ![image](./media/bot_detection_in_auction/image30.png)
+    ![image](./media/bot_detection_in_auction/image31.png)
 
-- **Nb_merchandise_3**
+=== ":octicons-file-code-16: `Nb_merchandise_4 & 6`"
 
-![image](./media/bot_detection_in_auction/image34.png)![image](./media/bot_detection_in_auction/image35.png)
+    ![image](./media/bot_detection_in_auction/image32.png)
+    ![image](./media/bot_detection_in_auction/image33.png)
 
-- **Nb_merchandise_5**
+=== ":octicons-file-code-16: `Nb_merchandise_3`"
 
-![image](./media/bot_detection_in_auction/image36.png)
-![image](./media/bot_detection_in_auction/image37.png)
+    ![image](./media/bot_detection_in_auction/image34.png)
+    ![image](./media/bot_detection_in_auction/image35.png)
+
+=== ":octicons-file-code-16: `Nb_merchandise_5`"
+
+    ![image](./media/bot_detection_in_auction/image36.png)
+    ![image](./media/bot_detection_in_auction/image237.png)
 
 Ces visualisations montrent bien que les robots se séparent des hommes quand l'utilisation des ressources augmente
+
+#### temps
 
 - time
 
@@ -800,37 +783,39 @@ from sklearn.metrics import confusion_matrix,r2_score,accuracy_score,roc_auc_sco
 
 Les modèles sont utilisés dans une classe qui implémente la méthode suivante
 
-```python
-def compute_all(self, model_name, important_cols:list=None, oversample:bool=None, test_size:float=None, remove_cols:list=None, feature_eng:bool=None):
-      print(f"model loader: {self.description}")
-      list_fct = {
-            "logit": self.logit_regression,
-            "logistic": logistic_regression_sklearn,
-            "svc": svc_classifier,
-            "knn":knn_classifier,
-            "sdg":sdg_classifier,
-            "tree":decision_tree_classifier,
-            "lda": lda_classifier,
-            "forest":random_forest_classifier,
-            "ada": ada_boost_classifier,
-            "xgboost": gradient_boosting_classifier
-            }
+??? example "`>>> def compute_all`"
 
-      # transform, split and oversample
-      X_train, X_test, y_train, y_test = self.get_train_test(model_name=model_name, important_cols=important_cols, oversample=oversample, test_size=test_size, remove_cols=remove_cols, feature_eng=feature_eng)
+    ```python
+    def compute_all(self, model_name, important_cols:list=None, oversample:bool=None, test_size:float=None, remove_cols:list=None, feature_eng:bool=None):
+          print(f"model loader: {self.description}")
+          list_fct = {
+                "logit": self.logit_regression,
+                "logistic": logistic_regression_sklearn,
+                "svc": svc_classifier,
+                "knn":knn_classifier,
+                "sdg":sdg_classifier,
+                "tree":decision_tree_classifier,
+                "lda": lda_classifier,
+                "forest":random_forest_classifier,
+                "ada": ada_boost_classifier,
+                "xgboost": gradient_boosting_classifier
+                }
 
-      # get model
-      my_fct = list_fct[model_name]
-      print(f"{'':~^50}\n{model_name:~^50}\n{'':~^50}")
+          # transform, split and oversample
+          X_train, X_test, y_train, y_test = self.get_train_test(model_name=model_name, important_cols=important_cols, oversample=oversample, test_size=test_size, remove_cols=remove_cols, feature_eng=feature_eng)
 
-      # train
-      y_test_proba, y_train_proba, y_train_pred, y_test_pred, nb_params = my_fct(X_train, y_train, X_test, y_test)
+          # get model
+          my_fct = list_fct[model_name]
+          print(f"{'':~^50}\n{model_name:~^50}\n{'':~^50}")
 
-      # evaluate
-      train_res, test_res = show_results(y_train, y_train_pred, y_train_proba,y_test, y_test_pred, y_test_proba)
-      g = f"{model_name}: nb_params = {nb_params}"
-      print(f"{g:~^50}")
-```
+          # train
+          y_test_proba, y_train_proba, y_train_pred, y_test_pred, nb_params = my_fct(X_train, y_train, X_test, y_test)
+
+          # evaluate
+          train_res, test_res = show_results(y_train, y_train_pred, y_train_proba,y_test, y_test_pred, y_test_proba)
+          g = f"{model_name}: nb_params = {nb_params}"
+          print(f"{g:~^50}")
+    ```
 
 Cette méthode utilise des algorithmes qui implémentent chaque une méthode de classification avec comme valeur ajoutée
 
@@ -842,71 +827,73 @@ Cette méthode utilise des algorithmes qui implémentent chaque une méthode de 
 
 Les résultats sont présentés avec cet algorithme
 
-```python
-def return_dict_scores(y, y_pred, pred_proba):
-  return {"acc":round(accuracy_score(y_pred, y),3), "f1":round(f1_score(y_pred, y),3), "pres":round(precision_score(y_pred, y),3), "rec":round(recall_score(y_pred, y),3), "roc":round(roc_auc_score(y_pred, pred_proba),3)}
+??? example "`>>> def show_results`"
 
-def bestThressholdForF1(y_true,y_pred_proba):
-    best_thresh = None
-    best_score = 0
-    for thresh in np.arange(0.1, 0.501, 0.01):
-        y_pred = np.array(y_pred_proba)>thresh
-        score = f1_score(y_true, y_pred)
-        if score > best_score:
-            best_thresh = thresh
-            best_score = score
-    return best_score , best_thresh, return_dict_scores(y_true, y_pred, y_pred_proba)
+    ```python
+    def return_dict_scores(y, y_pred, pred_proba):
+      return {"acc":round(accuracy_score(y_pred, y),3), "f1":round(f1_score(y_pred, y),3), "pres":round(precision_score(y_pred, y),3), "rec":round(recall_score(y_pred, y),3), "roc":round(roc_auc_score(y_pred, pred_proba),3)}
 
-def print_metrics(y, y_pred,pred_proba):
-  print("- confusion_matrix\n",confusion_matrix(y, y_pred))
-  print(f"- accuracy = {100*accuracy_score(y, y_pred):.2f}%") #better ->1 ##accuracy = nb_sucess/nb_sample
-  print(f"- f1 = {100*f1_score(y, y_pred):.2f}%") #better ->1 ##f1 = 2 * (precision * recall) / (precision + recall)
-  print(f"- roc(area under the curve) = {100*roc_auc_score(y, pred_proba):.2f}%") #better ->1 ##area under ROC and AUC
-  print(f"- precision = {100*precision_score(y, y_pred):.2f}%") #better->1 ##precision = tp / (tp + fp) where (tp=true_positive; fp:false_positive)
-  print(f"- recall = {100*recall_score(y, y_pred):.2f}%") #better->1 ##precision = tp / (tp + fn) where (tp=true_positive; fn:false_negative)
-  print(f"- bestThressholdForF1 = {bestThressholdForF1(y,pred_proba)}")
-  return return_dict_scores(y, y_pred, pred_proba)
+    def bestThressholdForF1(y_true,y_pred_proba):
+        best_thresh = None
+        best_score = 0
+        for thresh in np.arange(0.1, 0.501, 0.01):
+            y_pred = np.array(y_pred_proba)>thresh
+            score = f1_score(y_true, y_pred)
+            if score > best_score:
+                best_thresh = thresh
+                best_score = score
+        return best_score , best_thresh, return_dict_scores(y_true, y_pred, y_pred_proba)
 
-def show_results(y_train, y_train_pred, y_train_proba,y_test, y_test_pred, y_test_proba ):
-  print("\n>>>> metriques sur la base de données d'entrainement")
-  train_res = print_metrics(y_train,y_train_pred,y_train_proba)
-  print("\n>>>> metriques sur la base de données de test")
-  test_res = print_metrics(y_test, y_test_pred,y_test_proba)
-  return train_res, test_res
-```
+    def print_metrics(y, y_pred,pred_proba):
+      print("- confusion_matrix\n",confusion_matrix(y, y_pred))
+      print(f"- accuracy = {100*accuracy_score(y, y_pred):.2f}%") #better ->1 ##accuracy = nb_sucess/nb_sample
+      print(f"- f1 = {100*f1_score(y, y_pred):.2f}%") #better ->1 ##f1 = 2 * (precision * recall) / (precision + recall)
+      print(f"- roc(area under the curve) = {100*roc_auc_score(y, pred_proba):.2f}%") #better ->1 ##area under ROC and AUC
+      print(f"- precision = {100*precision_score(y, y_pred):.2f}%") #better->1 ##precision = tp / (tp + fp) where (tp=true_positive; fp:false_positive)
+      print(f"- recall = {100*recall_score(y, y_pred):.2f}%") #better->1 ##precision = tp / (tp + fn) where (tp=true_positive; fn:false_negative)
+      print(f"- bestThressholdForF1 = {bestThressholdForF1(y,pred_proba)}")
+      return return_dict_scores(y, y_pred, pred_proba)
+
+    def show_results(y_train, y_train_pred, y_train_proba,y_test, y_test_pred, y_test_proba ):
+      print("\n>>>> metriques sur la base de données d'entrainement")
+      train_res = print_metrics(y_train,y_train_pred,y_train_proba)
+      print("\n>>>> metriques sur la base de données de test")
+      test_res = print_metrics(y_test, y_test_pred,y_test_proba)
+      return train_res, test_res
+    ```
 
 ### Quelques exemples
 
-- Régression logistique
+??? example "Régression logistique"
 
-```python
-def logistic_regression_sklearn(X_train, y_train, X_test, y_test):
-  parameters = {"max_iter":[5,100,1000,2000], "penalty":["l1", "l2", "elasticnet", "none"], "C":[0.01, 0.1, 0.5, 1], "solver":["lbfgs", "liblinear"]}
-  clf = GridSearchCV(LogisticRegression(random_state=0, class_weight="balanced"), parameters).fit(X_train, y_train)
-  print(clf.best_params_)
+    ```python
+    def logistic_regression_sklearn(X_train, y_train, X_test, y_test):
+      parameters = {"max_iter":[5,100,1000,2000], "penalty":["l1", "l2", "elasticnet", "none"], "C":[0.01, 0.1, 0.5, 1], "solver":["lbfgs", "liblinear"]}
+      clf = GridSearchCV(LogisticRegression(random_state=0, class_weight="balanced"), parameters).fit(X_train, y_train)
+      print(clf.best_params_)
 
-  #clf = LogisticRegression(random_state=0, max_iter=1000, class_weight="balanced").fit(X_train, y_train)
-  y_train_pred = clf.predict(X_train)
-  y_test_pred = clf.predict(X_test)
-  y_train_proba = clf.predict_proba(X_train)[:, 1] #[proba({label=1}/row_data) for row_data in X_train]
-  y_test_proba = clf.predict_proba(X_test)[:, 1]
-  return y_test_proba, y_train_proba, y_train_pred, y_test_pred, len(clf.feature_names_in_)
-```
+      #clf = LogisticRegression(random_state=0, max_iter=1000, class_weight="balanced").fit(X_train, y_train)
+      y_train_pred = clf.predict(X_train)
+      y_test_pred = clf.predict(X_test)
+      y_train_proba = clf.predict_proba(X_train)[:, 1] #[proba({label=1}/row_data) for row_data in X_train]
+      y_test_proba = clf.predict_proba(X_test)[:, 1]
+      return y_test_proba, y_train_proba, y_train_pred, y_test_pred, len(clf.feature_names_in_)
+    ```
 
-- Knn
+??? example "Knn"
 
-```python
-def knn_classifier(X_train, y_train, X_test, y_test):
-  parameters = {"n_neighbors":[1,2,5,10,15,20]}
-  clf = GridSearchCV(KNeighborsClassifier(), parameters).fit(X_train, y_train)
-  print(clf.best_params_)
-  #clf = KNeighborsClassifier(n_neighbors=10).fit(X_train, y_train)
-  y_train_pred = clf.predict(X_train)
-  y_test_pred = clf.predict(X_test)
-  y_train_proba = clf.predict_proba(X_train)[:, 1] #[proba({label=1}/row_data) for row_data in X_train]
-  y_test_proba = clf.predict_proba(X_test)[:, 1]
-  return y_test_proba, y_train_proba, y_train_pred, y_test_pred, len(clf.feature_names_in_)
-```
+    ```python
+    def knn_classifier(X_train, y_train, X_test, y_test):
+      parameters = {"n_neighbors":[1,2,5,10,15,20]}
+      clf = GridSearchCV(KNeighborsClassifier(), parameters).fit(X_train, y_train)
+      print(clf.best_params_)
+      #clf = KNeighborsClassifier(n_neighbors=10).fit(X_train, y_train)
+      y_train_pred = clf.predict(X_train)
+      y_test_pred = clf.predict(X_test)
+      y_train_proba = clf.predict_proba(X_train)[:, 1] #[proba({label=1}/row_data) for row_data in X_train]
+      y_test_proba = clf.predict_proba(X_test)[:, 1]
+      return y_test_proba, y_train_proba, y_train_pred, y_test_pred, len(clf.feature_names_in_)
+    ```
 
 ### Algorithmes
 
@@ -947,35 +934,35 @@ auparavant
 
 ??? info "Légende"
 
-- acc : accuracy score
+    - acc : accuracy score
 
-- f1 : f1 score
+    - f1 : f1 score
 
-- pres : precision score
+    - pres : precision score
 
-- rec : recall score
+    - rec : recall score
 
-- roc : area under the curve
+    - roc : area under the curve
 
-- Ada: AdaBoost
+    - Ada: AdaBoost
 
-- Forest: Random Forest
+    - Forest: Random Forest
 
-- Knn: K nearest neighbors
+    - Knn: K nearest neighbors
 
-- Lda: Linear Discriminant analysis
+    - Lda: Linear Discriminant analysis
 
-- logistic: Logistic regression (sklearn)
+    - logistic: Logistic regression (sklearn)
 
-- Logit: Logistic regression Analysis (statsmodels)
+    - Logit: Logistic regression Analysis (statsmodels)
 
-- Sgd: Descente de gradient stochastique
+    - Sgd: Descente de gradient stochastique
 
-- Svc : Support vecteur Machine
+    - Svc : Support vecteur Machine
 
-- Tree : Arbre de decision
+    - Tree : Arbre de decision
 
-- Xgboost : Gradient Bossting
+    - Xgboost : Gradient Bossting
 
 ### **Comparaison des modèles**
 
