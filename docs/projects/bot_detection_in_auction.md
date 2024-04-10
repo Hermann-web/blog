@@ -1,6 +1,6 @@
 # Détection de bot dans dans les enchères
 
-![street view with city buildings, market and street sings](./media/bot_detection_in_auction/image1.jpeg)
+![street view with city buildings, market and street sings](./media/bot_detection_in_auction/image1.jpeg){width=50%}
 
 ## Objectif général
 
@@ -126,7 +126,7 @@ L'image ci-dessous présente plusieurs caractéristiques de chaque champ de la t
 
 - is_cat: 1 si la variable peut être considérée categorielle (ici, moins de 10 valeurs uniques) 0 sinon
 
-??? info "`>>> def get_cols_info`"
+??? code "`def get_cols_info`"
 
     ```python
     from math import ceil
@@ -445,7 +445,7 @@ df.groupby("merchandise").agg({"outcome": [human, bot] })
     array(['jewelry', 'mobile', 'books and music', 'office equipment',
            'sporting goods', 'home goods'], dtype=object)
 
-??? info "`>>> def one_hot_encoder`"
+??? code "`def one_hot_encoder`"
 
     ```python
     REMOVE_EVIDENT_MERCHANDISE = False
@@ -542,7 +542,7 @@ quantités.
 Ainsi, pour chaque bidder_id, on a une série de valeurs sur laquelle on calcule des statistiques simples telles que la moyenne
 (my_agg_mean), la somme(my_agg_sum), l'écart-type(my_agg_std) et le max(my_agg_max)
 
-??? example "`>>> def compute_groupby`"
+??? code "`def compute_groupby`"
 
     ```python
     def compute_groupby(filename):
@@ -783,7 +783,7 @@ from sklearn.metrics import confusion_matrix,r2_score,accuracy_score,roc_auc_sco
 
 Les modèles sont utilisés dans une classe qui implémente la méthode suivante
 
-??? example "`>>> def compute_all`"
+??? code "`def compute_all`"
 
     ```python
     def compute_all(self, model_name, important_cols:list=None, oversample:bool=None, test_size:float=None, remove_cols:list=None, feature_eng:bool=None):
@@ -827,7 +827,7 @@ Cette méthode utilise des algorithmes qui implémentent chaque une méthode de 
 
 Les résultats sont présentés avec cet algorithme
 
-??? example "`>>> def show_results`"
+??? code "`def show_results`"
 
     ```python
     def return_dict_scores(y, y_pred, pred_proba):
@@ -864,7 +864,7 @@ Les résultats sont présentés avec cet algorithme
 
 ### Quelques exemples
 
-??? example "Régression logistique"
+??? code ">>> Régression logistique"
 
     ```python
     def logistic_regression_sklearn(X_train, y_train, X_test, y_test):
@@ -880,7 +880,7 @@ Les résultats sont présentés avec cet algorithme
       return y_test_proba, y_train_proba, y_train_pred, y_test_pred, len(clf.feature_names_in_)
     ```
 
-??? example "Knn"
+??? code ">>> Knn"
 
     ```python
     def knn_classifier(X_train, y_train, X_test, y_test):

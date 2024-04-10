@@ -214,3 +214,4 @@ extra_javascript:
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
   - stylesheets/float-img.css
+  - stylesheets/custom-admonition.css
