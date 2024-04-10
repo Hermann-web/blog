@@ -86,7 +86,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/2024/04/10/comparing-python-formatters-and-linters-black-vs-flake8-vs-isort-vs-autopep8-vs-yapf-vs-pylint-and-more/</loc>
+         <loc>https://hermann-web.github.io/blog/blog/2024/02/12/comparing-python-formatters-and-linters-black-vs-flake8-vs-isort-vs-autopep8-vs-yapf-vs-pylint-and-more/</loc>
          <lastmod>2024-04-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -281,27 +281,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/programming/</loc>
+         <loc>https://hermann-web.github.io/blog/blog/category/documentation/</loc>
          <lastmod>2024-04-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/python/</loc>
-         <lastmod>2024-04-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/code-quality/</loc>
-         <lastmod>2024-04-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/tools-comparison/</loc>
-         <lastmod>2024-04-10</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/documentation/</loc>
          <lastmod>2024-04-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -407,6 +392,21 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/php/</loc>
+         <lastmod>2024-04-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/programming/</loc>
+         <lastmod>2024-04-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/code-quality/</loc>
+         <lastmod>2024-04-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/tools-comparison/</loc>
          <lastmod>2024-04-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
