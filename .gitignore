@@ -1,5 +1,5 @@
 
 *.db
-venv
-venv.prod
+.venv/
 site/
+.cache/

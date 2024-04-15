@@ -15,4 +15,7 @@ jobs:
           python-version: '3.11'
       - run: pip install uv
       - run: uv pip install -r requirements.txt --python $(which python3)
+      - run: mkdir -p ${{ github.workspace }}/.cache/plugin/social/fonts
+      - run: cp ${{ github.workspace }}/fonts/Roboto.zip ${{ github.workspace }}/.cache/plugin/social/fonts/Roboto.zip
+      - run: unzip ${{ github.workspace }}/.cache/plugin/social/fonts/Roboto.zip -d ${{ github.workspace }}/.cache/plugin/social/fonts/Roboto
       - run: mkdocs gh-deploy --force --clean --verbose

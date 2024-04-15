@@ -13,4 +13,7 @@ services:
         pip install uv &&
         uv pip install -r requirements.txt --python /usr/local/bin/python3 &&
         git config --global --add safe.directory /app &&
+        mkdir -p /app/.cache/plugin/social/fonts && 
+        cp /app/fonts/Roboto.zip /app/.cache/plugin/social/fonts/Roboto.zip &&
+        unzip -o /app/.cache/plugin/social/fonts/Roboto.zip -d /app/.cache/plugin/social/fonts/Roboto  &&
         mkdocs serve -a 0.0.0.0:8000"

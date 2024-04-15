@@ -107,6 +107,8 @@ plugins:
 #   - material/overrides/hooks/shortcodes.py
 #   - material/overrides/hooks/translations.py
 
+  - social
+
 
 # Additional configuration
 extra:
