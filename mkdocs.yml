@@ -83,9 +83,10 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/hermann-web.png
+  favicon: assets/logo-blog-hermann-agossou-ot0-500x500.png
   icon:
     logo: logo
+  logo: assets/logo-blog-hermann-agossou-ot20-500x500.png
 
 # Plugins
 plugins:
