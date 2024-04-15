@@ -1,5 +1,7 @@
 ---
 date: 2024-03-16
+authors: [hermann-web]
+comments: true
 title: Introducing Two New Packages for Streamlining File Conversions in Python
 ---
 

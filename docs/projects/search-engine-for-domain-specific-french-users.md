@@ -1,5 +1,7 @@
 ---
 date: 2023-11-13
+authors: [hermann-web]
+comments: true
 title: "Search Engine for domain specific french users"
 ---
 

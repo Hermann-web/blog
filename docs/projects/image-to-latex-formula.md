@@ -1,5 +1,7 @@
 ---
 date: 2023-11-15
+authors: [hermann-web]
+comments: true
 title: Streamlit App for Formula OCR using pix2tex
 ---
 

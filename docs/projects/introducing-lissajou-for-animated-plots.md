@@ -1,3 +1,10 @@
+---
+date: 2022-04-02
+authors: [hermann-web]
+comments: true
+title: "Introducing the `lissajou` Package: Animate Stunning Lissajou Curves and Beyond"
+---
+
 # Introducing the [lissajou Package](https://pypi.org/project/lissajou/): Animate Stunning Lissajou Curves and Beyond
 
 [Lissajou curves](https://en.wikipedia.org/wiki/Lissajous_curve) have always held a certain fascination for me. Their intricate, ever-changing patterns hold a beauty that's both mathematical and artistic. So, one day, I decided to embark on a journey to bring these curves to life through animation.

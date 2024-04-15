@@ -1,5 +1,7 @@
 ---
 date: 2023-11-27
+authors: [hermann-web]
+comments: true
 title: Flask based File Hosting (web app & api & python module & cli app)
 ---
 

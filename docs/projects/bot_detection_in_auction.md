@@ -1,3 +1,10 @@
+---
+date: 2022-12-19
+authors: [hermann-web]
+comments: true
+title: Détection de bot dans dans les enchères
+---
+
 # Détection de bot dans dans les enchères
 
 ![street view with city buildings, market and street sings](./media/bot_detection_in_auction/image1.jpeg){width=50%}
