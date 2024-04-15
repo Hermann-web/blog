@@ -110,9 +110,20 @@ Logging levels provide a way to categorize log messages based on their severity.
 !!! example "Logging Levels with Built-in Logging"
 
     ```python
-    logger.debug("Debug message")
-    logger.info("Info message")
-    # Other logging levels such as WARNING, ERROR, and CRITICAL can also be used
+    logger.debug("Debug message: Detailed diagnostic output")
+    logger.info("Info message: General system information")
+    logger.warning("Warning message: Something to take note of but not critical")
+    logger.error("Error message: A major problem that needs attention")
+    logger.critical("Critical message: A severe error indicating a major failure in the application")
+    ```
+
+!!! example "logging example using formatted string"
+
+    ```python
+    category = "module"
+    name = "example_function"
+    parameters = {"arg1": "value1", "arg2": "value2"}
+    logger.info("%s %s: %r", category, name, parameters)
     ```
 
 ### Suppressing Logging
