@@ -36,6 +36,8 @@ docs_dir: docs/
 # Copyright
 copyright: Copyright © 2023-2024 Hermann Agossou
 
+google_analytics: ['BD4YrWd0pEc2SUULdRPLKgv5QCfeDluhXPt37gL9nNs', 'hermann-web.github.io']
+
 # Configuration
 theme:
   name: material
@@ -117,7 +119,7 @@ extra:
     json: [.s2]
   analytics:
     provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY
+    property: BD4YrWd0pEc2SUULdRPLKgv5QCfeDluhXPt37gL9nNs
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/hermann-web
@@ -125,13 +127,18 @@ extra:
       link: https://www.linkedin.com/in/agossou-hermann
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/r/hermann-web/hermann-web.github.io/
-    # - icon: fontawesome/brands/python
-    #   link: https://pypi.org/project/mkdocs-material/
-    # - icon: fontawesome/brands/mastodon
-    #   link: https://fosstodon.org/@squidfunk
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/user/Hermann-web/
+    - icon: fontawesome/brands/researchgate
+      link: https://www.researchgate.net/profile/Hermann-Agosou
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/AgossouHermann
 
+  version:
+    provider: mike
+  analytics:
+    feedback:
+      title: Was this page helpful?
 # Extensions
 markdown_extensions:
   - abbr
