@@ -458,6 +458,83 @@ The `find` command searches for files and directories based on various criteria.
 
 `xargs` is a flexible tool for constructing and executing commands with arguments from standard input or files. It's particularly useful for batch processing and handling large sets of data efficiently.
 
+### sed (Stream Editor)
+
+- **Basic Syntax:**
+
+  ```bash
+  sed [options] 'command' file.txt
+  ```
+
+  - `options`: Additional flags or arguments that modify the behavior of the `sed` command.
+  - `command`: Specifies the editing operation to be performed on the input.
+  - `file.txt`: The input file to be processed by `sed`.
+
+    !!! example "Example"
+
+        ```bash
+        sed 's/old/new/' file.txt
+        ```
+        This command replaces the first occurrence of "old" with "new" on each line of `file.txt`.
+
+    ??? info "Common Use Cases:"
+
+        1. **Substitution:**
+          ```bash
+          sed 's/foo/bar/g' file.txt
+          ```
+          Substitutes all occurrences of "foo" with "bar" in `file.txt`.
+
+        2. **Deleting Lines:**
+          ```bash
+          sed '/pattern/d' file.txt
+          ```
+          Deletes lines containing "pattern" from `file.txt`.
+
+        3. **Printing Lines:**
+          ```bash
+          sed -n '10,20p' file.txt
+          ```
+          Prints lines 10 to 20 of `file.txt`.
+
+        4. **Inserting and Appending Text:**
+          ```bash
+          sed '1i Inserted Text' file.txt
+          ```
+          Inserts "Inserted Text" before the first line of `file.txt`.
+
+        5. **Using Regular Expressions:**
+          ```bash
+          sed -E 's/([0-9]+)\.([0-9]+)/\2.\1/' file.txt
+          ```
+          Reverses the order of numbers separated by a dot in `file.txt`.
+
+    ??? info "Advanced Features:"
+
+        - **In-Place Editing:**
+          ```bash
+          sed -i 's/old/new/g' file.txt
+          ```
+          Performs in-place editing, modifying `file.txt` directly.
+
+        - **Multiple Commands:**
+          ```bash
+          sed -e 's/foo/bar/' -e 's/baz/qux/' file.txt
+          ```
+          Executes multiple editing commands sequentially on `file.txt`.
+
+        - **Using Hold and Pattern Space:**
+          ```bash
+          sed '1h;1!H;$!d;g' file.txt
+          ```
+          Collects all lines into the hold space and then prints them in reverse order.
+
+        - **Conditional Execution:**
+          ```bash
+          sed '/pattern/ { s/old/new/ }' file.txt
+          ```
+          Substitutes "old" with "new" only on lines containing "pattern".
+
 ### Conclusion - basic commands
 
 These commands offer different functionalities:
@@ -468,6 +545,7 @@ These commands offer different functionalities:
 - `awk` is a powerful text processing tool for pattern scanning and processing.
 - The `find` command in Linux is a powerful tool used for searching files and directories based on various criteria.
 - `xargs`, constructs and executes commands with arguments from standard input or files
+- `sed`, performs various editing operations on text files, making it invaluable for automation and scripting tasks.
 
 You can use these commands to perform various operations related to file content, size estimation, and pattern matching within files.
 
@@ -526,6 +604,21 @@ Optimizing efficiency by passing multiple arguments to a command.
     ```
 
     !!! info "Deletes files (all in one command) matching the name `file_to_delete.txt`"
+
+### `-exec -c` option
+
+- get and `.txt` files and change their extension to `.md` using a combination of the `find` command and `sed` (stream editor)
+
+    ```bash
+    find /your/folder/path -type f -name "*.txt" -exec sh -c 'mv "$0" "${0%.txt}.md"' {} \;
+    ```
+
+    !!! info "Here's a breakdown of what's happening"
+        - `find /your/folder/path -type f -name "*.txt"`: This command finds all files (`-type f`) with the `.txt` extension in the specified folder and its subdirectories.
+
+        - `-exec sh -c 'mv "$0" "${0%.txt}.md"' {} \;`: For each file found, it executes the `sh` shell command to rename the file. `${0%.txt}.md` is a parameter expansion that replaces `.txt` with `.md` in the filename.
+
+        Make sure to replace `/your/folder/path` with the actual path to your folder.
 
 ### `\(` ... `\)`: Grouping Expressions
 
@@ -851,6 +944,58 @@ This command will apply the precedent operation on each file returned by the `fi
     - `-exec markdownlint-cli2 --fix {} +`: Executes the `markdownlint-cli2 --fix` command on the found files. The `{}` is replaced by the found file names.
     
     This command will execute `markdownlint-cli2 --fix` on all `.md` files in the `./docs` directory and `README.md` in the current directory.
+
+### comment out some lines matching a pattern
+
+To comment out all lines containing `font-size:` in a CSS file using Bash, you can use the `sed` command. `sed` is a powerful stream editor in Unix-like systems, used for performing basic text transformations on an input stream (a file or input from a pipeline).
+
+Here’s how you can use `sed` to find all occurrences of `font-size:` and comment out those lines in a CSS file. You will use the in-place edit option `-i` to modify the file directly. Please ensure to back up your file before running such commands, as they make direct changes to your files.
+
+#### Step-by-Step Command
+
+??? warning "Backup Your CSS File"
+
+    Before running the command, it's a good idea to make a backup of your CSS file:
+
+    ```bash
+    cp yourfile.css yourfile.backup.css
+    ```
+
+The following `sed` command will add `/*` and `*/` around any line that contains `font-size:`. This approach assumes that the lines do not already contain block comments (`/* */`), as nested comments are not supported in CSS and will lead to errors.
+
+```bash
+sed -i '/font-size:/ s|.*|/* & */|' yourfile.css
+```
+
+!!! info "Explanation:"
+
+    Here’s what each part of the command does:
+
+    - `sed -i`: The `-i` option edits files in-place (i.e., saves back to the original file).
+    - `'/font-size:/`: Selects lines that match the pattern `font-size:`.
+    - `s|.*|/* & */|`: Replaces the entire line (`.*` matches everything) with `/*` followed by the original line (`&` represents the matched line), followed by `*/`.
+  
+??? info "Alternative Command"
+
+    If you just want to prepend `//` to lines instead of wrapping them with `/* */`, assuming this is for a CSS-like language that supports `//` comments (note: standard CSS does not support `//` for commenting), you could do:
+
+    ```bash
+    sed -i '/font-size:/ s|^|// |' yourfile.css
+    ```
+
+    This command adds `//` at the start of any line that contains `font-size:`.
+
+??? "Testing the Command"
+
+    It's a good practice to test the command on a sample file or with a copy of your file to ensure it performs as expected without modifying the original file:
+    
+    ```bash
+    sed '/font-size:/ s|.*|/* & */|' yourfile.css > test_output.css
+    ```
+    
+    This command applies the changes and redirects the output to `test_output.css` instead of altering the original file.
+    
+    These commands should help you automatically comment out all lines containing `font-size:` in your CSS file using Bash.
 
 ## Conclusion
 
