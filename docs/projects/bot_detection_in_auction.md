@@ -333,7 +333,6 @@ df.country.isnull().sum()/len(df)
     Name: ip, Length: 100000, dtype: object
     ```
 
-
 ```python
 ## identify network instead of device
 df["ip"] = df.ip.apply(lambda x: '.'.join(x.split('.')[:2]))

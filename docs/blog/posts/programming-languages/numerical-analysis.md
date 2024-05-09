@@ -71,26 +71,26 @@ Understanding the corresponding syntaxes in each language facilitates code porta
 
 ### Array Creation
 
-| Task                  | Python (NumPy)                                 | R (Base/Additional Packages)               | MATLAB Core Functions                   | Scilab Core Functions                   |
-|-----------------------|-----------------------------------------------|--------------------------------------------|-----------------------------------------|----------------------------------------|
-| Row Vector            | `np.array([1, 2, 3])`                  | `c(1, 2, 3)`                            | `row_vector = [1, 2, 3]`                | `row_vector = [1, 2, 3]`                |
-| Column Vector         | `np.array([[1], [2], [3]])`            | `c(1, 2, 3)`                            | `col_vector = [1; 2; 3]`                | `col_vector = [1; 2; 3]`                |
-| Matrix                | `np.array([[1, 2], [3, 4]])`           | `matrix(c(1, 2, 3, 4), nrow=2)`         | `matrix = [1, 2; 3, 4]`                 | `matrix = [1, 2; 3, 4]`                 |
-| j:k Row Vector                 | `np.arange(j, k+1)`                           | `j:k`                                      | `j:k`                                   | `j:k`                                   |
-| j:i:k Row Vector               | `np.arange(j, k+i, i)`                        | `seq(j, k, by=i)`                          | `j:i:k`                                 | `j:i:k`                                 |
-| Linearly Spaced Vector         | `np.linspace(a, b, n)`                       | `seq(a, b, length.out=n)`                  | `linspace(a, b, n)`                     | `linspace(a, b, n)`                     |
-| Linearly spaced vector| `np.linspace(1, 10, 100)`                     | `seq(1, 10, length.out=100)`               | `linspace(1, 10, 100)`                   | `linspace(1, 10, 100)`                  |
-| Logarithmically spaced vector | `np.logspace(1, 3, 100)`                | `10^seq(1, 3, length.out=100)`             | `logspace(1, 3, 100)`                   | `logspace(1, 3, 100)`                  |
-| Range Array           | `np.arange(start, stop, step)`                | `seq(from = start, to = end, by = step)`   | `start:step:end`                        | `start:step:end`                       |
-| Empty Array           | `np.empty(shape=(m, n))`                     | `vector(length = n)`                       | `zeros(m, n)`                           | `zeros(m, n)`                          |
-| NaN Matrix                     | `np.full((a, b), np.nan)`                     | `matrix(NaN, nrow=a, ncol=b)`             | `NaN(a, b)`                             | `nan(a, b)`                             |
-| Zeros Array           | `np.zeros(shape=(m, n))`                     | `rep(0, n)`                               | `zeros(m, n)`                           | `zeros(m, n)`                          |
-| Zeros Matrix                   | `np.zeros((a, b))`                            | `matrix(0, nrow=a, ncol=b)`               | `zeros(a, b)`                           | `zeros(a, b)`                           |
-| Ones Array            | `np.ones(shape=(m, n))`                      | `rep(1, n)`                               | `ones(m, n)`                            | `ones(m, n)`                           |
-| Ones Matrix                    | `np.ones((a, b))`                             | `matrix(1, nrow=a, ncol=b)`               | `ones(a, b)`                            | `ones(a, b)`                            |
-| Identity Matrix       | `np.identity(n)` or `np.eye(n)`               | `diag(rep(1, n))`                          | `eye(n)`                                | `eye(n)`                               |
-| Meshgrid                       | `np.meshgrid(x, y)`                           | `expand.grid(x, y)`                       | `[X, Y] = meshgrid(x, y)`               | `[X, Y] = meshgrid(x, y)`               |
-| Random Array          | `np.random.rand(rows, cols)`                  | `runif(n)`                                | `rand(m, n)`                            | `rand(m, n)`                           |
+| Task                          | Python (NumPy)                  | R (Base/Additional Packages)             | MATLAB Core Functions     | Scilab Core Functions     |
+| ----------------------------- | ------------------------------- | ---------------------------------------- | ------------------------- | ------------------------- |
+| Row Vector                    | `np.array([1, 2, 3])`           | `c(1, 2, 3)`                             | `row_vector = [1, 2, 3]`  | `row_vector = [1, 2, 3]`  |
+| Column Vector                 | `np.array([[1], [2], [3]])`     | `c(1, 2, 3)`                             | `col_vector = [1; 2; 3]`  | `col_vector = [1; 2; 3]`  |
+| Matrix                        | `np.array([[1, 2], [3, 4]])`    | `matrix(c(1, 2, 3, 4), nrow=2)`          | `matrix = [1, 2; 3, 4]`   | `matrix = [1, 2; 3, 4]`   |
+| j:k Row Vector                | `np.arange(j, k+1)`             | `j:k`                                    | `j:k`                     | `j:k`                     |
+| j:i:k Row Vector              | `np.arange(j, k+i, i)`          | `seq(j, k, by=i)`                        | `j:i:k`                   | `j:i:k`                   |
+| Linearly Spaced Vector        | `np.linspace(a, b, n)`          | `seq(a, b, length.out=n)`                | `linspace(a, b, n)`       | `linspace(a, b, n)`       |
+| Linearly spaced vector        | `np.linspace(1, 10, 100)`       | `seq(1, 10, length.out=100)`             | `linspace(1, 10, 100)`    | `linspace(1, 10, 100)`    |
+| Logarithmically spaced vector | `np.logspace(1, 3, 100)`        | `10^seq(1, 3, length.out=100)`           | `logspace(1, 3, 100)`     | `logspace(1, 3, 100)`     |
+| Range Array                   | `np.arange(start, stop, step)`  | `seq(from = start, to = end, by = step)` | `start:step:end`          | `start:step:end`          |
+| Empty Array                   | `np.empty(shape=(m, n))`        | `vector(length = n)`                     | `zeros(m, n)`             | `zeros(m, n)`             |
+| NaN Matrix                    | `np.full((a, b), np.nan)`       | `matrix(NaN, nrow=a, ncol=b)`            | `NaN(a, b)`               | `nan(a, b)`               |
+| Zeros Array                   | `np.zeros(shape=(m, n))`        | `rep(0, n)`                              | `zeros(m, n)`             | `zeros(m, n)`             |
+| Zeros Matrix                  | `np.zeros((a, b))`              | `matrix(0, nrow=a, ncol=b)`              | `zeros(a, b)`             | `zeros(a, b)`             |
+| Ones Array                    | `np.ones(shape=(m, n))`         | `rep(1, n)`                              | `ones(m, n)`              | `ones(m, n)`              |
+| Ones Matrix                   | `np.ones((a, b))`               | `matrix(1, nrow=a, ncol=b)`              | `ones(a, b)`              | `ones(a, b)`              |
+| Identity Matrix               | `np.identity(n)` or `np.eye(n)` | `diag(rep(1, n))`                        | `eye(n)`                  | `eye(n)`                  |
+| Meshgrid                      | `np.meshgrid(x, y)`             | `expand.grid(x, y)`                      | `[X, Y] = meshgrid(x, y)` | `[X, Y] = meshgrid(x, y)` |
+| Random Array                  | `np.random.rand(rows, cols)`    | `runif(n)`                               | `rand(m, n)`              | `rand(m, n)`              |
 
 ### Descriptive Methods
 
@@ -305,17 +305,17 @@ This table provides basic operations for handling data frames in Python (using p
 
 ### System Commands
 
-| Feature               | Python (NumPy/SciPy)                   | R (Base/Additional Packages)            | MATLAB Core Functions                   | Scilab Core Functions                   |
-|-----------------------|-----------------------------------------|-----------------------------------------|-----------------------------------------|-----------------------------------------|
-| Add Path              | `sys.path.append(path)`                | `attach(path)`                          | `addpath(path)`                         | `path = path + ":" + path_to_add`      |
-| Get Subfolders        | N/A                                     | `list.dirs(path)`                       | `genpath(path)`                         | N/A                                     |
-| Current Directory     | `os.getcwd()`                           | `getwd()`                               | `pwd`                                   | `pwd`                                   |
-| Make Directory        | `os.mkdir(path)`                       | `dir.create(path)`                      | `mkdir(path)`                           | `mkdir(path)`                           |
-| Temporary Directory   | `tempfile.gettempdir()`                | `tempdir()`                             | `tempdir`                               | `tempdir()`                             |
-| Functions in Memory   | N/A                                     | N/A                                     | `inmem`                                 | N/A                                     |
-| Exit                  | `exit()`                                | `q()`                                   | `exit`                                  | `exit`                                  |
-| List Folder Content   | `os.listdir(path)`                     | `list.files(path)`                      | `dir(path)`                             | `files = dir(path)`                    |
-| List Toolboxes        | N/A                                     | `installed.packages()`                  | `ver`                                   | `exec('getmodules' + newline + 'getmodules()')` |
+| Feature             | Python (NumPy/SciPy)    | R (Base/Additional Packages) | MATLAB Core Functions | Scilab Core Functions                           |
+| ------------------- | ----------------------- | ---------------------------- | --------------------- | ----------------------------------------------- |
+| Add Path            | `sys.path.append(path)` | `attach(path)`               | `addpath(path)`       | `path = path + ":" + path_to_add`               |
+| Get Subfolders      | N/A                     | `list.dirs(path)`            | `genpath(path)`       | N/A                                             |
+| Current Directory   | `os.getcwd()`           | `getwd()`                    | `pwd`                 | `pwd`                                           |
+| Make Directory      | `os.mkdir(path)`        | `dir.create(path)`           | `mkdir(path)`         | `mkdir(path)`                                   |
+| Temporary Directory | `tempfile.gettempdir()` | `tempdir()`                  | `tempdir`             | `tempdir()`                                     |
+| Functions in Memory | N/A                     | N/A                          | `inmem`               | N/A                                             |
+| Exit                | `exit()`                | `q()`                        | `exit`                | `exit`                                          |
+| List Folder Content | `os.listdir(path)`      | `list.files(path)`           | `dir(path)`           | `files = dir(path)`                             |
+| List Toolboxes      | N/A                     | `installed.packages()`       | `ver`                 | `exec('getmodules' + newline + 'getmodules()')` |
 
 ## Conclusion
 
