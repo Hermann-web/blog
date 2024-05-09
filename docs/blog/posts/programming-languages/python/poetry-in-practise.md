@@ -239,6 +239,42 @@ poetry run black .
 
 This will run `isort` and `black` with the configurations specified in the `pyproject.toml` file on your project files.
 
+## Adding optional dependencies
+
+You can add optional dependencies in poetry by adding them in the extra packages ([more here](https://stackoverflow.com/questions/60971502/python-poetry-how-to-install-optional-dependencies))
+
+For example
+
+```toml
+[tool.poetry.dependencies]
+python = ">=3.8.1,<3.12"
+opencf-core = "^0.2.0"
+generalimport = "^0.5.2"
+numpy = = "^1.24.0"
+opencv-python = {version = "^4.8.1.78", optional = true}
+pillow = {version = "^10.3.0", optional = true}
+pypdf2 = {version = "^3.0.1", optional = true}
+imageio = {version = "^2.30.0", optional = true}
+
+
+[tool.poetry.extras]
+document = ["pdf2docx", "pypdf2"]
+image = ["pillow", "imageio"]
+```
+
+Here, 4 dependecncies are kept otional. The command `poetry install` would not install them.
+To add all `document` dependancies, use `poetry install --extras document`
+If you have make it a python module, use, `pip install mypackage[extras,...]`
+
+For example
+
+```bash
+pip install mypackage[document]
+pip install mypackage[document, image]
+```
+
+This is different from the dev dependancies, and groups in general
+
 Enjoy seamless Python project management with Poetry! Happy coding!
 
 ---

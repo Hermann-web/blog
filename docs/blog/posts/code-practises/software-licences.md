@@ -174,3 +174,8 @@ Beside open source and proprietary licenses, the dual licences has emerged, comb
 So, dual licensing is a strategy used to address different needs within a project, but it can introduce complexities and limitations. While open source fosters collaboration, innovation, and community-driven development, navigating through licensing choices requires careful consideration and understanding.
 
 Please remember that the information provided in this document is for educational purposes only and should not be considered legal advice. It's essential to consult with legal professionals for specific legal guidance related to software licenses and intellectual property matters.
+
+## Related links
+
+- <https://choosealicense.com>
+- <https://www.tldrlegal.com>
