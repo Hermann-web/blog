@@ -5,9 +5,10 @@ comments: true
 description: |
   A comprehensive guide for beginners diving into the realm of SSH connections and file transfers using Git Bash. From initiating connections to troubleshooting common errors and optimizing file transfers, this guide aims to empower users with the know-how of secure and efficient SSH usage.
 categories:
-  - devops
+  - dev
   - remote-access
   - ssh
+  - Security
 title: "Mastering SSH and File Transfers to Remote servers: A Beginner's Handbook"
 ---
 

@@ -7,8 +7,14 @@ description: >
 categories:
   - Blog
   - web
+  - fullstack
   - python
+  - fatapi
   - nodejs
+  - nextjs
+  - prisma
+  - clerck
+  - docker
   - beginners
 links:
   - blog/posts/a-roadmap-for-web-dev.md

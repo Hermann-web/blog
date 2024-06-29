@@ -6,6 +6,7 @@ description: >
   A comprehensive guide to setting up remote desktop access from a Linux system to a Windows 10 machine using Remmina.
 categories:
   - linux
+  - remote-access
   - RDP
   - windows
 links:

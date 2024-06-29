@@ -6,7 +6,7 @@ description: >
   Master essential Linux commands for efficient file and directory operations. Explore `wc`, `du`, `grep`, `find`, ... and their combinations for effective file management.
 title: "Mastering Essential Linux Commands: Your Path to File and Directory Mastery"
 categories:
-  - devops
+  - dev
   - OSX
   - linux
   - command-line

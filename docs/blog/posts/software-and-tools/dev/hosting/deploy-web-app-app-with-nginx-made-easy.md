@@ -6,8 +6,11 @@ description: >
   This blog shows useful stuff to know about or learn to do as web developer or data scientist/engineer
   Always working the fastest and easiest ways toward success
 categories:
-  - devops
+  - dev
   - deployment
+  - nginx
+  - web
+  - flask
 links:
   - blog/posts/a-roadmap-for-web-dev.md
   - blog/posts/code-practises/software-licences.md

@@ -5,7 +5,7 @@ comments: true
 description: >
   Discover MkDocs, the tool that makes documentation creation straightforward. Explore its simplicity in crafting professional documentation for your projects.
 categories:
-  - devops
+  - dev
   - mkdocs
   - beginners
   - project-management

@@ -5,7 +5,7 @@ comments: true
 description: >
   Learn to streamline documentation using MkDocs within Docker, simplifying your workflow for efficient documentation management.
 categories:
-  - devops
+  - dev
   - mkdocs
   - docker
   - project-management
