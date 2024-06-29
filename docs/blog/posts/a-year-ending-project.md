@@ -9,7 +9,7 @@ categories:
   - web
   - fullstack
   - python
-  - fatapi
+  - fastapi
   - nodejs
   - nextjs
   - prisma

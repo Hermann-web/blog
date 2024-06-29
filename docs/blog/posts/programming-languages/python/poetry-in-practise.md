@@ -275,6 +275,10 @@ pip install mypackage[document, image]
 
 This is different from the dev dependancies, and groups in general
 
+## Platform specific dependencies
+
+anwers from this stackoverflow thread: [platform-specific dependency alternatives?](https://stackoverflow.com/questions/61052866/python-poetry-how-to-specify-platform-specific-dependency-alternatives)
+
 Enjoy seamless Python project management with Poetry! Happy coding!
 
 ---

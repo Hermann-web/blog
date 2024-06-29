@@ -112,3 +112,8 @@ Assuming you're on the master branch, this step uploads the large files to the G
 By successfully implementing Git LFS, your large files are now efficiently managed within the repository, enhancing version control capabilities.
 
 For detailed installation instructions and additional information about Git LFS, refer to the [Git LFS installation guide](https://github.com/git-lfs/git-lfs/wiki/Installation).
+
+## More ressources
+
+- [untrack with git-lfs](https://www.mankier.com/1/git-lfs-untrack)
+-

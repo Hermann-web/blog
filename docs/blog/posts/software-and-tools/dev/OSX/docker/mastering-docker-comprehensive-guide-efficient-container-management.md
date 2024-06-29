@@ -8,6 +8,7 @@ categories:
   - OSX
   - docker
   - containers
+  - deployment
 links:
   - blog/posts/a-roadmap-for-web-dev.md
   - blog/posts/code-practises/software-licences.md
@@ -139,7 +140,7 @@ $ docker ps -a
 
 This command lists all the running containers along with their IDs, names, and other details.
 
-Example output:
+Example output ([nodejs-docker](https://nodejs.org/en/docs/guides/nodejs-docker-webapp)):
 
 ```plaintext
 ID            IMAGE                                COMMAND    ...   PORTS

@@ -38,7 +38,7 @@ Create a new Nginx configuration file for your Flask app in the `/etc/nginx/site
 
 <!-- more -->
 
-```
+```conf
 server {
     listen 80;
     server_name yourdomain.com;

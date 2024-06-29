@@ -2,6 +2,7 @@
 date: 2024-04-06
 authors: [hermann-web]
 comments: true
+# cover_image: image1.jpeg
 description: |
   Learn how to automate documentation generation for your Python projects using Sphinx and its extensions, such as sphinx-apidoc and napoleon, to streamline the process and enhance readability.
 categories:
@@ -32,7 +33,7 @@ In my quest to streamline the documentation process for my python projects as pa
 
 Amidst my research, I stumbled upon a pivotal discovery. A question posed by a fellow developer seeking to automatically generate [Sphinx documentation](https://www.sphinx-doc.org/en/master/) from their docstrings led me to a solution. Users had proposed a [script](https://stackoverflow.com/a/2703173), which eventually found its way into the Sphinx ecosystem as [sphinx-apidoc](https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html), aligning perfectly with my requirements.
 
-Despite the prevalence of Sphinx in platforms like ReadTheDocs, I encountered [discussions](https://github.com/encode/httpx/discussions/1220) debating the merits of [MkDocs](../../software-and-tools/dev/mkdocs/mkdocs-get-started.md) versus Sphinx, particularly concerning module documentation. While MkDocs appealed to me for its simplicity, the absence of built-in support for API documentation posed a significant hurdle. This realization prompted me to explore alternatives and delve later on into lesser-known solutions like [mkdocstrings](https://github.com/mkdocstrings/mkdocstrings).
+Despite the prevalence of Sphinx in platforms like ReadTheDocs, I encountered [discussions](https://github.com/encode/httpx/discussions/1220) debating the merits of [MkDocs](../../software-and-tools/dev/mkdocs/mkdocs-get-started.md) versus Sphinx, particularly concerning module documentation. While MkDocs appealed to me for its simplicity, the absence of built-in support for API documentation posed a significant hurdle. This realization prompted me to explore alternatives and delve later on into lesser-known solutions like [mkdocstrings](https://github.com/mkdocstrings/mkdocstrings) or [react based ones](https://dev.to/jacksonkasi/how-to-make-a-documentation-website-in-react-js-56mk) or whatever solution is used in [pydandic api documentation](https://docs.pydantic.dev/latest/api/base_model/), built using mkdocs with [some automation](https://github.com/pydantic/pydantic/tree/main/docs/api).
 
 ??? examples "Example of documentations with these tools:"
 
@@ -453,6 +454,28 @@ To deploy your documentation to ReadTheDocs, you need to prepare your documentat
     ![ReadTheDocs Builds](./images/my-readthedocs-builds.png){width=80%}
 
 By following these steps, you can successfully deploy your Sphinx documentation to ReadTheDocs and make it accessible to your audience.
+
+??? example "recap example"
+
+ This was the steps for one python package i've built
+
+ ```bash
+ # 1. add deps
+ poetry add sphinx==^7.0.0 --group buildthedocs
+ poetry add sphinx-rtd-theme --group buildthedocs
+ poetry add m2r2 --group buildthedocs
+ # 2. create the docu template
+ sphinx-quickstart docs
+ # 2. generate buildthedocs requirements, generate api doc and build docu
+ source scripts/run-build-docu.sh
+ # 3. add readme.rst
+ # 4. update index.rst to integrate readme.rst and openconv/modules.rst in 
+ # 5. update conf.py to specify main path, add extensions, modify the html_theme
+ # 6. rebuild docu to check
+ source scripts/run-build-docu.sh
+ # 7. add a .readthedocs file
+ # 8. push to readthedocs.org
+ ```
 
 ## Additional Resources
 
