@@ -411,6 +411,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/deployment/</loc>
+         <lastmod>2024-06-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/linux/</loc>
          <lastmod>2024-06-29</lastmod>
          <changefreq>daily</changefreq>
@@ -457,11 +462,6 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/pwa/</loc>
-         <lastmod>2024-06-29</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/deployment/</loc>
          <lastmod>2024-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -526,7 +526,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/fatapi/</loc>
+         <loc>https://hermann-web.github.io/blog/blog/category/fastapi/</loc>
          <lastmod>2024-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
