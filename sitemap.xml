@@ -186,7 +186,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/2024/03/11/comprehensive-guide-to-ssh-tunneling-file-transfers-and-key-based-authentication/</loc>
+         <loc>https://hermann-web.github.io/blog/blog/2024/06/29/comprehensive-guide-to-ssh-tunneling-file-transfers-and-key-based-authentication/</loc>
          <lastmod>2024-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -296,6 +296,26 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/dev/</loc>
+         <lastmod>2024-06-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/remote-access/</loc>
+         <lastmod>2024-06-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/ssh/</loc>
+         <lastmod>2024-06-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/security/</loc>
+         <lastmod>2024-06-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/database-management/</loc>
          <lastmod>2024-06-29</lastmod>
          <changefreq>daily</changefreq>
@@ -307,6 +327,21 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/tools-comparison/</loc>
+         <lastmod>2024-06-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/mysql/</loc>
+         <lastmod>2024-06-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/postgresql/</loc>
+         <lastmod>2024-06-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/mongodb/</loc>
          <lastmod>2024-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -351,11 +386,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/security/</loc>
-         <lastmod>2024-06-29</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/authentication/</loc>
          <lastmod>2024-06-29</lastmod>
          <changefreq>daily</changefreq>
@@ -386,27 +416,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/remote-access/</loc>
-         <lastmod>2024-06-29</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/rdp/</loc>
          <lastmod>2024-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/windows/</loc>
-         <lastmod>2024-06-29</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/dev/</loc>
-         <lastmod>2024-06-29</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/ssh/</loc>
          <lastmod>2024-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -571,11 +586,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/mysql/</loc>
-         <lastmod>2024-06-29</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/recovery/</loc>
          <lastmod>2024-06-29</lastmod>
          <changefreq>daily</changefreq>
@@ -592,11 +602,6 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/streamlit/</loc>
-         <lastmod>2024-06-29</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/mongodb/</loc>
          <lastmod>2024-06-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
