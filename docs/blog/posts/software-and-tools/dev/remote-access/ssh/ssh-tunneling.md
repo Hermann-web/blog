@@ -110,24 +110,28 @@ mysql -u dbuser -p -h 127.0.0.1 -P ${LOCAL_PORT}
 #### Explanation
 
 1. **Variables**:
-   - `SSH_PORT`: Port used for SSH connections (default is `22`).
-   - `HOST`: Remote server’s address.
-   - `USER`: Your SSH username.
-   - `LOCAL_PORT`: Local port to forward MySQL traffic (e.g., `5523`).
-   - `REMOTE_DB_HOST`: Remote database host (usually `127.0.0.1`).
-   - `REMOTE_DB_PORT`: Remote database port (default for MySQL is `3306`).
+
+    - `SSH_PORT`: Port used for SSH connections (default is `22`).
+    - `HOST`: Remote server’s address.
+    - `USER`: Your SSH username.
+    - `LOCAL_PORT`: Local port to forward MySQL traffic (e.g., `5523`).
+    - `REMOTE_DB_HOST`: Remote database host (usually `127.0.0.1`).
+    - `REMOTE_DB_PORT`: Remote database port (default for MySQL is `3306`).
 
 2. **SSH Command**:
-   - `-f`: Runs command in the background.
-   - `-L`: Sets up local port forwarding from `LOCAL_PORT` to `REMOTE_DB_HOST:REMOTE_DB_PORT`.
-   - `-N`: Prevents execution of remote commands (only sets up the tunnel).
+
+    - `-f`: Runs command in the background.
+    - `-L`: Sets up local port forwarding from `LOCAL_PORT` to `REMOTE_DB_HOST:REMOTE_DB_PORT`.
+    - `-N`: Prevents execution of remote commands (only sets up the tunnel).
 
 3. **MySQL Connection**:
-   - Connects to MySQL using the local tunnel.
-   - `-u dbuser`: Specifies MySQL username.
-   - `-p`: Prompts for password.
-   - `-h 127.0.0.1`: Connects to localhost (tunneled).
-   - `-P ${LOCAL_PORT}`: Specifies local port for the tunnel.
+
+    Connects to MySQL using the local tunnel.
+
+    - `-u dbuser`: Specifies MySQL username.
+    - `-p`: Prompts for password.
+    - `-h 127.0.0.1`: Connects to localhost (tunneled).
+    - `-P ${LOCAL_PORT}`: Specifies local port for the tunnel.
 
 #### Usage
 
@@ -156,11 +160,11 @@ SFTP [^sftp-wiki] is a secure way to transfer files between your local machine a
 
 2. **Common SFTP Commands**
 
-   - `ls`: List files on the remote server.
-   - `cd <directory>`: Change directory on the remote server.
-   - `get <remote_file>`: Download a file from the remote server.
-   - `put <local_file>`: Upload a file to the remote server.
-   - `exit`: Close the SFTP session.
+    - `ls`: List files on the remote server.
+    - `cd <directory>`: Change directory on the remote server.
+    - `get <remote_file>`: Download a file from the remote server.
+    - `put <local_file>`: Upload a file to the remote server.
+    - `exit`: Close the SFTP session.
 
 ### Example Usage
 

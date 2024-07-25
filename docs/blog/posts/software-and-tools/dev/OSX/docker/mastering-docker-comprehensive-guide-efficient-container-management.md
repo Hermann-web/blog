@@ -321,7 +321,7 @@ This way, you can share files between your PC and a Docker container using the `
 
 Managing Docker images and their containers involves a structured process. Here's an organized version detailing the steps:
 
-### **Organize Files:**
+### __Organize Files:__
 
 Organizing files is pivotal for smooth Docker image creation. Ensure your application code, including the Dockerfile, `.dockerignore`, and necessary configuration files, resides within the same directory. For instance, a typical Node.js app might have the following structure:
 
@@ -336,7 +336,7 @@ your-app-directory/
 
 Keeping all pertinent files together simplifies referencing in the Dockerfile and ensures that only essential application files are included in the image.
 
-### **Example Dockerfile for an Express App:**
+### __Example Dockerfile for an Express App:__
 
 Here's a simple Dockerfile suitable for an Express application running on Node.js 14:
 
@@ -363,7 +363,7 @@ EXPOSE 3001
 CMD ["npm", "start"]
 ```
 
-### **Create .dockerignore:**
+### __Create .dockerignore:__
 
 A sample `.dockerignore` might contain exclusions like:
 
@@ -396,7 +396,7 @@ Consider using a modified `.gitignore` as `.dockerignore`. However, ensure it's 
 
 In my example, `.test.env` was in .gitignore but important. However, `tests` is not in .gitignore but useless in production
 
-### **Build the Image:**
+### __Build the Image:__
 
 Navigate to the directory containing your Dockerfile and execute:
 
@@ -406,7 +406,7 @@ docker build -t your-image-name .
 
 This command constructs a Docker image from the Dockerfile and tags it with the specified name.
 
-### **Run a Container from the New Image:**
+### __Run a Container from the New Image:__
 
 Start a container using the newly built image:
 

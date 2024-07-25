@@ -58,15 +58,15 @@ To apply rebase whenever you do a `git pull`, run this command to modify git def
 git config pull.rebase true
 ```
 
-**Example Scenario:**
+__Example Scenario:__
 Consider a scenario where ...
 
-**Pros:**
+__Pros:__
 
 - Keeps a linear, clean commit history.
 - Integrates local changes after remote ones, maintaining chronological order.
 
-**Cons:**
+__Cons:__
 
 - Requires manual resolution of conflicts that may arise during rebase.
 
@@ -90,19 +90,19 @@ You pull with the no-rebase option with
 git pull --no-rebase
 ```
 
-**Example Scenario:**
+__Example Scenario:__
 Suppose you've made substantial local changes and need to pull remote updates without modifying your commit history:
 
 ```bash
 git pull --no-rebase origin main
 ```
 
-**Pros:**
+__Pros:__
 
 - Creates a single combined commit representing both local and remote changes.
 - Retains the original commit structure without altering history.
 
-**Cons:**
+__Cons:__
 
 - Might lose individual context from multiple local commits.
 
@@ -126,19 +126,19 @@ You pull with the fast-forward option with
 git pull --ff-only
 ```
 
-**Example Scenario:**
+__Example Scenario:__
 When ensuring a linear history is a priority and avoiding merge commits:
 
 ```bash
 git pull --ff-only origin main
 ```
 
-**Pros:**
+__Pros:__
 
 - Enforces a strictly linear history if possible, avoiding merge commits.
 - Facilitates a cleaner commit timeline for easier tracking.
 
-**Cons:**
+__Cons:__
 
 - Requires conflict resolution if the remote branch diverges.
 
@@ -149,19 +149,19 @@ In this scenario (default behavior):
 - Proceeds as usual when no remote commits are present.
 - Performs a rebase based on the `git config pull.rebase` setting if remote commits exist.
 
-**Example Scenario:**
+__Example Scenario:__
 Pulling changes with flexibility based on configured rebase settings:
 
 ```bash
 git pull --ff-merge origin main
 ```
 
-**Pros:**
+__Pros:__
 
 - Offers flexibility based on configured rebase settings (`pull.rebase true/false`).
 - Can accommodate both linear and non-linear commit histories.
 
-**Cons:**
+__Cons:__
 
 - May result in a non-linear history with merge commits in certain scenarios.
 
@@ -171,19 +171,19 @@ git pull --ff-merge origin main
 - Caution is advised as it can lead to the loss of other developers' work.
 - Coordination with the team is crucial for a smooth collaboration process.
 
-**Example Scenario:**
+__Example Scenario:__
 When pushing changes forcefully becomes necessary:
 
 ```bash
 git push --force origin feature-branch
 ```
 
-**Pros:**
+__Pros:__
 
 - Allows correcting mistakes or overriding changes when needed.
 - Provides a quick resolution to divergent branch issues.
 
-**Cons:**
+__Cons:__
 
 - Risks losing or overwriting others' work, disrupting collaboration.
 - Requires careful coordination within the team.

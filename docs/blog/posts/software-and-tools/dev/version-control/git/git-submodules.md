@@ -55,13 +55,13 @@ This document simplifies Git submodules in a beginner-friendly way, offering dev
 
 ### Clone the Main Repository
 
-1. **Open your terminal and navigate to the desired directory for cloning:**
+1. __Open your terminal and navigate to the desired directory for cloning:__
 
     ```bash
     cd /desired/directory/path
     ```
 
-2. **Clone the main repository:**
+2. __Clone the main repository:__
 
     ```bash
     git clone <repository_url>
@@ -69,7 +69,7 @@ This document simplifies Git submodules in a beginner-friendly way, offering dev
 
     Replace `<repository_url>` with the URL of the main repository.
 
-3. **Change your working directory to the repository:**
+3. __Change your working directory to the repository:__
 
     ```bash
     cd <repository_directory>
@@ -79,7 +79,7 @@ This document simplifies Git submodules in a beginner-friendly way, offering dev
 
 ### Initialize and Update Submodules
 
-4. **Initialize the submodules:**
+4. __Initialize the submodules:__
 
     ```bash
     git submodule init
@@ -87,7 +87,7 @@ This document simplifies Git submodules in a beginner-friendly way, offering dev
 
     This sets up necessary Git configurations for submodules.
 
-5. **Update the submodules:**
+5. __Update the submodules:__
 
     ```bash
     git submodule update
@@ -97,7 +97,7 @@ This document simplifies Git submodules in a beginner-friendly way, offering dev
 
 ### Clone a Specific Submodule
 
-6. **Clone a specific submodule:**
+6. __Clone a specific submodule:__
 
     ```bash
     git submodule update --recursive -- <submodule_path>
@@ -112,13 +112,13 @@ Now that you've successfully cloned the main repository along with its submodule
 
 ## Creating a Git Submodule
 
-1. **Move to the parent repository's root directory:**
+1. __Move to the parent repository's root directory:__
 
     ```bash
     cd /path/to/parent/repository
     ```
 
-2. **Add the Submodule:**
+2. __Add the Submodule:__
 
     ```bash
     git submodule add <submodule_repository_url> <submodule_path>
@@ -133,7 +133,7 @@ Now that you've successfully cloned the main repository along with its submodule
     git submodule add https://github.com/example/submodule-repo.git path/to/submodule
     ```
 
-3. **Commit the Changes:**
+3. __Commit the Changes:__
 
     ```bash
     git commit -m "Add submodule: <submodule_path>"
@@ -141,7 +141,7 @@ Now that you've successfully cloned the main repository along with its submodule
 
     Replace `<submodule_path>` with the actual path used when adding the submodule.
 
-4. **Push Changes (Optional):**
+4. __Push Changes (Optional):__
 
     ```bash
     git push
@@ -153,13 +153,13 @@ Now, let's delve into pulling changes from both the main repository and its subm
 
 ### Update the Main Repository
 
-1. **Navigate to the main repository's directory:**
+1. __Navigate to the main repository's directory:__
 
     ```bash
     cd /path/to/main/repository
     ```
 
-2. **Fetch the latest changes:**
+2. __Fetch the latest changes:__
 
     ```bash
     git pull origin main
@@ -169,7 +169,7 @@ Now, let's delve into pulling changes from both the main repository and its subm
 
 ### Update Submodules
 
-1. **Update submodules to the latest commits:**
+1. __Update submodules to the latest commits:__
 
     ```bash
     git submodule update --remote
@@ -177,7 +177,7 @@ Now, let's delve into pulling changes from both the main repository and its subm
 
     This updates each submodule to the commit specified by the main repository.
 
-2. **Update a specific submodule:**
+2. __Update a specific submodule:__
     - Using `git submodule update --remote <submodule_path>`:
 
         ```bash
@@ -193,14 +193,14 @@ Now, let's delve into pulling changes from both the main repository and its subm
 
 ### Pushing Updated Submodule References (Bonus)
 
-1. **Inside the main repository, after updating submodule references:**
+1. __Inside the main repository, after updating submodule references:__
 
     ```bash
     git commit -am "Update submodule references"
     git push origin main
     ```
 
-2. **If there are changes in the submodules themselves:**
+2. __If there are changes in the submodules themselves:__
 
     ```bash
     cd path/to/submodule
@@ -212,7 +212,7 @@ Now, let's delve into pulling changes from both the main repository and its subm
 
 To remove a submodule from your repository, follow these steps. The following instructions are based on a detailed explanation found on Stack Overflow ([source](https://stackoverflow.com/a/16162000)).
 
-1. **Move to the parent repository's root directory:**
+1. __Move to the parent repository's root directory:__
 
     Before removing the submodule, move it temporarily to a different location within your working directory.
 
@@ -220,21 +220,21 @@ To remove a submodule from your repository, follow these steps. The following in
     mv <submodule_path> <submodule_path>_tmp
     ```
 
-1. **Deinitialize the Submodule:**
+1. __Deinitialize the Submodule:__
     Use the following command to deinitialize the submodule:
 
     ```bash
     git submodule deinit -f -- <submodule_path>
     ```
 
-2. **Remove Submodule Configuration:**
+2. __Remove Submodule Configuration:__
     Delete the submodule's configuration from the `.git/modules` directory:
 
     ```bash
     rm -rf .git/modules/<submodule_path>
     ```
 
-3. **Remove Submodule from Repository:**
+3. __Remove Submodule from Repository:__
     There are two options to remove the submodule from the repository:
 
     a. If you want to completely remove it from the repository and your working tree:
@@ -251,7 +251,7 @@ To remove a submodule from your repository, follow these steps. The following in
        git rm --cached <submodule_path>
        ```
 
-4. **Restore Submodule (Optional):**
+4. __Restore Submodule (Optional):__
     If you moved the submodule in step 0, restore it to its original location:
 
     ```bash

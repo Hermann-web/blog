@@ -61,10 +61,10 @@ This command fetches changes from the remote and prunes (removes) any remote-tra
 
 If a branch was mistakenly deleted and not yet pruned, it might be recoverable.
 
-1. **Check the Reflog:**
+1. __Check the Reflog:__
    Use `git reflog show` to view recently deleted branches and find the one you want to restore.
 
-2. **Recover the Branch:**
+2. __Recover the Branch:__
    Identify the commit hash associated with the deleted branch in the reflog and create a new branch at that commit:
 
    ```bash
@@ -73,7 +73,7 @@ If a branch was mistakenly deleted and not yet pruned, it might be recoverable.
 
 Replace `<branch-name>` with the branch name and `<commit-hash>` with the commit hash from the reflog.
 
-**Note:** The ability to recover a deleted branch depends on recent activity and whether Git has pruned references.
+__Note:__ The ability to recover a deleted branch depends on recent activity and whether Git has pruned references.
 
 ## Related pages
 

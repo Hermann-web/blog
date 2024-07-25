@@ -48,7 +48,7 @@ gRPC offers several advantages, making it a versatile and efficient choice for b
 
 Follow the steps below to set up a Python environment for gRPC [^grpc-python-quickstart]:
 
-1. **Quick Setup:**
+1. __Quick Setup:__
 
    ```bash
    cd path/to/my/folder
@@ -57,14 +57,14 @@ Follow the steps below to set up a Python environment for gRPC [^grpc-python-qui
    python -m pip install --upgrade pip
    ```
 
-2. **Install gRPC and gRPC Tools:**
+2. __Install gRPC and gRPC Tools:__
 
    ```bash
    python -m pip install grpcio
    python -m pip install grpcio-tools
    ```
 
-   - **gRPC Tools Include:**
+   - __gRPC Tools Include:__
      - `protoc`, the buffer compiler
      - A plugin to generate client and server-side code from `.proto` files.
 
