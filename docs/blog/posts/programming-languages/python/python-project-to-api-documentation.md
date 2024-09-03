@@ -321,7 +321,7 @@ Install your chosen theme using pip and update the `html_theme` in your `conf.py
 
     You may have some warnings related to the syntax; you can fix them.
 
-Here was my output of my python package [statanalysis](https://test.pypi.org/project/statanalysis/) with `sphinx-docapi` + `sphinx-rtd-theme`
+Here was my output of my python package [statanalysis](https://pypi.org/project/statanalysis/) with `sphinx-docapi` + `sphinx-rtd-theme`
 
 ![statanalysis sphinx documentation](./images/docu-statanalysis.png)
 
