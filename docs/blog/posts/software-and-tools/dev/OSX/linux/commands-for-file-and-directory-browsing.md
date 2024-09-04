@@ -9,7 +9,7 @@ categories:
   - dev
   - OSX
   - linux
-  - command-line
+  - cli-tools
   - file-handling
   - deployment
 ---
