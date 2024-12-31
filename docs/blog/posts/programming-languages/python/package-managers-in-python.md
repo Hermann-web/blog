@@ -76,8 +76,8 @@ Grasping their strengths, weaknesses, and use cases empowers you to make informe
     - **Drop-in Replacement:** Provides a familiar interface for common pip commands.
     - **Supports Advanced Features:** Handles editable installs, Git dependencies, URL dependencies, etc.
     - **Dependency Management:** Offers features like dependency overrides and conflict resolution.
-    - **Limitations:** Not a complete replacement for pip; some features are still missing.
     - **Platform-specific Requirements File Generation:** Generates requirements files tailored to specific platforms.
+    - **Resolution Strategy Customization:** Allows customization of resolution strategies for dependencies.
 
 ## Comparison Table
 
@@ -94,17 +94,17 @@ Grasping their strengths, weaknesses, and use cases empowers you to make informe
 
 | Feature               | pip                                       | pipenv                                    | [poetry](https://python-poetry.org/docs/cli)                                      | conda                                       | uv                                         |
 |-----------------------|-------------------------------------------|--------------------------------------------|---------------------------------------------|---------------------------------------------|--------------------------------------------|
-| **Create a project**  | `python -m venv <env-name>`               | `pipenv --python <python-version>`          | `poetry init`                               | `conda create -n <env-name> python=<python-version>` | `uv venv` (creates virtualenv at: `.venv/`)                                  |
+| **Create a project**  | `python -m venv <env-name>`               | `pipenv --python <python-version>`          | `poetry init`                               | `conda create -n <env-name> python=<python-version>` | `uv init .` (creates virtualenv at: `.venv/`)                                  |
 | **Use a virtual environment** | `source <env-name>/bin/activate` (linux) or `<env-name>/Scripts/activate` (windows) | `pipenv shell`                       | `poetry shell`                              | `conda activate <env-name>`                   | Same as pip                                        |
-| **Install a package** | `pip install <package-name>`              | `pipenv install <package-name>`             | `poetry add <package-name>`                 | `conda install <package-name>`               | `uv pip install <package-name>`            |
-| **Remove a package**  | `pip uninstall <package-name>`            | `pipenv uninstall <package-name>`           | `poetry remove <package-name>`              | `conda uninstall <package-name>`             | `uv pip uninstall <package-name>`          |
-| **Install from requirements** | `pip install -r requirements.txt`      | `pipenv install` (reads from Pipfile)       | `poetry install` (reads from pyproject.toml) | `conda install --file requirements.txt`       | `uv pip sync requirements.txt` or `uv pip install -r requirements.txt`           |
-| **Dev packages vs others** | No explicit distinction                | `--dev` flag for development dependencies  | `[tool.poetry.dev-dependencies]` section in pyproject.toml | No explicit distinction | Not currently supported (planned for future) |
+| **Install a package** | `pip install <package-name>`              | `pipenv install <package-name>`             | `poetry add <package-name>`                 | `conda install <package-name>`               | `uv add <package-name>`            |
+| **Remove a package**  | `pip uninstall <package-name>`            | `pipenv uninstall <package-name>`           | `poetry remove <package-name>`              | `conda uninstall <package-name>`             | `uv remove <package-name>`          |
+| **Install from requirements** | `pip install -r requirements.txt`      | `pipenv install` (reads from Pipfile)       | `poetry install` (reads from pyproject.toml) | `conda install --file requirements.txt`       | `uv sync requirements.txt` or `uv pip install -r requirements.txt`           |
+| **Dev packages vs others** | No explicit distinction                | `--dev` flag for development dependencies  | `[tool.poetry.dev-dependencies]` section in pyproject.toml | No explicit distinction | `--dev` flag for development dependencies |
 | **List requirements**  | `pip freeze > requirements.txt` or use `pipreqs`            | `pipenv lock -r > requirements.txt`        | `poetry export -f requirements.txt > requirements.txt` | `conda list --export > requirements.txt`     | Same as pip (e.g., `uv pip freeze > requirements.txt`) |
 | **Transport project**  | Manually copy files or create a setup.py   | Copy Pipfile and Pipfile.lock               | Copy pyproject.toml and pyproject.toml.lock  | Export environment to .yml file (conda env export > environment.yml) | Not directly supported (requires rebuilding with UV) |
 | **Install from lock file** | N/A                                   | `pipenv install --ignore-pipfile`           | `poetry install --no-dev` (reads from pyproject.toml.lock) | `conda env update --file environment.yml`       | N/A (Dependency resolution handled by UV directly) |
 | **Delete the venv**   | Remove directory manually                  | `pipenv --rm`                              | `poetry env remove <env-name>`              | `conda remove --name <env-name> --all`      | N/A                                        |
-| **Update a package to its latest version** | `pip install <package-name> --upgrade`   | `pipenv update <package-name>`              | `poetry update <package-name>`              | `conda update <package-name>`               | `uv pip install <package-name> --upgrade` |
+| **Update a package to its latest version** | `pip install <package-name> --upgrade`   | `pipenv update <package-name>`              | `poetry update <package-name>`              | `conda update <package-name>`               | `uv update <package-name>` |
 | **Update all packages to their latest versions** | N/A                                 | `pipenv update`                             | `poetry update`                             | `conda update -n <env-name> --all` (be aware of potential conflicts)                  | N/A                                        |
 
 <!-- ### Additional Features
@@ -134,18 +134,18 @@ Grasping their strengths, weaknesses, and use cases empowers you to make informe
 
     - **Generate Requirements from pyproject.toml:**
         ```bash
-        uv pip-compile pyproject.toml -o requirements.txt
+        uv pip compile pyproject.toml -o requirements.txt
         ```
     - **Platform-specific Requirements Generation:**
         ```bash
-        uv pip-compile requirements.in -o requirements.txt
+        uv pip compile requirements.in -o requirements.txt
         ```
 
     - **Command Line Compatibility:**
-      uv's `pip-install` (`uv pip`) and `pip-compile` (`uv compile`) commands support many familiar command-line arguments, such as `-r requirements.txt`, `-c constraints.txt`, `-e .` (for editable installs), `--index-url`, and more.
+      uv's `install` (`uv pip install`) and `compile` (`uv pip compile`) commands support many familiar command-line arguments, such as `-r requirements.txt`, `-c constraints.txt`, `-e .` (for editable installs), `--index-url`, and more.
 
     - **Resolution Strategy Customization:**
-      uv allows customization of its resolution strategy. With `--resolution=lowest`, uv installs the lowest compatible versions for all dependencies, while `--resolution=lowest-direct` focuses on lowest compatible versions for direct dependencies and latest compatible versions for transitive dependencies.
+      uv allows customization of its resolution strategy. With `--resolution=lowest`, uv pip installs the lowest compatible versions for all dependencies, while `--resolution=lowest-direct` focuses on lowest compatible versions for direct dependencies and latest compatible versions for transitive dependencies.
 
 ??? info "read [this docu](./integrating-requirements-with-poetry.md) about how to add dependencies from a `requirements.txt` file"
 
