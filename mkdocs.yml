@@ -127,13 +127,13 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/hermann-web
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/agossou-hermann
+      link: https://linkedin.com/in/agossou-hermann
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/r/hermann-web/hermann-web.github.io/
     - icon: fontawesome/brands/python
       link: https://pypi.org/user/Hermann-web/
     - icon: fontawesome/brands/researchgate
-      link: https://www.researchgate.net/profile/Hermann-Agosou
+      link: https://researchgate.net/profile/Hermann-Agosou
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/AgossouHermann
 
@@ -142,6 +142,18 @@ extra:
   analytics:
     feedback:
       title: Was this page helpful?
+      ratings:
+        - icon: material/thumb-up-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/thumb-down-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback!
+
 # Extensions
 markdown_extensions:
   - abbr
@@ -195,6 +207,11 @@ markdown_extensions:
   ## math parsing extensions
   - pymdownx.arithmatex:
       generic: true
+
+  - markdown.extensions.meta:
+  - markdown.extensions.attr_list:
+  - markdown.extensions.footnotes:
+      PLACE_MARKER: "<!-- Footnotes -->"
 
 # Page tree
 nav:
