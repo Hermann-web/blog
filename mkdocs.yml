@@ -32,6 +32,7 @@ repo_url: https://github.com/hermann-web/blog/
 
 docs_dir: docs/
 
+lang: en
 
 # Copyright
 copyright: Copyright © 2023-2024 Hermann Agossou
@@ -40,7 +41,9 @@ google_analytics: ['BD4YrWd0pEc2SUULdRPLKgv5QCfeDluhXPt37gL9nNs', 'hermann-web.g
 
 # Configuration
 theme:
-  name: material
+  name: dracula
+  language: en
+  lang: en
   custom_dir: material/overrides
   features:
     - announce.dismiss
@@ -110,7 +113,7 @@ plugins:
 #   - material/overrides/hooks/shortcodes.py
 #   - material/overrides/hooks/translations.py
 
-  - social
+  # - social
 
 
 # Additional configuration
