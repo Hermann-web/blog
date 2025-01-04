@@ -122,17 +122,17 @@ extra:
     property: BD4YrWd0pEc2SUULdRPLKgv5QCfeDluhXPt37gL9nNs
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/hermann-web
+      link: https://www.github.com/hermann-web
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/agossou-hermann
     - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/hermann-web/hermann-web.github.io/
+      link: https://www.hub.docker.com/r/hermann-web/hermann-web.github.io/
     - icon: fontawesome/brands/python
       link: https://pypi.org/user/Hermann-web/
     - icon: fontawesome/brands/researchgate
       link: https://www.researchgate.net/profile/Hermann-Agosou
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/AgossouHermann
+      link: https://www.twitter.com/AgossouHermann
 
   version:
     provider: mike
