@@ -139,6 +139,18 @@ extra:
   analytics:
     feedback:
       title: Was this page helpful?
+      ratings:
+        - icon: material/thumb-up-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/thumb-down-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback!
+
 # Extensions
 markdown_extensions:
   - abbr
@@ -192,6 +204,11 @@ markdown_extensions:
   ## math parsing extensions
   - pymdownx.arithmatex:
       generic: true
+
+  - markdown.extensions.meta:
+  - markdown.extensions.attr_list:
+  - markdown.extensions.footnotes:
+      PLACE_MARKER: "<!-- Footnotes -->"
 
 # Page tree
 nav:
