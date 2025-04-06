@@ -63,11 +63,18 @@ Understanding the corresponding syntaxes in each database system facilitates cod
 
 | Task                         | MySQL CLI (`mysql`)           | PostgreSQL CLI (`psql`)               | MongoDB CLI (`mongosh`)               |
 | ---------------------------- | ----------------------------- | ------------------------------------- | ------------------------------------- |
-| Connect to Database          | `mysql -u username -p database` | `psql -U username -d database`       | `mongosh "mongodb://username:password@host:port/database"` |
+| Connect to Database          | `mysql -u username -p database` | `psql -U username -d database`      | `mongosh "mongodb://username:password@host:port/database"` |
 | List Databases               | `SHOW DATABASES;`             | `\l`                                 | `show dbs`                            |
 | Select Database              | `USE database;`               | `\c database`                        | `use database`                        |
 | List Collections/Tables      | `SHOW TABLES;`                | `\dt`                                | `show collections`                    |
 | Exit CLI                     | `exit` or `\q`                | `\q`                                 | `exit`                                |
+
+### Database Management
+
+| Task                         | MySQL CLI (`mysql`)           | PostgreSQL CLI (`psql`)               | MongoDB CLI (`mongosh`)               |
+|------------------------------|-------------------------------|---------------------------------------|---------------------------------------|
+| Create Database              | `CREATE DATABASE dbname;`     | `CREATE DATABASE dbname;`             | `use dbname` (created on first write) |
+| Delete Database              | `DROP DATABASE dbname;`       | `DROP DATABASE dbname;`               | `use dbname; db.dropDatabase()`       |
 
 ### Table/Collection Management
 
