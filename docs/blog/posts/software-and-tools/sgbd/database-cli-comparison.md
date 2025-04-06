@@ -75,6 +75,12 @@ Understanding the corresponding syntaxes in each database system facilitates cod
 |------------------------------|-------------------------------|---------------------------------------|---------------------------------------|
 | Create Database              | `CREATE DATABASE dbname;`     | `CREATE DATABASE dbname;`             | `use dbname` (created on first write) |
 | Delete Database              | `DROP DATABASE dbname;`       | `DROP DATABASE dbname;`               | `use dbname; db.dropDatabase()`       |
+| Rename Database  | Not supported directly; use dump + restore| Not supported directly; use `ALTER DATABASE` workaround or dump/restore | Not directly supported; use `mongodump` + `mongorestore` |
+| Duplicate Database           | `mysqldump old_db             | mysql new_db`              | `pg_dump old_db | psql new_db`                             | `mongodump --db old_db` + `mongorestore --nsFrom old_db.* --nsTo new_db.*` |
+
+!!! note "notes"
+    **MySQL** and **PostgreSQL** don’t support renaming databases easily via SQL/psql—you typically use a **dump & restore** approach.
+    **MongoDB** doesn’t have a built-in rename or clone command for entire databases—again, `mongodump`/`mongorestore` is the way to go.
 
 ### Table/Collection Management
 
@@ -84,6 +90,11 @@ Understanding the corresponding syntaxes in each database system facilitates cod
 | Drop Table/Collection        | `DROP TABLE table_name;`      | `DROP TABLE table_name;`              | `db.collection_name.drop()`           |
 | Describe Table/Collection    | `DESCRIBE table_name;`        | `\d table_name`                       | `db.collection_name.stats()`          |
 | Rename Table/Collection      | `RENAME TABLE old_name TO new_name;` | `ALTER TABLE old_name RENAME TO new_name;` | `db.collection_name.renameCollection("new_name")` |
+| Duplicate Table/Collection   | `CREATE TABLE new_name AS SELECT * FROM old_name;`   | `CREATE TABLE new_name AS TABLE old_name;`              | `db.new_name.insertMany(db.old_name.find().toArray())`              |
+
+!!! note "notes"
+    The **duplicate** commands copy data **and** structure (for SQL), but may **not** copy things like indexes, constraints, triggers.
+    In **MongoDB**, the `insertMany(...find())` pattern copies documents, but **not indexes** or **validation rules** unless added separately.
 
 ### Data Manipulation
 
