@@ -12,7 +12,7 @@ title: "Guide Perplexity AI and NotebookLM: Tutoriels pour Tous (part2)"
 
 Guide pour utiliser NotebookLM : Simplifiez vos tâches et organisez vos informations
 
-Bienvenue dans ce guide détaillé pour utiliser NotebookLM \! Que vous soyez un jeune étudiant, un professionnel expérimenté ou simplement curieux, ce guide vous aidera à maîtriser NotebookLM pour alléger vos tâches administratives, stocker et classer vos recherches, et bien plus encore. Chaque section propose des instructions simples, des icônes pour repérer les actions, et des indications pour insérer vos propres captures d'écran (pensez à ajouter des balises `alt` pour l'accessibilité).
+Bienvenue dans ce guide détaillé pour utiliser NotebookLM \! Que vous soyez un jeune étudiant, un professionnel expérimenté ou simplement curieux, ce guide vous aidera à maîtriser NotebookLM pour alléger vos tâches administratives, stocker et classer vos recherches, et bien plus encore...
 
 -----
 
