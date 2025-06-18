@@ -4,6 +4,7 @@ authors: [hermann-web]
 comments: true
 categories:
   - beginners
+  - ai tools
 title: "Guide Perplexity AI and NotebookLM: Tutoriels pour Tous (part1)"
 ---
 
