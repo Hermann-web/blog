@@ -61,12 +61,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/2024/06/15/guide-perplexity-ai-and-notebooklm-tutoriels-pour-tous-part2/</loc>
+         <loc>https://hermann-web.github.io/blog/blog/2025/06/15/guide-perplexity-ai-and-notebooklm-tutoriels-pour-tous-part2/</loc>
          <lastmod>2025-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/2024/06/15/guide-perplexity-ai-and-notebooklm-tutoriels-pour-tous-part1/</loc>
+         <loc>https://hermann-web.github.io/blog/blog/2025/06/15/guide-perplexity-ai-and-notebooklm-tutoriels-pour-tous-part1/</loc>
          <lastmod>2025-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -301,12 +301,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hermann-web.github.io/blog/blog/archive/2025/</loc>
+         <lastmod>2025-06-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hermann-web.github.io/blog/blog/archive/2024/</loc>
          <lastmod>2025-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/archive/2023/</loc>
+         <lastmod>2025-06-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/beginners/</loc>
+         <lastmod>2025-06-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/ai-tools/</loc>
          <lastmod>2025-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -357,11 +372,6 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/mongodb/</loc>
-         <lastmod>2025-06-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/beginners/</loc>
          <lastmod>2025-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
