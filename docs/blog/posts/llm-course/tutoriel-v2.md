@@ -16,9 +16,10 @@ Bienvenue dans ce guide détaillé pour utiliser NotebookLM \! Que vous soyez un
 
 -----
 
-## 1\. Créer un nouveau carnet de notes (Notebook)
 
-### Icône à utiliser :
+<!-- more -->
+
+## 1\. Créer un nouveau carnet de notes (Notebook)
 
 ### Étapes simples
 
@@ -32,8 +33,6 @@ Bienvenue dans ce guide détaillé pour utiliser NotebookLM \! Que vous soyez un
 ## 2\. Ajouter des sources à votre carnet de notes
 
 NotebookLM est puissant grâce aux sources que vous lui fournissez. Il peut analyser différents types de documents.
-
-### Icône à utiliser :
 
 ### Comment ajouter des sources
 
@@ -54,8 +53,6 @@ NotebookLM est puissant grâce aux sources que vous lui fournissez. Il peut anal
 
 Une fois vos sources ajoutées, vous pouvez interroger NotebookLM pour obtenir des informations, des résumés ou des idées.
 
-### Icône à utiliser :
-
 ### Comment discuter avec l'IA
 
   - Après avoir ajouté vos sources, vous verrez une barre de discussion ou une zone de texte en bas ou sur le côté de l'interface[^343].
@@ -74,8 +71,6 @@ Une fois vos sources ajoutées, vous pouvez interroger NotebookLM pour obtenir d
 
 NotebookLM vous aide à structurer vos pensées et vos recherches.
 
-### Icône à utiliser :
-
 ### Comment organiser vos informations
 
   - **Ajouter des notes** : Vous pouvez prendre des notes directement dans votre carnet, à côté de vos sources ou des discussions avec l'IA[^345].
@@ -89,7 +84,6 @@ NotebookLM vous aide à structurer vos pensées et vos recherches.
 
 NotebookLM peut créer des "Guides" basés sur vos sources pour vous aider à explorer des sujets en profondeur.
 
-### Icône à utiliser :
 
 ### Comment utiliser les guides
 
@@ -103,8 +97,6 @@ NotebookLM peut créer des "Guides" basés sur vos sources pour vous aider à ex
 ## 6\. Partager vos carnets de notes
 
 Vous pouvez partager vos carnets de notes avec d'autres personnes pour collaborer ou simplement diffuser vos recherches.
-
-### Icône à utiliser :
 
 ### Comment partager un carnet
 

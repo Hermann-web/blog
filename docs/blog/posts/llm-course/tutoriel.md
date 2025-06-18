@@ -19,10 +19,11 @@ Bienvenue dans ce guide pas à pas pour utiliser Perplexity AI, pensé pour tous
 
 ## 1. Se connecter à son compte Perplexity
 
-**Icône à utiliser :**
-
-
 ![Page de connexion Perplexity](./connexion.png)
+
+
+<!-- more -->
+
 ### Étapes simples
 
 - Rendez-vous sur [www.perplexity.ai](./https://www.perplexity.ai/) depuis votre navigateur[^31].
