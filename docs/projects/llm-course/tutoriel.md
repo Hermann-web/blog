@@ -10,8 +10,8 @@ Bienvenue dans ce guide pas à pas pour utiliser Perplexity AI, pensé pour tous
 
 **Icône à utiliser :**
 
-
 ![Page de connexion Perplexity](connexion.png)
+
 ### Étapes simples
 
 - Rendez-vous sur [www.perplexity.ai](https://www.perplexity.ai/) depuis votre navigateur[^1].
@@ -25,12 +25,12 @@ Bienvenue dans ce guide pas à pas pour utiliser Perplexity AI, pensé pour tous
 
 ![Zone pour écrire une question à l’IA](chat.png)
 ![]()
+
 ### Comment discuter avec l’IA
 
 - Tapez votre question dans la barre centrale, puis appuyez sur **Entrée** ou cliquez sur l’icône flèche[^2][^3].
 - L’IA répond en quelques secondes, avec une réponse claire et facile à lire[^2][^3].
 - **Astuce :** Posez vos questions comme à une personne réelle, et soyez précis si possible[^3].
-
 
 ![[resp.png]]
 
@@ -45,7 +45,7 @@ Bienvenue dans ce guide pas à pas pour utiliser Perplexity AI, pensé pour tous
 
 ### Où retrouver vos conversations passées
 
-- Sur la page principale, cherchez l'icone Accueil sur la gauche 🔍. 
+- Sur la page principale, cherchez l'icone Accueil sur la gauche 🔍.
 - Cherchez le menu **Bibliothèque** ou **Historique** sur la gauche[^2][^5].
 ![Menu bibliothèque avec les discussions passées](histo.jpeg)
 - Cliquez dessus pour voir la liste de toutes vos discussions précédentes. Vous pouvez en rouvrir une en un clic[^2][^5].
@@ -67,8 +67,8 @@ Bienvenue dans ce guide pas à pas pour utiliser Perplexity AI, pensé pour tous
 
 ## 5. Faire une recherche académique
 
-
 ### Étapes à suivre
+
 - Creer une nouvelle discussion en cliquant sur l'icone à gauche ➕. Puis, vous serez sur une nouvelle page
 - Dans la barre de recherche, cliquez sur le menu déroulant (souvent nommé « Mode » ou « Focus »)[^3][^7].
 ![Sélection du mode Recherche académique](academic.png)
@@ -85,6 +85,7 @@ Bienvenue dans ce guide pas à pas pour utiliser Perplexity AI, pensé pour tous
 **Capture d’écran suggérée :** Bouton « + Attacher » (alt="Bouton pour ajouter un fichier à la discussion")
 
 ![Selection de fichier](file-select.png)
+
 ### Comment faire
 
 - Lors d’une nouvelle question, cliquez sur le bouton **+ Attacher** (📎) à droite de la barre de recherche[^2][^10][^11].
@@ -93,6 +94,7 @@ Bienvenue dans ce guide pas à pas pour utiliser Perplexity AI, pensé pour tous
 - L’IA analysera le contenu du fichier pour répondre à vos questions spécifiques[^11][^12].
 - Limite : 25 Mo par fichier, jusqu’à 4 fichiers à la fois pour les utilisateurs standards[^11].
 ![img resp](img-resp.png)
+
 ---
 
 ## 7. Exporter une discussion ou un fichier
@@ -107,9 +109,11 @@ Bienvenue dans ce guide pas à pas pour utiliser Perplexity AI, pensé pour tous
 - Pratique pour garder une trace ou partager vos échanges avec d’autres personnes[^16][^14].
 - Vous pouvez également générer un lien et partager avec d'autres personnes
 ![copier url](copy-url.png)
+
 ---
 
 ## 8. Générer les fichiers avec l'A
+
 Dans une question, vous pouvez demander à l'AI de générer un fichier
 
 ![export-response](export-response.png)
@@ -120,7 +124,6 @@ Pour trouver les fichier, cliquer sur l'onglet "Etapes"
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
 
 # Tutoriels Avancés Perplexity : Rapports approfondis, Personnalisation, Collaboration
-
 
 ## 8. Créer des rapports de recherche approfondis (Deep Research)
 
@@ -158,10 +161,10 @@ Adapter Perplexity à vos besoins permet d’obtenir des réponses plus pertinen
 ![profile pic](profile-icon.png)
 ![personalize icon](personaalize-icon.png)
 - **Remplissez votre profil** :
-    - **Centres d’intérêt** : indiquez vos sujets favoris (sciences, cuisine, voyages…).
-    - **Style de réponse** : choisissez entre un ton formel ou décontracté, des réponses courtes ou détaillées.
-    - **Langue et localisation** : sélectionnez la langue de préférence et, si besoin, votre région.
-    - **Objectifs** : précisez ce que vous attendez de Perplexity (aide aux devoirs, veille professionnelle, etc.).
+  - **Centres d’intérêt** : indiquez vos sujets favoris (sciences, cuisine, voyages…).
+  - **Style de réponse** : choisissez entre un ton formel ou décontracté, des réponses courtes ou détaillées.
+  - **Langue et localisation** : sélectionnez la langue de préférence et, si besoin, votre région.
+  - **Objectifs** : précisez ce que vous attendez de Perplexity (aide aux devoirs, veille professionnelle, etc.).
 - **Enregistrez vos préférences** : ces réglages s’appliqueront à toutes vos futures recherches, rendant l’IA plus efficace et personnalisée[^31][^34][^35].
 
 **Astuce :** Les abonnés Pro peuvent aussi choisir le modèle d’IA utilisé pour chaque recherche (ex : GPT-4o, Claude 3), pour encore plus de personnalisation[^35].
@@ -175,6 +178,7 @@ Adapter Perplexity à vos besoins permet d’obtenir des réponses plus pertinen
 Un « Space » est un espace collaboratif où vous pouvez organiser vos recherches, partager des fichiers et travailler à plusieurs sur des projets communs (études, travaux de groupe, veille d’équipe…)[^36].
 
 ### Étapes pour collaborer
+
 - Dans le menu à gauche, clickez sur le bouton espace
 ![bouton espace](spaces-icon.png)
 - **Créez un espace** : cliquez sur « Créer un espace » dans la barre latérale, donnez-lui un nom et une description.
@@ -191,115 +195,63 @@ Un « Space » est un espace collaboratif où vous pouvez organiser vos rech
 - Centraliser les ressources d’une équipe projet.
 - Générer des outils d’étude personnalisés pour une classe ou un groupe d’apprentissage[^36].
 
-
-
-
-
-
-
-
-
-
-
-
 - Cliquez sur **Créer un espace** dans la barre latérale[^17][^19].
 ![creer un space](create-space.png)
 - Donnez un nom à l’espace, ajoutez une description et, si besoin, des instructions personnalisées pour l’IA[^17][^19].
 
 - Ajoutez vos fichiers et commencez à poser des questions ou à collaborer avec d’autres utilisateurs[^18][^19].
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div style="text-align: center">⁂</div>
 
-[^1]: https://infopreneur.blog/perplexity-login/
+[^1]: <https://infopreneur.blog/perplexity-login/>
 
-[^2]: https://reglo.ai/comment-utiliser-perplexity-ai/
+[^2]: <https://reglo.ai/comment-utiliser-perplexity-ai/>
 
-[^3]: https://gitmind.com/fr/perplexity-ai-guide-utilisation.html
+[^3]: <https://gitmind.com/fr/perplexity-ai-guide-utilisation.html>
 
-[^4]: https://www.blogdumoderateur.com/perplexity-guide-bien-utiliser-moteur-recherche-assiste-ia/
+[^4]: <https://www.blogdumoderateur.com/perplexity-guide-bien-utiliser-moteur-recherche-assiste-ia/>
 
-[^5]: https://www.perplexity.ai/help-center/fr/articles/10354769-qu-est-ce-qu-un-fil-de-discussion
+[^5]: <https://www.perplexity.ai/help-center/fr/articles/10354769-qu-est-ce-qu-un-fil-de-discussion>
 
-[^6]: https://www.reddit.com/r/perplexity_ai/comments/1dyx9uy/need_help_with_managing_threads/?tl=fr
+[^6]: <https://www.reddit.com/r/perplexity_ai/comments/1dyx9uy/need_help_with_managing_threads/?tl=fr>
 
-[^7]: https://www.perplexity.ai/fr/hub/getting-started
+[^7]: <https://www.perplexity.ai/fr/hub/getting-started>
 
-[^8]: https://www.perplexity.ai/help-center/fr/articles/10354975-commencer-a-utiliser-perplexity
+[^8]: <https://www.perplexity.ai/help-center/fr/articles/10354975-commencer-a-utiliser-perplexity>
 
-[^9]: https://www.elephorm.com/formation/code-data/no-code/maitriser-perplexity-ai-optimisez-vos-recherches-avec-lia
+[^9]: <https://www.elephorm.com/formation/code-data/no-code/maitriser-perplexity-ai-optimisez-vos-recherches-avec-lia>
 
-[^10]: https://www.elephorm.com/formation/code-data/perplexity/maitriser-perplexity-ai-optimisez-vos-recherches-avec-lia/integration-dimages-et-de-fichiers-dans-vos-recherches
+[^10]: <https://www.elephorm.com/formation/code-data/perplexity/maitriser-perplexity-ai-optimisez-vos-recherches-avec-lia/integration-dimages-et-de-fichiers-dans-vos-recherches>
 
-[^11]: https://app.studyraid.com/fr/read/18469/680245/importer-des-fichiers-pdf
+[^11]: <https://app.studyraid.com/fr/read/18469/680245/importer-des-fichiers-pdf>
 
-[^12]: https://www.perplexity.ai/hub/faq/how-does-file-upload-work
+[^12]: <https://www.perplexity.ai/hub/faq/how-does-file-upload-work>
 
-[^13]: https://www.reddit.com/r/perplexity_ai/comments/16n2g3d/i_made_an_extension_to_export_perplexity_threads/?tl=fr
+[^13]: <https://www.reddit.com/r/perplexity_ai/comments/16n2g3d/i_made_an_extension_to_export_perplexity_threads/?tl=fr>
 
-[^14]: https://chromewebstore.google.com/detail/save-my-chatbot-ai-conver/agklnagmfeooogcppjccdnoallkhgkod
+[^14]: <https://chromewebstore.google.com/detail/save-my-chatbot-ai-conver/agklnagmfeooogcppjccdnoallkhgkod>
 
-[^15]: https://github.com/Hugo-COLLIN/SaveMyPhind-conversation-exporter
+[^15]: <https://github.com/Hugo-COLLIN/SaveMyPhind-conversation-exporter>
 
-[^16]: https://www.perplexity.ai/hub/blog/introducing-perplexity-deep-research
+[^16]: <https://www.perplexity.ai/hub/blog/introducing-perplexity-deep-research>
 
-[^17]: https://www.elephorm.com/formation/code-data/perplexity/maitriser-perplexity-ai-optimisez-vos-recherches-avec-lia/explorez-la-fonctionnalite-space-de-perplexity
+[^17]: <https://www.elephorm.com/formation/code-data/perplexity/maitriser-perplexity-ai-optimisez-vos-recherches-avec-lia/explorez-la-fonctionnalite-space-de-perplexity>
 
-[^18]: https://anthemcreation.com/intelligence-artificielle/perplexity-spaces-recherche-en-ligne-et-locale-premium/
+[^18]: <https://anthemcreation.com/intelligence-artificielle/perplexity-spaces-recherche-en-ligne-et-locale-premium/>
 
-[^19]: https://action-commerciale.com/espace-perplexity-hub-projets/
+[^19]: <https://action-commerciale.com/espace-perplexity-hub-projets/>
 
-[^20]: https://help.gamsgo.com/fr/article/perplexity-aicomment-se-connecter-1ur5abk/
+[^31]: <https://reglo.ai/comment-utiliser-perplexity-ai/>
 
-[^21]: https://www.youtube.com/watch?v=dnmcZ1KIhUU
+[^32]: <https://www.elephorm.com/formation/code-data/perplexity/maitriser-perplexity-ai-optimisez-vos-recherches-avec-lia/exploration-de-la-recherche-approfondie-avec-perplexity>
 
-[^22]: https://www.perplexity.ai
+[^33]: <https://cedric.fm/guide-perplexity-redaction/>
 
-[^23]: https://www.reddit.com/r/perplexity_ai/comments/16n2g3d/i_made_an_extension_to_export_perplexity_threads/
+[^34]: <https://www.perplexity.ai/help-center/fr/articles/10354948-comment-dois-je-remplir-la-section-profil-de-mes-parametres>
 
-[^24]: https://greasyfork.org/ckb/scripts/518844-perplexity-ai-chat-exporter
+[^35]: <https://www.blogdumoderateur.com/perplexity-guide-bien-utiliser-moteur-recherche-assiste-ia/>
 
-[^25]: https://www.reddit.com/r/perplexity_ai/comments/1dq0qqb/now_you_can_export_perplexity_pages_into_markdown/?tl=fr
-
-[^31]: https://reglo.ai/comment-utiliser-perplexity-ai/
-
-[^32]: https://www.elephorm.com/formation/code-data/perplexity/maitriser-perplexity-ai-optimisez-vos-recherches-avec-lia/exploration-de-la-recherche-approfondie-avec-perplexity
-
-[^33]: https://cedric.fm/guide-perplexity-redaction/
-
-[^34]: https://www.perplexity.ai/help-center/fr/articles/10354948-comment-dois-je-remplir-la-section-profil-de-mes-parametres
-
-[^35]: https://www.blogdumoderateur.com/perplexity-guide-bien-utiliser-moteur-recherche-assiste-ia/
-
-[^36]: https://www.perplexity.ai/fr/hub/blog/a-student-s-guide-to-using-perplexity-spaces
-
-[^37]: paste.txt
-
-[^38]: https://www.optimia-hub.com/use-case/perplexity-ai-tutoriel-complet
-
-[^39]: https://www.perplexity.ai/fr/hub/getting-started
-
-[^310]: https://www.youtube.com/watch?v=IJOunEV3QCs
-
-[^311]: https://action-commerciale.com/espace-perplexity-hub-projets/
-
-
+[^36]: <https://www.perplexity.ai/fr/hub/blog/a-student-s-guide-to-using-perplexity-spaces>
 
 # Guide pour utiliser NotebookLM
 
@@ -311,14 +263,14 @@ Bienvenue dans ce guide détaillé pour utiliser NotebookLM \! Que vous soyez un
 
 ## 1\. Créer un nouveau carnet de notes (Notebook)
 
-### Icône à utiliser :
+### Icône à utiliser
 
 ### Étapes simples
 
-  - Rendez-vous sur [notebooklm.google](https://notebooklm.google/) depuis votre navigateur.
-  - Cliquez sur le bouton "+ Nouveau carnet de notes" (ou "New notebook")[^41].
-  - Donnez un nom à votre carnet de notes (ex: "Projet Alpha", "Recettes de cuisine", "Recherches historiques").
-  - Cliquez sur "Créer" pour ouvrir votre nouveau carnet[^41].
+- Rendez-vous sur [notebooklm.google](https://notebooklm.google/) depuis votre navigateur.
+- Cliquez sur le bouton "+ Nouveau carnet de notes" (ou "New notebook")[^41].
+- Donnez un nom à votre carnet de notes (ex: "Projet Alpha", "Recettes de cuisine", "Recherches historiques").
+- Cliquez sur "Créer" pour ouvrir votre nouveau carnet[^41].
 
 -----
 
@@ -326,20 +278,20 @@ Bienvenue dans ce guide détaillé pour utiliser NotebookLM \! Que vous soyez un
 
 NotebookLM est puissant grâce aux sources que vous lui fournissez. Il peut analyser différents types de documents.
 
-### Icône à utiliser :
+### Icône à utiliser
 
 ### Comment ajouter des sources
 
-  - Dans votre carnet de notes, cherchez le bouton "Ajouter des sources" (généralement "+ Add sources" ou une icône similaire).
+- Dans votre carnet de notes, cherchez le bouton "Ajouter des sources" (généralement "+ Add sources" ou une icône similaire).
 
-  - Vous avez plusieurs options pour ajouter des sources[^42]:
+- Vous avez plusieurs options pour ajouter des sources[^42]:
 
-      - **Depuis votre ordinateur** : Cliquez sur "Télécharger un fichier" et sélectionnez des documents PDF, Google Docs, ou d'autres fichiers texte[^42].
-      - **Depuis Google Drive** : Connectez votre compte Google Drive pour importer des documents directement[^42].
-      - **Copier-coller du texte** : Collez du texte directement dans la zone prévue à cet effet (par exemple, un article de blog, une transcription)[^42].
-      - **Coller une URL de site web** : Ajoutez l'URL d'une page web pour que NotebookLM en tire des informations[^42].
+  - **Depuis votre ordinateur** : Cliquez sur "Télécharger un fichier" et sélectionnez des documents PDF, Google Docs, ou d'autres fichiers texte[^42].
+  - **Depuis Google Drive** : Connectez votre compte Google Drive pour importer des documents directement[^42].
+  - **Copier-coller du texte** : Collez du texte directement dans la zone prévue à cet effet (par exemple, un article de blog, une transcription)[^42].
+  - **Coller une URL de site web** : Ajoutez l'URL d'une page web pour que NotebookLM en tire des informations[^42].
 
-  - Une fois les sources ajoutées, NotebookLM les analyse. Cela peut prendre quelques instants selon la taille et le nombre de fichiers[^42].
+- Une fois les sources ajoutées, NotebookLM les analyse. Cela peut prendre quelques instants selon la taille et le nombre de fichiers[^42].
 
 -----
 
@@ -347,19 +299,19 @@ NotebookLM est puissant grâce aux sources que vous lui fournissez. Il peut anal
 
 Une fois vos sources ajoutées, vous pouvez interroger NotebookLM pour obtenir des informations, des résumés ou des idées.
 
-### Icône à utiliser :
+### Icône à utiliser
 
 ### Comment discuter avec l'IA
 
-  - Après avoir ajouté vos sources, vous verrez une barre de discussion ou une zone de texte en bas ou sur le côté de l'interface[^43].
-  - Tapez votre question ou votre demande dans cette barre. Par exemple : "Résumez les points clés du document sur le projet X", "Quels sont les avantages de la solution Y mentionnés dans ce fichier ?", ou "Générez un plan d'action basé sur ces notes"[^43].
-  - Appuyez sur **Entrée** ou cliquez sur l'icône d'envoi.
-  - L'IA générera une réponse basée **uniquement** sur les sources que vous avez fournies, ce qui garantit la pertinence et la fiabilité des informations[^43].
+- Après avoir ajouté vos sources, vous verrez une barre de discussion ou une zone de texte en bas ou sur le côté de l'interface[^43].
+- Tapez votre question ou votre demande dans cette barre. Par exemple : "Résumez les points clés du document sur le projet X", "Quels sont les avantages de la solution Y mentionnés dans ce fichier ?", ou "Générez un plan d'action basé sur ces notes"[^43].
+- Appuyez sur **Entrée** ou cliquez sur l'icône d'envoi.
+- L'IA générera une réponse basée **uniquement** sur les sources que vous avez fournies, ce qui garantit la pertinence et la fiabilité des informations[^43].
 
 ### Comprendre les citations (Sources)
 
-  - Les réponses de NotebookLM incluent des citations (par exemple, `[1]`, `[2]`) qui renvoient aux sources spécifiques que vous avez ajoutées[^44].
-  - Cliquez sur ces citations pour voir quelle partie de votre document a été utilisée pour générer la réponse. Cela vous aide à vérifier l'information et à trouver rapidement la section originale[^44].
+- Les réponses de NotebookLM incluent des citations (par exemple, `[1]`, `[2]`) qui renvoient aux sources spécifiques que vous avez ajoutées[^44].
+- Cliquez sur ces citations pour voir quelle partie de votre document a été utilisée pour générer la réponse. Cela vous aide à vérifier l'information et à trouver rapidement la section originale[^44].
 
 -----
 
@@ -367,14 +319,14 @@ Une fois vos sources ajoutées, vous pouvez interroger NotebookLM pour obtenir d
 
 NotebookLM vous aide à structurer vos pensées et vos recherches.
 
-### Icône à utiliser :
+### Icône à utiliser
 
 ### Comment organiser vos informations
 
-  - **Ajouter des notes** : Vous pouvez prendre des notes directement dans votre carnet, à côté de vos sources ou des discussions avec l'IA[^45].
-  - **Créer des résumés automatiques** : Demandez à l'IA de générer des résumés pour des sections spécifiques de vos documents ou pour l'ensemble de votre carnet[^45].
-  - **Générer des plans et des idées** : Utilisez l'IA pour structurer des plans d'exposé, des ébauches d'articles, ou pour brainstormer des idées en fonction de vos sources[^45].
-  - **Mettre en évidence les passages importants** : Sélectionnez du texte dans vos sources et demandez à NotebookLM de vous en extraire des points clés ou de les résumer[^46].
+- **Ajouter des notes** : Vous pouvez prendre des notes directement dans votre carnet, à côté de vos sources ou des discussions avec l'IA[^45].
+- **Créer des résumés automatiques** : Demandez à l'IA de générer des résumés pour des sections spécifiques de vos documents ou pour l'ensemble de votre carnet[^45].
+- **Générer des plans et des idées** : Utilisez l'IA pour structurer des plans d'exposé, des ébauches d'articles, ou pour brainstormer des idées en fonction de vos sources[^45].
+- **Mettre en évidence les passages importants** : Sélectionnez du texte dans vos sources et demandez à NotebookLM de vous en extraire des points clés ou de les résumer[^46].
 
 -----
 
@@ -382,14 +334,14 @@ NotebookLM vous aide à structurer vos pensées et vos recherches.
 
 NotebookLM peut créer des "Guides" basés sur vos sources pour vous aider à explorer des sujets en profondeur.
 
-### Icône à utiliser :
+### Icône à utiliser
 
 ### Comment utiliser les guides
 
-  - Dans certains cas, NotebookLM peut suggérer de créer un guide basé sur le contenu de votre carnet[^47].
-  - Cliquez sur "Créer un guide" ou une option similaire.
-  - L'IA organisera les informations de vos sources en sections thématiques, facilitant la navigation et la compréhension des sujets complexes[^47].
-  - Les guides sont particulièrement utiles pour étudier, préparer des présentations ou explorer de nouvelles thématiques.
+- Dans certains cas, NotebookLM peut suggérer de créer un guide basé sur le contenu de votre carnet[^47].
+- Cliquez sur "Créer un guide" ou une option similaire.
+- L'IA organisera les informations de vos sources en sections thématiques, facilitant la navigation et la compréhension des sujets complexes[^47].
+- Les guides sont particulièrement utiles pour étudier, préparer des présentations ou explorer de nouvelles thématiques.
 
 -----
 
@@ -397,13 +349,13 @@ NotebookLM peut créer des "Guides" basés sur vos sources pour vous aider à ex
 
 Vous pouvez partager vos carnets de notes avec d'autres personnes pour collaborer ou simplement diffuser vos recherches.
 
-### Icône à utiliser :
+### Icône à utiliser
 
 ### Comment partager un carnet
 
-  - Dans votre carnet de notes, cherchez l'icône de partage (souvent un symbole de flèche ou de trois points connectés) ou le bouton "Partager"[^48].
-  - Vous pourrez alors générer un lien partageable.
-  - Attention : Assurez-vous de bien comprendre les options de partage (lecture seule, modification) avant d'envoyer le lien[^48].
+- Dans votre carnet de notes, cherchez l'icône de partage (souvent un symbole de flèche ou de trois points connectés) ou le bouton "Partager"[^48].
+- Vous pourrez alors générer un lien partageable.
+- Attention : Assurez-vous de bien comprendre les options de partage (lecture seule, modification) avant d'envoyer le lien[^48].
 
 -----
 
@@ -411,13 +363,13 @@ Vous pouvez partager vos carnets de notes avec d'autres personnes pour collabore
 
 ### Où retrouver vos carnets passés
 
-  - Sur la page principale de NotebookLM, vous verrez la liste de tous vos carnets de notes.
-  - Cliquez sur un carnet pour l'ouvrir et reprendre votre travail là où vous l'avez laissé.
-  - Vous pouvez rechercher des carnets par nom si vous en avez beaucoup.
+- Sur la page principale de NotebookLM, vous verrez la liste de tous vos carnets de notes.
+- Cliquez sur un carnet pour l'ouvrir et reprendre votre travail là où vous l'avez laissé.
+- Vous pouvez rechercher des carnets par nom si vous en avez beaucoup.
 
-### Attention :
+### Attention
 
-  - Si vous supprimez un carnet de notes, toutes les sources et discussions qu'il contient seront définitivement effacées[^49].
+- Si vous supprimez un carnet de notes, toutes les sources et discussions qu'il contient seront définitivement effacées[^49].
 
 -----
 

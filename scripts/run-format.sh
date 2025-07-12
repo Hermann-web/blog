@@ -18,4 +18,5 @@ check_command() {
 check_command "markdownlint-cli2" "npm install markdownlint-cli2 --global" || return 1
 
 # If markdownlint-cli2 is installed, fix linting issues in Markdown files
-find -type f -path "./docs/*.md" -exec markdownlint-cli2 --fix {} +
+# find -type f -path "./docs/*.md" -exec markdownlint-cli2 --fix {} +
+markdownlint-cli2 "**/*.md" --fix
