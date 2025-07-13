@@ -281,8 +281,8 @@ anwers from this stackoverflow thread: [platform-specific dependency alternative
 
 Enjoy seamless Python project management with Poetry! Happy coding!
 
----
+## Related Posts
 
-Related resources:
-
+- [Beginner's guide to poetry](./poetry-in-practise.md)
+- [Cheat on Python Package Managers](./package-managers-in-python.md)
 - [How to publish your python project (to pypi or testPypi) with Poetry then install as dependency in another project ?](./publishing-python-project-poetry.md)

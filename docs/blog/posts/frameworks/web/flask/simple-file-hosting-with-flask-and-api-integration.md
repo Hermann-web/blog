@@ -550,3 +550,7 @@ Create a 'static' folder and place your static files inside it.
 It can be interesting for custom css/js files and others
 
 You can find all this code in the repository [https://github.com/Hermann-web/simple-file-hosting-with-flask](https://github.com/Hermann-web/simple-file-hosting-with-flask)
+
+## Related Posts
+
+- [Cheat on Python Package Managers](./package-managers-in-python.md)

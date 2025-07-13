@@ -111,3 +111,7 @@ NodeJS is a tool for executing JS scripts on the server side, opening doors to m
 The journey continues with Laravel, a framework that beckons with new possibilities and a new chapter to explore.
 
 Each chapter in this roadmap of web development is more than a course; it's a story, an experience, a transformation that shaped me into the software engineer I am today. The roadmap evolves, the journey continues, and the quest for learning never ceases.
+
+## Related Posts
+
+- [Cheat on Python Package Managers](./package-managers-in-python.md)

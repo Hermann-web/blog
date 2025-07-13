@@ -23,9 +23,9 @@ __Are you ready to share your Python project with the world and make it accessib
   </a>
 </div>
 
-Publishing your work not only showcases your creation but also enables others to benefit from and contribute to your project. Discover the simplest way to publish Python projects using Poetry, a powerful dependency management and packaging tool.
+Publishing your work not only showcases your creation but also enables others to benefit from and contribute to your project. Discover the simplest way to publish Python projects using [Poetry](./poetry-in-practise.md), a powerful dependency management and packaging tool.
 
-In this guide, we'll walk you through setting up your project with [Poetry](https://python-poetry.org/docs/) and publishing it on both test.pypi and production PyPI.
+In this guide, we'll walk you through setting up your project with [Poetry](./poetry-in-practise.md) and publishing it on both test.pypi and production PyPI.
 
 Get ready to make your project accessible for testing and distribution. Let's get started!
 
@@ -250,11 +250,12 @@ For further reference, you can also check out [this Stack Overflow answer](https
 
 Now, go ahead and share your amazing Python projects with the world!
 
----
+## Related Posts
 
-Related resources:
-
-- [Test PyPI](https://test.pypi.org/help/#twofa), [PyPI](https://pypi.org/), [Python Packaging](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
-- [beginner's guide to poetry](./poetry-in-practise.md)
+- [Beginner's guide to poetry](./poetry-in-practise.md)
 - [python dependency management cheat including poetry, conda and more](./package-managers-in-python.md)
 - [Introducing Two New Packages for Streamlining File Conversions in Python](../../../../projects/introducing-two-new-packages-for-streamlining-file-conversions-in-python.md)
+
+## Relevant Sources
+
+- [Test PyPI](https://test.pypi.org/help/#twofa), [PyPI](https://pypi.org/), [Python Packaging](https://packaging.python.org/en/latest/tutorials/packaging-projects/)

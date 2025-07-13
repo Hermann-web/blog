@@ -270,7 +270,7 @@ extensions = [
 
 ??? tip "Adding Sphinx to Development Dependencies"
 
-    Ensure Sphinx is included in your development dependencies. You can achieve this by adding it to your project using Poetry or pip:
+    Ensure Sphinx is included in your development dependencies. You can achieve this by adding it to your project using [Poetry](./poetry-in-practise.md) or pip:
 
     ```bash
     poetry add sphinx --group buildthedocs
@@ -476,6 +476,11 @@ By following these steps, you can successfully deploy your Sphinx documentation 
  # 7. add a .readthedocs file
  # 8. push to readthedocs.org
  ```
+
+## Related Posts
+
+- [How to publish your python project (to pypi or testPypi) with Poetry then install as dependency in another project ?](./publishing-python-project-poetry.md)
+- [Cheat on Python Package Managers](./package-managers-in-python.md)
 
 ## Additional Resources
 

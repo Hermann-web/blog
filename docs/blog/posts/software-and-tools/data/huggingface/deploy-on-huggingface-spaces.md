@@ -155,3 +155,7 @@ In this guide, we'll walk through the steps to deploy a Streamlit app using the 
     ![streamlit app on huggingface](./assets/streamlit-app-on-hugginface.png)
 
 Congratulations! Your Streamlit app is now deployed on Hugging Face. You can find a live example on [https://huggingface.co/spaces/hermann-web/pix2tex](https://huggingface.co/spaces/hermann-web/pix2tex).
+
+## Related Posts
+
+- [Deploying any Web application with Nginx: Example of Flask](../../dev/hosting/deploy-web-app-app-with-nginx-made-easy.md)

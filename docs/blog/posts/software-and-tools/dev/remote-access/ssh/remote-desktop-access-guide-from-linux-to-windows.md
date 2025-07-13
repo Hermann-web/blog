@@ -75,3 +75,8 @@ By following these steps, you can enjoy seamless remote desktop access from your
 ## Conclusion
 
 Setting up remote desktop access from a Linux system to a Windows 10 machine using Remmina offers convenience and flexibility, allowing users to access their computers remotely from anywhere. While the process involves a few initial setup steps and potential network considerations, the ability to connect seamlessly enhances productivity and enables efficient remote work. By following the steps outlined in this guide and troubleshooting any connectivity issues, users can enjoy the benefits of remote desktop access with ease.
+
+## Related Posts
+
+- [Comprehensive Guide to SSH: Tunneling, File Transfers, and Key-Based Authentication](./ssh-tunneling.md)
+- [Mastering SSH and File Transfers to Remote servers: A Beginner's Handbook](../remote-access/ssh/access-remote-from-cli.md)

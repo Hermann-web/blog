@@ -344,3 +344,7 @@ SSH is a versatile tool that offers secure communication, file transfers, and mo
 [^ssh-key-auth]: [SSH Key Authentication](https://www.ssh.com/academy/ssh/key)
 [^connecting-to-github-with-ssh]: [Connecting to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 [^improving-git-protocol-security-github]: [Improving Git Protocol Security on GitHub](https://github.blog/2021-09-01-improving-git-protocol-security-github/)
+
+## Related Posts
+
+- [Mastering SSH and File Transfers to Remote servers: A Beginner's Handbook](../remote-access/ssh/access-remote-from-cli.md)

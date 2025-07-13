@@ -100,3 +100,8 @@ def index():
 if __name__ == '__main__':
     app.run()
 ```
+
+## Related Posts
+
+- [Mastering SSH and File Transfers to Remote servers: A Beginner's Handbook](../remote-access/ssh/access-remote-from-cli.md)
+- [Navigating Redirect Challenges With GitHub Pages: A Creative Approach to Domain Migration](./github-action/github-action-redirection-app.md)

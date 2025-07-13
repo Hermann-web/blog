@@ -323,7 +323,11 @@ Congratulations! You've now gained insights into the numerical analysis and plot
 
 Stay proactive in exploring and utilizing the rich libraries and functionalities offered by each language to enhance your computational workflows!
 
-## Related Links
+## Related Posts
+
+- [Cheat on Python Package Managers](./package-managers-in-python.md)
+
+## Relevant Sources
 
 - [NumPy Documentation](https://np.org/doc/)
 - [R Documentation](https://www.rdocumentation.org/)

@@ -9,13 +9,14 @@ categories:
   - python
   - logging
   - tools-comparison
+  - deployment
 links:
   - blog/posts/a-roadmap-for-web-dev.md
   - blog/posts/code-practises/software-licences.md
-title: "Simplified Logging in Python: A Practical Guide to Effective Debugging and Monitoring"
+title: "Logging for Deployment in Python: A Practical Guide to Effective Debugging and Monitoring"
 ---
 
-# Simplified Logging in Python: A Practical Guide to Effective Debugging and Monitoring
+# Logging for Deployment in Python: A Practical Guide to Effective Debugging and Monitoring
 
 ## Introduction
 
@@ -193,3 +194,7 @@ pip install loguru
 Logging plays a crucial role in Python development by providing a structured and manageable approach to debugging, monitoring, and troubleshooting applications. Whether using the built-in logging module or the Loguru library, developers can leverage logging to improve code quality, streamline development workflows, and enhance application reliability.
 
 By mastering logging techniques and best practices outlined in this guide, developers can effectively manage log output, control verbosity, modularize code, monitor performance, handle errors, and integrate with monitoring tools. With structured and informative logs, Python developers can gain valuable insights into their applications, leading to more efficient development cycles and improved overall software quality.
+
+## Related Posts
+
+- [Cheat on Python Package Managers](./package-managers-in-python.md)

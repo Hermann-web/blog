@@ -286,3 +286,9 @@ I noticed that all erroneous URLs redirect the user to the `404.html` page. For 
 ## Conclusion
 
 In this guide, we explored a step-by-step approach to redirecting all pages from one domain to another using Flask and Frozen-Flask. From parsing the `sitemap.xml` file to handling dynamic endpoints and overcoming static constraints, each aspect was covered in detail. The use of a custom `404.html` page with JavaScript ensures a smooth redirection experience for users, making this solution both effective and elegant.
+
+## Related pages
+
+- [Deploying any Web application with Nginx: Example of Flask](../deploy-web-app-app-with-nginx-made-easy.md)
+- [Managing Local Modifications and Remote Changes in Git](../../version-control/git/pull-changes-with-conflicts.md)
+- [How to deploy a Streamlit Application on Hugging Face](../deploy-web-app-app-with-nginx-made-easy.md)

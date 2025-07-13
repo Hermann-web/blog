@@ -14,9 +14,9 @@ title: "Integrating Requirements.txt with Poetry"
 
 # Integrating Requirements.txt with Poetry
 
-Managing dependencies is a crucial aspect of any software project. Whether you're starting a new project or inheriting an existing one, handling dependencies effectively can greatly impact your workflow. Often, projects utilize a `requirements.txt` file to specify their dependencies, but when it comes to Python projects, integrating these dependencies seamlessly with a package manager like Poetry can streamline the process.
+Managing dependencies is a crucial aspect of any software project. Whether you're starting a new project or inheriting an existing one, [handling dependencies](./package-managers-in-python.md) effectively can greatly impact your workflow. Often, projects utilize a `requirements.txt` file to specify their dependencies, but when it comes to Python projects, integrating these dependencies seamlessly with a package manager like [Poetry](./poetry-in-practise.md) can streamline the process.
 
-So, when working with Poetry, you might need to integrate your existing `requirements.txt` file into your project. This document outlines how to achieve that efficiently.
+So, when working with Poetry, you might need to integrate your existing `requirements.txt` file into your project so you can improve reusability and [publishing](./publishing-python-project-poetry.md). This document outlines how to achieve that efficiently.
 
 <!-- more -->
 
@@ -87,7 +87,12 @@ This command strips version information from the package names before adding the
 
 Integrating an existing `requirements.txt` file into a Poetry project can be a straightforward process with the right approach. By ensuring that your requirements are abstract and by following the provided steps to preprocess your file, you can seamlessly manage dependencies in your Python projects using Poetry. Embracing modern tools like Poetry not only simplifies dependency management but also enhances the overall development experience, allowing you to focus more on building and refining your software.
 
-## Related Links
+## Related Posts
+
+- [Beginner's guide to poetry](./poetry-in-practise.md)
+- [Cheat on Python Package Managers](./package-managers-in-python.md)
+- [How to publish your python project (to pypi or testPypi) with Poetry then install as dependency in another project ?](./publishing-python-project-poetry.md)
+
+## Relevant Sources
 
 - [How to import an existing requirements.txt into a Poetry project? - Stack Overflow](https://stackoverflow.com/questions/62764148/how-to-import-an-existing-requirements-txt-into-a-poetry-project)
-- [Cheat on Python Package Managers](./package-managers-in-python.md)

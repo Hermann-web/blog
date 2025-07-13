@@ -26,7 +26,7 @@ In the realm of Python development, a crucial aspect is managing project depende
   <a title="www.python.org, GPL &lt;http://www.gnu.org/licenses/gpl.html&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg"><img width="64" alt="Python-logo-notext" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/64px-Python-logo-notext.svg.png"></a>
 </div>
 
-This guide delves into four prominent tools—pip, pipenv, poetry, conda and more—each offering distinct approaches to dependency management.
+This guide delves into four prominent tools—pip, pipenv, [poetry](./integrating-requirements-with-poetry.md), conda and more—each offering distinct approaches to dependency management.
 Grasping their strengths, weaknesses, and use cases empowers you to make informed decisions for your projects.
 
 <!-- more -->
@@ -170,6 +170,12 @@ Congratulations! You've now equipped yourself with insights into managing Python
 
 Stay proactive in exploring and adapting these tools to optimize your Python development experience!
 
-## Related Links
+## Related Posts
 
-- [is it safe to update all conda package at once ?](https://stackoverflow.com/a/44072944)
+- [Beginner's guide to poetry](./poetry-in-practise.md)
+- [Cheat on Python Package Managers](./package-managers-in-python.md)
+- [How to publish your python project (to pypi or testPypi) with Poetry then install as dependency in another project ?](./publishing-python-project-poetry.md)
+
+## Relevant Sources
+
+- [Is it safe to update all conda package at once ?](https://stackoverflow.com/a/44072944)

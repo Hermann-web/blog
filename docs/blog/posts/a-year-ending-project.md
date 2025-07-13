@@ -165,3 +165,8 @@ To bridge the gap between FastAPI and Next.js, I explored [digitros/nextjs-fasta
 Projects in development constantly change and borrow from each other. My journey from scattered Python apps to a unified web interface has been an ongoing quest for efficiency and elegance.
 
 As I combine backend strength with frontend finesse, the vision of a user-friendly toolbox gets closer. And in this pursuit, the journey itself is as rewarding as the destination.
+
+## Related Posts
+
+- [Cheat on Python Package Managers](./package-managers-in-python.md)
+- [How to publish your python project (to pypi or testPypi) with Poetry then install as dependency in another project ?](./publishing-python-project-poetry.md)

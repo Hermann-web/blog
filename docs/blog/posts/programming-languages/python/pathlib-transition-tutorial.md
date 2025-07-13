@@ -172,6 +172,7 @@ Congratulations! You've now gained a foundational understanding of `pathlib` and
 
 Stay curious and keep exploring to harness the full potential of `pathlib` in your Python projects!
 
-## relating links
+## Related Posts
 
+- [Cheat on Python Package Managers](./package-managers-in-python.md)
 - [Removing Directories in Python](./remove-dir-in-python.md)
