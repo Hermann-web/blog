@@ -101,12 +101,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/2024/02/12/exploring-the-commands-and-comparing-python-formatters-linters-and-type-checkers-black-vs-flake8-vs-isort-vs-autopep8-vs-yapf-vs-pylint-vs-jaxtyping-vs-check_shapes-vs-typeguard-vs-pyright-and-more/</loc>
+         <loc>https://hermann-web.github.io/blog/blog/2024/02/12/exploring-python-code-formatters-and-linters-black-vs-flake8-vs-isort-vs-autopep8-vs-yapf-vs-pylint-vs-ruff-and-more/</loc>
          <lastmod>2025-07-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/2024/04/06/generating-api-documentation-for-your-python-package-with-sphinx-apidoc/</loc>
+         <lastmod>2025-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/2025/07/13/python-type-checking-tools-mypy-vs-pyright-vs-pydantic-vs-pandera-vs-jaxtyping-vs-check_shapes-vs-typeguard/</loc>
          <lastmod>2025-07-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -316,6 +321,31 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/programming/</loc>
+         <lastmod>2025-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/python/</loc>
+         <lastmod>2025-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/type-checking/</loc>
+         <lastmod>2025-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/data-validation/</loc>
+         <lastmod>2025-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/tools-comparison/</loc>
+         <lastmod>2025-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/beginners/</loc>
          <lastmod>2025-07-13</lastmod>
          <changefreq>daily</changefreq>
@@ -356,11 +386,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/tools-comparison/</loc>
-         <lastmod>2025-07-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/mysql/</loc>
          <lastmod>2025-07-13</lastmod>
          <changefreq>daily</changefreq>
@@ -376,11 +401,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/programming/</loc>
-         <lastmod>2025-07-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/numerical-analysis/</loc>
          <lastmod>2025-07-13</lastmod>
          <changefreq>daily</changefreq>
@@ -392,11 +412,6 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/documentation/</loc>
-         <lastmod>2025-07-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/python/</loc>
          <lastmod>2025-07-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -502,11 +517,6 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/code-quality/</loc>
-         <lastmod>2025-07-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/type-checking/</loc>
          <lastmod>2025-07-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
