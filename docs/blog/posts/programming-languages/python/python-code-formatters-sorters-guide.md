@@ -219,7 +219,7 @@ Python code formatters and linters are tools designed to improve the readability
 
     This script first sorts imports with isort, formats code with Black, and then runs comprehensive linting with ruff and flake8.
 
-!!! example "Example with find + Multiple Tools"
+??? example "Example with find + Multiple Tools"
 
     To recursively format and check Python files in a directory and its subdirectories, while excluding certain directories like 'env' and '.git':
 
@@ -274,7 +274,7 @@ Python code formatters and linters are tools designed to improve the readability
             pylint --recursive=y .
     ```
 
-!!! example "pyproject.toml Configuration"
+??? example "pyproject.toml Configuration"
 
     Comprehensive configuration for multiple tools:
 
