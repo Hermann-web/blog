@@ -92,7 +92,9 @@ theme:
 
 # Plugins
 plugins:
-  - blog
+  - blog:
+      blog_dir: blog
+      post_url_format: "{slug}/"  # Or just "{slug}" to drop the trailing slash too
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
