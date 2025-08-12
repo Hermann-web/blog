@@ -1,8 +1,6 @@
-version: '3'
-
 services:
   mkdocs-serving:
-    image: python:3.11
+    image: python:3.11-slim
     volumes:
       - ./:/app/
     working_dir: /app
@@ -10,6 +8,8 @@ services:
       - "49161:8000"
     command: >
       bash -c "
+        apt update &&
+        apt install git unzip libcairo2 libcairo2-dev libpango-1.0-0 libpangocairo-1.0-0 libjpeg-dev zlib1g-dev -y &&
         pip install uv &&
         uv pip install -r requirements.txt --python /usr/local/bin/python3 &&
         git config --global --add safe.directory /app &&
