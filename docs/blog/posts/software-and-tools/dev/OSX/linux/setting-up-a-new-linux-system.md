@@ -18,9 +18,12 @@ When I install a fresh Linux distribution like Ubuntu 24, I'm not just setting u
 
 <div class="float-img-container float-img-left">
   <img src="/blog/assets/images/clean-minimalist-desktop-setup.png" alt="A clean, minimalist desktop setup" border="0">
+  <figcaption style="font-size: 0.5em; color: #666; text-align: center; margin-top: 2px;">
+    Image generated using Google Gemini
+  </figcaption>
 </div>
 
-This isn't just about a list of commands—it's a philosophy of intentionality. Every tool I choose, and every tool I leave behind, is a step toward a more efficient and less cluttered workflow.
+This isn't just about [a list of commands](../../../../../posts/software-and-tools/dev/OSX/linux/commands-for-file-and-directory-browsing.md), it's a philosophy of intentionality. Every tool I choose, and every tool I leave behind, is a step toward a more efficient and less cluttered workflow.
 
 This is my journey to a perfect setup, and it all starts with version control.
 
@@ -28,9 +31,12 @@ This is my journey to a perfect setup, and it all starts with version control.
 
 ## The First Steps: Git and SSH, The Key to Everything
 
-First things first: **Git**. It's the cornerstone of my development life. I don't just use Git for code; I use it to version control documents, configurations, and even this very blog post. The ability to track changes and collaborate is a non-negotiable.
+First things first: [**Git**](../../../../../posts/software-and-tools/dev/version-control/git/git-pull-vs-git-merge-equivalence.md). It's the cornerstone of my development life. I don't just use Git for code; I use it to version control documents, configurations, and even this very blog post. The ability to track changes and collaborate is a non-negotiable.
 
 ![The Git command in a terminal window](./git-command-in-a-terminal-window.png)
+<figcaption style="font-size: 0.5em; color: #666; text-align: center; margin-top: 2px;">
+    The Git command in a terminal window, courtesy of Google Gemini Image generator
+</figcaption>
 
 So, the very first command I run after updating my packages is to install Git:
 
@@ -40,7 +46,7 @@ sudo apt install git
 
 Next, I need a secure, password-free way to connect to my Git hosting service. I used to rely on tools like GitHub Desktop, but I've found that nothing beats the raw power and security of **SSH**. It's the standard for server access, and it's the most practical way to interact with my repositories when I'm working on a remote machine.
 
-I follow the official documentation to generate a new key pair:
+I follow the [official guideline](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) to generate a new key pair:
 
 ```bash
 ssh-keygen -t ed25519 -C "my-email@example.com"
@@ -65,6 +71,9 @@ I choose a different path. I use **Docker** as my primary application manager.
 Imagine a pristine, empty desktop. Now, imagine a magical box that contains all your applications and their messy dependencies, neatly sealed away. When you need a tool, you open the box. When you're done, you close it, and all the mess vanishes without a trace. That's Docker for me.
 
 ![A stylized Docker whale with containers](./stylized-docker-whale-with-containers.png)
+<figcaption style="font-size: 0.5em; color: #666; text-align: center; margin-top: 2px;">
+    A stylized Docker whale with containers, courtesy of Google Gemini Image generator
+</figcaption>
 
 My applications are completely isolated, running in lightweight containers. This means I can run Node.js, Python, MongoDB, or any other tool without ever touching my host system's libraries. It eliminates version conflicts and ensures that my environment is always reproducible.
 
@@ -79,6 +88,8 @@ reboot                        # A restart is necessary to apply the changes
 ```
 
 After the reboot, I can run `docker run hello-world` without `sudo`, and my user has full control over Docker. The real power of this approach comes from the next step: aliases.
+
+!!! note "Read [here](../../../../../posts/software-and-tools/dev/OSX/docker/mastering-docker-comprehensive-guide-efficient-container-management.md) for a deep dive into docker in practice"
 
 -----
 
@@ -171,7 +182,7 @@ alias markdownlint-cli2='sudo docker run --rm -v "$PWD":/work -w /work node:22 n
 
 ### Embracing Markdown and LaTeX with Docker
 
-I've fallen in love with **Markdown** and its rich ecosystem. Unlike proprietary word processors, Markdown files are plain text, making them perfect for Git. I've even created aliases for tools like **Grip**, a GitHub-like markdown viewer, which I run from a Docker container:
+I've fallen in love with **Markdown** and its rich ecosystem. Unlike proprietary word processors, Markdown files are plain text, making them perfect for Git. I've even created aliases for tools like [**Pandoc**](../../../../../posts/software-and-tools/dev/convertion-tools/pandoc-convert-most-files-without-online-services.md) or [**Grip**](../../../../../posts/software-and-tools/dev/convertion-tools/github-like-viewer-of-markdown-on-your-computer.md), a GitHub-like markdown viewer, which I run from a Docker container:
 
 ```bash
 alias grip='sudo docker run --rm -it -v "$PWD":/home -p 6419:6419 -w /home python:3.11-slim bash -c '\''pip install grip && file=$1 && shift && grip "$file" 0.0.0.0 "$@"'\'' --'
@@ -179,7 +190,7 @@ alias grip='sudo docker run --rm -it -v "$PWD":/home -p 6419:6419 -w /home pytho
 
 For professional or academic documents, nothing beats **LaTeX**. I remember being blown away when I first discovered it—the idea of coding a document. But a full TeX Live installation can be enormous\!
 
-My solution, of course, is a Docker container. I created a minimal image with just the tools I need, like `latexindent`, to keep the size down.
+My solution, of course, is a Docker container. I created minimal images with just the tools I need, like `latexindent` and `pdflatex`, to keep the size down.
 
 **Dockerfile for `latexindent`:**
 
@@ -203,7 +214,43 @@ I build this once, then use it as needed:
 alias latexindent='sudo docker run --rm -v "$(pwd)":/data -w /data ahlk/latexindent'
 ```
 
-This approach extends to my most powerful document workflow: converting complex Markdown files to beautiful PDFs using **Pandoc**. For simple conversions, the default `pandoc/latex` image is fine, but for academic writing, I need more advanced features like glossaries, mini-tables of contents (`minitoc`), and elegant drop caps (`lettrine`). The `pandoc/extra` image is a great starting point, but it's still missing some key packages.
+**Dockerfile for `pdflatex`:**
+
+```dockerfile
+# Use a lightweight base image with TeX Live
+FROM debian:bookworm-slim
+
+
+# Set metadata for the image
+LABEL maintainer="Hermann Agossou <agossouhermann7@gmail.com>"
+LABEL description="A lightweight Docker image for running pdflatex"
+
+# Install pdflatex and clean up to minimize image size
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    texlive-latex-base \
+    texlive-fonts-recommended \
+    texlive-fonts-extra \
+    texlive-latex-extra && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set the working directory inside the container
+WORKDIR /data
+
+# Default command to run pdflatex
+ENTRYPOINT ["pdflatex"]
+```
+
+I build this once, then use it as needed:
+
+For example,
+
+```bash
+alias pdflatex = 'docker run --rm --volume "$PWD:/data" pdflatex main.tex'
+```
+
+This approach extends to my most powerful document workflow: converting complex Markdown files to beautiful PDFs using [**Pandoc**](../../../../../posts/software-and-tools/dev/convertion-tools/pandoc-convert-most-files-without-online-services.md). For simple conversions, the default `pandoc/latex` image is fine, but for academic writing, I need more advanced features like glossaries, mini-tables of contents (`minitoc`), and elegant drop caps (`lettrine`). The `pandoc/extra` image is a great starting point, but it's still missing some key packages.
 
 So, I wrote my own custom Dockerfile to build on top of it:
 
