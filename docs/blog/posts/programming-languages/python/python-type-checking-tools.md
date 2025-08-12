@@ -457,7 +457,7 @@ The combination of these tools can significantly improve code quality, catch bug
 
 ## Related Posts
 
-- Explore [Python Code Formatters and Linters: black vs. flake8 vs. isort vs. autopep8 vs. yapf vs. pylint vs. ruff and more](./python-code-formatters-sorters-guide.md)
+- Explore [Python Code Formatters and Linters: black vs. flake8 vs. isort vs. autopep8 vs. yapf vs. pylint vs. ruff and more](../../../posts/programming-languages/python/python-code-formatters-sorters-guide.md)
 
 ## Relevant Sources
 

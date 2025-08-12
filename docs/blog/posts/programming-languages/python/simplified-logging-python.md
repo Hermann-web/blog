@@ -197,4 +197,4 @@ By mastering logging techniques and best practices outlined in this guide, devel
 
 ## Related Posts
 
-- [Cheat on Python Package Managers](./package-managers-in-python.md)
+- [Cheat on Python Package Managers](../../../posts/programming-languages/python/package-managers-in-python.md)

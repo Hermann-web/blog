@@ -252,8 +252,8 @@ Now, go ahead and share your amazing Python projects with the world!
 
 ## Related Posts
 
-- [Beginner's guide to poetry](./poetry-in-practise.md)
-- [python dependency management cheat including poetry, conda and more](./package-managers-in-python.md)
+- [Beginner's guide to poetry](../../../posts/programming-languages/python/poetry-in-practise.md)
+- [python dependency management cheat including poetry, conda and more](../../../posts/programming-languages/python/package-managers-in-python.md)
 - [Introducing Two New Packages for Streamlining File Conversions in Python](../../../../projects/introducing-two-new-packages-for-streamlining-file-conversions-in-python.md)
 
 ## Relevant Sources

@@ -172,9 +172,9 @@ Stay proactive in exploring and adapting these tools to optimize your Python dev
 
 ## Related Posts
 
-- [Beginner's guide to poetry](./poetry-in-practise.md)
-- [Cheat on Python Package Managers](./package-managers-in-python.md)
-- [How to publish your python project (to pypi or testPypi) with Poetry then install as dependency in another project ?](./publishing-python-project-poetry.md)
+- [Beginner's guide to poetry](../../../posts/programming-languages/python/poetry-in-practise.md)
+- [Cheat on Python Package Managers](../../../posts/programming-languages/python/package-managers-in-python.md)
+- [How to publish your python project (to pypi or testPypi) with Poetry then install as dependency in another project ?](../../../posts/programming-languages/python/publishing-python-project-poetry.md)
 
 ## Relevant Sources
 

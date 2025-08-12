@@ -210,4 +210,4 @@ Let the visualization journey begin, and may your data tell its story vividly th
 
 ## Related Posts
 
-- [Cheat on Python Package Managers](./package-managers-in-python.md)
+- [Cheat on Python Package Managers](../../../../posts/programming-languages/python/package-managers-in-python.md)

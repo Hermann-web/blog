@@ -111,5 +111,5 @@ Explore the possibilities of PWA further and stay tuned for updates and enhancem
 
 ## Related pages
 
-- [Setting Up Laravel Environment on Linux](./setup-laravel-environment-for-linux.md)
-- [Setting Up Laravel Environment on Windows](./setup-laravel-environment-on-windows.md)
+- [Setting Up Laravel Environment on Linux](../../../../posts/frameworks/web/laravel/setup-laravel-environment-for-linux.md)
+- [Setting Up Laravel Environment on Windows](../../../../posts/frameworks/web/laravel/setup-laravel-environment-on-windows.md)

@@ -289,6 +289,6 @@ In this guide, we explored a step-by-step approach to redirecting all pages from
 
 ## Related pages
 
-- [Deploying any Web application with Nginx: Example of Flask](../deploy-web-app-app-with-nginx-made-easy.md)
+- [Deploying any Web application with Nginx: Example of Flask](../../../../../posts/software-and-tools/dev/hosting/deploy-web-app-app-with-nginx-made-easy.md)
 - [Managing Local Modifications and Remote Changes in Git](../../version-control/git/pull-changes-with-conflicts.md)
 - [How to deploy a Streamlit Application on Hugging Face](../deploy-web-app-app-with-nginx-made-easy.md)

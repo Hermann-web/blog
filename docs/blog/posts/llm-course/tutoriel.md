@@ -25,7 +25,7 @@ Bienvenue dans ce guide pas à pas pour utiliser Perplexity AI, pensé pour tous
 
 ### Étapes simples
 
-- Rendez-vous sur [www.perplexity.ai](./https://www.perplexity.ai/) depuis votre navigateur[^31].
+- Rendez-vous sur [www.perplexity.ai](https://www.perplexity.ai/) depuis votre navigateur[^31].
 - Entrez votre adresse e-mail et votre mot de passe, ou choisissez la connexion via Google[^31].
 - Si vous avez oublié votre mot de passe, cliquez sur « Mot de passe oublié ? » et suivez les instructions reçues par e-mail[^31].
 - Après connexion, vous accédez à l’interface principale.
@@ -278,7 +278,7 @@ Bienvenue dans ce guide détaillé pour utiliser NotebookLM \! Que vous soyez un
 
 ### Étapes simples
 
-- Rendez-vous sur [notebooklm.google](./https://notebooklm.google/) depuis votre navigateur.
+- Rendez-vous sur [notebooklm.google](https://notebooklm.google/) depuis votre navigateur.
 - Cliquez sur le bouton "+ Nouveau carnet de notes" (ou "New notebook")[^341].
 - Donnez un nom à votre carnet de notes (ex: "Projet Alpha", "Recettes de cuisine", "Recherches historiques").
 - Cliquez sur "Créer" pour ouvrir votre nouveau carnet[^341].
@@ -389,28 +389,28 @@ En utilisant NotebookLM, vous transformez vos documents en une base de connaissa
 \<div style="text-align: center"\>⁂\</div\>
 
 [^341]:
-    [Google Workspace Updates: Build your own AI assistant with NotebookLM](./https://www.google.com/search?q=https://workspaceupdates.googleblog.com/2023/07/build-your-own-ai-assistant-with-notebooklm.html)
+    [Google Workspace Updates: Build your own AI assistant with NotebookLM](https://www.google.com/search?q=https://workspaceupdates.googleblog.com/2023/07/build-your-own-ai-assistant-with-notebooklm.html)
 
 [^342]:
-    [Google Chrome : Utiliser NotebookLM](./https://support.google.com/chrome/answer/14352127?hl=fr)
+    [Google Chrome : Utiliser NotebookLM](https://support.google.com/chrome/answer/14352127?hl=fr)
 
 [^343]:
-    [Google Workspace Updates: Get to know NotebookLM, a Google AI experiment](./https://www.google.com/search?q=https://workspaceupdates.googleblog.com/2024/06/get-to-know-notebooklm-a-google-ai-experiment.html)
+    [Google Workspace Updates: Get to know NotebookLM, a Google AI experiment](https://www.google.com/search?q=https://workspaceupdates.googleblog.com/2024/06/get-to-know-notebooklm-a-google-ai-experiment.html)
 
 [^344]:
-    [NotebookLM - Your AI-powered research assistant](./https://www.google.com/search?q=https://blog.google/technology/ai/notebooklm-google-ai-research-assistant/)
+    [NotebookLM - Your AI-powered research assistant](https://www.google.com/search?q=https://blog.google/technology/ai/notebooklm-google-ai-research-assistant/)
 
 [^345]:
-    [Google Workspace Updates: NotebookLM makes your research easier with AI-generated notes, outlines, and summaries](./https://www.google.com/search?q=https://workspaceupdates.googleblog.com/2024/03/notebooklm-ai-generated-notes-outlines-summaries.html)
+    [Google Workspace Updates: NotebookLM makes your research easier with AI-generated notes, outlines, and summaries](https://www.google.com/search?q=https://workspaceupdates.googleblog.com/2024/03/notebooklm-ai-generated-notes-outlines-summaries.html)
 
 [^346]:
-    [How to use NotebookLM - YouTube](./https://www.google.com/search?q=https://www.youtube.com/watch%3Fv%3DFqS0o7M4j2E)
+    [How to use NotebookLM - YouTube](https://www.google.com/search?q=https://www.youtube.com/watch%3Fv%3DFqS0o7M4j2E)
 
 [^347]:
-    [Google Blog: How NotebookLM helps you learn anything](./https://www.google.com/search?q=https://blog.google/technology/ai/how-notebooklm-helps-you-learn-anything/)
+    [Google Blog: How NotebookLM helps you learn anything](https://www.google.com/search?q=https://blog.google/technology/ai/how-notebooklm-helps-you-learn-anything/)
 
 [^348]:
-    [How to Share NotebookLM Projects - YouTube](./https://www.google.com/search?q=https://m.youtube.com/watch%3Fv%3D4F9o_c2d0fE)
+    [How to Share NotebookLM Projects - YouTube](https://www.google.com/search?q=https://m.youtube.com/watch%3Fv%3D4F9o_c2d0fE)
 
 [^349]:
-    [NotebookLM support page](./https://support.google.com/notebooklm/answer/14352127)
+    [NotebookLM support page](https://support.google.com/notebooklm/answer/14352127)

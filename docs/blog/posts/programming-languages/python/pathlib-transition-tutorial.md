@@ -174,5 +174,5 @@ Stay curious and keep exploring to harness the full potential of `pathlib` in yo
 
 ## Related Posts
 
-- [Cheat on Python Package Managers](./package-managers-in-python.md)
-- [Removing Directories in Python](./remove-dir-in-python.md)
+- [Cheat on Python Package Managers](../../../posts/programming-languages/python/package-managers-in-python.md)
+- [Removing Directories in Python](../../../posts/programming-languages/python/remove-dir-in-python.md)

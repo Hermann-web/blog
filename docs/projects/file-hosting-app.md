@@ -102,6 +102,6 @@ To deploy the File Sharing App, follow these steps:
 
 Remember to follow best practices for securing your deployed application.
 
-## License
+<!-- ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE). -->

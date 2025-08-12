@@ -325,7 +325,7 @@ Stay proactive in exploring and utilizing the rich libraries and functionalities
 
 ## Related Posts
 
-- [Cheat on Python Package Managers](./package-managers-in-python.md)
+- [Cheat on Python Package Managers](../../posts/programming-languages/python/package-managers-in-python.md)
 
 ## Relevant Sources
 

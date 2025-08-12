@@ -652,8 +652,8 @@ Avec les variables suivantes, nous introduiront les produits achetés ainsi que 
 
 === ":octicons-file-code-16: `Nb_merchandise_5`"
 
-    ![image](./media/bot_detection_in_auction/image36.png)
-    ![image](./media/bot_detection_in_auction/image237.png)
+    ![image](docs/projects/media/bot_detection_in_auction/image36.png)
+    ![image](docs/projects/media/bot_detection_in_auction/image237.png)
 
 Ces visualisations montrent bien que les robots se séparent des hommes quand l'utilisation des ressources augmente
 

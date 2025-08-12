@@ -206,4 +206,4 @@ Embrace the power of SSH, continue to explore, and may your future endeavors in 
 
 ## Related Posts
 
-- [Comprehensive Guide to SSH: Tunneling, File Transfers, and Key-Based Authentication](./ssh-tunneling.md)
+- [Comprehensive Guide to SSH: Tunneling, File Transfers, and Key-Based Authentication](../../../../../posts/software-and-tools/dev/remote-access/ssh/ssh-tunneling.md)

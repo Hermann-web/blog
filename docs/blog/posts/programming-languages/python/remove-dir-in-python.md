@@ -81,4 +81,4 @@ Ensure to confirm the directory paths before removal operations to prevent accid
 
 ## relating links
 
-- [Pathlib Tutorial: Transitioning to Simplified File and Directory Handling in Python](./pathlib-transition-tutorial.md)
+- [Pathlib Tutorial: Transitioning to Simplified File and Directory Handling in Python](../../../posts/programming-languages/python/pathlib-transition-tutorial.md)

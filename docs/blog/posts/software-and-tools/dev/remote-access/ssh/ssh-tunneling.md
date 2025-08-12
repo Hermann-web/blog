@@ -347,4 +347,4 @@ SSH is a versatile tool that offers secure communication, file transfers, and mo
 
 ## Related Posts
 
-- [Mastering SSH and File Transfers to Remote servers: A Beginner's Handbook](../remote-access/ssh/access-remote-from-cli.md)
+- [Mastering SSH and File Transfers to Remote servers: A Beginner's Handbook](../../../../../posts/software-and-tools/dev/remote-access/ssh/access-remote-from-cli.md)

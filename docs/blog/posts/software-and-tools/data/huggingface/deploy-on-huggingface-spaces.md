@@ -158,4 +158,4 @@ Congratulations! Your Streamlit app is now deployed on Hugging Face. You can fin
 
 ## Related Posts
 
-- [Deploying any Web application with Nginx: Example of Flask](../../dev/hosting/deploy-web-app-app-with-nginx-made-easy.md)
+- [Deploying any Web application with Nginx: Example of Flask](../../../../posts/software-and-tools/dev/hosting/deploy-web-app-app-with-nginx-made-easy.md)

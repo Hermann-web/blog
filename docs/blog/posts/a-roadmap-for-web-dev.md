@@ -114,4 +114,4 @@ Each chapter in this roadmap of web development is more than a course; it's a st
 
 ## Related Posts
 
-- [Cheat on Python Package Managers](./package-managers-in-python.md)
+- [Cheat on Python Package Managers](../posts/programming-languages/python/package-managers-in-python.md)

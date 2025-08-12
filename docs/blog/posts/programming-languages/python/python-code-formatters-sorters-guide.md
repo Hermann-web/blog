@@ -394,8 +394,8 @@ The key is to start with essential tools and gradually build up your toolchain b
 
 ## Related Posts
 
-- Read [Python Type Checking Tools: mypy vs. pyright vs. pydantic vs. pandera vs. jaxtyping vs. check_shapes vs. typeguard](./python-type-checking-tools.md)
-- [Cheat on Python Package Managers](./package-managers-in-python.md)
+- Read [Python Type Checking Tools: mypy vs. pyright vs. pydantic vs. pandera vs. jaxtyping vs. check_shapes vs. typeguard](../../../posts/programming-languages/python/python-type-checking-tools.md)
+- [Cheat on Python Package Managers](../../../posts/programming-languages/python/package-managers-in-python.md)
 
 ## Relevant Sources
 

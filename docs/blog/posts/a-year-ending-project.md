@@ -168,5 +168,5 @@ As I combine backend strength with frontend finesse, the vision of a user-friend
 
 ## Related Posts
 
-- [Cheat on Python Package Managers](./package-managers-in-python.md)
-- [How to publish your python project (to pypi or testPypi) with Poetry then install as dependency in another project ?](./publishing-python-project-poetry.md)
+- [Cheat on Python Package Managers](../posts/programming-languages/python/package-managers-in-python.md)
+- [How to publish your python project (to pypi or testPypi) with Poetry then install as dependency in another project ?](../posts/programming-languages/python/publishing-python-project-poetry.md)

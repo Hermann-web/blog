@@ -78,5 +78,5 @@ Setting up remote desktop access from a Linux system to a Windows 10 machine usi
 
 ## Related Posts
 
-- [Comprehensive Guide to SSH: Tunneling, File Transfers, and Key-Based Authentication](./ssh-tunneling.md)
-- [Mastering SSH and File Transfers to Remote servers: A Beginner's Handbook](../remote-access/ssh/access-remote-from-cli.md)
+- [Comprehensive Guide to SSH: Tunneling, File Transfers, and Key-Based Authentication](../../../../../posts/software-and-tools/dev/remote-access/ssh/ssh-tunneling.md)
+- [Mastering SSH and File Transfers to Remote servers: A Beginner's Handbook](../../../../../posts/software-and-tools/dev/remote-access/ssh/access-remote-from-cli.md)

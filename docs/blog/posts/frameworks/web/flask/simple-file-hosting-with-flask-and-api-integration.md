@@ -553,4 +553,4 @@ You can find all this code in the repository [https://github.com/Hermann-web/sim
 
 ## Related Posts
 
-- [Cheat on Python Package Managers](./package-managers-in-python.md)
+- [Cheat on Python Package Managers](../../../../posts/programming-languages/python/package-managers-in-python.md)
