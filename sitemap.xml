@@ -156,6 +156,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hermann-web.github.io/blog/blog/my-ubuntu-setup-from-barebones-to-a-productive-dev-environment/</loc>
+         <lastmod>2025-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hermann-web.github.io/blog/blog/grip-a-github-like-markdown-viewer-in-your-computer/</loc>
          <lastmod>2025-08-12</lastmod>
          <changefreq>daily</changefreq>
@@ -321,6 +326,36 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/dev/</loc>
+         <lastmod>2025-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/linux/</loc>
+         <lastmod>2025-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/cli-tools/</loc>
+         <lastmod>2025-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/docker/</loc>
+         <lastmod>2025-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/git/</loc>
+         <lastmod>2025-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hermann-web.github.io/blog/blog/category/markdown/</loc>
+         <lastmod>2025-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/programming/</loc>
          <lastmod>2025-08-12</lastmod>
          <changefreq>daily</changefreq>
@@ -356,11 +391,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/dev/</loc>
-         <lastmod>2025-08-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/remote-access/</loc>
          <lastmod>2025-08-12</lastmod>
          <changefreq>daily</changefreq>
@@ -377,11 +407,6 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/database-management/</loc>
-         <lastmod>2025-08-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/cli-tools/</loc>
          <lastmod>2025-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -446,22 +471,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/docker/</loc>
-         <lastmod>2025-08-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/containers/</loc>
          <lastmod>2025-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/deployment/</loc>
-         <lastmod>2025-08-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/linux/</loc>
          <lastmod>2025-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -566,11 +581,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/git/</loc>
-         <lastmod>2025-08-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hermann-web.github.io/blog/blog/category/fastapi/</loc>
          <lastmod>2025-08-12</lastmod>
          <changefreq>daily</changefreq>
@@ -647,11 +657,6 @@
     </url>
     <url>
          <loc>https://hermann-web.github.io/blog/blog/category/conversion-tools/</loc>
-         <lastmod>2025-08-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hermann-web.github.io/blog/blog/category/markdown/</loc>
          <lastmod>2025-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
