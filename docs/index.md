@@ -1,5 +1,5 @@
 ---
-template: home.html
+template: home2.html
 title: Personal Website
 social:
   cards_layout_options:
