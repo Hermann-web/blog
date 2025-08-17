@@ -34,9 +34,6 @@ This is my journey to a perfect setup, and it all starts with version control.
 First things first: [**Git**](../../../../../posts/software-and-tools/dev/version-control/git/git-pull-vs-git-merge-equivalence.md). It's the cornerstone of my development life. I don't just use Git for code; I use it to version control documents, configurations, and even this very blog post. The ability to track changes and collaborate is a non-negotiable.
 
 ![The Git command in a terminal window](./git-command-in-a-terminal-window.png)
-<figcaption style="font-size: 0.5em; color: #666; text-align: center; margin-top: 2px;">
-    The Git command in a terminal window, courtesy of Google Gemini Image generator
-</figcaption>
 
 So, the very first command I run after updating my packages is to install Git:
 
