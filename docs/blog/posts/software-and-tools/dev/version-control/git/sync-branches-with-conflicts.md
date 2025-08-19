@@ -27,6 +27,39 @@ So, this document provides guidance on using Git merge strategies, specifically 
 
 <!-- more -->
 
+### Git Branch Operations Cheat Sheet
+
+Before diving into merging and rebasing, it’s helpful to remember some key branch operations:
+
+| Task (Branch → Target)     | Description                                    | Command / Notes                                    |
+| -------------------------- | ---------------------------------------------- | -------------------------------------------------- |
+| Create new branch          | Start a new line of development                | `git branch <branch>` / `git switch -c <branch>`   |
+| Switch branch              | Move between branches                          | `git switch <branch>`                              |
+| Merge branch into current  | Combine another branch’s commits into current  | `git merge <branch>` (fast-forward or 3-way merge) |
+| Rebase current onto branch | Replay commits on top of another branch        | `git rebase <branch>`                              |
+| Reset branch to commit     | Move branch HEAD to a specific commit          | `git reset --soft/--mixed/--hard <commit>`         |
+| Restore branch files       | Restore specific files from a commit or branch | `git restore --source=<branch-or-commit> <file>`   |
+
+---
+
+### Notes on Branch Management
+
+* Merging and rebasing are your primary tools for integrating work from other branches.
+
+  * **Merge** = preserves history, creates a new merge commit
+  * **Rebase** = linearizes history, replaying commits on top of target branch
+
+* **`git reset`** and **`git restore`** are still useful in branch workflows:
+
+  * Resetting can move your branch to a specific commit safely in local dev.
+  * Restoring files allows you to pull a clean version from another branch without affecting commits.
+
+* When referencing commits in reset or restore, you can use commit hashes or branch names interchangeably.
+
+* Always double-check which branch you’re on—operations like `reset --hard` or `rebase` can irreversibly alter history if applied on the wrong branch.
+
+For a deeper dive into managing files and commits across states, see [**Git File and Commit Operations: Managing Changes Between States**](./commit-operations.md) – _Learn how to navigate files and commits across different Git states for effective version control._
+
 ### Rebase: Creating a Linear History
 
 ```bash
@@ -142,7 +175,8 @@ So, venture forth armed with this knowledge, shaping your repository's saga amid
 
 ## Related pages
 
+- [Git File and Commit Operations: Managing Changes Between States](./commit-operations.md)
 - [Managing Local Modifications and Remote Changes in Git](./pull-changes-with-conflicts.md)
 - [Understanding Git Pull vs Merge in Git Workflow](./git-pull-vs-git-merge-equivalence.md)
-- [Nesting Repositories with Git Submodules: A Newbie's Guide](./git-submodules.md)
 - [Mastering Git Branch Handling: Strategies for Deletion and Recovery](./handling-branch-deletion.md)
+

@@ -201,4 +201,4 @@ Choosing the right Git approach involves understanding the implications and trad
 - [Mastering Git Merge Strategies: A Developer's Guide](./sync-branches-with-conflicts.md)
 - [Understanding Git Pull vs Merge in Git Workflow](./git-pull-vs-git-merge-equivalence.md)
 - [Nesting Repositories with Git Submodules: A Newbie's Guide](./git-submodules.md)
-- [Mastering Git Branch Handling: Strategies for Deletion and Recovery](./handling-branch-deletion.md)
+- [Git File and Commit Operations: Managing Changes Between States](./commit-operations.md)
