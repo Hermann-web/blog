@@ -201,11 +201,11 @@ Here’s a conceptual diagram of Git areas and commands:
 | Action            | From → To      | Command                       |
 | ----------------- | -------------- | ----------------------------- |
 | Stage changes     | WD → Index     | `git add <file>`              |
-| Unstage           | Index → WD     | `git restore --staged <file>` |
+| Undo changes      | Index → WD     | `git restore <file>`          |
 | Commit            | Index → HEAD   | `git commit -m "msg"`         |
 | Amend last commit | HEAD → HEAD    | `git commit --amend`          |
-| Undo changes      | HEAD → WD      | `git restore <file>`          |
-| Reset staging     | Index → HEAD   | `git reset <file>`            |
+| Unstage           | HEAD → Index   | `git restore --staged <file>` |
+| Reset staging     | HEAD → Index   | `git reset <file>`            |
 | Push              | HEAD → Remote  | `git push origin <branch>`    |
 | Fetch             | Remote → Local | `git fetch origin`            |
 | Pull              | Remote → HEAD  | `git pull origin <branch>`    |
