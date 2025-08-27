@@ -1,10 +1,10 @@
 ---
 date: 2023-11-10
-authors: [hermann-web]
+authors:
+  - hermann-web
 comments: true
-description: >
-  This blog shows useful stuff to know about or learn to do as web developer or data scientist/engineer
-  Always working the fastest and easiest ways toward success
+description: |
+  This blog shows useful stuff to know about or learn to do as web developer or data scientist/engineer Always working the fastest and easiest ways toward success
 categories:
   - dev
   - OSX
@@ -13,7 +13,7 @@ categories:
 links:
   - blog/posts/a-roadmap-for-web-dev.md
   - blog/posts/code-practises/software-licences.md
-title: "Run an application forever on linux made easy: Case of a java script"
+title: "Run an application forever on linux made easy: Case of a javascript project"
 ---
 
 ## Introduction
@@ -84,3 +84,6 @@ sudo systemctl status myapp
 If everything is set up correctly, you should see output indicating that the service is running. To stop the service, you can use the `sudo systemctl stop myapp` command.
 
 With this setup, your Java application will run as a background process and automatically start when the server boots up. If the application crashes or stops for any reason, `systemd` will automatically restart it.
+
+## Related Posts
+ - [Step-by-Step Guide to Identifying and Terminating Processes on Specific Ports](./check-running-processes.md)
