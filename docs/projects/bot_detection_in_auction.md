@@ -2,38 +2,37 @@
 date: 2022-12-19
 authors: [hermann-web]
 comments: true
-title: Détection de bot dans dans les enchères
+title: Bot Detection in Auctions
 ---
 
-# Détection de bot dans dans les enchères
+# Bot Detection in Auctions
 
 ![street view with city buildings, market and street sings](./media/bot_detection_in_auction/image1.jpeg){width=50%}
 
-## Objectif général
+## General Objective
 
-Notre objectif général est d\'étudier un « dataset » issu d\'une plateforme d\'enchères publicitaires pour pouvoir prédire si l'agent qui a émis des enchères est un humain ou un robot. A partir d'une analyse bien approfondie de diverses données concernant les transactions effectuées notamment les outils numériques utilisés, les temps de ces transactions et bien d'autres « features », nous allons développer un modèle de classification capable de prédire la variable binaire « outcome » de telle sorte que 0 désigne `humain` et 1, `robot`. En outre, nous visons à travers ce projet à minimiser le taux des faux négatifs (prédire que l'agent est un humain, alors qu'il est un robot) et donc augmenter comme métrique le « recall »
-pour éviter toute sorte de fraude. Enfin, nous allons choisir au maximum 5 variables pour notre modélisation.
+Our general objective is to study a dataset from an advertising auction platform to predict whether the agent placing bids is a human or a robot. Through a thorough analysis of various transaction data, including digital tools used, transaction times, and other features, we will develop a classification model capable of predicting the binary variable "outcome" where 0 designates `human` and 1 `robot`. Furthermore, we aim to minimize the false negative rate (predicting a human when it is a robot) and thus increase the "recall" metric to prevent fraud. Finally, we will select at most 5 variables for our modeling.
 
-## Compréhension des données
+## Data Understanding
 
-La base de données fournie contient des informations sur les soumissionnaires de l'enchère et sur l'enchère. Les features donnés sont expliqués ci-dessous :
+The provided database contains information about auction bidders and the auction itself. The given features are explained below:
 
-| **Feature**         | **Explication**                                                |
+| **Feature**         | **Explanation**                                                |
 |---------------------|---------------------------------------------------------------|
-| Bidder_id           | Un identifiant unique pour le soumissionnaire                  |
-| Bid_id              | Un identifiant unique de l'offre fait par le soumissionnaire   |
-| Auction             | Un identifiant unique de l'enchère (l'offre publique)          |
-| Merchandise         | La catégorie du produit/offre                                  |
-| Device              | Modèle de téléphone d'un visiteur                              |
-| Time                | Temps à lequel la transaction a été faite pour l'enchère      |
-| Country             | Le pays auquel appartient l'IP                                 |
-| IP                  | Adresse IP de l'enrichisseur                                   |
-| Url                 | Le site à partir duquel l'enrichisseur a été référé            |
-| Payment_account     | Le compte à partir duquel l'enrichisseur a payé                |
-| Address             | L'adresse de l'enrichisseur                                    |
-| Outcome             | 1 si robot, 0 si homme                                         |
+| Bidder_id           | Unique identifier for the bidder                  |
+| Bid_id              | Unique identifier for the bid made by the bidder   |
+| Auction             | Unique identifier for the auction (public offer)          |
+| Merchandise         | Category of the product/offer                                  |
+| Device              | Visitor's phone model                              |
+| Time                | Time when the transaction was made for the auction      |
+| Country             | Country to which the IP belongs                                 |
+| IP                  | IP address of the bidder                                   |
+| Url                 | Site from which the bidder was referred            |
+| Payment_account     | Account from which the bidder paid                |
+| Address             | Address of the bidder                                    |
+| Outcome             | 1 if robot, 0 if human                                         |
 
-## Analyse descriptive et sélection de variables
+## Descriptive Analysis and Variable Selection
 
 ### **some constants**
 
@@ -55,7 +54,7 @@ df.bidder_id.nunique() # 87
 
 ### **Preview**
 
-Voici un aperçu de la dataset :
+Here is an overview of the dataset:
 
 ??? output ">>> df"
 
@@ -73,7 +72,7 @@ Voici un aperçu de la dataset :
     | 0ad17aa9111f657d71cd3005599afc24fd44y | 1411877 | toaj7   | mobile            | phone26   | 5.201508e-308 | in      | 17.66.120.232   | 4dd8ei0o5oqsua3 | 22cdb26663f071c00de61cc2dcde7b556rido | db147bf6056d00428b1bbf250c6e97594ewjy | 1       |
     | 0ad17aa9111f657d71cd3005599afc24fd44y | 1412085 | 07axb   | mobile            | phone25   | 5.201509e-308 | in      | 64.30.57.156    | 8zdkeqk4yby6lz2 | 22cdb26663f071c00de61cc2dcde7b556rido | db147bf6056d00428b1bbf250c6e97594ewjy | 1       |
 
-### variable à prédire
+### Target Variable
 
 !!! output "`>>> df[TARGET_COL].value_counts()`"
 
@@ -83,9 +82,9 @@ Voici un aperçu de la dataset :
     Name: outcome, dtype: int64
     ```
 
-c'est une classification binaire
+It is a binary classification
 
-### **Description des champs numériques**
+### **Description of Numeric Fields**
 
 !!! output "`>>> df.info()`"
 
@@ -113,25 +112,25 @@ c'est une classification binaire
     memory usage: 9.2+ MB
     ```
 
-On a près de 200 cellules vides dans country. on verra ça après
+We have nearly 200 empty cells in country. We will deal with this later.
 
-### **Types et autres informations**
+### **Types and Other Information**
 
-Le dataset contient 12 colonnes et 100.000 lignes.
+The dataset contains 12 columns and 100,000 rows.
 
 #### **Description**
 
-L'image ci-dessous présente plusieurs caractéristiques de chaque champ de la table
+The image below presents several characteristics of each field in the table
 
-- dtype : type de la variable (int64 pour les entiers, float64 pour les nombres, object pour les champs textes ou non-identifiés)
+- dtype: variable type (int64 for integers, float64 for numbers, object for text or unidentified fields)
 
-- nunique : nombre de valeurs uniques que prends cette variable
+- nunique: number of unique values this variable takes
 
-- nunique(%) : proportion des valeurs uniques que prends cette variable par rapport au nombre de lignes dans la table
+- nunique(%): proportion of unique values this variable takes relative to the number of rows in the table
 
-- nunique_per_bid\>1(%) : nombre de « bidder_id » qui présentes plusieurs valeurs différentes pour cette variable.
+- nunique_per_bid\>1(%): number of "bidder_id" that present multiple different values for this variable.
 
-- is_cat: 1 si la variable peut être considérée categorielle (ici, moins de 10 valeurs uniques) 0 sinon
+- is_cat: 1 if the variable can be considered categorical (here, less than 10 unique values) 0 otherwise
 
 ??? code "`def get_cols_info`"
 
@@ -214,11 +213,11 @@ L'image ci-dessous présente plusieurs caractéristiques de chaque champ de la t
       max    7.656326e+06       1.000000       1.000000
     ```
 
-!!! info "on remarque le bid_id est un identifiant unique pour chaque bidder_id qui représente l'action de l'offre menée par chaque bidder"
+!!! info "we notice bid_id is a unique identifier for each bidder_id representing the bidding action taken by each bidder"
 
-!!! info "on constate que time est n'est pas à 100% unique donc on peut avoir deux actions d'enchère qui sont réalisé en même instant"
+!!! info "we observe that time is not 100% unique so we can have two auction actions performed at the same instant"
 
-#### **Etude de la variable prédictive**
+#### **Study of the Predictive Variable**
 
 ```python
 tg = "outcome" #("outcome", "<lambda>")
@@ -229,30 +228,30 @@ add_labels_to_histplot(ax, title="distribution of outcome")
 
 ![image](./media/bot_detection_in_auction/image5.png)
 
-On remarque que sur 87 bidder_id, seuls 6 correspondent à des robots.
-Ainsi, il s'agit d'un problème de classification binaire déséquilibré.
+We notice that out of 87 bidder_ids, only 6 correspond to robots.
+Thus, it is an imbalanced binary classification problem.
 
-#### **Sélection des variables**
+#### **Variable Selection**
 
-Les variables qui prennent plusieurs valeurs pour un même joueur pourraient être utilisés afin d'étudier la variété des outils utilisés par le joueur. C'est le cas des variables (country, device, auction, url, ip). La variable bid_id est un identifiant unique de transaction (nunique=100%) et ne sera pas considéré.
+Variables that take multiple values for the same player could be used to study the variety of tools used by the player. This is the case for variables (country, device, auction, url, ip). The variable bid_id is a unique transaction identifier (nunique=100%) and will not be considered.
 
-Les variables catégorielles, si pertinentes seront intégrées. C'est le cas de la variable (merchandise)
+Categorical variables, if relevant, will be integrated. This is the case for the variable (merchandise).
 
-Les variables avec un « nunique_per_bid » prenant la valeur nulle, n'apportent pas d'informations et seront rejetées s'il n'y a pas d'extraction d'informations possibles. C'est le cas pour les variables (payment_account et address)
+Variables with a "nunique_per_bid" taking a null value do not provide information and will be rejected if no information extraction is possible. This is the case for variables (payment_account and address).
 
-| Variable         | Pertinence                            | Descriptions                                | À Rejeter  |
+| Variable         | Relevance                            | Descriptions                                | To Reject  |
 |------------------|---------------------------------------|---------------------------------------------|------------|
-| Outcome (status du joueur)  | - Il s'agit de la variable à prédire | Variable catégorielle (0 ou 1). Chaque joueur a un seul status. Cette information est vérifiée sur toute la table.      | **NON**    |
-| Merchandise (type de produit achetés)| - Les robots ou les humains pourraient avoir des tendances vers des produits particuliers.           | Variable catégorielle (6 catégories)       | **NON**    |
-| bidder_id (identifiant du joueur)  |  - Il s'agit de l'object de la prédiction.                         | Identifiant. Mais il n'apporte pas d'informations supplémentaires.           |     **NON**       |
-| PAYMENT_ACCOUNT ET ADRESSE  | - Ces variables n'apportent pas d'informations supplémentaires (unique_per_bid = 0).         | Identifiants sans possibilité d'extraction d'informations. | **OUI**    |
-| COUNTRY          | - Les joueurs de certains pays pourraient avoir plus tendance à utiliser ou non des robots.        | Variable texte (identifiant du pays).      | **NON**    |
-| device (Appareil utilisé), AUCTION, URL, IP           | - Les robots ou humains pourraient avoir tendance à utiliser certains appareils (pc vs mobile vs web ...)   | Variable texte (nom du device).            | **NON**    |
-| BID_ID           | - Le bid_id est unique sur les lignes et ne contient pas de features à extraire.| Identifiant ne contenant pas de features à extraire.    | **OUI**    |
+| Outcome (player status)  | - This is the variable to predict | Categorical variable (0 or 1). Each player has a single status. This information is verified across the entire table.      | **NO**    |
+| Merchandise (type of purchased products)| - Robots or humans might have tendencies towards specific products.           | Categorical variable (6 categories)       | **NO**    |
+| bidder_id (player identifier)  |  - This is the object of prediction.                         | Identifier. But it does not provide additional information.           |     **NO**       |
+| PAYMENT_ACCOUNT AND ADDRESS  | - These variables do not provide additional information (unique_per_bid = 0).         | Identifiers with no possibility of information extraction. | **YES**    |
+| COUNTRY          | - Players from certain countries might have more tendency to use robots or not.        | Text variable (country identifier).      | **NO**    |
+| device (Device used), AUCTION, URL, IP           | - Robots or humans might tend to use certain devices (pc vs mobile vs web ...)   | Text variable (device name).            | **NO**    |
+| BID_ID           | - bid_id is unique across rows and contains no features to extract.| Identifier containing no features to extract.    | **YES**    |
 
-### **Valeurs nulles**
+### **Null Values**
 
-On affiche le nombre de lignes vides par colonne
+We display the number of empty rows per column
 
 !!! output "`>>> df.isnull().sum()`"
 
@@ -272,21 +271,21 @@ On affiche le nombre de lignes vides par colonne
     dtype: int64
     ```
 
-Il n'y a de cellules vides que dans country
+There are empty cells only in country
 
-### Valeurs dupliquées ?
+### Duplicated Values?
 
 ![image](./media/bot_detection_in_auction/image7.png)
 
-Il n'y a pas de lignes dupliquées dans la table. Mais si on enlève le champs bid_id, il y a deux lignes dupliquées. On supprime ces deux lignes puisque ce sont des transactions qui se répètent.
+There are no duplicated rows in the table. But if we remove the bid_id field, there are two duplicated rows. We remove these two rows as they are repeating transactions.
 
-## Feature Engineering, Visualisation et/ou Test des Hypothèses
+## Feature Engineering, Visualization and/or Hypothesis Testing
 
-Afin d'en savoir plus sur le pouvoir de séparabilité des variables par rapport à la variable « outcome », nous allons effectuer une série d'analyses et de visualisations.
+To learn more about the separability power of variables relative to the "outcome" variable, we will perform a series of analyses and visualizations.
 
-Par ailleurs, nous ferons une agrégation des données selon le « bidder_id » qui identifie la nature (robot ou humain) des joueurs.
+Furthermore, we will aggregate data according to "bidder_id" which identifies the nature (robot or human) of the players.
 
-### Librairies utiles
+### Useful Libraries
 
 ``` python
 
@@ -305,10 +304,10 @@ from sklearn.preprocessing import StandardScaler
 
 ### **Null values (country)**
 
-Seule la variable country contient des valeurs nulles. Nous allons remplacer toutes les valeurs nulles par une constante nommée « NO_COUNTRY »
+Only the country variable contains null values. We will replace all null values with a constant named "NO_COUNTRY".
 
 ```python
-## proportion des valeurs nulles
+## proportion of null values
 df.country.isnull().sum()/len(df)
 ```
 
@@ -372,9 +371,9 @@ df["ip"] = df.ip.apply(lambda x: '.'.join(x.split('.')[:2]))
     Name: country, dtype: int64
     ```
 
-### **Normalisation (time)**
+### **Normalization (time)**
 
-La variable « time » prends des valeurs très petites (de l'ordre de 10\*\*(-308)). On appliquera une normalisation linéaire et qui donc ne réduit pas l'information de cette variable.
+The "time" variable takes very small values (of the order of 10\*\*(-308)). We will apply a linear normalization which therefore does not reduce the information of this variable.
 
 ??? info "`>>> df["time"].describe()`"
 
@@ -409,10 +408,10 @@ df["time"] = (df.time - df.time.min())/(df.time.max() - df.time.min())
     Name: time, dtype: float64
     ```
 
-### **Visualisation (Merchandise)**
+### **Visualization (Merchandise)**
 
 ```python
-## histogrammes des produits
+## product histograms
 ax = sns.histplot(x="merchandise", data=df, color='b')
 add_labels_to_histplot(ax, title="Distribution of merchandises")
 ```
@@ -420,7 +419,7 @@ add_labels_to_histplot(ax, title="Distribution of merchandises")
 ![png](./media/bot_detection_in_auction/image11-1.png)
 
 ```python
-## histogramme des produits par outcome
+## product histogram by outcome
 ax = sns.histplot(x="merchandise", data=df, hue="outcome", palette=["b","orange"])
 add_labels_to_histplot(ax, title="Distribution of merchandises by outcome")
 ```
@@ -428,7 +427,7 @@ add_labels_to_histplot(ax, title="Distribution of merchandises by outcome")
 ![png](./media/bot_detection_in_auction/image11-2.png)
 
 ```python
-## liste des outcome par produit
+## list of outcomes by product
 def human(x): return (x==0).sum()
 def bot(x): return (x==1).sum()
 df.groupby("merchandise").agg({"outcome": [human, bot] })
@@ -496,9 +495,9 @@ df.groupby("merchandise").agg({"outcome": [human, bot] })
 
 no unique on merchandise because of unicite/bidder_id
 
-### **Groupage par bidder_id**
+### **Grouping by bidder_id**
 
-Les variables actuelles
+Current variables
 
 !!! info "`>>> df.columns`"
 
@@ -507,46 +506,43 @@ Les variables actuelles
            'merchandise_3', 'merchandise_4', 'merchandise_5', 'merchandise_6'],
           dtype='object')
 
-Les nouvelles variables :
+New variables:
 
-| Champs                  | Descriptif                                                                   |
+| Fields                  | Description                                                                   |
 |-------------------------|------------------------------------------------------------------------------|
-| nb_device               | Nombre d'appareils uniques utilisés par bidder_id                           |
-| nb_auction              | Nombre d'enchères auxquelles bidder_id a participé                           |
-| nb_ip                   | Nombre d'adresses IP (identifiant de réseau) uniques utilisées par bidder_id |
-| nb_url                  | Nombre d'URLs utilisées par le bidder_id                                     |
-| nb_country              | Nombre de pays uniques identifiés par bidder_id                              |
-| outcome                 | 1 si robot, 0 si homme                                                       |
-| non_robot_merchandise   | Catégories non choisies par les robots                                       |
-| time                    | Moyenne des écarts de temps pour chaque bidder_id                            |
-| nb_bid                  | Nombre de bids effectuées par bidder_id                                      |
-| nb_merchandise_1        | Nombre de "jewelry" uniques utilisés par bidder_id                           |
-| nb_merchandise_2        | Nombre de "mobile" uniques utilisés par bidder_id                            |
-| nb_merchandise_3        | Nombre de "books and music" uniques utilisés par bidder_id                   |
-| nb_merchandise_4        | Nombre de "office equipment" uniques utilisés par bidder_id                  |
-| nb_merchandise_5        | Nombre de "sporting goods" uniques utilisés par bidder_id                    |
-| nb_merchandise_6        | Nombre de "home goods" uniques utilisés par bidder_id                        |
+| nb_device               | Number of unique devices used by bidder_id                           |
+| nb_auction              | Number of auctions bidder_id participated in                           |
+| nb_ip                   | Number of unique IP addresses (network identifier) used by bidder_id |
+| nb_url                  | Number of URLs used by bidder_id                                     |
+| nb_country              | Number of unique countries identified by bidder_id                              |
+| outcome                 | 1 if robot, 0 if human                                                       |
+| non_robot_merchandise   | Categories not chosen by robots                                       |
+| time                    | Mean time differences for each bidder_id                            |
+| nb_bid                  | Number of bids made by bidder_id                                      |
+| nb_merchandise_1        | Number of unique "jewelry" used by bidder_id                           |
+| nb_merchandise_2        | Number of unique "mobile" used by bidder_id                            |
+| nb_merchandise_3        | Number of unique "books and music" used by bidder_id                   |
+| nb_merchandise_4        | Number of unique "office equipment" used by bidder_id                  |
+| nb_merchandise_5        | Number of unique "sporting goods" used by bidder_id                    |
+| nb_merchandise_6        | Number of unique "home goods" used by bidder_id                        |
 
-### **Groupage par bidder_id and time**
+### **Grouping by bidder_id and time**
 
-Pour chaque bidder_id, à chaque instant donné, on identifie le nombre de fois que l'utilisateur a utilisé simultanément certaines ressources
+For each bidder_id, at each given instant, we identify the number of times the user simultaneously used certain resources
 
-- adresse ip : on identifie le nombre d'adresses ip utilisées à cet instant par cette personne
+- ip address: we identify the number of ip addresses used at this instant by this person
 
-- auction : le nombre d'enchères où il était connecté simultanément
+- auction: the number of auctions where they were connected simultaneously
 
-- device : le nombre d'appareils différents qu'il a utilisé
-simultanément
+- device: the number of different devices they used simultaneously
 
-- url : le nombre d'urls différents qui ont été utilisés simultanément par l'enrichisseur
+- url: the number of different urls used simultaneously by the bidder
 
-- country : le nombre de pays depuis lesquels l'enrichisseur a fait simultanément la transaction .
+- country: the number of countries from which the bidder made the transaction simultaneously.
 
-Ensuite, pour chaque bidder_id et chaque temps, on somme ces 5
-quantités.
+Then, for each bidder_id and each time, we sum these 5 quantities.
 
-Ainsi, pour chaque bidder_id, on a une série de valeurs sur laquelle on calcule des statistiques simples telles que la moyenne
-(my_agg_mean), la somme(my_agg_sum), l'écart-type(my_agg_std) et le max(my_agg_max)
+Thus, for each bidder_id, we have a series of values on which we calculate simple statistics such as mean (my_agg_mean), sum (my_agg_sum), standard deviation (my_agg_std), and max (my_agg_max).
 
 ??? code "`def compute_groupby`"
 
@@ -575,9 +571,9 @@ Ainsi, pour chaque bidder_id, on a une série de valeurs sur laquelle on calcule
 
     ```
 
-### **Normalisation (tous les features)**
+### **Normalization (all features)**
 
-Chaque variable est normalisée entre 0 et 1 à l'aide d'un min-max-scaler
+Each variable is normalized between 0 and 1 using a min-max-scaler
 
 ??? info "Preview"
 
@@ -587,13 +583,13 @@ Chaque variable est normalisée entre 0 et 1 à l'aide d'un min-max-scaler
 
     ![image](./media/bot_detection_in_auction/image17.png)
 
-### Visualisation - Histogramme
+### Visualization - Histogram
 
-Pour chaque variable, nous faisons un histogramme afin de comprendre l'explicabilité de nos variables explicatives par rapport à notre variable expliqué « outcome ». Nous ajoutons à ces diagrammes une estimation de la densité de chacune de ses variables.
+For each variable, we create a histogram to understand the explainability of our explanatory variables relative to our explained variable "outcome". We add to these diagrams a density estimation for each of these variables.
 
-Comme nos données sont déséquilibrées par rapport à la variable expliqué, nous effectuons une augmentation de données par duplication pour ces visualisations.
+As our data is imbalanced regarding the explained variable, we perform data augmentation by duplication for these visualizations.
 
-#### Les agrégations sur bidder_id
+#### Aggregations on bidder_id
 
 === ":octicons-file-code-16: `Nb_ip`"
 
@@ -625,15 +621,13 @@ Comme nos données sont déséquilibrées par rapport à la variable expliqué, 
     ![image](./media/bot_detection_in_auction/image28.png)
     ![image](./media/bot_detection_in_auction/image29.png)
 
-On s'attends à ce que les robots effectuent plus d'opérations que les humains, ce qui se vérifie facilement dans ces diagrammes. En effet,
-on représente les histogrammes des variables (nb_ip, nb_auction,
-nb_device, nb_url, nb_country, nb_bid) (bleu pour les humains et rouge pour les robots).
+We expect robots to perform more operations than humans, which is easily verified in these diagrams. Indeed, we represent histograms of variables (nb_ip, nb_auction, nb_device, nb_url, nb_country, nb_bid) (blue for humans and red for robots).
 
-D'abord, on remarque qu'il y a beaucoup de valeurs nulles, ce qui signifie que pour chaque ressource (ip, url, ...), l'usage multiple de ces ressources n'est pas courant. En plus, parmi ceux qui font un usage multiple de ces ressources, on note des robots mais aussi des humains pour certaines ressources comme l'url ou l'appareil. Ce qui est contre intuitif, c'est que les humains dépassent parfois les robots sur ces métriques.
+First, we notice there are many null values, which means that for each resource (ip, url, ...), multiple usage of these resources is not common. Furthermore, among those who make multiple usage of these resources, we note robots but also humans for certain resources like url or device. What is counter-intuitive is that humans sometimes surpass robots on these metrics.
 
-#### produits achetés
+#### purchased products
 
-Avec les variables suivantes, nous introduiront les produits achetés ainsi que le temps qui est très important.
+With the following variables, we will introduce purchased products as well as time which is very important.
 
 === ":octicons-file-code-16: `Nb_merchandise_1 & 2`"
 
@@ -655,87 +649,84 @@ Avec les variables suivantes, nous introduiront les produits achetés ainsi que 
     ![image](docs/projects/media/bot_detection_in_auction/image36.png)
     ![image](docs/projects/media/bot_detection_in_auction/image237.png)
 
-Ces visualisations montrent bien que les robots se séparent des hommes quand l'utilisation des ressources augmente
+These visualizations clearly show that robots separate from humans when resource usage increases
 
-#### temps
+#### time
 
 - time
 
 ![image](./media/bot_detection_in_auction/image38.png)
 
-Cette variable est pertinante car la visualisation confirme l'évidence : le temps entre les connections des robots sont beaucoup plus court que ceux des hommes
+This variable is relevant because the visualization confirms the obvious: the time between robot connections is much shorter than that of humans
 
-- my_agg (aggrégation sur le bidder_id et le temps)
+- my_agg (aggregation on bidder_id and time)
 
 ![image](./media/bot_detection_in_auction/image39.png)![image](./media/bot_detection_in_auction/image40.png)![image](./media/bot_detection_in_auction/image41.png)![image](./media/bot_detection_in_auction/image42.png)
 
-Les agrégations effectuées sur le temps et le bidder_id, sont pertinentes car les robots ont plus tendance à se connecter plusieurs fois de façon simultanée
+Aggregations performed on time and bidder_id are relevant because robots tend to connect multiple times simultaneously.
 
-Nous avons fait des tests statistiques en plus de ces visualisations mais ils ne seront présentés que brièvement dans ce rapport.
+We performed statistical tests in addition to these visualizations but they will only be presented briefly in this report.
 
 ### **Binarization (on continuous features)**
 
-L'objectif est d'exploiter le pouvoir séparatif de nos variables afin de rendre les algorithmes de classification plus efficaces.
+The objective is to exploit the separability power of our variables to make classification algorithms more effective.
 
-Chaque feature est projetée sur l'espace {0,1} en définissant un seuil (threshold). Les valeurs supérieures au seuil correspondent à  
-1, tandis que les valeurs inférieures ou égales au seuil correspondent à 0.
+Each feature is projected onto the space {0,1} by defining a threshold. Values greater than the threshold correspond to 1, while values less than or equal to the threshold correspond to 0.
 
-Ce seuil est déterminé pour chaque feature. Pour cela, on choisit un nombre limité de valeurs possibles entre 0 et1 (range (0, 1, 0.05)).
-Pour chaque valeur,
+This threshold is determined for each feature. To do this, we choose a limited number of possible values between 0 and 1 (range (0, 1, 0.05)).
+For each value,
 
-On transforme la série en variable catégorielle
-
-![image](./media/bot_detection_in_auction/image43.png)
-
-On sépare la série en deux échantillons (outcome=0 vs outcome=1).
-Puis, on réalise un [test de student](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)
-pour les moyennes de deux échantillons pour voir s'ils sont significativement différents
+We transform the series into a categorical variable.
 
 ![image](./media/bot_detection_in_auction/image43.png)
 
-On sépare la série en deux échantillons selon les deux catégories.
-Puis, on calcule la proportion de robots dans chaque échantillon.
-Ensuite, on compare ces proportions à l'aide d'un z-test pour voir s'ils sont significativement différents
+We separate the series into two samples (outcome=0 vs outcome=1).
+Then, we perform a [Student's t-test](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html) for the means of two samples to see if they are significantly different.
+
+![image](./media/bot_detection_in_auction/image43.png)
+
+We separate the series into two samples according to the two categories.
+Then, we calculate the proportion of robots in each sample.
+Next, we compare these proportions using a z-test to see if they are significantly different.
 
 ![image](./media/bot_detection_in_auction/image44.png)
 
-Si ces deux tests donnent des résultats conclusifs (p-value\<0.05),  
-on les retients
+If these two tests yield conclusive results (p-value < 0.05), we retain them.
 
-On choisit le seuil qui passe les deux tests avec des p-valeurs minimales. Ce seuil est utilisé pour transformer la variable continue en variable binaire (0 et 1)
+We choose the threshold that passes both tests with minimal p-values. This threshold is used to transform the continuous variable into a binary variable (0 and 1).
 
 ### **Resampling Techniques**
 
 ![image](./media/bot_detection_in_auction/image5.png)
 
-On remarque que sur 87 bidder_id, seuls 6 correspondent à des robots.
-Nous appliquons alors une méthode de oversampling nommée SMOTE. Cette méthode, ne duplique pas des lignes mais créé de nouveaux points à partir des anciens en trouvant des points au milieu des points existants.
+We notice that out of 87 bidder_ids, only 6 correspond to robots.
+We then apply an oversampling method named SMOTE. This method does not duplicate rows but creates new points from old ones by finding points in between existing points.
 
-## Stratégie d'entrainement
+## Training Strategy
 
 ### **Split train test**
 
-Nous séparons d'abord notre base de données en deux parties. Une partie pour l'entrainement et une autre pour le test (50% du dataset).
+We first separate our database into two parts. One part for training and another for testing (50% of the dataset).
 
 ### **Models**
 
-Nous utilisons principalement des modèles de classification disponibles sous la librairie sklearn. Il s'agit notamment
+We mainly use classification models available under the sklearn library. These include:
 
-- Modèles linéaires (Régression logistique (sous sklearn ou statsmodels), Support vecteur Machine (SVC), Descente de gradient stochastique (SDG))
+- Linear models (Logistic Regression (under sklearn or statsmodels), Support Vector Machine (SVC), Stochastic Gradient Descent (SGD))
 
-- Tree based (Arbre de décision, Random Forest)
+- Tree based (Decision Tree, Random Forest)
 
-- D'autres modèles (KNN, LDA)
+- Other models (KNN, LDA)
 
-- Des modèles ensemblistes (AdaBoost, Gradient Boosting)
+- Ensemble models (AdaBoost, Gradient Boosting)
 
-Nous présenterons d'abord les résultats obtenus sur les algorithmes :
-**Régression logistique, Support vecteur machine et random Forest**.
+We will first present the results obtained on the algorithms:
+**Logistic Regression, Support Vector Machine, and Random Forest**.
 
-### **Choix des hyperparamètres**
+### **Hyperparameter Choice**
 
-Pour certains modèles, nous utilisons une méthode nommée Grid Search.
-Nous choisissions certains paramètres importants ainsi que des valeurs possibles. Cette méthode améliore optimise le loss du modèle sur le training set en fonction des valeurs des hyperparamètres données.
+For some models, we use a method named Grid Search.
+We choose certain important parameters as well as possible values. This method optimizes the model loss on the training set according to the given hyperparameter values.
 
 |      Algorithm        |      Parameters           |     Objectives                                                        |
 |-----------------------|---------------------------|-----------------------------------------------------------------------|
@@ -743,34 +734,33 @@ Nous choisissions certains paramètres importants ainsi que des valeurs possible
 | SVM                   | - gamma='scale' <br> - probability=True <br> - C=1 <br> - kernel="linear" <br> - class_weight="balanced" |  - Utilizing a linear model |
 | Random Forest         | - max_depth: [1, 3, 5, 15, 25] <br> - max_leaf_nodes: [1, 3, 5, 15] <br> - n_estimators: [10, 50, 100] <br> - max_features: ["sqrt", "log2", None] <br> - criterion: ["gini", "entropy", "log_loss"] | - Varying tree sizes but maintaining a maximum limit <br> - Testing different metrics, particularly the log-loss |
 
-### **Selection de feature?**
+### **Feature Selection?**
 
-Nous avons fait nos modèles sur 19 variables et nous souhaitons tiliser 5 variables. Afin de sélectionner les variables les plus pertinentes pour chaque modèle, nous utilisons une méthode qui élimine les variables les moins importantes de façon itérative. Une implémentation est disponible sous sklearn à travers la fonction [RFE (recursive feature elimination)](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFE.html)
+We built our models on 19 variables and we wish to use 5 variables. To select the most relevant variables for each model, we use a method that iteratively eliminates the least important variables. An implementation is available under sklearn through the RFE (recursive feature elimination) function.
 
-## Métriques de validation
+## Validation Metrics
 
-Afin de valider nos modèles, nous utilisons des métriques adaptées à
-la classification. Il s'agit de
+To validate our models, we use metrics adapted to classification. These are:
 
-- Matrice de confusion : Elle montre le nombre de prédictions (bien classé vs mal classé) en fonction des catégories
+- Confusion Matrix: Shows the number of predictions (correctly classified vs misclassified) according to categories.
 
-- Précision : Mesure la capacité du modèle à identifier tous les humains même s'il classe mal des robots. Il réduit le nombre de faux positifs
+- Precision: Measures the model's ability to identify all humans even if it misclassifies robots. It reduces the number of false positives.
 
-- recall : Mesure la capacité du modèle à identifier tous les robots même si il classe mal des humains. Il réduit le nombre de faux négatifs
+- Recall: Measures the model's ability to identify all robots even if it misclassifies humans. It reduces the number of false negatives.
 
 ![Calculation of Precision, Recall and Accuracy in the confusion matrix. \| Download Scientific Diagram](./media/bot_detection_in_auction/image45.png)
 
-- f1 : elle combine la precision et le recall
+- F1: Combines precision and recall.
 
 ![4 things you need to know about AI: accuracy, precision, recall and F1 scores](./media/bot_detection_in_auction/image46.png)
 
-- Courbe ROC : Calculer l\'aire sous la courbe ROC à partir des scores de prédiction.
+- ROC Curve: Calculate the area under the ROC curve from prediction scores.
 
-Toutes ces métriques sont disponibles sous [sklearn](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics)
+All these metrics are available under [sklearn](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics)
 
-## Prédiction
+## Prediction
 
-### Librairies utiles pour la prédiction
+### Useful Libraries for Prediction
 
 ``` python
 from sklearn.linear_model import LogisticRegression, SGDClassifier
@@ -785,9 +775,9 @@ from sklearn import metrics
 from sklearn.metrics import confusion_matrix,r2_score,accuracy_score,roc_auc_score,f1_score,precision_score,recall_score
 ```
 
-### Démarche
+### Approach
 
-Les modèles sont utilisés dans une classe qui implémente la méthode suivante
+Models are used in a class that implements the following method
 
 ??? code "`def compute_all`"
 
@@ -1076,3 +1066,9 @@ Ce projet de classification présente des spécificités intéressantes.
 D'une part, on a pu valider à priori qu'on a sur les robots à l'aide des données qu'on avait même s\'il y a eu des paradoxes quelques fois qui peuvent être liés au nombre limité de données ou à des facteurs extérieurs.
 D'autre part, la base de données brute contient beaucoup de champs texte. Ainsi, la transformation des données est l'étape cruciale de ce projet. En plus, la base de données, déséquilibrée, nécessite d'utiliser des techniques particulières pour l'entrainement. Nous avons également adapté les métriques de validation au problème de classification et avons obtenu des résultats satisfaisants (recall, précision \> 90%) avec jusque 4 à 5 features maximum, ce qui montre le potentiel que le feature engineering peut apporter à la modélisation et à l'explicabilité des modèles.
 Enfin, avec des modèles simples qui proposent des recall parfaits, nous pouvons être sûr de déterminer les robots même si certains (très peu) d'humains sont mals prédits
+
+## Project Members
+
+- Salma KHMASSI
+- Hermann Agossou
+- Noura Jamal

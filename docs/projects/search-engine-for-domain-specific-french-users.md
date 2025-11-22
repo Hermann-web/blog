@@ -56,9 +56,9 @@ nltk.download('stopwords')
 
 Files used in the notebook are stored in the folder [data](https://github.com/Hermann-web/Search-engine-with-python-nlp/tree/main/data) of the repository
 
-## **1: Créer les keywords à partir d'une phrase
+## **1: Create keywords from a sentence
 
-> en se basant sur les mots d'un dictionnaire et un corpus de texte en passant par la tokenization, la correction, la lemmatization et le removeStopWords**
+> based on words from a dictionary and a text corpus through tokenization, correction, lemmatization, and stop words removal**
 
 ### preprocessing
 
@@ -120,7 +120,7 @@ def pre_process(sentence):
     return liste_words
 ```
 
-### correction des mots
+### Word correction
 
 ```python
 def edits1(word):
@@ -149,10 +149,10 @@ def candidates(word):
 
 
 def DICO_ET_CORRECTEUR():
-    "cette fonction retourne la liste des mots de dictionnaire"
+    "this function returns the list of dictionary words"
     DICO = get_dico()
     WORDS = Counter(pre_process(DICO)) #Counter prends un str et retourne une sorte de liste enrichie
-    "correction des mots "
+    "word correction "
     N = sum(WORDS.values())
     P = lambda word: WORDS[word] / N #"Probability of `word`."
     
@@ -162,25 +162,25 @@ def DICO_ET_CORRECTEUR():
 WORDS,CORRECTION = DICO_ET_CORRECTEUR()
 ```
 
-### stopwords et stemming(premier exemple)
+### stopwords and stemming (first example)
 
 ```python
 ## stopwords #//https://www.ranks.nl/stopwords/french
 with open('stp_words_.txt','r') as f:
     STOPWORDS = f.read()
 
-## bdd de stemmer
+## stemmer database
 with open("sample_.json",'r',encoding='cp1252') as json_file:
     #json_file.seek(0)
     LISTE = json.load(json_file)
 my_stemmer = lambda word: LISTE[word] if word in LISTE else word
 ```
 
-### fonction: SENTENCE_TO_CORRECT_WORDS
+### function: SENTENCE_TO_CORRECT_WORDS
 
 ```python
 def SENTENCE_TO_CORRECT_WORDS(sentence):
-    "cette fonction retourne la liste des mots du user"
+    "this function returns the user's word list"
     print('\n------------pre_process--------\n')
     liste_words = pre_process(sentence)
     print(liste_words)
@@ -312,7 +312,7 @@ def wordLemmatizer(data,colname):
 
 
 def wordLemmatizer_(sentence):
-    #prendre une phrase que retourner un str (les mots sont separes par des ,)
+    #take a sentence and return a str (words are separated by ,)
     preprocessed_query = preprocessed_query = re.sub("\W+", " ", sentence).strip()
     tokens = word_tokenize(str(preprocessed_query))
     q_df = pd.DataFrame(columns=['q_clean'])
@@ -325,7 +325,7 @@ def wordLemmatizer_(sentence):
 
 ```
 
-## **2: trouver la meilleure phrase dans une liste de phrase**
+## **2: find the best sentence in a list of sentences**
 
 ### method: TF-Idf
 
@@ -426,7 +426,7 @@ $tfidf(wd,stc) = tf(wd,stc) *idf(wd)$
     sentence3: log(3/1)
     $$
 
-## fonction: cosine_similarity_T
+## function: cosine_similarity_T
 
 ```python
 def init(df_news):
@@ -512,10 +512,10 @@ def test(data,sentence,init_=False,mine=True):
   if not init_:
     deb = time.time();print('\n\n## ## ## ## ## #')
     init(df_news)
-    print('\n## ## ## ## ## #temps init: ', time.time()-deb)
+    print('\n## ## ## ## ## #init time: ', time.time()-deb)
   deb = time.time();print('\n\n## ## ## ## ## #')
   print(cosine_similarity_T(10, sentence,df_news))
-  print('\n## ## ## ## ## #temps methode 1: ', time.time()-deb)
+  print('\n## ## ## ## ## #method 1 time: ', time.time()-deb)
 sentence = 'Message d\'erreur \"La qte livree est differente de la qte facturee ; fonction impossible"'
 sentence = 'erreur de conversion'
 sentence = 'message d\'erreur'
