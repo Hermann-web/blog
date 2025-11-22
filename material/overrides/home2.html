@@ -1,32 +1,60 @@
-{#-
-  This file was automatically generated - do not edit
--#}
-{% extends "main2.html" %}
-{% block tabs %}
-  {{ super() }}
-  <style>.md-header{position:initial}.md-main__inner{margin:0}.md-content{display:none}@media screen and (min-width:60em){.md-sidebar--secondary{display:none}}@media screen and (min-width:76.25em){.md-sidebar--primary{display:none}}</style>
-  <section class="mdx-container">
-    <div class="md-grid md-typeset">
-      <div class="mdx-hero">
-        <div class="mdx-hero__image" style="display:flex">
-          <img src="assets/logo-blog-hermann-agossou-ot20-500x500.png" alt="" draggable="false" style="max-height: 500px; height: auto;">
-        </div>
-        <div class="mdx-hero__content">
-          <h1>Hermann Web Index</h1>
-          <p>{{ config.site_description }}.</p>
-          <!-- <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}" class="md-button md-button--primary">
+{#- This file was automatically generated - do not edit -#} {% extends
+"main2.html" %} {% block tabs %} {{ super() }}
+<style>
+  .md-header {
+    position: initial;
+  }
+  .md-main__inner {
+    margin: 0;
+  }
+  .md-content {
+    display: none;
+  }
+  @media screen and (min-width: 60em) {
+    .md-sidebar--secondary {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 76.25em) {
+    .md-sidebar--primary {
+      display: none;
+    }
+  }
+</style>
+<section class="mdx-container">
+  <div class="md-grid md-typeset">
+    <div class="mdx-hero">
+      <div class="mdx-hero__image" style="display: flex">
+        <img
+          src="assets/logo-blog-hermann-agossou-ot20-500x500.png"
+          alt=""
+          draggable="false"
+          style="max-height: 500px; height: auto"
+        />
+      </div>
+      <div class="mdx-hero__content">
+        <h1>Hermann Web Index</h1>
+        <p>{{ config.site_description }}.</p>
+        <!-- <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}" class="md-button md-button--primary">
             Quick start
           </a> -->
-          <a href="{{ 'blog/' | url }}" title="Articles for Blog about Data Science/Web development" class="md-button md-button--primary">
-            Read the blog
-          </a>
-          <a href="{{ 'projects/' | url }}" title="{{ page.next_page.title | e }}" class="md-button">
-            See projects
-          </a>
-        </div>
+        <a
+          href="{{ 'blog/' | url }}"
+          title="Articles for Blog about Data Science/Web development"
+          class="md-button md-button--primary"
+        >
+          Read the blog
+        </a>
+        <a
+          href="{{ 'projects/' | url }}"
+          title="{{ page.next_page.title | e }}"
+          class="md-button"
+        >
+          See projects
+        </a>
       </div>
     </div>
-  </section>
-{% endblock %}
-{% block content %}{% endblock %}
-{% block footer %}{% endblock %}
+  </div>
+</section>
+{% endblock %} {% block content %}{% endblock %} {% block footer %}{% endblock
+%}
