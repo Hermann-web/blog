@@ -1,57 +1,93 @@
 {#- This file was automatically generated - do not edit -#} {% extends
 "main2.html" %} {% block tabs %} {{ super() }}
+<link rel="stylesheet" href="{{ 'stylesheets/home.css' | url }}" />
 <style>
   .md-header {
     position: initial;
   }
+
   .md-main__inner {
     margin: 0;
   }
+
   .md-content {
     display: none;
   }
+
   @media screen and (min-width: 60em) {
     .md-sidebar--secondary {
       display: none;
     }
   }
+
   @media screen and (min-width: 76.25em) {
     .md-sidebar--primary {
       display: none;
     }
   }
 </style>
+
 <section class="mdx-container">
-  <div class="md-grid md-typeset">
-    <div class="mdx-hero">
-      <div class="mdx-hero__image" style="display: flex">
-        <img
-          src="assets/logo-blog-hermann-agossou-ot20-500x500.png"
-          alt=""
-          draggable="false"
-          style="max-height: 500px; height: auto"
-        />
-      </div>
-      <div class="mdx-hero__content">
-        <h1>Hermann Web Index</h1>
-        <p>{{ config.site_description }}.</p>
-        <!-- <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}" class="md-button md-button--primary">
-            Quick start
-          </a> -->
-        <a
-          href="{{ 'blog/' | url }}"
-          title="Articles for Blog about Data Science/Web development"
-          class="md-button md-button--primary"
-        >
-          Read the blog
+  <!-- Hero Section -->
+  <div class="mdx-hero">
+    <div class="mdx-hero__content">
+      <h1 class="mdx-hero__title">Hermann Agossou</h1>
+      <p class="mdx-hero__subtitle">
+        Full-stack Web Developer & Data Scientist.<br />
+        Building intelligent systems and beautiful interfaces.
+      </p>
+      <div class="mdx-hero__actions">
+        <a href="{{ 'blog/' | url }}" class="mdx-button mdx-button--primary">
+          Read the Blog
         </a>
         <a
           href="{{ 'projects/' | url }}"
-          title="{{ page.next_page.title | e }}"
-          class="md-button"
+          class="mdx-button mdx-button--secondary"
         >
-          See projects
+          View Projects
         </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features / Skills Section -->
+  <div class="mdx-features">
+    <div class="mdx-features__grid">
+      <div class="mdx-feature">
+        <div class="mdx-feature__icon">
+          <span class="twemoji"
+            >{% include ".icons/fontawesome/solid/code.svg" %}</span
+          >
+        </div>
+        <h3 class="mdx-feature__title">Web Development</h3>
+        <p class="mdx-feature__text">
+          Crafting responsive and performant web applications using modern
+          frameworks and best practices.
+        </p>
+      </div>
+      <div class="mdx-feature">
+        <div class="mdx-feature__icon">
+          <span class="twemoji"
+            >{% include ".icons/fontawesome/solid/brain.svg" %}</span
+          >
+        </div>
+        <h3 class="mdx-feature__title">Data Science</h3>
+        <p class="mdx-feature__text">
+          Extracting insights from data, building ML models, and solving complex
+          problems.
+        </p>
+      </div>
+      <div class="mdx-feature">
+        <div class="mdx-feature__icon">
+          <span class="twemoji"
+            >{% include ".icons/fontawesome/solid/layer-group.svg" %}</span
+          >
+        </div>
+        <h3 class="mdx-feature__title">Full Stack</h3>
+        <p class="mdx-feature__text">
+          From database design to frontend polish, handling the entire stack
+          with confidence.
+        </p>
       </div>
     </div>
   </div>
