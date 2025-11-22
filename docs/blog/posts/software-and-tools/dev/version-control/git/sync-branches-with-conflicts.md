@@ -46,10 +46,10 @@ Before diving into merging and rebasing, it’s helpful to remember some key bra
 
 * Merging and rebasing are your primary tools for integrating work from other branches.
 
-  * **Merge** = preserves history, creates a new merge commit
-  * **Rebase** = linearizes history, replaying commits on top of target branch
+  * __Merge__ = preserves history, creates a new merge commit
+  * __Rebase__ = linearizes history, replaying commits on top of target branch
 
-* **`git reset`** and **`git restore`** are still useful in branch workflows:
+* __`git reset`__ and __`git restore`__ are still useful in branch workflows:
 
   * Resetting can move your branch to a specific commit safely in local dev.
   * Restoring files allows you to pull a clean version from another branch without affecting commits.
@@ -58,7 +58,7 @@ Before diving into merging and rebasing, it’s helpful to remember some key bra
 
 * Always double-check which branch you’re on—operations like `reset --hard` or `rebase` can irreversibly alter history if applied on the wrong branch.
 
-For a deeper dive into managing files and commits across states, see [**Git File and Commit Operations: Managing Changes Between States**](./commit-operations.md) – _Learn how to navigate files and commits across different Git states for effective version control._
+For a deeper dive into managing files and commits across states, see [__Git File and Commit Operations: Managing Changes Between States__](./commit-operations.md) – _Learn how to navigate files and commits across different Git states for effective version control._
 
 ### Rebase: Creating a Linear History
 
@@ -175,8 +175,7 @@ So, venture forth armed with this knowledge, shaping your repository's saga amid
 
 ## Related pages
 
-- [Git File and Commit Operations: Managing Changes Between States](./commit-operations.md)
-- [Managing Local Modifications and Remote Changes in Git](./pull-changes-with-conflicts.md)
-- [Understanding Git Pull vs Merge in Git Workflow](./git-pull-vs-git-merge-equivalence.md)
-- [Mastering Git Branch Handling: Strategies for Deletion and Recovery](./handling-branch-deletion.md)
-
+* [Git File and Commit Operations: Managing Changes Between States](./commit-operations.md)
+* [Managing Local Modifications and Remote Changes in Git](./pull-changes-with-conflicts.md)
+* [Understanding Git Pull vs Merge in Git Workflow](./git-pull-vs-git-merge-equivalence.md)
+* [Mastering Git Branch Handling: Strategies for Deletion and Recovery](./handling-branch-deletion.md)

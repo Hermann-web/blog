@@ -86,4 +86,5 @@ If everything is set up correctly, you should see output indicating that the ser
 With this setup, your Java application will run as a background process and automatically start when the server boots up. If the application crashes or stops for any reason, `systemd` will automatically restart it.
 
 ## Related Posts
- - [Step-by-Step Guide to Identifying and Terminating Processes on Specific Ports](./check-running-processes.md)
+
+- [Step-by-Step Guide to Identifying and Terminating Processes on Specific Ports](./check-running-processes.md)

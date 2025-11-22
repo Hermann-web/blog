@@ -6,36 +6,42 @@ Meet Hermann, a pro at full-stack web development and data science, acing websit
 
 ## Tech Stack
 
-*   [MkDocs](https://www.mkdocs.org/)
-*   [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
-*   [Python](https://www.python.org/)
-*   [Docker](https://www.docker.com/)
+* [MkDocs](https://www.mkdocs.org/)
+* [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
+* [Python](https://www.python.org/)
+* [Docker](https://www.docker.com/)
 
 ## Project Structure
 
-*   `docs/`: Contains all the Markdown files for the website's content, including blog posts, projects, and pages.
-*   `material/`: Contains overrides for the Material for MkDocs theme, allowing for customization of the website's appearance and behavior.
-*   `scripts/`: Contains shell scripts for various development tasks, such as formatting code and checking for broken links.
-*   `mkdocs.yml`: The configuration file for MkDocs, where the site's structure, theme, and plugins are defined.
+* `docs/`: Contains all the Markdown files for the website's content, including blog posts, projects, and pages.
+* `material/`: Contains overrides for the Material for MkDocs theme, allowing for customization of the website's appearance and behavior.
+* `scripts/`: Contains shell scripts for various development tasks, such as formatting code and checking for broken links.
+* `mkdocs.yml`: The configuration file for MkDocs, where the site's structure, theme, and plugins are defined.
 
 ## How to Contribute
 
-1.  **Fork the repository.**
-2.  **Clone your fork:**
+1. **Fork the repository.**
+2. **Clone your fork:**
+
     ```bash
     git clone https://github.com/hermann-web/blog.git
     ```
-3.  **Create a virtual environment and install dependencies:**
+
+3. **Create a virtual environment and install dependencies:**
+
     ```bash
     python -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
     ```
-4.  **Run the development server:**
+
+4. **Run the development server:**
+
     ```bash
     mkdocs serve
     ```
-5.  **Make your changes and submit a pull request.**
+
+5. **Make your changes and submit a pull request.**
 
 Alternatively, you can use Docker to run the project:
 

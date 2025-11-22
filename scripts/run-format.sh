@@ -20,3 +20,6 @@ check_command "markdownlint-cli2" "npm install markdownlint-cli2 --global" || re
 # If markdownlint-cli2 is installed, fix linting issues in Markdown files
 # find -type f -path "./docs/*.md" -exec markdownlint-cli2 --fix {} +
 markdownlint-cli2 "**/*.md" --fix
+
+check_command "prettier" "npm install prettier --global" || return 1
+prettier "material/overrides/" --write --list-different

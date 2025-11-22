@@ -105,7 +105,6 @@ Once you've identified the Process ID (PID) of the process using port 8000, you 
 
 Always exercise caution when terminating processes, especially with `kill -9`, as it may impact running applications or services. Ensure proper permissions and confirm that you're terminating the correct process to avoid unintended consequences.
 
-
-
 ## Related Posts
+
 - [Run an application forever on linux made easy: Case of a javascript project](./how-to-run-an-application-forever-on-linux.md)

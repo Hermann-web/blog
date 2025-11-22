@@ -191,7 +191,6 @@ Here’s a conceptual diagram of Git areas and commands:
 
 ![how Git areas interact and which commands move changes between](git-file-commit-operations-between-states.png)
 
-
 > **Pro tip:** Memorize this flow. Once you can picture it, every command makes sense instantly.
 
 ---
@@ -267,16 +266,14 @@ Here’s a conceptual diagram of Git areas and commands:
 
 ### Rules of Thumb
 
-- Use **`git restore`** for files — it safely updates WD or index without affecting commits.  
-- Use **`git reset`** for commits — moves HEAD and optionally unstages or discards changes.  
-- Use **`git revert`** to undo commits in a shared history — creates a new commit.  
-- Use **`git checkout`** primarily to switch branches or view old commits (legacy usage).  
-- Always be cautious with **`reset --hard`** and **`push --force`** — they can permanently discard work.
-
+* Use **`git restore`** for files — it safely updates WD or index without affecting commits.  
+* Use **`git reset`** for commits — moves HEAD and optionally unstages or discards changes.  
+* Use **`git revert`** to undo commits in a shared history — creates a new commit.  
+* Use **`git checkout`** primarily to switch branches or view old commits (legacy usage).  
+* Always be cautious with **`reset --hard`** and **`push --force`** — they can permanently discard work.
 
 !!! note "Handling Local branches"
     Merging and rebasing are your primary tools for integrating work from other branches. Read [this Git Branch Operations docu](./sync-branches-with-conflicts) to understand how they work
-
 
 ## Syncing with Remote
 
@@ -294,18 +291,17 @@ Read [this docu about how to manage Local Modifications and Remote Changes in Gi
 
 **Notes:**
 
-- `git pull` fetches remote commits and **merges** or **rebases** them into your current branch.  
-- Pulling updates **HEAD** and may update **Index/WD** if there are conflicts.  
-- Pushing sends **HEAD commits** to the remote branch.
+* `git pull` fetches remote commits and **merges** or **rebases** them into your current branch.  
+* Pulling updates **HEAD** and may update **Index/WD** if there are conflicts.  
+* Pushing sends **HEAD commits** to the remote branch.
 
 ---
 
 Mastering these areas and commands will make Git a lot less confusing, and help you confidently manage your changes without accidental loss.
 
-
 ## Related pages
 
-- [Managing Local Modifications and Remote Changes in Git](./pull-changes-with-conflicts.md)
-- [Mastering Git Merge Strategies: A Developer's Guide](./sync-branches-with-conflicts.md)
-- [Nesting Repositories with Git Submodules: A Newbie's Guide](./git-submodules.md)
-- [Understanding Git Pull vs Merge in Git Workflow](./git-pull-vs-git-merge-equivalence.md)
+* [Managing Local Modifications and Remote Changes in Git](./pull-changes-with-conflicts.md)
+* [Mastering Git Merge Strategies: A Developer's Guide](./sync-branches-with-conflicts.md)
+* [Nesting Repositories with Git Submodules: A Newbie's Guide](./git-submodules.md)
+* [Understanding Git Pull vs Merge in Git Workflow](./git-pull-vs-git-merge-equivalence.md)
