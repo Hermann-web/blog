@@ -646,8 +646,8 @@ With the following variables, we will introduce purchased products as well as ti
 
 === ":octicons-file-code-16: `Nb_merchandise_5`"
 
-    ![image](docs/projects/media/bot_detection_in_auction/image36.png)
-    ![image](docs/projects/media/bot_detection_in_auction/image237.png)
+    ![image](./media/bot_detection_in_auction/image36.png)
+    ![image](./media/bot_detection_in_auction/image237.png)
 
 These visualizations clearly show that robots separate from humans when resource usage increases
 
