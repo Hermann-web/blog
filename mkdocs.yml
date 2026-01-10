@@ -82,9 +82,9 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  font:
-    text: Roboto
-    code: Roboto Mono
+  # font:
+  #   text: Roboto
+  #   code: Roboto Mono
   favicon: assets/logo-blog-hermann-agossou-ot0-500x500.png
   icon:
     logo: logo
@@ -112,7 +112,11 @@ plugins:
 #   - material/overrides/hooks/shortcodes.py
 #   - material/overrides/hooks/translations.py
 
-  - social
+#  - social
+  - macros:
+      module_name: main
+      ignore_macros:
+        - '\{\{\..*?\}\}'
 
 
 # Additional configuration
@@ -232,10 +236,10 @@ nav:
     - Public Admin Data ETL: projects/public-admin-data-etl.md
     - Spring School ETL System: projects/spring-school-etl-system.md
     - Statistical Methods Library: projects/statistical-methods-library.md
-  - The JavaScript Edge:
-    - Home: projects/js-course/index.md
-    - JavaScript Syntax Fundamentals: projects/js-course/javascript-fundamentals-simplified.md
-    - Intermediate JavaScript Concepts: projects/js-course/javascript-concepts-intermediate.md
+  # - The JavaScript Edge:
+  #   - Home: projects/js-course/index.md
+  #   - JavaScript Syntax Fundamentals: projects/js-course/javascript-fundamentals-simplified.md
+  #   - Intermediate JavaScript Concepts: projects/js-course/javascript-concepts-intermediate.md
   - Blog:
     - blog/index.md
 

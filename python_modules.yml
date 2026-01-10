@@ -1,0 +1,41 @@
+modules:
+  ResuModel:
+    name: "ResuModel"
+    link: "https://pypi.org/project/ResuModel/"
+    description: "Resume generator from YAML configs"
+  opencf_core:
+    name: "opencf-core"
+    link: "https://pypi.org/project/opencf-core/"
+    description: "A robust framework for handling file conversion tasks in Python"
+  opencf:
+    name: "opencf"
+    link: "https://pypi.org/project/opencf/"
+    description: "A collection of Python scripts for file conversion tasks, built on top of the opencf-core framework."
+  flask_file_share:
+    name: "flask-file-share"
+    link: "https://pypi.org/project/flask-file-share/"
+    description: "Flask-based file sharing with web interface, API, and CLI app"
+  versioning_python:
+    name: "versioning-python"
+    link: "https://pypi.org/project/versioning-python/"
+    description: "A command-line interface (CLI) application for managing versioning in a using Python"
+  curl_python:
+    name: "curl-python"
+    link: "https://pypi.org/project/curl-python/"
+    description: "Python wrapper for curl"
+  polynomial_generator:
+    name: "polynomial-generator"
+    link: "https://pypi.org/project/polynomial-generator/"
+    description: "A Python package for generating polynomial expressions"
+  inspect_recursive:
+    name: "inspect-recursive"
+    link: "https://pypi.org/project/inspect-recursive/"
+    description: "Recursively inspect python objects"
+  stat_analysis:
+    name: "stat-analysis"
+    link: "https://pypi.org/project/stat-analysis/"
+    description: "A Python library providing hands on implementation of a collection of common statistical methods for data analysis."
+  lissajou:
+    name: "lissajou"
+    link: "https://pypi.org/project/lissajou/"
+    description: "A Python module for creating animations, including Lissajou curve simulations."

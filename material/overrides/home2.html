@@ -33,17 +33,14 @@
     <div class="mdx-hero__content">
       <h1 class="mdx-hero__title">Hermann Agossou</h1>
       <p class="mdx-hero__subtitle">
-        Full-stack Web Developer & Data Scientist.<br />
-        Building intelligent systems and beautiful interfaces.
+        Data Scientist & Full-stack Web Developer.<br />
+        Building robust applications and intelligent systems.
       </p>
       <div class="mdx-hero__actions">
         <a href="{{ 'blog/' | url }}" class="mdx-button mdx-button--primary">
           Read the Blog
         </a>
-        <a
-          href="{{ 'projects/' | url }}"
-          class="mdx-button mdx-button--secondary"
-        >
+        <a href="{{ 'projects/' | url }}" class="mdx-button mdx-button--secondary">
           View Projects
         </a>
       </div>
@@ -55,42 +52,121 @@
     <div class="mdx-features__grid">
       <div class="mdx-feature">
         <div class="mdx-feature__icon">
-          <span class="twemoji"
-            >{% include ".icons/fontawesome/solid/code.svg" %}</span
-          >
+          <span class="twemoji">{% include ".icons/fontawesome/solid/code.svg" %}</span>
         </div>
         <h3 class="mdx-feature__title">Web Development</h3>
         <p class="mdx-feature__text">
-          Crafting responsive and performant web applications using modern
-          frameworks and best practices.
+          Crafting responsive and performant web applications using modern frameworks and best practices.
         </p>
       </div>
       <div class="mdx-feature">
         <div class="mdx-feature__icon">
-          <span class="twemoji"
-            >{% include ".icons/fontawesome/solid/brain.svg" %}</span
-          >
+          <span class="twemoji">{% include ".icons/fontawesome/solid/brain.svg" %}</span>
         </div>
         <h3 class="mdx-feature__title">Data Science</h3>
         <p class="mdx-feature__text">
-          Extracting insights from data, building ML models, and solving complex
-          problems.
+          Extracting insights from data, building ML models, and solving complex problems.
         </p>
       </div>
       <div class="mdx-feature">
         <div class="mdx-feature__icon">
-          <span class="twemoji"
-            >{% include ".icons/fontawesome/solid/layer-group.svg" %}</span
-          >
+          <span class="twemoji">{% include ".icons/fontawesome/solid/layer-group.svg" %}</span>
         </div>
-        <h3 class="mdx-feature__title">Full Stack</h3>
+        <h3 class="mdx-feature__title">Backend Development</h3>
         <p class="mdx-feature__text">
-          From database design to frontend polish, handling the entire stack
-          with confidence.
+          Building scalable and secure backend systems using modern frameworks and best practices.
         </p>
       </div>
     </div>
   </div>
+
+  {% if config.resume.experiences %}
+  <!-- Experience Section -->
+  <div class="mdx-section">
+    <h2 class="mdx-section__title">Experience</h2>
+    <div class="mdx-timeline">
+      {% for id, exp in config.resume.experiences.items() %}
+      <div class="mdx-timeline__item">
+        <div class="mdx-timeline__content">
+          <div class="mdx-timeline__header">
+            <h3 class="mdx-timeline__role">{{ exp.title }}</h3>
+            <span class="mdx-timeline__date">{{ exp.date }}</span>
+          </div>
+          <div class="mdx-timeline__company">{{ exp.company }}</div>
+          <ul class="mdx-timeline__points">
+            {% for point in exp.bullet_points %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if config.resume.projects %}
+  <!-- Projects Section -->
+  <div class="mdx-section">
+    <h2 class="mdx-section__title">Research, Educational & Personal Projects</h2>
+    <div class="mdx-projects__grid">
+      {% for id, project in config.resume.projects.items() %}
+      {% if project.link %}
+      <a href="{{ project.link }}" class="mdx-project-card mdx-project-card--link" target="_blank">
+        {% else %}
+        <div class="mdx-project-card">
+          {% endif %}
+          <h3 class="mdx-project-card__title">{{ project.name }}</h3>
+          <p class="mdx-project-card__description">{{ project.description }}</p>
+          <div class="mdx-project-card__tags">
+            {% for tag in project.tags %}
+            <span class="mdx-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% if project.link %}
+      </a>
+      {% else %}
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  </div>
+  {% endif %}
+
+  {% if config.resume.modules %}
+  <!-- Python Modules Section -->
+  <div class="mdx-section">
+    <h2 class="mdx-section__title">Python Modules (PyPI)</h2>
+    <div class="mdx-projects__grid">
+      {% for id, module in config.resume.modules.items() %}
+      <a href="{{ module.link }}" class="mdx-project-card mdx-project-card--link" target="_blank">
+        <h3 class="mdx-project-card__title">{{ module.name }}</h3>
+        <p class="mdx-project-card__description">{{ module.description }}</p>
+        <div class="mdx-project-card__tags">
+          <span class="mdx-tag">PyPI</span>
+          <span class="mdx-tag">Python</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if config.resume.education %}
+  <!-- Education Section -->
+  <div class="mdx-section">
+    <h2 class="mdx-section__title">Education</h2>
+    <div class="mdx-education__grid">
+      {% for id, edu in config.resume.education.items() %}
+      <div class="mdx-education-card">
+        <h3 class="mdx-education-card__degree">{{ edu.degree }}</h3>
+        <div class="mdx-education-card__school">{{ edu.school }}</div>
+        <div class="mdx-education-card__date">{{ edu.date }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
 </section>
 {% endblock %} {% block content %}{% endblock %} {% block footer %}{% endblock
 %}

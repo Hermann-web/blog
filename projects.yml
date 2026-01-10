@@ -1,0 +1,233 @@
+projects:
+  MCKINSEY_HACKATHON:
+    name: "Agentic Quantitative Risk Analysis"
+    link: "https://github.com/Hermann-web/McKinsey-AI-Hackathon-MWell-Asset-Management"
+    description: "Built AI agents for financial risk analysis such as a Google Finance integration, Smart Risk Detector, and Economic Evaluator, orchestrated via ARK in Kubernetes"
+    tags: ["AI Agents", "Kubernetes", "Finance"]
+
+  BOT_DETECTION:
+    name: "Bot Detection"
+    link: "https://hermann-web.github.io/blog/projects/bot_detection_in_auction"
+    description: "Built a model to classify auction bidders, reaching over 90% F1-score with linear models"
+    tags: ["Machine Learning", "Classification", "Python"]
+
+  ABSTRACT_SUMMARIZATION:
+    name: "Abstract Summarization"
+    link: "https://github.com/Hermann-web/abstract-summarization"
+    description: "Fine-tuned T5-small on XSum dataset for abstract summarization, achieving competitive BLEU scores"
+    tags: ["NLP", "T5", "Deep Learning"]
+
+  OZONE_FORECASTING:
+    name: "Ozone Level Forecasting"
+    link: "https://github.com/Hermann-web/ozone-forecasting"
+    description: "Applied Gradient Boosting, surpassing deep learning models on meteorological data, achieving RMSE of 8.81"
+    tags: ["Gradient Boosting", "Data Science", "Python"]
+
+  HEETCH_DATASCI:
+    name: "Driver Traffic Analysis"
+    link: "https://github.com/Hermann-web/projet-rythmes-urbains-heetch"
+    description: "Used geospatial mapping and time series analysis to detect peak hours & traffic patterns in Casablanca"
+    tags: ["Geospatial", "Time Series", "Data Analysis"]
+
+  SPAM_DETECTION:
+    name: "Spam Detection Model"
+    link: "https://github.com/Hermann-web/spam-detection"
+    description: "Built a machine learning model to classify emails as spam or not, achieving 95% accuracy using Random Forest and Bagging techniques"
+    tags: ["Machine Learning", "Random Forest", "NLP"]
+
+  PYPI_MODULES:
+    name: "PyPI - Developed Python Modules"
+    link: "https://pypi.org/user/Hermann-web/"
+    description: "Maintained multiple open-source Python modules: opencf (file conversion), flask-file-share (file sharing web app), Common Statistics Tools, lissajou (image and curve animations), pyv (git branch based versioning helper)"
+    tags: ["Open Source", "Python", "PyPI"]
+
+  DEMAND_FORECASTING:
+    name: "Demand Forecasting"
+    link: "https://github.com/Hermann-web/Demand-forecasting-with-python"
+    description: "Built a GUI for commercial forecasting from historical data, comparing methods (e.g., exponential smoothing, ARIMA, LSTM), and visualizes results"
+    tags: ["ARIMA", "LSTM", "GUI"]
+
+  PORTFOLIO_WEBSITE:
+    name: "Portfolio Website"
+    link: "https://hermann-web.github.io/blog/"
+    description: "Built and published a personal blog website sharing insights and guidelines on technologies, projects, and career"
+    tags: ["MkDocs", "Material", "Portfolio"]
+
+  SUMMARIZATION_SOFTWARE:
+    name: "Summarization Software"
+    description: "Created an extractive summarization software using BERT/Word2Vec embeddings"
+    tags: ["BERT", "NLP", "Word2Vec"]
+
+  SUMMARIZATION_SOFTWARE_FREELANCE:
+    name: "Summarization Software (freelance)"
+    description: "Built a text summarization model using BERT/Word2Vec embeddings and cosine similarity, with graph-based sentence visualization"
+    tags: ["BERT", "NLP", "Visualization"]
+
+  PUBLIC_ADMIN_DATA:
+    name: "Public Administrations Data Indexing (ETL)"
+    description: "Analyzed Moroccan public administration data with Python and SQLite, uncovering database normalization anomalies"
+    tags: ["ETL", "SQLite", "Python"]
+
+  SPRING_SCHOOL_ETL:
+    name: "Spring School ETL System"
+    description: "Created an ETL system in Python for managing user registration, payments, accommodations, badge generation, user statistics visualization, and automated email utilizing SQLite database, for the annual spring school for data science event"
+    tags: ["ETL", "SQLite", "Automation"]
+
+  FORMULA_TO_LATEX:
+    name: "Formula Screenshot to LaTeX"
+    link: "https://github.com/Hermann-web/pix2tex"
+    description: "Built and deployed a Streamlit app to convert formula images to LaTeX code"
+    tags: ["Streamlit", "OCR", "LaTeX"]
+
+  AI_SEARCH_ENGINE:
+    name: "AI Based Searched Engine"
+    description: "Implemented a web application with an NLP Based search engine"
+    tags: ["NLP", "Search", "Web App"]
+
+  PREDICTIVE_MAINTENANCE:
+    name: "Predictive Maintenance for Industrial Equipment"
+    description: "Built a predictive maintenance model to forecast equipment failures using time-series analysis."
+    tags: ["Time Series", "Predictive Maintenance", "Python"]
+
+  EVENT_WEBSITES:
+    name: "Event Websites"
+    link: "https://www.ai4impact2026.com"
+    description: "Developed responsive modern websites for various scientific events, including the Spring School 2023 and the Winter School 2025. Tasks included DNS configuration, SEO optimization and Mail automation."
+    tags: ["Web Dev", "SEO", "DNS"]
+
+  EVENT_ORGANIZATION:
+    name: "Event Organization"
+    description: "Co-organized various scientific events including the Next Generation AI Winter School (2025), the Generative AI Winter School (2024) and the Data Driven Decision Making Spring School (2023)"
+    tags: ["Event Planning", "AI", "Coordination"]
+
+  STATISTICAL_METHODS_LIB:
+    name: "Statistical Methods Python Library"
+    link: "https://statanalysis.readthedocs.io/en/latest/"
+    description: "Implemented statistical methods, including minimum sample size, confidence interval estimation, hypothesis testing, and regression models, complete with unit test suites"
+    tags: ["Statistics", "Python", "Unit Testing"]
+
+  MTECK_RESUME_PARSER:
+    name: "mteck-resume-parser"
+    link: "https://github.com/Hermann-web/mteck-resume-parser"
+    description: "Resume parser and generator"
+    tags: ["Resume", "Parser", "Python"]
+
+  WINTER_SCHOOL_WEBSITE:
+    name: "winter-school-website"
+    link: "https://github.com/Hermann-web/winter-school-website"
+    description: "Website for the Winter School event"
+    tags: ["Web Dev", "Event", "HTML/CSS"]
+
+  EXCHANGE_FORM:
+    name: "exchange-form"
+    link: "https://github.com/Hermann-web/exchange-form"
+    description: "Form for exchange programs"
+    tags: ["Web Dev", "Form", "JavaScript"]
+
+  FILE_STORAGE_API:
+    name: "file-storage-api"
+    link: "https://github.com/Hermann-web/file-storage-api"
+    description: "A lightweight FastAPI-based file storage service with UUID-based security and SQLite metadata management"
+    tags: ["FastAPI", "SQLite", "API"]
+
+  MOROCCO_AI_HACKATHON:
+    name: "MoroccoAI Hackathon Medical Assistant"
+    link: "https://github.com/Hermann-web/MoroccoAI-Hackathon-UnderWatch-TrustWorthy-AI-Medical-Assistant"
+    description: "Demo of a smartwatch based systematic health monitoring solution designed for patients with chronic conditions"
+    tags: ["AI", "Healthcare", "Hackathon"]
+
+  AGENTS_AT_SCALE_ARK:
+    name: "agents-at-scale-ark"
+    link: "https://github.com/Hermann-web/agents-at-scale-ark"
+    description: "Provider-agnostic operations for agentic resources. ARK codifies patterns and practices developed across dozens of agentic application projects."
+    tags: ["AI Agents", "Operations", "Framework"]
+
+  REPOS_STATS:
+    name: "repos-stats-and-evaluation"
+    link: "https://github.com/Hermann-web/repos-stats-and-evaluation"
+    description: "A tool for coding instructors to read a repo stats and evaluate in a streamlit app"
+    tags: ["Streamlit", "Education", "Python"]
+
+  LIDAR2BEV:
+    name: "lidar2bev"
+    link: "https://github.com/Hermann-web/lidar2bev"
+    description: "Lidar to Bird's Eye View conversion"
+    tags: ["Computer Vision", "Lidar", "Python"]
+
+  LEARN_GIT_PYTEST:
+    name: "learn-git-pytest"
+    link: "https://github.com/Hermann-web/learn-git-pytest"
+    description: "Learning resources for Git and Pytest"
+    tags: ["Education", "Git", "Pytest"]
+
+  SIMPLE_PRODUCT_LISTING:
+    name: "simple-product-listing-express"
+    link: "https://github.com/Hermann-web/simple-product-listing-express"
+    description: "Simple product listing application with two frontends (one JS-based and one Jade-based) and a backend using Express"
+    tags: ["Express", "Node.js", "Web Dev"]
+
+  # AWESOME_MLSS:
+  #   name: "awesome-mlss"
+  #   link: "https://github.com/Hermann-web/awesome-mlss"
+  #   description: "Machine Learning Summer School deadlines"
+  #   tags: ["Machine Learning", "Resources", "List"]
+
+  FILE_CONVERTER:
+    name: "file-converter"
+    link: "https://github.com/Hermann-web/file-converter"
+    description: "Implementation of the best convertion methods without restiction on the file format backed by a versatile Python package"
+    tags: ["File Conversion", "Python", "Tool"]
+
+  INSPECT_RECURSIVE:
+    name: "inspect-recursive"
+    link: "https://github.com/Hermann-web/inspect-recursive"
+    description: "Recursively inspect python objects"
+    tags: ["Python", "Debugging", "Tool"]
+
+  PYV:
+    name: "pyv"
+    link: "https://github.com/Hermann-web/pyv"
+    description: "A pypi package providing a command-line interface (CLI) application for managing versioning in a using Python"
+    tags: ["Python", "Versioning", "CLI"]
+
+  VOD_CONVERTER:
+    name: "vod-converter"
+    link: "https://github.com/Hermann-web/vod-converter"
+    description: "Convert between visual object detection datasets"
+    tags: ["Computer Vision", "Dataset", "Python"]
+
+  # RIISONGOO_APP:
+  #   name: "riisongoo_app"
+  #   link: "https://github.com/Hermann-web/riisongoo_app"
+  #   description: "Riisongoo App"
+  #   tags: ["App", "Mobile", "Dev"]
+
+  # COMPLEX_YOLO_V3:
+  #   name: "Complex-YOLOv3"
+  #   link: "https://github.com/Hermann-web/Complex-YOLOv3"
+  #   description: "PyTorch implementation of Complex-YOLO paper with YoloV3"
+  #   tags: ["Computer Vision", "YOLO", "PyTorch"]
+
+  POLYNOMIAL_GENERATOR:
+    name: "polynomial-generator"
+    link: "https://github.com/Hermann-web/polynomial-generator"
+    description: "A Python package for generating polynomial expressions"
+    tags: ["Math", "Python", "Package"]
+
+  # DEV_TOOLBOX_WEB:
+  #   name: "DevToolboxWeb"
+  #   link: "https://github.com/Hermann-web/DevToolboxWeb"
+  #   description: "Developer Toolbox Web App"
+  #   tags: ["Web Dev", "Tools", "Next.js"]
+
+  # COMPLEX_YOLO_V4:
+  #   name: "Complex-YOLOv4-Pytorch"
+  #   link: "https://github.com/Hermann-web/Complex-YOLOv4-Pytorch"
+  #   description: "The PyTorch Implementation based on YOLOv4 of the paper: 'Complex-YOLO: Real-time 3D Object Detection on Point Clouds'"
+  #   tags: ["Computer Vision", "YOLO", "PyTorch"]
+
+  # OPEN3D_POINTNET2:
+  #   name: "Open3D-PointNet2-Semantic3D"
+  #   link: "https://github.com/Hermann-web/Open3D-PointNet2-Semantic3D"
+  #   description: "Semantic3D segmentation with Open3D and PointNet++"
+  #   tags: ["Computer Vision", "Point Cloud", "Open3D"]
