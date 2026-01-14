@@ -45,9 +45,9 @@ At the end of 2023, in the very last 2 days, I felt a sense of completion. It wa
 
 Looking back at the same time one year ago —from 2022 to 2023— I remembered working on statistical tools, learning through coding all methods i've encountered in a dedicated coursera certification. The work is open source on github at [Hermann-web/some-common-statistical-methods](https://github.com/Hermann-web/some-common-statistical-methods)
 
-In the last months of 2023, i've started this [blog](https://hermann-web.github.io/), as a mean to put on the web what tech tools i learn and how to use them. I rewrite my notes as tutorials i find interesting enough to share, in a way i would want to read them right before having tested them.
+In the last months of 2023, i've started this [blog](https://hermann-agossou.com/), as a mean to put on the web what tech tools i learn and how to use them. I rewrite my notes as tutorials i find interesting enough to share, in a way i would want to read them right before having tested them.
 
-Before that, i've created an application that has an api, a frontend view then on top of it, a python module that gave birth to a cli tool. I've written a [tutorial about it showing how i build it brick by brick](https://hermann-web.github.io/web/blog/2023/11/14/flask-based-file-hosting-web-app-api-python-module-cli-app/?h=flask) and it also open source on github at [Hermann-web/simple-file-hosting-with-flask](https://github.com/Hermann-web/simple-file-hosting-with-flask)
+Before that, i've created an application that has an api, a frontend view then on top of it, a python module that gave birth to a cli tool. I've written a [tutorial about it showing how i build it brick by brick](https://hermann-agossou.com/blog/flask-based-file-hosting-web-app--api--python-module--cli-app) and it also open source on github at [Hermann-web/simple-file-hosting-with-flask](https://github.com/Hermann-web/simple-file-hosting-with-flask)
 
 But, as the year ended, a project lingered, a collection of scattered Python apps. This project had evolved into a vision—a web interface combined with a backend, a unified creation born from various ideas.
 
@@ -63,7 +63,7 @@ However, as the collection grew further, the need for organization became appare
 
 This restructuring revelation extended beyond just applications.
 I figured i've gone through a similar for my development notes. These notes—ranging from syntax references to frequently used functions and tutorials—were upgraded significantly.
-Migrating from plain text to Markdown format, these notes underwent a transformation. Leveraging the prowess of MkDocs and Docker, these notes metamorphosed into a [dynamic web application, offering a seamless browsing experience](https://hermann-web.github.io/web/blog/2023/12/25/using-mkdocs-with-docker-streamlining-documentation-workflow).
+Migrating from plain text to Markdown format, these notes underwent a transformation. Leveraging the prowess of MkDocs and Docker, these notes metamorphosed into a [dynamic web application, offering a seamless browsing experience](https://hermann-agossou.com/blog/using-mkdocs-with-docker-streamlining-documentation-workflow/).
 This gave me an idea for my small python projects too.
 
 ## The Expansion: Taking Projects Online
@@ -82,7 +82,7 @@ I opted for poetry for dependency management, though encountered a hiccup when i
 
 Then, i've added my packages with poetry: fastapi and uvicorn. then, black and isort, as dev dependencies. In comparison to pip, poetry or pipenv let you separate dev dependencies and you can ever group dependencies or add command to be run with poetry.
 
-!!! note "See more on [python package managers practical comparison here](https://hermann-web.github.io/web/blog/2023/10/28/managing-python-dependencies-navigating-pip-pipenv-poetry-and-conda/)"
+!!! note "See more on [python package managers practical comparison here](https://hermann-agossou.com/blog/managing-python-dependencies-navigating-pip-pipenv-poetry-conda-and-more)"
 
 Despite encountering issues, tweaking the `pyproject.toml` scripts addressed the obstacles.
 

@@ -21,7 +21,7 @@
 
 # Project information
 site_name: What I learned today (@hermann-web)
-site_url: https://hermann-web.github.io/blog/
+site_url: https://hermann-agossou.com
 site_author: Hermann Agossou
 site_description: >-
   Meet Hermann, a pro at full-stack web development and data science, acing website building, backend systems, ML & DL (NLP and 3D vision included). These tutorials? They're my personal cheat sheets—where I stash those markdown, GitHub nuggets: syntax, functions, handy tools—stuff I use all the time. Now, I'm turning some into blog posts. Join me in simplifying our learning journeys, building a shared resource that evolves as we grow.
@@ -36,7 +36,7 @@ docs_dir: docs/
 # Copyright
 copyright: Copyright © 2023-2024 Hermann Agossou
 
-google_analytics: ['BD4YrWd0pEc2SUULdRPLKgv5QCfeDluhXPt37gL9nNs', 'hermann-web.github.io']
+google_analytics: ['BD4YrWd0pEc2SUULdRPLKgv5QCfeDluhXPt37gL9nNs', 'hermann-agossou.com']
 
 # Configuration
 theme:
@@ -132,7 +132,7 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/agossou-hermann
     - icon: fontawesome/brands/docker
-      link: https://www.hub.docker.com/r/hermann-web/hermann-web.github.io/
+      link: https://www.hub.docker.com/r/hermann-web/hermann-agossou.com/
     - icon: fontawesome/brands/python
       link: https://pypi.org/user/Hermann-web/
     - icon: fontawesome/brands/researchgate

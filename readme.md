@@ -1,6 +1,6 @@
 # What I learned today (@hermann-web)
 
-This repository contains the source code for my personal website and blog, available at [hermann-web.github.io/blog/](https://hermann-web.github.io/blog/).
+This repository contains the source code for my personal website and blog, available at [hermann-agossou.com](https://hermann-agossou.com).
 
 Meet Hermann, a pro at full-stack web development and data science, acing website building, backend systems, ML & DL (NLP and 3D vision included). These tutorials? They're my personal cheat sheets—where I stash those markdown, GitHub nuggets: syntax, functions, handy tools—stuff I use all the time. Now, I'm turning some into blog posts. Join me in simplifying our learning journeys, building a shared resource that evolves as we grow.
 

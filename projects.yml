@@ -7,7 +7,7 @@ projects:
 
   BOT_DETECTION:
     name: "Bot Detection"
-    link: "https://hermann-web.github.io/blog/projects/bot_detection_in_auction"
+    link: "https://hermann-agossou.com/projects/bot_detection_in_auction"
     description: "Built a model to classify auction bidders, reaching over 90% F1-score with linear models"
     tags: ["Machine Learning", "Classification", "Python"]
 
@@ -49,7 +49,7 @@ projects:
 
   PORTFOLIO_WEBSITE:
     name: "Portfolio Website"
-    link: "https://hermann-web.github.io/blog/"
+    link: "https://hermann-agossou.com/"
     description: "Built and published a personal blog website sharing insights and guidelines on technologies, projects, and career"
     tags: ["MkDocs", "Material", "Portfolio"]
 
