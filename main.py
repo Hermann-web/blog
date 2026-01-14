@@ -53,13 +53,13 @@ def define_env(env):
         # },
         "projects": projects_data, # Use data from projects.yml
         "modules": modules_data, # Use data from python_modules.yml
-        "education": {
-            "ENGINEERING": {
-                "degree": "Engineering Degree in Computer Science",
-                "school": "Mohammed V University in Rabat",
-                "date": "2018 — 2021"
-            }
-        }
+        # "education": {
+        #     "ENGINEERING": {
+        #         "degree": "Engineering Degree in Computer Science",
+        #         "school": "Mohammed V University in Rabat",
+        #         "date": "2018 — 2021"
+        #     }
+        # }
     }
 
     # Expose to macros (for markdown)
