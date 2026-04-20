@@ -1,20 +1,11 @@
 /* ============================================================
-   PORTFOLIO HOME PAGE — Premium Dark Theme
+   PORTFOLIO HOME PAGE — Adaptive Light / Dark Theme
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-/* ---------- Design Tokens ---------- */
+/* ---------- Shared Design Tokens ---------- */
 :root {
-  --p-bg: #06080d;
-  --p-bg-card: rgba(15, 18, 30, 0.6);
-  --p-bg-card-hover: rgba(20, 24, 42, 0.8);
-  --p-surface: rgba(255, 255, 255, 0.03);
-  --p-border: rgba(255, 255, 255, 0.06);
-  --p-border-hover: rgba(255, 255, 255, 0.12);
-  --p-text: #e8ecf4;
-  --p-text-muted: #7a8ba8;
-  --p-text-dim: #4a5568;
   --p-accent-1: #6c5ce7;
   --p-accent-2: #a855f7;
   --p-accent-3: #ec4899;
@@ -26,6 +17,71 @@
   --p-transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --p-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --p-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ---------- Dark Mode (slate) ---------- */
+[data-md-color-scheme="slate"] {
+  --p-bg: #06080d;
+  --p-bg-card: rgba(15, 18, 30, 0.6);
+  --p-bg-card-hover: rgba(20, 24, 42, 0.8);
+  --p-surface: rgba(255, 255, 255, 0.03);
+  --p-border: rgba(255, 255, 255, 0.06);
+  --p-border-hover: rgba(255, 255, 255, 0.12);
+  --p-text: #e8ecf4;
+  --p-text-muted: #7a8ba8;
+  --p-text-dim: #4a5568;
+  --p-particle: rgba(108, 92, 231, 0.4);
+  --p-particle-line: rgba(108, 92, 231, 0.08);
+  --p-hero-title-from: #ffffff;
+  --p-stat-shadow: none;
+}
+
+/* ---------- Light Mode (default) ---------- */
+[data-md-color-scheme="default"] {
+  --p-bg: #f8f9fc;
+  --p-bg-card: rgba(255, 255, 255, 0.7);
+  --p-bg-card-hover: rgba(255, 255, 255, 0.9);
+  --p-surface: rgba(0, 0, 0, 0.02);
+  --p-border: rgba(0, 0, 0, 0.07);
+  --p-border-hover: rgba(0, 0, 0, 0.14);
+  --p-text: #1a1a2e;
+  --p-text-muted: #555b6e;
+  --p-text-dim: #9ca3af;
+  --p-particle: rgba(108, 92, 231, 0.2);
+  --p-particle-line: rgba(108, 92, 231, 0.05);
+  --p-hero-title-from: #1a1a2e;
+  --p-stat-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Light mode refinements ---------- */
+[data-md-color-scheme="default"] .mdx-skill-card,
+[data-md-color-scheme="default"] .mdx-project-card,
+[data-md-color-scheme="default"] .mdx-timeline__content,
+[data-md-color-scheme="default"] .mdx-education-card {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+[data-md-color-scheme="default"] .mdx-skill-card:hover,
+[data-md-color-scheme="default"] .mdx-project-card:hover,
+[data-md-color-scheme="default"] .mdx-timeline__content:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+[data-md-color-scheme="default"] .mdx-hero::before,
+[data-md-color-scheme="default"] .mdx-hero::after {
+  opacity: 0.25;
+}
+
+[data-md-color-scheme="default"] .mdx-social-link {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+[data-md-color-scheme="default"] .mdx-tech-item {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+[data-md-color-scheme="default"] .mdx-show-more-btn {
+  background: rgba(0, 0, 0, 0.03);
 }
 
 /* ---------- Global resets for home page ---------- */
@@ -192,7 +248,7 @@
   line-height: 1.1;
   margin: 0 0 1rem;
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, #ffffff 0%, var(--p-accent-1) 40%, var(--p-accent-3) 70%, var(--p-accent-4) 100%);
+  background: linear-gradient(135deg, var(--p-hero-title-from) 0%, var(--p-accent-1) 40%, var(--p-accent-3) 70%, var(--p-accent-4) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1098,9 +1154,13 @@
 
 /* ============================================================
    FIX: hide MkDocs default elements for home page
+   Keep header in flow but visually integrated.
    ============================================================ */
 .md-header {
-  position: initial;
+  /* Keep sticky so theme toggle doesn't cause scroll-jump */
+  position: sticky !important;
+  top: 0;
+  z-index: 100;
 }
 
 .md-main__inner {
