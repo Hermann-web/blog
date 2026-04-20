@@ -1,14 +1,13 @@
-{#- This file was automatically generated - do not edit -#} {% extends
-"base.html" %} {% block extrahead %}
-<link
-  rel="stylesheet"
-  href="{{ 'assets/stylesheets/custom.00c04c01.min.css' | url }}"
-/>
-<meta
-  name="google-site-verification"
-  content="BD4YrWd0pEc2SUULdRPLKgv5QCfeDluhXPt37gL9nNs"
-/>
-{% endblock %} {% block announce %} For updates follow
+{#- Site-wide template with premium enhancements -#}
+{% extends "base.html" %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{{ 'assets/stylesheets/custom.00c04c01.min.css' | url }}" />
+<meta name="google-site-verification" content="BD4YrWd0pEc2SUULdRPLKgv5QCfeDluhXPt37gL9nNs" />
+{% endblock %}
+
+{% block announce %}
+For updates follow
 <strong>@hermann-agossou</strong> on
 <a rel="me" href="https://www.linkedin.com/in/agossou-hermann/">
   <span class="twemoji twitter">
@@ -23,6 +22,87 @@ and
   </span>
   <strong>Twitter</strong>
 </a>
-{% endblock %} {% block scripts %} {{ super() }}
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
 <script src="{{ 'assets/javascripts/custom.9c11c319.min.js' | url }}"></script>
+
+<!-- Reading Progress Bar -->
+<div class="reading-progress" id="reading-progress"></div>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24">
+    <polyline points="18 15 12 9 6 15" />
+  </svg>
+</button>
+
+<script>
+  (function () {
+    'use strict';
+
+    /* ------- Reading Progress Bar ------- */
+    const progressBar = document.getElementById('reading-progress');
+    if (progressBar) {
+      function updateProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight > 0) {
+          const progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = Math.min(progress, 100) + '%';
+        }
+      }
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    }
+
+    /* ------- Scroll to Top Button ------- */
+    const scrollBtn = document.getElementById('scroll-to-top');
+    if (scrollBtn) {
+      function toggleScrollBtn() {
+        if (window.scrollY > 400) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      }
+      window.addEventListener('scroll', toggleScrollBtn, { passive: true });
+      scrollBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      toggleScrollBtn();
+    }
+
+    /* ------- Image Lightbox (click to zoom) ------- */
+    document.querySelectorAll('.md-typeset img:not([class])').forEach(function (img) {
+      img.addEventListener('click', function () {
+        if (document.querySelector('.img-lightbox')) return;
+        const overlay = document.createElement('div');
+        overlay.className = 'img-lightbox';
+        overlay.style.cssText = 'position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;cursor:zoom-out;animation:lbFadeIn .25s ease';
+        const clone = img.cloneNode();
+        clone.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5);object-fit:contain;animation:lbZoomIn .3s ease';
+        overlay.appendChild(clone);
+        overlay.addEventListener('click', function () {
+          overlay.style.animation = 'lbFadeOut .2s ease forwards';
+          setTimeout(function () { overlay.remove(); }, 200);
+        });
+        document.body.appendChild(overlay);
+      });
+    });
+
+    /* Lightbox animations (injected once) */
+    if (!document.getElementById('lightbox-styles')) {
+      const style = document.createElement('style');
+      style.id = 'lightbox-styles';
+      style.textContent = `
+      @keyframes lbFadeIn { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes lbFadeOut { from { opacity: 1; } to { opacity: 0; } }
+      @keyframes lbZoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    `;
+      document.head.appendChild(style);
+    }
+  })();
+</script>
 {% endblock %}

@@ -1,0 +1,559 @@
+/* ============================================================
+   SITE-WIDE PREMIUM ENHANCEMENTS
+   Applies to ALL pages (blog, projects, etc.)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ---------- Design Tokens (global) ---------- */
+:root {
+    --sw-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --sw-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --sw-radius: 12px;
+    --sw-radius-sm: 8px;
+    --sw-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --sw-accent: #6c5ce7;
+    --sw-accent-light: #a855f7;
+}
+
+/* ============================================================
+   1. GLOBAL TYPOGRAPHY
+   ============================================================ */
+.md-typeset {
+    font-family: var(--sw-font) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.md-typeset code,
+.md-typeset pre code,
+.md-typeset kbd {
+    font-family: var(--sw-font-mono) !important;
+}
+
+/* Headings — tighter tracking, bolder */
+.md-typeset h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.md-typeset h2 {
+    font-weight: 700;
+    letter-spacing: -0.015em;
+}
+
+.md-typeset h3,
+.md-typeset h4 {
+    font-weight: 600;
+}
+
+/* ============================================================
+   2. GLASSMORPHIC HEADER
+   Only adds blur + border. Does NOT override Material's native
+   background/text colors to avoid the white-on-white bug.
+   ============================================================ */
+.md-header {
+    backdrop-filter: blur(16px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
+    transition: box-shadow var(--sw-transition) !important;
+}
+
+[data-md-color-scheme="slate"] .md-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="default"] .md-header {
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Nav tabs — smoother hover */
+.md-tabs {
+    transition: background-color var(--sw-transition) !important;
+}
+
+.md-tabs__link {
+    transition: color var(--sw-transition), opacity var(--sw-transition) !important;
+}
+
+.md-tabs__link:hover {
+    opacity: 1 !important;
+}
+
+/* ============================================================
+   3. READING PROGRESS BAR
+   ============================================================ */
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--sw-accent), var(--sw-accent-light), #ec4899);
+    z-index: 9999;
+    width: 0%;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 0 10px rgba(108, 92, 231, 0.4);
+}
+
+/* ============================================================
+   4. CONTENT FADE-IN ANIMATION
+   ============================================================ */
+.md-content__inner {
+    animation: contentFadeIn 0.5s ease-out;
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   5. CODE BLOCKS — Premium
+   ============================================================ */
+.md-typeset pre {
+    border-radius: var(--sw-radius) !important;
+    position: relative;
+    transition: box-shadow var(--sw-transition);
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-md-color-scheme="default"] .md-typeset pre {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.md-typeset pre:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Code copy button glow */
+.md-clipboard {
+    transition: color var(--sw-transition), background var(--sw-transition) !important;
+    border-radius: var(--sw-radius-sm) !important;
+}
+
+.md-clipboard:hover {
+    color: var(--sw-accent) !important;
+    background: rgba(108, 92, 231, 0.1) !important;
+}
+
+/* Inline code styling */
+.md-typeset :not(pre)>code {
+    border-radius: 5px !important;
+    padding: 2px 6px !important;
+    transition: background var(--sw-transition);
+    font-size: 0.82em !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset :not(pre)>code {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="default"] .md-typeset :not(pre)>code {
+    background: rgba(108, 92, 231, 0.06) !important;
+    border: 1px solid rgba(108, 92, 231, 0.1);
+}
+
+/* ============================================================
+   6. BLOG LISTING CARDS
+   ============================================================ */
+/* Post excerpt cards */
+.md-post {
+    border-radius: var(--sw-radius) !important;
+    transition: transform var(--sw-transition), box-shadow var(--sw-transition), border-color var(--sw-transition) !important;
+    overflow: hidden;
+}
+
+[data-md-color-scheme="slate"] .md-post {
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    background: rgba(15, 18, 30, 0.5) !important;
+}
+
+[data-md-color-scheme="default"] .md-post {
+    border: 1px solid rgba(0, 0, 0, 0.07) !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.md-post:hover {
+    transform: translateY(-4px);
+}
+
+[data-md-color-scheme="slate"] .md-post:hover {
+    border-color: rgba(108, 92, 231, 0.3) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+[data-md-color-scheme="default"] .md-post:hover {
+    border-color: rgba(108, 92, 231, 0.2) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Blog post metadata — tags */
+.md-typeset .md-tags a {
+    border-radius: var(--sw-radius-sm) !important;
+    transition: all var(--sw-transition) !important;
+    font-size: 0.72em !important;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.md-typeset .md-tags a:hover {
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   7. ADMONITIONS — Glassmorphic
+   ============================================================ */
+.md-typeset .admonition,
+.md-typeset details {
+    border-radius: var(--sw-radius) !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    overflow: hidden;
+    transition: box-shadow var(--sw-transition), border-color var(--sw-transition);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition,
+[data-md-color-scheme="slate"] .md-typeset details {
+    backdrop-filter: blur(8px);
+    background: rgba(15, 18, 30, 0.4) !important;
+}
+
+[data-md-color-scheme="default"] .md-typeset .admonition,
+[data-md-color-scheme="default"] .md-typeset details {
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.md-typeset .admonition:hover,
+.md-typeset details:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Admonition title bar — smoother */
+.md-typeset .admonition>.admonition-title,
+.md-typeset details>summary {
+    border-radius: var(--sw-radius) var(--sw-radius) 0 0;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+/* Details expand/collapse animation */
+.md-typeset details[open]>summary~* {
+    animation: admonitionSlideIn 0.3s ease-out;
+}
+
+@keyframes admonitionSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   8. IMAGES — Polished
+   ============================================================ */
+.md-typeset img:not([class]),
+.md-typeset .md-content img {
+    border-radius: var(--sw-radius-sm);
+    transition: transform var(--sw-transition), box-shadow var(--sw-transition);
+}
+
+[data-md-color-scheme="slate"] .md-typeset img:not([class]),
+[data-md-color-scheme="slate"] .md-typeset .md-content img {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-md-color-scheme="default"] .md-typeset img:not([class]),
+[data-md-color-scheme="default"] .md-typeset .md-content img {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.md-typeset img:not([class]):hover,
+.md-typeset .md-content img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    cursor: zoom-in;
+}
+
+/* ============================================================
+   9. LINK HOVER EFFECTS
+   ============================================================ */
+.md-typeset a:not(.md-button):not(.md-nav__link):not(.md-source):not(.md-footer__link):not(.headerlink):not([class^="md-"]):not([class^="mdx-"]) {
+    text-decoration: none;
+    background-image: linear-gradient(var(--sw-accent), var(--sw-accent));
+    background-size: 0% 2px;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    transition: background-size var(--sw-transition), color var(--sw-transition);
+    padding-bottom: 1px;
+}
+
+.md-typeset a:not(.md-button):not(.md-nav__link):not(.md-source):not(.md-footer__link):not(.headerlink):not([class^="md-"]):not([class^="mdx-"]):hover {
+    background-size: 100% 2px;
+}
+
+/* ============================================================
+   10. TOC — Active Gradient Indicator
+   ============================================================ */
+.md-sidebar--secondary .md-nav__link--active {
+    color: var(--sw-accent) !important;
+    font-weight: 600;
+    position: relative;
+}
+
+.md-sidebar--secondary .md-nav__link {
+    transition: color var(--sw-transition), padding-left var(--sw-transition);
+    border-left: 2px solid transparent;
+    padding-left: 12px;
+}
+
+.md-sidebar--secondary .md-nav__link--active {
+    border-left: 2px solid var(--sw-accent);
+    padding-left: 12px;
+}
+
+.md-sidebar--secondary .md-nav__link:hover {
+    color: var(--sw-accent) !important;
+}
+
+/* ============================================================
+   11. SCROLL TO TOP BUTTON
+   ============================================================ */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(108, 92, 231, 0.3);
+    background: rgba(108, 92, 231, 0.15);
+    backdrop-filter: blur(12px);
+    color: var(--sw-accent);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--sw-transition), transform var(--sw-transition), background var(--sw-transition), box-shadow var(--sw-transition);
+    pointer-events: none;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.scroll-to-top:hover {
+    background: rgba(108, 92, 231, 0.25);
+    border-color: var(--sw-accent);
+    box-shadow: 0 4px 20px rgba(108, 92, 231, 0.3);
+    transform: translateY(-2px);
+}
+
+.scroll-to-top svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ============================================================
+   12. FOOTER — Refined
+   ============================================================ */
+.md-footer {
+    transition: background-color var(--sw-transition) !important;
+}
+
+[data-md-color-scheme="slate"] .md-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+[data-md-color-scheme="default"] .md-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.md-footer-meta {
+    backdrop-filter: blur(12px);
+}
+
+/* Social links in footer */
+.md-social__link {
+    transition: transform var(--sw-transition), color var(--sw-transition) !important;
+}
+
+.md-social__link:hover {
+    transform: translateY(-3px);
+    color: var(--sw-accent) !important;
+}
+
+/* ============================================================
+   13. SEARCH — Polished
+   ============================================================ */
+.md-search__form {
+    border-radius: var(--sw-radius-sm) !important;
+    transition: box-shadow var(--sw-transition) !important;
+}
+
+.md-search__form:focus-within {
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2) !important;
+}
+
+[data-md-color-scheme="slate"] .md-search__form {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.md-search__output {
+    border-radius: 0 0 var(--sw-radius-sm) var(--sw-radius-sm) !important;
+}
+
+/* ============================================================
+   14. SIDEBAR NAV — Smooth
+   ============================================================ */
+.md-nav__link {
+    transition: color var(--sw-transition), padding-left var(--sw-transition) !important;
+    border-radius: 4px;
+}
+
+.md-nav__item--active>.md-nav__link {
+    font-weight: 600 !important;
+}
+
+/* ============================================================
+   15. ANNOUNCE BAR — Subtle
+   ============================================================ */
+.md-banner {
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+}
+
+[data-md-color-scheme="slate"] .md-banner {
+    background: rgba(108, 92, 231, 0.08);
+    border-bottom: 1px solid rgba(108, 92, 231, 0.1);
+}
+
+[data-md-color-scheme="default"] .md-banner {
+    background: rgba(108, 92, 231, 0.04);
+    border-bottom: 1px solid rgba(108, 92, 231, 0.08);
+}
+
+/* ============================================================
+   16. SELECTION COLOR
+   ============================================================ */
+::selection {
+    background: rgba(108, 92, 231, 0.3);
+    color: inherit;
+}
+
+::-moz-selection {
+    background: rgba(108, 92, 231, 0.3);
+    color: inherit;
+}
+
+/* ============================================================
+   17. SCROLLBAR (Webkit)
+   ============================================================ */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+[data-md-color-scheme="default"] ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+}
+
+[data-md-color-scheme="default"] ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================
+   18. TABLES — Polished
+   ============================================================ */
+.md-typeset table:not([class]) {
+    border-radius: var(--sw-radius-sm);
+    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-md-color-scheme="default"] .md-typeset table:not([class]) {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.md-typeset table:not([class]) th {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-size: 0.82em;
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   19. SMOOTH SCROLLING
+   ============================================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================================================
+   20. PAGE TRANSITIONS — Navigation
+   ============================================================ */
+.md-main {
+    transition: opacity 0.15s ease-out;
+}
+
+/* ============================================================
+   RESPONSIVE REFINEMENTS
+   ============================================================ */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 40px;
+        height: 40px;
+    }
+}

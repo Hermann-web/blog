@@ -71,20 +71,20 @@ theme:
     # - toc.integrate
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: deep purple
+      accent: purple
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
       primary: black
-      accent: indigo
+      accent: purple
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  # font:
-  #   text: Roboto
-  #   code: Roboto Mono
+  font:
+    text: Inter
+    code: JetBrains Mono
   favicon: assets/logo-blog-hermann-agossou-ot0-500x500.png
   icon:
     logo: logo
@@ -255,5 +255,6 @@ extra_javascript:
   #  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+  - stylesheets/site-wide.css
   - stylesheets/float-img.css
   - stylesheets/custom-admonition.css
